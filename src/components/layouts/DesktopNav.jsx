@@ -23,15 +23,16 @@ const DesktopNav = () => {
         );
 
         const result = await response.json();
-        // console.log(result?.menu_items, 'result')
         setData(result?.menu_items);
       } catch (error) {
-        // setError(error.message);
       }
     };
 
     fetchData();
   }, []);
+
+
+  console.log(data, 'data')
 
   return (
     <div className="hidden lg:flex items-center w-full justify-between px-16">
@@ -42,18 +43,19 @@ const DesktopNav = () => {
      
       <NavigationMenu>
         <NavigationMenuList>
-          {data?.map((item) => (
-            <>
-              <NavigationMenuItem>
+          {data?.map((item, index) => (
+           
+              <NavigationMenuItem key={index}>
                 <NavigationMenuTrigger>{item?.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                   
                   
                     {item?.children?.length > 0 && 
-                      item?.children?.map((child) => (
+                      item?.children?.map((child, childindex) => (
                         <>
                        
-                        <ListItem href={`/${child?.title}`} title={child?.title}>
+                        <ListItem key={childindex} href={`/${child?.title}`} title={child?.title}>
                         Explore {child?.title}
                       </ListItem>
                         </>
@@ -63,7 +65,7 @@ const DesktopNav = () => {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-            </>
+            
           ))}
         </NavigationMenuList>
       </NavigationMenu>
