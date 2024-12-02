@@ -30,7 +30,7 @@ const Hero = async () => {
           </h2>
           <div className='flex flex-wrap items-center gap-4'>
             <a href='/products' className={cn(buttonVariants())}>
-              Buy now
+             Get Started
             </a>
             <Link
               href='/dashboard/stores'
@@ -40,14 +40,14 @@ const Hero = async () => {
                 }),
               )}
             >
-              Sell now
+             Book Demo
             </Link>
           </div>
         </div>
         <div className='flex items-center justify-center md:justify-end'>
           <Image
             priority
-            src='/images/hero.webp'
+            src='/svg/hero.svg'
             className='rounded-full'
             alt='Hero image'
             width={500}
