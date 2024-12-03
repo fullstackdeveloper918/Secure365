@@ -16,8 +16,8 @@ const Navbar = () => {
  
 
   return (
-    <header className='sticky top-0 z-50 w-full border-b bg-background py-3'>
-      <nav className='container px-2 sm:px-4 lg:px-6 flex items-center justify-between'>
+    <header className='absolute top-0 z-50 w-full py-5'>
+      <nav className='container px-2 sm:px-4 lg:px-6 flex items-center justify-between mx-auto'>
         <MobileNav />
         <DesktopNav />
       </nav>

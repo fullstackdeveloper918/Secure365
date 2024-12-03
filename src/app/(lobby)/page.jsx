@@ -36,35 +36,35 @@ export default function page() {
   return (
     <main>
       {/* <Hero /> */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto py-16">
      
         <div className="w-full">
-          <div className="flex flex-col items-center justify-between gap-4">
-            <Text tag="h2" className="text-4xl">
-              What Makes Us Different?
+          <div className="flex flex-col items-center justify-between gap-4 ">
+            <Text tag="h2" className="text-4xl md:text-6xl sm:text-2xl">
+              What Makes <strong className="text-black">Us Different? </strong>
             </Text>
-            <Text tag="p" className="max-w-2xl">
+            <Text tag="p" className="max-w-2xl text-center text-primary ">
               At Secure365, we understand that navigating the digital world can
               be overwhelming. That’s why we’ve designed our services to be a
               one-stop solution, covering everything from cloud management and
               IT support to marketing and cybersecurity.
             </Text>
           </div>
-          <div className="w-full flex justify-between items-center gap-6">
+          <div className="w-full flex justify-between items-center gap-6 pt-10">
             {testimonial.map((item, index) => (
               <>
                 <Suspense  fallback={<CategoryCardSkeleton />}>
-                  <div className="flex flex-col gap-4" key={item?.id}>
+                  <div className="flex flex-col gap-4 justify-center items-center" key={item?.id}>
                     <Image
                       src={item?.img}
                       width={40}
                       height={40}
                       alt={item?.icon}
                     />
-                    <Text tag="h3" className="text-xl">
+                    <Text tag="h3" className="text-xl font-semibold text-center ">
                       {item?.title}
                     </Text>
-                    <Text tag="p">{item?.text}</Text>
+                    <Text tag="p" className="text-center text-primary">{item?.text}</Text>
                   </div>
                 </Suspense>
               </>

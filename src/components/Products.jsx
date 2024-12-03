@@ -12,7 +12,7 @@ const Products = async () => {
       aria-labelledby="product-heading"
       className="space-y-8 px-4 sm:px-6 lg:px-8 py-8 md:pt-10 lg:pt-24"
     >
-      <div className="flex items-end justify-between">
+      <div className="flex items-center justify-center">
         <div className="flex flex-col items-center justify-between gap-4">
           <Text
             tag="h2"
@@ -22,7 +22,7 @@ const Products = async () => {
           </Text>
           <Text
             tag="p"
-            className="max-w-2xl"
+            className="max-w-2xl text-center text-primary"
           >
             At Secure365, we understand that navigating the digital world can be
             overwhelming. That’s why we’ve designed our services to be a

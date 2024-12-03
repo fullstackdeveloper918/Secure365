@@ -34,7 +34,7 @@ const DesktopNav = () => {
 
 
   return (
-    <div className="hidden lg:flex items-center w-full justify-between px-16">
+    <div className="hidden lg:flex items-center w-full justify-between ">
      
       <Link href="/" className="flex space-x-2">
         <Image src={Secure} width={150} height={30} alt="Secure Logo" />
