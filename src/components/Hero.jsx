@@ -5,6 +5,15 @@ import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const Hero = async () => {
+   
+  const response = await fetch('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner');
+
+  const data = await response.json();
+
+  console.log(data, 'data')
+    
+
+
   return (
     <section className='relative'>
       <svg

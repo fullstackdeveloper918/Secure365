@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "../ui/navigation-menu";
-import { ListItem } from "./ListItem";
+import  ListItem  from "./ListItem";
 
 const DesktopNav = () => {
   const [data, setData] = useState([]);
@@ -23,6 +23,7 @@ const DesktopNav = () => {
         );
 
         const result = await response.json();
+        console.log(result, 'check result')
         setData(result?.menu_items);
       } catch (error) {
       }
@@ -31,8 +32,6 @@ const DesktopNav = () => {
     fetchData();
   }, []);
 
-
-  console.log(data, 'data')
 
   return (
     <div className="hidden lg:flex items-center w-full justify-between px-16">

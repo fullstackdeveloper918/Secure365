@@ -5,6 +5,8 @@ import Text from "../../components/Text";
 import Image from "next/image";
 import { Suspense } from "react";
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
+import RecentWork from "../../components/RecentWork";
+
 
 const testimonial = [
   {
@@ -30,12 +32,12 @@ const testimonial = [
   },
 ];
 
-export default function Lobby() {
+export default function page() {
   return (
     <main>
-      <Hero />
+      {/* <Hero /> */}
       <div className="max-w-7xl mx-auto">
-        {/* What makes us different section */}
+     
         <div className="w-full">
           <div className="flex flex-col items-center justify-between gap-4">
             <Text tag="h2" className="text-4xl">
@@ -51,8 +53,8 @@ export default function Lobby() {
           <div className="w-full flex justify-between items-center gap-6">
             {testimonial.map((item, index) => (
               <>
-                <Suspense fallback={<CategoryCardSkeleton />}>
-                  <div className="flex flex-col gap-4">
+                <Suspense  fallback={<CategoryCardSkeleton />}>
+                  <div className="flex flex-col gap-4" key={item?.id}>
                     <Image
                       src={item?.img}
                       width={40}
@@ -70,10 +72,28 @@ export default function Lobby() {
           </div>
         </div>
 
-        {/* our Key Services Section */}
+    
         <Products />
-        {/*  */}
+  
         <Categories />
+
+ 
+
+         <div className="w-full">
+          <div className="flex flex-col items-center justify-between gap-4">
+            <Text tag="h2" className="text-4xl">
+              Our Recent Best Works
+            </Text>
+            <Text tag="p" className="max-w-2xl">
+              Our recent projects highlight our expertise in delivering tailored
+              solutions that meet the unique needs and objectives of our
+              clients, custom software.
+            </Text>
+          </div>
+          {/* <div className="w-full flex justify-between items-center gap-6">
+           <RecentWork />
+          </div> */}
+        </div> 
       </div>
     </main>
   );
