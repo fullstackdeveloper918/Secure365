@@ -40,8 +40,9 @@ export default function page() {
   return (
     <main>
       {/* <Hero /> */}
-      <div className="max-w-7xl mx-auto py-16">
-        <div className="w-full">
+      {/* <div className="max-w-7xl mx-auto py-16"> */}
+      <section className="make_us_different py-12">
+        <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 ">
             <Text tag="h2" className="text-4xl md:text-6xl sm:text-2xl">
               What Makes <strong className="text-black">Us Different? </strong>
@@ -82,14 +83,15 @@ export default function page() {
             ))}
           </div>
         </div>
-
+        </section>
         {/* World Class Protection */}
-        <section className="w-full my-5">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 bg-black text-white p-10 gap-7">
+        <section className="py-5 protection_section  bg-[#011024] text-white">
+         <div className="container">
+         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7">
             <div className="left-side">
-              <Text tag="h2" className="text-2xl">
+              <Text tag="h2" className="text-3xl">
                 world-class{" "}
-                <span className="text-5xl text-blue-600 font-extrabold">
+                <span className="text-6xl text-[#52C5FF] font-extrabold block">
                   Protection
                 </span>
               </Text>
@@ -103,7 +105,7 @@ export default function page() {
                   </Text>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <Text tag="h3">01</Text>
+                  <Text tag="h3" >01</Text>
                   <Text tag="h2">Expert Guidance</Text>
                   <Text tag="p">
                     Leverage our team’s experience to navigate complex IT
@@ -111,7 +113,7 @@ export default function page() {
                   </Text>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <Text tag="h3">01</Text>
+                  <Text tag="h3" > 01</Text>
                   <Text tag="h2">Expert Guidance</Text>
                   <Text tag="p">
                     Leverage our team’s experience to navigate complex IT
@@ -119,7 +121,7 @@ export default function page() {
                   </Text>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <Text tag="h3">01</Text>
+                  <Text tag="h3" >01</Text>
                   <Text tag="h2">Expert Guidance</Text>
                   <Text tag="p">
                     Leverage our team’s experience to navigate complex IT
@@ -139,11 +141,14 @@ export default function page() {
               </div>
             </div>
           </div>
+
+         </div>
         </section>
 
         {/* Protect your website section */}
 
-        <section className="w-full my-5">
+        <section className="cybersecurity_wrapper my-5">
+          <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7">
             <div className="left-side flex gap-5">
               <div className="flex flex-col gap-5">
@@ -192,11 +197,13 @@ export default function page() {
               </div>
             </div>
           </div>
+          </div>
         </section>
 
         {/* Ensure Your Website */}
-        <section className="w-full my-5">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 bg-black text-white gap-7">
+        <section className="get_started_wrapper my-5 bg-black text-white">
+       <div className="container">
+       <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10  gap-7">
             <div className="left-side">
               <div className="w-full grid grid-cols-2 mt-8">
                 <div className="flex flex-col gap-4 ">
@@ -228,14 +235,15 @@ export default function page() {
               </div>
             </div>
           </div>
+       </div>
         </section>
 
         {/* <Products /> */}
         <Products />
 
         <Categories />
-
-        <div className="w-full">
+<section className="key_services">
+        <div className="container">
           <div className="flex flex-col items-center justify-between gap-4">
             <Text tag="h2" className="text-4xl">
               Our Recent Best Works
@@ -246,11 +254,13 @@ export default function page() {
               clients, custom software.
             </Text>
           </div>
+          
           {/* <div className="w-full flex justify-between items-center gap-6">
            <RecentWork />
           </div> */}
         </div>
-      </div>
+        </section>
+      {/* </div> */}
     </main>
   );
 }

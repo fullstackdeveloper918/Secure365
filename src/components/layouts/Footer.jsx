@@ -5,7 +5,9 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <div className="flex items-center justify-between px-5 mt-5">
+    <footer>
+      <div className=" container">
+       <div className="flex items-center justify-between px-5 mt-5">
         <div className="flex flex-col gap-5">
           <Text tag="li">
             <Link href="/products">icon</Link>
@@ -55,6 +57,8 @@ const Footer = () => {
           </Text>
         </div>
       </div>
+      </div>
+      </footer>
     </>
   );
 };
