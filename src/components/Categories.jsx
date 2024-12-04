@@ -13,30 +13,38 @@ const categories = [
     id: 1,
     image:
       "https://img.freepik.com/premium-photo/people-teleworking-from-home_23-2151546979.jpg?w=1380",
-    category_name: "category name",
+    // category_name: "Enhance Trust, Compliance, and Governance",
     products: "products",
   },
   {
     id: 2,
     image:
       "https://img.freepik.com/premium-photo/people-teleworking-from-home_23-2151546979.jpg?w=1380",
-    category_name: "category name",
+    // category_name: "Cyber Security Protects Sensitive Data",
     products: "products",
   },
   {
     id: 3,
     image:
       "https://img.freepik.com/premium-photo/people-teleworking-from-home_23-2151546979.jpg?w=1380",
-    category_name: "category name",
+    // category_name: "The Steps to Gaining Privileged Access Security",
     products: "products",
   },
   {
     id: 4,
     image:
       "https://img.freepik.com/premium-photo/people-teleworking-from-home_23-2151546979.jpg?w=1380",
-    category_name: "category name",
+    // category_name: "The Steps to Gaining Privileged Access Security",
     products: "products",
   },
+  {
+    id: 5,
+    image:
+      "https://img.freepik.com/premium-photo/people-teleworking-from-home_23-2151546979.jpg?w=1380",
+    // category_name: "The Steps to Gaining Privileged Access Security",
+    products: "products",
+  },
+ 
 ];
 
 const Categories = async () => {
@@ -53,7 +61,7 @@ const Categories = async () => {
           </Text>
         </div>
       </div>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {categories.map((category, index) => (
           <Suspense key={category?.id}  fallback={<CategoryCardSkeleton />}>
             <React.Fragment >

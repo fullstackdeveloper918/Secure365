@@ -1,6 +1,5 @@
 
 import Image from 'next/image'
-import Link from 'next/link'
 
 import {
   Card,
@@ -21,8 +20,8 @@ const CategoryCard= async ({ category }) => {
           <Image
              src={`https://img.freepik.com/premium-photo/people-teleworking-from-home_23-2151546979.jpg?w=1380`}
             alt='test'
-            width={32}
-            height={32}
+            width={400}
+            height={400}
           />
         </CardHeader>
         <CardContent className='space-y-1.5'>
