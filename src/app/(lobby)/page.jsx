@@ -45,8 +45,6 @@ export default async function page() {
 
   const data = await response.json();
 
-  console.log(data, 'home chck')
-
   return (
     <main>
       {/* <Hero /> */}
