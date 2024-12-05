@@ -41,25 +41,25 @@ export default function page() {
     <main>
       {/* <Hero /> */}
       {/* <div className="max-w-7xl mx-auto py-16"> */}
-      <section className="make_us_different py-12">
+      <section className="make_us_different py-12 pb-20">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 ">
-            <Text tag="h2" className="text-4xl md:text-6xl sm:text-2xl">
+            <Text tag="h2" className="heading_h2">
               What Makes <strong className="text-black">Us Different? </strong>
             </Text>
-            <Text tag="p" className="max-w-2xl text-center text-primary ">
+            <Text tag="p" className="max-w-2xl text-center subheading_text ">
               At Secure365, we understand that navigating the digital world can
               be overwhelming. That’s why we’ve designed our services to be a
               one-stop solution, covering everything from cloud management and
               IT support to marketing and cybersecurity.
             </Text>
           </div>
-          <div className="w-full flex justify-between items-center gap-6 pt-10">
+          <div className="w-full flex justify-between items-center gap-6 pt-10 ">
             {testimonial.map((item, index) => (
               <>
                 <Suspense fallback={<CategoryCardSkeleton />}>
                   <div
-                    className="flex flex-col gap-4 justify-center items-center"
+                    className="text-center column_hover"
                     key={item?.id}
                   >
                     <Image
@@ -67,14 +67,15 @@ export default function page() {
                       width={40}
                       height={40}
                       alt={item?.icon}
+                      className="mx-auto mb-3"
                     />
                     <Text
                       tag="h3"
-                      className="text-xl font-semibold text-center "
+                      className="md:text-2xl text-xl mb-3 font-semibold text-center "
                     >
                       {item?.title}
                     </Text>
-                    <Text tag="p" className="text-center text-primary">
+                    <Text tag="p" className="text-center text-md text-primary text-[#4F4F4F]">
                       {item?.text}
                     </Text>
                   </div>
@@ -87,43 +88,47 @@ export default function page() {
         {/* World Class Protection */}
         <section className="py-5 protection_section  bg-[#011024] text-white">
          <div className="container">
-         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7">
+         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7 ">
             <div className="left-side">
-              <Text tag="h2" className="text-3xl">
+              <Text tag="h2">
                 world-class{" "}
-                <span className="text-6xl text-[#52C5FF] font-extrabold block">
+                <strong className=" text-[#52C5FF] font-extrabold block">
                   Protection
-                </span>
+                </strong>
               </Text>
-              <div className="w-full grid grid-cols-2 mt-8">
-                <div className="flex flex-col gap-4 ">
-                  <Text tag="h3">01</Text>
-                  <Text tag="h2">Expert Guidance</Text>
-                  <Text tag="p">
+              <div className="w-full grid grid-cols-2 mt-8 space-y-10">
+                <div className="max-w-[80%] mt-10">
+                  <Text tag="h3" className="relative border_blue_bottom">01</Text> 
+                  <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3"  />
+                  <Text tag="h2" className="expert_heading my-2  font-medium tet-white">Expert Guidance</Text>
+                  <Text tag="p" className="text-[#878787]">
                     Leverage our team’s experience to navigate complex IT
                     challenges with confidence
                   </Text>
                 </div>
-                <div className="flex flex-col gap-4">
-                  <Text tag="h3" >01</Text>
-                  <Text tag="h2">Expert Guidance</Text>
-                  <Text tag="p">
+                <div className="max-w-[80%]">
+                  <Text tag="h3" className="relative border_blue_bottom">02</Text>
+                  <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3"  />
+                  <Text tag="h2" className="expert_heading font-medium tet-white my-2">Expert Guidance</Text>
+                  <Text tag="p" className="text-[#878787]">
                     Leverage our team’s experience to navigate complex IT
                     challenges with confidence
                   </Text>
                 </div>
-                <div className="flex flex-col gap-4">
-                  <Text tag="h3" > 01</Text>
-                  <Text tag="h2">Expert Guidance</Text>
-                  <Text tag="p">
+                <div className="max-w-[80%]">
+                  <Text tag="h3" className="relative border_blue_bottom"> 03</Text>
+                  <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3"  />
+                  <Text tag="h2" className="expert_heading font-medium tet-white my-2">Expert Guidance</Text>
+                  <Text tag="p" className="text-[#878787]">
                     Leverage our team’s experience to navigate complex IT
                     challenges with confidence
                   </Text>
                 </div>
-                <div className="flex flex-col gap-4">
-                  <Text tag="h3" >01</Text>
-                  <Text tag="h2">Expert Guidance</Text>
-                  <Text tag="p">
+                <div className="max-w-[80%]">
+                  <Text tag="h3" className="relative border_blue_bottom">04</Text>
+                  <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3"  />
+                  <Text tag="h2" className="expert_heading font-medium tet-white my-2">Expert Guidance</Text>
+                  <Text tag="p" className="text-[#878787]">
                     Leverage our team’s experience to navigate complex IT
                     challenges with confidence
                   </Text>
@@ -181,7 +186,7 @@ export default function page() {
 
             <div className="right-side">
               <div className="w-full grid grid-cols-2 mt-8">
-                <div className="flex flex-col gap-4 ">
+                <div className="max-w-[80%]">
                   <Text tag="h3">
                     Protect your website with the power of cybersecurity.
                   </Text>
@@ -206,7 +211,7 @@ export default function page() {
        <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10  gap-7">
             <div className="left-side">
               <div className="w-full grid grid-cols-2 mt-8">
-                <div className="flex flex-col gap-4 ">
+                <div className="max-w-[80%]">
                   <Text tag="h3">
                     Ensure your website's protection with cutting-edge{" "}
                     <span>cybersecurity</span>
