@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Secure from "../../../public/svg/secure.svg";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuLink,
@@ -51,12 +51,12 @@ const DesktopNav = () => {
                   
                     {item?.children?.length > 0 && 
                       item?.children?.map((child, childindex) => (
-                        <>
+                        <React.Fragment key={child?.title}>
                        
-                        <ListItem key={childindex} href={`/${child?.title}`} title={child?.title}>
+                        <ListItem  href={`/${child?.title}`} title={child?.title}>
                         Explore {child?.title}
                       </ListItem>
-                        </>
+                        </React.Fragment>
                       ))
                    
                     }

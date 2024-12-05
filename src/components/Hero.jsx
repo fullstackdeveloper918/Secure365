@@ -18,16 +18,15 @@ const Hero = async () => {
 
   return (
     <section className='relative overlay' style={{background: 'url(/Images/banner_img.png)'}}>
-      
       <div className='relative container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-20 sm:pb-20'>
         <div className='flex flex-col gap-y-4 justify-center items-center text-center sm:items-start sm:text-start'>
          
           <h1 className='tracking-tighter text-3xl sm:text-5xl lg:text-6xl xl:text-7xl	 max-w-sm sm:max-w-lg	text-white	banner_heading'>
           <span>{data?.pages?.banner_heading}</span>
-            {/* <span className='text-emerald-600'>inifarhan</span> */}
+            <span className='text-emerald-600'>{data?.pages?.banner_heading_second}</span>
           </h1>
           <h2 className='max-w-md sm:max-w-[42rem] leading-normal text-muted-foreground text-sm sm:text-xl text-white	 sm:leading-8'>
-          From cybersecurity to cloud solutions, we’ve got your business covered—securely and efficiently
+          {data?.pages?.banner_sub_headline}
           </h2>
           <div className='flex flex-wrap items-center text-white gap-4 mt-5'>
             <a href='/products' className='btn_one global_btn capitalize'>
