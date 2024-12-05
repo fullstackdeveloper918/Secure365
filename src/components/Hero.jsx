@@ -44,7 +44,7 @@ const Hero = async () => {
           <Image
             priority
             src={data?.pages?.banner_image?.url}
-            className='rounded-full'
+            className='l'
             alt='Hero image'
             width={500}
             height={500}

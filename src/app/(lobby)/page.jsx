@@ -56,15 +56,15 @@ export default async function page() {
       <section className="make_us_different py-12 pb-20">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 ">
-            <Text tag="h2" className="heading_h2">
-            {data?.makes_us_diffrent_heading}
+            <Text tag="h2" className="heading_h2 capitalize ">
+              {data?.makes_us_diffrent_heading}
             </Text>
             <Text tag="p" className="max-w-2xl text-center subheading_text ">
-            {data?. makes_us_diffrent_paragraph}
+              {data?.makes_us_diffrent_paragraph}
             </Text>
           </div>
-          
-          <div className="w-full flex justify-between items-center gap-6 pt-10">
+
+          <div className="w-full grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 pt-10">
             {data?.choose_real_world && data?.choose_real_world.map((item, index) => (
               <>
                 <Suspense fallback={<CategoryCardSkeleton />}>
@@ -81,7 +81,7 @@ export default async function page() {
                     />
                     <Text
                       tag="h3"
-                      className="md:text-2xl text-xl mb-3 font-semibold text-center "
+                      className="md:text-xl text-xl mb-2 font-medium text-center "
                     >
                       {item?.world_heading}
                     </Text>
@@ -95,33 +95,33 @@ export default async function page() {
             ))}
           </div>
         </div>
-        </section>
+      </section>
 
-        {/* World Class Protection */}
-        <section className="py-5 protection_section  bg-[#011024] text-white">
-         <div className="container">
-         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7 ">
+      {/* World Class Protection */}
+      <section className="py-5 protection_section  bg-[#011024] text-white">
+        <div className="container">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 pb-0 gap-7 ">
             <div className="left-side">
               <Text tag="h2" className="capitalize">
-              {data?.world_class_protection_heading}
+                {data?.world_class_protection_heading}
                 <strong className=" text-[#52C5FF] font-extrabold block capitalize">
-                {data?.world_class_protection_heading_second}
+                  {data?.world_class_protection_heading_second}
                 </strong>
               </Text>
               <div className="w-full grid grid-cols-2 mt-8 space-y-10">
-                
-                 {
-                  data?.world_class_protection && data?.world_class_protection.map((protect,index) => (
-                   <>
+
+                {
+                  data?.world_class_protection && data?.world_class_protection.map((protect, index) => (
+                    <>
                       <div className="max-w-[80%] mt-10">
-                  <Text tag="h3" className="relative border_blue_bottom">{index+1}</Text>
-                  <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3"  />
-                  <Text tag="h2" className="expert_heading my-2  font-medium tet-white">{protect?.expert_guidance_heading}</Text>
-                  <Text tag="p" className="text-[#878787]">
-                    {protect?.expert_guidance_paragraph}
-                  </Text>
-                </div>
-                   </>
+                        <Text tag="h3" className="relative border_blue_bottom">{index + 1}</Text>
+                        <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3" />
+                        <Text tag="h2" className="expert_heading my-2  font-medium tet-white">{protect?.expert_guidance_heading}</Text>
+                        <Text tag="p" className="text-[#878787]">
+                          {protect?.expert_guidance_paragraph}
+                        </Text>
+                      </div>
+                    </>
                   ))
                 }
               </div>
@@ -137,14 +137,14 @@ export default async function page() {
               </div>
             </div>
           </div>
-         </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Protect your website section */}
-        <section className="cybersecurity_wrapper my-5">
-          <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7">
-            <div className="left-side flex gap-5">
+      {/* Protect your website section */}
+      <section className="cybersecurity_wrapper my-5">
+        <div className="container">
+          <div className="grid md:grid-cols-2   p-10 gap-7  items-center ">
+            <div className="left-side flex gap-5 col-md-4 col-12 ">
               <div className="flex flex-col gap-5">
                 <div>
                   <Image
@@ -173,50 +173,46 @@ export default async function page() {
               </div>
             </div>
 
-            <div className="right-side">
-              <div className="w-full grid grid-cols-2 mt-8">
-                <div className="max-w-[80%]">
-                  <Text tag="h3">
-                    Protect your website with the power of cybersecurity.
-                  </Text>
-                  <Text tag="p">
-                    At Secure365, we understand that navigating the digital
-                    world can be overwhelming. That’s why we’ve designed our
-                    services to be a one-stop solution, covering everything from
-                    cloud management and IT support to marketing and
-                    cybersecurity.{" "}
-                  </Text>
-                  <Button>Get started</Button>
-                </div>
+            <div className="right-side col-md-7 col-12">
+
+              
+                <Text tag="h2" className="my-2 text-black">
+                  Protect your website with the power of cybersecurity.
+                </Text>
+                <Text tag="p" className="text-[#434242] text-lg my-5">
+                  At Secure365, we understand that navigating the digital
+                  world can be overwhelming. That’s why we’ve designed our
+                  services to be a one-stop solution, covering everything from
+                  cloud management and IT support to marketing and
+                  cybersecurity.{" "}
+                </Text>
+                <Button className="btn_one global_btn capitalize mt-10">Get started</Button>
               </div>
             </div>
-          </div>
-          </div>
-        </section>
 
-        {/* Ensure Your Website */}
-        <section className="get_started_wrapper my-5 bg-black text-white">
-       <div className="container">
-       <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10  gap-7">
+        </div>
+      </section>
+
+      {/* Ensure Your Website */}
+      <section className="get_started_wrapper my-5 bg-black text-white py-16">
+        <div className="container">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10  gap-7 items-center">
             <div className="left-side">
-              <div className="w-full grid grid-cols-2 mt-8">
-                <div className="max-w-[80%]">
-                  <Text tag="h3">
+              <div className="w-full ">
+              
+                  <Text tag="h2" className="mb-8">
                     Ensure your website's protection with cutting-edge{" "}
-                    <span>cybersecurity</span>
+                    <span className="text_blue">cybersecurity</span>
                   </Text>
-                  <Text tag="p">
-                    At Secure365, we understand that navigating the digital
-                    world can be overwhelming. That’s why we’ve designed our
-                    services to be a one-stop solution, covering
+                  <Text tag="p" className="text-white md:text-xl text-lg my-5">
+                  At Secure365, we understand that navigating the digital world can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering.
                   </Text>
-                  <Text tag="p">
-                    That’s why we’ve designed our services to be a one-stop
-                    solution, covering
+                  <Text tag="p" className="text-white md:text-xl text-lg my-2 mb-5">
+                  That’s why we’ve designed our services to be a one-stop solution, covering 
                   </Text>
-                  <Button className="bg-[#52c5ff] rounded-lg">Get started</Button>
+                  <Button className="btn_one global_btn capitalize mt-5">Get started</Button>
                 </div>
-              </div>
+             
             </div>
             <div className="w-full">
               <div className="">
@@ -229,15 +225,15 @@ export default async function page() {
               </div>
             </div>
           </div>
-       </div>
-        </section>
+        </div>
+      </section>
 
 
-        {/* <Products /> */}
-        <Products data={data?.key_services_data} />
+      {/* <Products /> */}
+      <Products data={data?.key_services_data} />
 
-        <Categories data={data}  />
-<section className="key_services">
+      <Categories data={data} />
+      <section className="key_services">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4">
             <Text tag="h2" className="text-4xl">
@@ -249,14 +245,14 @@ export default async function page() {
               clients, custom software.
             </Text>
           </div>
-          
+
           {/* <div className="w-full flex justify-between items-center gap-6">
            <RecentWork />
           </div> */}
         </div>
-        </section>
+      </section>
 
-{/* <section className="key_services">
+      {/* <section className="key_services">
 <div className="container">
   <div className="flex flex-col items-center justify-between gap-4">
     <Text tag="h2" className="text-4xl">
@@ -281,4 +277,4 @@ export default async function page() {
   );
 }
 
- 
+
