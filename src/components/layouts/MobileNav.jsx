@@ -3,8 +3,9 @@
 import { Menu } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
-
+import Image from "next/image";
 import { Icons } from '@/components/Icons'
+import Secure from "../../../public/svg/secure.svg";
 import {
   Accordion,
   AccordionContent,
@@ -18,10 +19,13 @@ const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className='flex lg:hidden'>
+    <div className='flex justify-between w-full lg:hidden'>
+   <Link href="/">
+        <Image src={Secure} width={150} height={30} alt="Secure Logo" />
+      </Link>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
-          <Button variant='ghost' size='icon'>
+          <Button variant='ghost' size='icon' className="text-white bg-transparent hover:bg-transparent hover:text-white">
             <Menu />
             <span className='sr-only'>Toggle Menu</span>
           </Button>
@@ -33,9 +37,9 @@ const MobileNav = () => {
               className='flex items-center'
               onClick={() => setIsOpen(false)}
             >
-              <Icons.logo className='mr-2 h-4 w-4' aria-hidden='true' />
-              <span className='font-bold'>Skaters</span>
-              <span className='sr-only'>Home</span>
+              {/* <Icons.logo className='mr-2 h-4 w-4' aria-hidden='true' /> */}
+              {/* <span className='font-bold'></span>
+              <span className='sr-only'>Home</span> */}
             </Link>
             <div className='text-sm'>
               <Accordion
@@ -44,20 +48,20 @@ const MobileNav = () => {
                 className='w-full'
               >
                 <AccordionItem value='item-1'>
-                  <AccordionTrigger>My Dashboard</AccordionTrigger>
+                  <AccordionTrigger>Home</AccordionTrigger>
                   <AccordionContent>
                     <div className='flex flex-col gap-y-2 text-muted-foreground'>
                       <Link
                         onClick={() => setIsOpen(false)}
                         href='/dashboard/orders'
                       >
-                        Orders
+                       About Us
                       </Link>
                       <Link
                         onClick={() => setIsOpen(false)}
                         href='/dashboard/stores'
                       >
-                        Stores
+                        Contact Us
                       </Link>
                     </div>
                   </AccordionContent>
@@ -67,7 +71,7 @@ const MobileNav = () => {
                   <AccordionContent>
                     <div className='flex flex-col gap-y-2 text-muted-foreground'>
                       <Link onClick={() => setIsOpen(false)} href='/products'>
-                        Products
+                      Services
                       </Link>
                       <Link
                         onClick={() => setIsOpen(false)}

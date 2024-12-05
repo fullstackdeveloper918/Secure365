@@ -42,30 +42,30 @@ export default async function page() {
   const response = await fetch('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/home', {
     cache: 'no-store'
   });
-
   const data = await response.json();
+
 
   return (
     <main>
       {/* <Hero /> */}
       {/* <div className="max-w-7xl mx-auto py-16"> */}
-      <section className="make_us_different py-12">
+      <section className="make_us_different py-12 pb-20">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 ">
-            <Text tag="h2" className="text-4xl md:text-6xl sm:text-2xl">
+            <Text tag="h2" className="heading_h2">
             {data?.makes_us_diffrent_heading}
-              {/* What Makes <strong className="text-black">Us Different? </strong> */}
             </Text>
-            <Text tag="p" className="max-w-2xl text-center text-primary ">
-              {data?. makes_us_diffrent_paragraph}
+            <Text tag="p" className="max-w-2xl text-center subheading_text ">
+            {data?. makes_us_diffrent_paragraph}
             </Text>
           </div>
+          
           <div className="w-full flex justify-between items-center gap-6 pt-10">
             {data?.choose_real_world && data?.choose_real_world.map((item, index) => (
               <>
                 <Suspense fallback={<CategoryCardSkeleton />}>
                   <div
-                    className="flex flex-col gap-4 justify-center items-center"
+                    className="text-center column_hover"
                     key={item?.id}
                   >
                     <Image
@@ -73,14 +73,16 @@ export default async function page() {
                       width={40}
                       height={40}
                       alt={item?.icon}
+                      className="mx-auto mb-3"
                     />
                     <Text
                       tag="h3"
-                      className="text-xl font-semibold text-center "
+                      className="md:text-2xl text-xl mb-3 font-semibold text-center "
                     >
                       {item?.world_heading}
                     </Text>
-                    <Text tag="p" className="text-center text-primary">
+
+                    <Text tag="p" className="text-center text-md text-primary text-[#4F4F4F]">
                       {item?.world_experience_paragraph}
                     </Text>
                   </div>
@@ -90,25 +92,28 @@ export default async function page() {
           </div>
         </div>
         </section>
+
         {/* World Class Protection */}
         <section className="py-5 protection_section  bg-[#011024] text-white">
          <div className="container">
-         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7">
+         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7 ">
             <div className="left-side">
-              <Text tag="h2" className="text-3xl capitalize">
-                {data?.world_class_protection_heading}
-                <span className="text-6xl text-[#52C5FF] font-extrabold block capitalize">
-                  {data?.world_class_protection_heading_second}
-                </span>
+              <Text tag="h2" className="capitalize">
+              {data?.world_class_protection_heading}
+                <strong className=" text-[#52C5FF] font-extrabold block capitalize">
+                {data?.world_class_protection_heading_second}
+                </strong>
               </Text>
-              <div className="w-full grid grid-cols-2 mt-8">
-                {
+              <div className="w-full grid grid-cols-2 mt-8 space-y-10">
+                
+                 {
                   data?.world_class_protection && data?.world_class_protection.map((protect,index) => (
                    <>
-                      <div className="flex flex-col gap-4 ">
-                  <Text tag="h3">{index+1}</Text>
-                  <Text tag="h2">{protect?.expert_guidance_heading}</Text>
-                  <Text tag="p">
+                      <div className="max-w-[80%] mt-10">
+                  <Text tag="h3" className="relative border_blue_bottom">{index+1}</Text>
+                  <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3"  />
+                  <Text tag="h2" className="expert_heading my-2  font-medium tet-white">{protect?.expert_guidance_heading}</Text>
+                  <Text tag="p" className="text-[#878787]">
                     {protect?.expert_guidance_paragraph}
                   </Text>
                 </div>
@@ -128,12 +133,10 @@ export default async function page() {
               </div>
             </div>
           </div>
-
          </div>
         </section>
 
         {/* Protect your website section */}
-
         <section className="cybersecurity_wrapper my-5">
           <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7">
@@ -168,7 +171,7 @@ export default async function page() {
 
             <div className="right-side">
               <div className="w-full grid grid-cols-2 mt-8">
-                <div className="flex flex-col gap-4 ">
+                <div className="max-w-[80%]">
                   <Text tag="h3">
                     Protect your website with the power of cybersecurity.
                   </Text>
@@ -193,7 +196,7 @@ export default async function page() {
        <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10  gap-7">
             <div className="left-side">
               <div className="w-full grid grid-cols-2 mt-8">
-                <div className="flex flex-col gap-4 ">
+                <div className="max-w-[80%]">
                   <Text tag="h3">
                     Ensure your website's protection with cutting-edge{" "}
                     <span>cybersecurity</span>
@@ -225,6 +228,7 @@ export default async function page() {
        </div>
         </section>
 
+
         {/* <Products /> */}
         <Products data={data?.key_services_data} />
 
@@ -247,7 +251,30 @@ export default async function page() {
           </div> */}
         </div>
         </section>
+
+{/* <section className="key_services">
+<div className="container">
+  <div className="flex flex-col items-center justify-between gap-4">
+    <Text tag="h2" className="text-4xl">
+      Our Recent Best Works
+    </Text>
+    <Text tag="p" className="max-w-2xl">
+      Our recent projects highlight our expertise in delivering tailored
+      solutions that meet the unique needs and objectives of our
+      clients, custom software.
+    </Text>
+  </div>
+   <div className="w-full flex justify-between items-center gap-6">
+   <RecentWork />
+  </div> 
+</div>
+</section> */}
+
+
+
       {/* </div> */}
     </main>
   );
 }
+
+ 
