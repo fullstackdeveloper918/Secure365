@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Categories from "@/components/Categories";
 // import Products from "@/components/Products";
-import Text from "../../components/Text";
+
 import Image from "next/image";
 import { Suspense } from "react";
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
@@ -10,6 +10,10 @@ import { Button } from "@/components/ui/button";
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
 });
+
+const Text = dynamic(() => import('../../components/Text'), {
+   loading: () => <p>Loading Wait...</p>
+})
 
 const testimonial = [
   {
@@ -72,7 +76,7 @@ export default async function page() {
                       src={item?.world_icon_url}
                       width={40}
                       height={40}
-                      alt={item?.icon}
+                      alt="avatar image"
                       className="mx-auto mb-3"
                     />
                     <Text
