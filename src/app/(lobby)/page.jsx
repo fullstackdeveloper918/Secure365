@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Categories from "@/components/Categories";
 // import Products from "@/components/Products";
-import Text from "../../components/Text";
+
 import Image from "next/image";
 import { Suspense } from "react";
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
@@ -10,6 +10,10 @@ import { Button } from "@/components/ui/button";
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
 });
+
+const Text = dynamic(() => import('../../components/Text'), {
+   loading: () => <p>Loading Wait...</p>
+})
 
 const testimonial = [
   {

@@ -18,7 +18,7 @@ const ProductCard  = ({ product }) => {
              src={product?.our_key_services_image}
             fill
             sizes='200'
-            alt='product.name'
+            alt='product image'
             className='aspect-square object-cover rounded-2xl'
           />
         </div>
