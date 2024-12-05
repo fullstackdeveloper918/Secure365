@@ -134,7 +134,7 @@ h1, h2, h3, h4, h5, li, a, span, p{
 }
 
 .column_hover{
-  padding: 40px;
+  padding: 30px;
   transition: all .3s ease-in;
   border: 1px solid #FAFAFA;
 }
@@ -146,6 +146,7 @@ h1, h2, h3, h4, h5, li, a, span, p{
 /******** common heading fix size ***********/
 h2{
   font-size: 48px;
+  line-height: normal;
 }
 h2 strong{
   font-size:60px;
@@ -176,6 +177,33 @@ h2.expert_heading{
 /*********** protection_section  end ************/
 
 
+
+
+/*********** cybersecurity_wrapper  end ************/
+.cybersecurity_wrapper h2{
+  max-width: 78%;
+}
+/*********** cybersecurity_wrapper  end ************/
+
+.text_blue{
+  color: #52c5ff;
+}
+
+
+.get_started_wrapper h2{
+  max-width: 33rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* responsive css started */
 @media screen and (max-width:991px) {
   .banner_heading {
     line-height: 3rem !important;
@@ -183,6 +211,9 @@ h2.expert_heading{
 .container {
 padding-left: 15px;
 padding-right: 15px;
+}
+h2 {
+  font-size: 35px;
 }
 }
 
