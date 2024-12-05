@@ -5,7 +5,7 @@ import PopularProducts from "@/components/PopularProducts";
 import PopularProductsSkeleton from "@/components/skeletons/PopularProductsSkeleton";
 import Text from "./Text";
 
-const Products = async () => {
+const Products = async ({data}) => {
   return (
     <section
       id="products"
@@ -32,7 +32,7 @@ const Products = async () => {
         </div>
       </div>
       <Suspense fallback={<PopularProductsSkeleton />}>
-        <PopularProducts />
+        <PopularProducts data={data} />
       </Suspense>
     </section>
   );

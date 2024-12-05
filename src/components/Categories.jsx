@@ -47,7 +47,7 @@ const categories = [
  
 ];
 
-const Categories = async () => {
+const Categories = async ({data}) => {
   return (
     <section
       id="categories"
@@ -57,12 +57,12 @@ const Categories = async () => {
       <div className="flex items-end justify-between">
         <div className="flex flex-col items-center justify-between gap-4">
           <Text tag="h2" className="text-4xl text-center block">
-          Top Skilled Experts
+          {data?.top_skilled_experts_heading}
           </Text>
         </div>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-        {categories.map((category, index) => (
+        {data?.skilled_expert_data && data?.skilled_expert_data.map((category, index) => (
           <Suspense key={category?.id}  fallback={<CategoryCardSkeleton />}>
             <React.Fragment >
               <CategoryCard  category={category} />
