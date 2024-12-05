@@ -56,7 +56,7 @@ const Categories = async ({data}) => {
     >
       <div className="flex items-end justify-between">
         <div className="flex flex-col items-center justify-between gap-4">
-          <Text tag="h2" className="text-4xl text-center block">
+          <Text tag="h2" className=" text-center block">
           {data?.top_skilled_experts_heading}
           </Text>
         </div>

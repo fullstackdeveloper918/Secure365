@@ -98,7 +98,7 @@ export default async function page() {
       </section>
 
       {/* World Class Protection */}
-      <section className="py-5 protection_section  bg-[#011024] text-white">
+      <section className="py-5 pb-16 protection_section  bg-[#011024] text-white">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 pb-0 gap-7 ">
             <div className="left-side">
@@ -108,7 +108,7 @@ export default async function page() {
                   {data?.world_class_protection_heading_second}
                 </strong>
               </Text>
-              <div className="w-full grid grid-cols-2 mt-8 space-y-10">
+              <div className="w-full grid grid-cols-2 space-y-10">
 
                 {
                   data?.world_class_protection && data?.world_class_protection.map((protect, index) => (
