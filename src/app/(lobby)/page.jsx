@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
 });
-// import RecentWork from "../../components/RecentWork";
 
 const testimonial = [
   {
@@ -36,7 +35,18 @@ const testimonial = [
   },
 ];
 
-export default function page() {
+
+
+export default async function page() {
+
+  const response = await fetch('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/home', {
+    cache: 'no-store'
+  });
+
+  const data = await response.json();
+
+  console.log(data, 'home chck')
+
   return (
     <main>
       {/* <Hero /> */}
@@ -45,17 +55,15 @@ export default function page() {
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 ">
             <Text tag="h2" className="text-4xl md:text-6xl sm:text-2xl">
-              What Makes <strong className="text-black">Us Different? </strong>
+            {data?.makes_us_diffrent_heading}
+              {/* What Makes <strong className="text-black">Us Different? </strong> */}
             </Text>
             <Text tag="p" className="max-w-2xl text-center text-primary ">
-              At Secure365, we understand that navigating the digital world can
-              be overwhelming. That’s why we’ve designed our services to be a
-              one-stop solution, covering everything from cloud management and
-              IT support to marketing and cybersecurity.
+              {data?. makes_us_diffrent_paragraph}
             </Text>
           </div>
           <div className="w-full flex justify-between items-center gap-6 pt-10">
-            {testimonial.map((item, index) => (
+            {data?.choose_real_world && data?.choose_real_world.map((item, index) => (
               <>
                 <Suspense fallback={<CategoryCardSkeleton />}>
                   <div
@@ -63,7 +71,7 @@ export default function page() {
                     key={item?.id}
                   >
                     <Image
-                      src={item?.img}
+                      src={item?.world_icon_url}
                       width={40}
                       height={40}
                       alt={item?.icon}
@@ -72,10 +80,10 @@ export default function page() {
                       tag="h3"
                       className="text-xl font-semibold text-center "
                     >
-                      {item?.title}
+                      {item?.world_heading}
                     </Text>
                     <Text tag="p" className="text-center text-primary">
-                      {item?.text}
+                      {item?.world_experience_paragraph}
                     </Text>
                   </div>
                 </Suspense>
@@ -89,51 +97,32 @@ export default function page() {
          <div className="container">
          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 gap-7">
             <div className="left-side">
-              <Text tag="h2" className="text-3xl">
-                world-class{" "}
-                <span className="text-6xl text-[#52C5FF] font-extrabold block">
-                  Protection
+              <Text tag="h2" className="text-3xl capitalize">
+                {data?.world_class_protection_heading}
+                <span className="text-6xl text-[#52C5FF] font-extrabold block capitalize">
+                  {data?.world_class_protection_heading_second}
                 </span>
               </Text>
               <div className="w-full grid grid-cols-2 mt-8">
-                <div className="flex flex-col gap-4 ">
-                  <Text tag="h3">01</Text>
-                  <Text tag="h2">Expert Guidance</Text>
+                {
+                  data?.world_class_protection && data?.world_class_protection.map((protect,index) => (
+                   <>
+                      <div className="flex flex-col gap-4 ">
+                  <Text tag="h3">{index+1}</Text>
+                  <Text tag="h2">{protect?.expert_guidance_heading}</Text>
                   <Text tag="p">
-                    Leverage our team’s experience to navigate complex IT
-                    challenges with confidence
+                    {protect?.expert_guidance_paragraph}
                   </Text>
                 </div>
-                <div className="flex flex-col gap-4">
-                  <Text tag="h3" >01</Text>
-                  <Text tag="h2">Expert Guidance</Text>
-                  <Text tag="p">
-                    Leverage our team’s experience to navigate complex IT
-                    challenges with confidence
-                  </Text>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <Text tag="h3" > 01</Text>
-                  <Text tag="h2">Expert Guidance</Text>
-                  <Text tag="p">
-                    Leverage our team’s experience to navigate complex IT
-                    challenges with confidence
-                  </Text>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <Text tag="h3" >01</Text>
-                  <Text tag="h2">Expert Guidance</Text>
-                  <Text tag="p">
-                    Leverage our team’s experience to navigate complex IT
-                    challenges with confidence
-                  </Text>
-                </div>
+                   </>
+                  ))
+                }
               </div>
             </div>
             <div className="w-full">
               <div className="">
                 <Image
-                  src="/Images/protection.png"
+                  src={data?.expert_image}
                   width={700}
                   height={500}
                   alt="expert guidance image"
@@ -239,9 +228,9 @@ export default function page() {
         </section>
 
         {/* <Products /> */}
-        <Products />
+        <Products data={data?.key_services_data} />
 
-        <Categories />
+        <Categories data={data}  />
 <section className="key_services">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4">

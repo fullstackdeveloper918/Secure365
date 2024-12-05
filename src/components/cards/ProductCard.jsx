@@ -15,7 +15,7 @@ const ProductCard  = ({ product }) => {
       > */}
         <div className='aspect-square m-3 rounded-2xl bg-gray-100 relative'>
           <Image
-             src="https://img.freepik.com/premium-photo/people-teleworking-from-home_23-2151546979.jpg?w=1380"
+             src={product?.our_key_services_image}
             fill
             sizes='200'
             alt='product.name'
@@ -29,13 +29,17 @@ const ProductCard  = ({ product }) => {
               className='font-semibold group-hover/card:text-emerald-800 text-lg truncate'
               // title={product.name}
             >
-              product.name
+              {product?.our_key_services_paragraph}
+              
             </p>
             <Image alt='Stars' src='/svg/stars.svg' width={100} height={100} />
           </div>
           <div className='flex items-center justify-between'>
             <div className='font-semibold text-emerald-700'>
-              product.price
+            
+
+            {product?.our_key_services_button}
+             
             </div>
             
           </div>
