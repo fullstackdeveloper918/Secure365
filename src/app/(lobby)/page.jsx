@@ -49,6 +49,9 @@ export default async function page() {
   const data = await response.json();
 
 
+  console.log('bencho', data)
+
+
   return (
     <main>
       {/* <Hero /> */}
@@ -58,6 +61,9 @@ export default async function page() {
           <div className="flex flex-col items-center justify-between gap-4 ">
             <Text tag="h2" className="heading_h2 capitalize ">
               {data?.makes_us_diffrent_heading}
+              <span>
+               {data?.makes_us_diffrent_heading_second}
+              </span>
             </Text>
             <Text tag="p" className="max-w-2xl text-center subheading_text ">
               {data?.makes_us_diffrent_paragraph}

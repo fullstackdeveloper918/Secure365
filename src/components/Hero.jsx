@@ -26,10 +26,10 @@ const Hero = async () => {
          
           <h1 className='tracking-tighter text-3xl sm:text-5xl lg:text-6xl xl:text-7xl	 max-w-sm sm:max-w-lg	text-white	banner_heading'>
           <span>{data?.pages?.banner_heading}</span>
-            {/* <span className='text-emerald-600'>inifarhan</span> */}
+            <span className='text-emerald-600'>{data?.pages?.banner_heading_second}</span>
           </h1>
           <h2 className='max-w-md sm:max-w-[42rem] leading-normal text-muted-foreground text-sm sm:text-xl text-white	 sm:leading-8'>
-          From cybersecurity to cloud solutions, we’ve got your business covered—securely and efficiently
+          {data?.pages?.banner_sub_headline}
           </h2>
           <div className='flex flex-wrap items-center text-white gap-4 mt-5'>
             <a href='/products' className='btn_one global_btn capitalize'>
