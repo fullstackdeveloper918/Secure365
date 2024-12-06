@@ -3,7 +3,7 @@ import Categories from "@/components/Categories";
 // import Products from "@/components/Products";
 
 import Image from "next/image";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 import { Button } from "@/components/ui/button";
 import RecentWork from "@/components/RecentWork";
@@ -73,19 +73,19 @@ export default async function page() {
 
           <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 pt-10">
             {data?.choose_real_world && data?.choose_real_world.map((item, index) => (
-              <>
-                <Suspense fallback={<CategoryCardSkeleton />}>
+              <React.Fragment key={index}>
+                <Suspense  fallback={<CategoryCardSkeleton />}>
                   <div
                     className="text-center column_hover"
-                    key={item?.id}
+                   
                   >
-                    <Image
+                    {/* <Image
                       src={item?.world_icon_url}
                       width={40}
                       height={40}
                       alt="avatar image"
                       className="mx-auto mb-3"
-                    />
+                    /> */}
                     <Text
                       tag="h3"
                       className="md:text-xl text-xl mb-2 font-medium text-center "
@@ -98,7 +98,7 @@ export default async function page() {
                     </Text>
                   </div>
                 </Suspense>
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>
@@ -135,12 +135,12 @@ export default async function page() {
             </div>
             <div className="w-full">
               <div className="">
-                <Image
+                {/* <Image
                   src={data?.expert_image}
                   width={700}
                   height={500}
                   alt="expert guidance image"
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -154,29 +154,29 @@ export default async function page() {
             <div className="left-side flex gap-5 col-md-4 col-12 ">
               <div className="flex flex-col gap-5">
                 <div>
-                  <Image
+                  {/* <Image
                     src="/Images/protection.png"
                     width={300}
                     height={300}
                     alt="kuch b"
-                  />
+                  /> */}
                 </div>
                 <div>
-                  <Image
+                  {/* <Image
                     src="/Images/protection.png"
                     width={300}
                     height={300}
                     alt="kuch b"
-                  />
+                  /> */}
                 </div>
               </div>
               <div className="flex items-center">
-                <Image
+                {/* <Image
                   src="/Images/protection.png"
                   width={300}
                   height={300}
                   alt="kuch b"
-                />
+                /> */}
               </div>
             </div>
 
@@ -221,12 +221,12 @@ export default async function page() {
             </div>
             <div className="w-full">
               <div className="">
-                <Image
+                {/* <Image
                   src="/svg/professional_team.svg"
                   width={700}
                   height={500}
                   alt="expert guidance image"
-                />
+                /> */}
               </div>
             </div>
           </div>
