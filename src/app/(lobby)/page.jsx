@@ -1,12 +1,11 @@
 import dynamic from "next/dynamic";
 import Categories from "@/components/Categories";
 // import Products from "@/components/Products";
-
-import Image from "next/image";
 import React, { Suspense } from "react";
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 import { Button } from "@/components/ui/button";
 import RecentWork from "@/components/RecentWork";
+import ImageCard from "@/components/cards/ImageCard";
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
@@ -79,13 +78,11 @@ export default async function page() {
                     className="text-center column_hover"
                    
                   >
-                    <Image
-                      src={item?.world_icon_url}
-                      width={40}
+                   
+                    <ImageCard src={item?.world_icon_url}   width={40}
                       height={40}
                       alt="avatar image"
-                      className="mx-auto mb-3"
-                    />
+                      className="mx-auto mb-3"  />
                     <Text
                       tag="h3"
                       className="md:text-xl text-xl mb-2 font-medium text-center "
@@ -135,7 +132,7 @@ export default async function page() {
             </div>
             <div className="w-full">
               <div className="">
-                <Image
+                <ImageCard
                   src={data?.expert_image}
                   width={700}
                   height={500}
@@ -154,29 +151,30 @@ export default async function page() {
             <div className="left-side flex gap-5 col-md-4 col-12  relative">
               <div className="flex flex-col gap-5">
                 <div>
-                  <Image
-                    src="/Images/protection.png"
-                    width={300}
-                    height={300}
-                    alt="kuch b"
+                  
+                  <ImageCard
+                   src="/Images/protection.png"
+                   width={300}
+                   height={300}
+                   alt="kuch b"
                   />
                 </div>
                 <div>
-                  <Image
-                    src="/Images/protection.png"
-                    width={300}
-                    height={300}
-                    alt="kuch b"
+                <ImageCard
+                   src="/Images/protection.png"
+                   width={300}
+                   height={300}
+                   alt="kuch b"
                   />
                 </div>
               </div>
               <div className="flex items-center">
-                <Image
-                  src="/Images/protection.png"
-                  width={300}
-                  height={300}
-                  alt="kuch b"
-                />
+              <ImageCard
+                   src="/Images/protection.png"
+                   width={300}
+                   height={300}
+                   alt="kuch b"
+                  />
               </div>
 
 
@@ -229,7 +227,7 @@ export default async function page() {
             </div>
             <div className="w-full">
               <div className="">
-                <Image
+                <ImageCard
                   src="/svg/professional_team.svg"
                   width={700}
                   height={500}
