@@ -275,6 +275,15 @@ left: 50%;
 }
 
 
+/* about page css started */
+.about_banner .min_height {
+  min-height: calc(70vh - 200px);
+}
+/* about page css ended */
+
+
+
+
 /* responsive css started */
 @media screen and (max-width:1024px) {
   .maxWidthGiver{
