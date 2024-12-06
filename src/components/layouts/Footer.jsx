@@ -38,6 +38,8 @@ const data = [
 ];
 
 const Footer = () => {
+
+  console.log('Footer')
   return (
     <>
       <footer className="relative text-white pt-10">
@@ -121,11 +123,11 @@ const Footer = () => {
                   {
                     item?.Links?.map((link) => (
                       <React.Fragment key={link?.id}>
-                       <Link href={link?.href}>
                     <Text tag="li" className="md:mb-4 md:text-md mb-2 text-sm">
+                       <Link href={link?.href}>
                       {link?.text}
-                    </Text>
                   </Link>
+                    </Text>
                       </React.Fragment>
                     ))
                   }

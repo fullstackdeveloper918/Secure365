@@ -11,7 +11,7 @@ const page = async () => {
   const data = await response.json();
 
 
-  console.log(data, 'about data')
+  console.log(data?.data?.our_story_paragraph, 'about data')
 
 
 
@@ -66,25 +66,10 @@ const page = async () => {
                 tag="p"
                 className="text-[#4F4F4F] md:text-lg md:mt-8 text-md"
               >
-                While running Techable, Jonathan experienced firsthand how
-                damaging and pervasive cybercrime could be. He encountered
-                sophisticated scams, fraudulent buyers using stolen credit
-                cards, and deceptive chargebacks that threatened his business.
-                Despite meticulously documenting each incident and providing
-                evidence to the authorities, he was met with a disappointing
-                lack of support—cases were dismissed as either too complex or
-                too low-priority to pursue. This frustration drove him to seek
-                solutions that went beyond just preventing crime, focusing on
-                supporting victims and helping them recover.
+               {data?.data?.our_story_paragraph}
               </Text>
               <Text tag="p" className="text-[#4F4F4F] md:text-lg text-md my-3">
-                Recognizing a gap in the market, Jonathan decided to take
-                action. Drawing on his criminology background and years of
-                real-world experience dealing with scammers, he set out to build
-                a platform that offered more than just monitoring and
-                prevention. Secure365 was created to be a comprehensive security
-                solution that helps businesses and individuals not only protect
-                themselves but also fight back when targeted by cybercriminals.
+               
               </Text>
             </div>
             <div className="RightWrapper md:text-end">

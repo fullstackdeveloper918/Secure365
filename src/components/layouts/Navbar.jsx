@@ -6,14 +6,10 @@
 // import CartButton from '@/components/cart/CartButton'
 import DesktopNav from '@/components/layouts/DesktopNav'
 import MobileNav from '@/components/layouts/MobileNav'
-import { useEffect } from 'react'
 // import { buttonVariants } from '@/components/ui/button'
 
 
-
 const Navbar = () => {
-
- 
 
   return (
     <header className='absolute top-0 z-50 w-full py-5'>
