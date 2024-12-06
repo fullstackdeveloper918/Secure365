@@ -17,13 +17,9 @@ const Hero = async () => {
 
 
   return (
-    // <section className='relative overlay banner_robot relative' style={{background: 'url(/Images/banner_img.png)'}}>
+    
     <section className='relative overlay banner_robot' >
-
-
       <Image src="/Images/homepage_banner.png" className='absolute' layout='fill' alt='background image' />
-
-
       <div className='relative container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28  pb-0 min_height'>
         <div className='flex flex-col gap-y-4 justify-center items-center text-center sm:items-start sm:text-start'>
          

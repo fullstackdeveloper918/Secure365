@@ -79,13 +79,13 @@ export default async function page() {
                     className="text-center column_hover"
                    
                   >
-                    {/* <Image
+                    <Image
                       src={item?.world_icon_url}
                       width={40}
                       height={40}
                       alt="avatar image"
                       className="mx-auto mb-3"
-                    /> */}
+                    />
                     <Text
                       tag="h3"
                       className="md:text-xl text-xl mb-2 font-medium text-center "
@@ -135,12 +135,12 @@ export default async function page() {
             </div>
             <div className="w-full">
               <div className="">
-                {/* <Image
+                <Image
                   src={data?.expert_image}
                   width={700}
                   height={500}
                   alt="expert guidance image"
-                /> */}
+                />
               </div>
             </div>
           </div>
@@ -154,29 +154,29 @@ export default async function page() {
             <div className="left-side flex gap-5 col-md-4 col-12  relative">
               <div className="flex flex-col gap-5">
                 <div>
-                  {/* <Image
+                  <Image
                     src="/Images/protection.png"
                     width={300}
                     height={300}
                     alt="kuch b"
-                  /> */}
+                  />
                 </div>
                 <div>
-                  {/* <Image
+                  <Image
                     src="/Images/protection.png"
                     width={300}
                     height={300}
                     alt="kuch b"
-                  /> */}
+                  />
                 </div>
               </div>
               <div className="flex items-center">
-                {/* <Image
+                <Image
                   src="/Images/protection.png"
                   width={300}
                   height={300}
                   alt="kuch b"
-                /> */}
+                />
               </div>
 
 
@@ -229,12 +229,12 @@ export default async function page() {
             </div>
             <div className="w-full">
               <div className="">
-                {/* <Image
+                <Image
                   src="/svg/professional_team.svg"
                   width={700}
                   height={500}
                   alt="expert guidance image"
-                /> */}
+                />
               </div>
             </div>
           </div>
