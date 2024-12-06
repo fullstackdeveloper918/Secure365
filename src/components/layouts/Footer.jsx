@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       <footer className="relative text-white pt-10">
-        <Image className="absolute -z-10 w-full" src="/Images/footer_bg.png" layout="fill" alt="footer bg" objectFit="cover" />
+        <Image className="absolute -z-10 w-full" src="/Images/footer_bg_new.png" layout="fill" alt="footer bg" objectFit="cover" />
         <div className="container">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 margin_bottom lg:justify-between lg:justify-start pb-12 mt-5 px-3 ">
             <div className="flex flex-col gap-5">

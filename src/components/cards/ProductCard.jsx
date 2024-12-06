@@ -9,7 +9,7 @@ import Link from 'next/link'
 const ProductCard  = ({ product }) => {
 
   return (
-    <div className='group/card  border hover:shadow-2xl duration-300 transition-all rounded-2xl space-y-4 h-full'>
+    <div className='group/card  border hover:shadow-2xl duration-300 transition-all rounded-2xl space-y-4 h-full relative'>
       {/* <Link
         href={`/${product.storeId}/${product.slug}?productId=${product.id}`}
       > */}
@@ -21,6 +21,11 @@ const ProductCard  = ({ product }) => {
             alt='product image'
             className='aspect-square object-cover rounded-2xl'
           />
+        </div>
+        <div className='bottom_text absolute bottom-5 left-5'>
+          <span className='bg-[#ffffff40] text-white text-md p-3'>Marketing</span>
+<h3 className='tex-2xl my-4 text-white md:max-w-[70%] '>Enhance Trust, Compliance, And Goverance</h3>
+<button className='inline  border-white rounded-full arrow_button'><Image src="/svg/arrow-right-solid.svg" className='invert'  width={18} height={18} /> </button>
         </div>
        
       
