@@ -258,6 +258,21 @@ h2.expert_heading{
 /* footer */
 
 
+/* counter */
+.counter_box{
+  width: 150px;
+  height: 150px;
+border-radius: 50%;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 5px solid #fff;
+background: linear-gradient(#55CAE1, #4E53AC);
+top: 50%;
+transform: translate(-50%,-50%);
+left: 50%;
+}
 
 
 /* responsive css started */
