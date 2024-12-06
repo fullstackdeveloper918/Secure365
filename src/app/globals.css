@@ -281,6 +281,9 @@ left: 50%;
 }
 /* about page css ended */
 
+.user_image{
+  border-radius: 10px;
+}
 
 
 
@@ -350,6 +353,7 @@ h2 strong {
 }
 h2 {
   font-size: 28px;
+  line-height: 36px;
 }
 
 }

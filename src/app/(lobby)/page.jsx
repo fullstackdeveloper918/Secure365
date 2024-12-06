@@ -55,9 +55,9 @@ export default async function page() {
       {/* <Hero /> */}
 
 {/* logos slider */}
-<section className="logo_section py-20">
+<section className="logo_section lg:py-20 md:py-10 py-3  ">
   <div className="container">
-    <div className="flex gap-5 justify-center">
+    <div className="flex gap-5 justify-between">
     <div>
     <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
     </div>
@@ -78,7 +78,7 @@ export default async function page() {
 </section>
 
       {/* <div className="max-w-7xl mx-auto py-16"> */}
-      <section className="make_us_different py-12 pb-20">
+      <section className="make_us_different md:py-12 md:pb-20 pb-10 ">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 ">
             <Text tag="h2" className="heading_h2 capitalize ">
