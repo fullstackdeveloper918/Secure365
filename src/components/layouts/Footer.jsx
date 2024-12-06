@@ -23,7 +23,7 @@ const Footer = () => {
               <p className="max-w-[80%]">
                 Clarity gives you the blocks and components you need to create a truly professional website.
               </p>
-              <ul className="list-none flex gap-2">
+              <ul className="list-none flex gap-2 mt-5">
                <li className="social_list">  <Image  src="/svg/facebook.svg"  width={12} height={12} className="social_icon" alt="facebook"  /></li>
                <li className="social_list">  <Image  src="/svg/insta.svg"  width={20} height={20} className="social_icon" alt="facebook"  /></li>
                <li className="social_list">  <Image  src="/svg/logo-twitter 2.svg"  width={20} height={20} className="social_icon" alt="facebook"  /></li>
@@ -91,8 +91,8 @@ const Footer = () => {
             </div>
           </div>
           <hr className="border-[#D9D9D9]" />
-          <div className="copy_right py-3">
-            <p className="text-xs text-center">© Copyright 2022, All Rights Reserved by <b>Secure 365</b></p>
+          <div className="copy_right py-4">
+            <p className="text-sm text-center">© Copyright 2022, All Rights Reserved by <b>Secure 365</b></p>
 
           </div>
         </div>
