@@ -28,7 +28,7 @@ const CategoryCard= async ({ category }) => {
         </CardHeader>
         <CardContent className='space-y-1.5'>
           <CardTitle className='capitalize text-emerald-600 group-hover:text-white'>
-            {/* {category?.top_skilled_experts_name} */}
+        
             <h2 className='text-[#020842] text-lg'>edfhbj</h2>
             <span className='text-[#020842] text-sm uppercase '>ABCD</span>
           </CardTitle>
