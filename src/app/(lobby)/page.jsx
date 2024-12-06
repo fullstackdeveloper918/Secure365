@@ -57,7 +57,7 @@ export default async function page() {
 {/* logos slider */}
 <section className="logo_section lg:py-20 md:py-10 py-3  ">
   <div className="container">
-    <div className="flex gap-5 justify-center">
+    <div className="flex gap-5 justify-between">
     <div>
     <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
     </div>

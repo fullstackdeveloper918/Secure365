@@ -22,7 +22,7 @@ const Products = async ({data}) => {
           </Text>
           <Text
             tag="p"
-            className="max-w-2xl text-center  text-[#4F4F4F] subheading_text"
+            className="max-w-3xl text-center  text-[#4F4F4F] subheading_text"
           >
             At Secure365, we understand that navigating the digital world can be
             overwhelming. That’s why we’ve designed our services to be a
