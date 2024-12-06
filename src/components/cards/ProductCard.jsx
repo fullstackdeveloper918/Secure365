@@ -25,7 +25,9 @@ const ProductCard  = ({ product }) => {
         <div className='bottom_text absolute bottom-5 left-5'>
           <span className='bg-[#ffffff40] text-white text-md p-3'>Marketing</span>
 <h3 className='tex-2xl my-4 text-white md:max-w-[70%] '>Enhance Trust, Compliance, And Goverance</h3>
-<button className='inline  border-white rounded-full arrow_button'><Image src="/svg/arrow-right-solid.svg" className='invert'  width={18} height={18} /> </button>
+<button className='inline  border-white rounded-full arrow_button'>
+  <Image src="/svg/arrow-right-solid.svg" className='invert' alt='arrow image'  width={18} height={18} /> 
+</button>
         </div>
        
       
