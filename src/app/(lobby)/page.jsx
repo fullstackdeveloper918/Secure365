@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Suspense } from "react";
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 import { Button } from "@/components/ui/button";
+import RecentWork from "@/components/RecentWork";
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
@@ -188,8 +189,6 @@ export default async function page() {
             </div>
 
             <div className="right-side col-md-7 col-12">
-
-              
                 <Text tag="h2" className="my-2 text-black">
                   Protect your website with the power of cybersecurity.
                 </Text>
@@ -260,33 +259,11 @@ export default async function page() {
             </Text>
           </div>
 
-          {/* <div className="w-full flex justify-between items-center gap-6">
+          <div className="w-full flex justify-between items-center gap-6">
            <RecentWork />
-          </div> */}
+          </div>
         </div>
       </section>
-
-      {/* <section className="key_services">
-<div className="container">
-  <div className="flex flex-col items-center justify-between gap-4">
-    <Text tag="h2" className="text-4xl">
-      Our Recent Best Works
-    </Text>
-    <Text tag="p" className="max-w-2xl">
-      Our recent projects highlight our expertise in delivering tailored
-      solutions that meet the unique needs and objectives of our
-      clients, custom software.
-    </Text>
-  </div>
-   <div className="w-full flex justify-between items-center gap-6">
-   <RecentWork />
-  </div> 
-</div>
-</section> */}
-
-
-
-      {/* </div> */}
     </main>
   );
 }
