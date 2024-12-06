@@ -4,11 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 
-
-
-
-
-
 const Footer = () => {
   return (
     <>
@@ -20,14 +15,14 @@ const Footer = () => {
               <Link href="/" className="flex space-x-2">
                 <Image src="/svg/secure.svg" width={200} height={30} alt="Secure Logo" />
               </Link>
-              <p className="max-w-[80%]">
+              <Text tag="p" className="max-w-[80%]">
                 Clarity gives you the blocks and components you need to create a truly professional website.
-              </p>
+              </Text>
               <ul className="list-none flex gap-2 mt-5">
-               <li className="social_list">  <Image  src="/svg/facebook.svg"  width={12} height={12} className="social_icon facebook_icon" alt="facebook"  /></li>
-               <li className="social_list">  <Image  src="/svg/insta.svg"  width={20} height={20} className="social_icon" alt="facebook"  /></li>
-               <li className="social_list">  <Image  src="/svg/logo-twitter 2.svg"  width={20} height={20} className="social_icon" alt="facebook"  /></li>
-               <li className="social_list">  <Image  src="/svg/git.svg"  width={20} height={20} className="social_icon" alt="facebook"  /></li>
+               <Text tag="li" className="social_list">  <Image  src="/svg/facebook.svg"  width={12} height={12} className="social_icon facebook_icon" alt="facebook"  /></Text>
+               <Text tag="li" className="social_list">  <Image  src="/svg/insta.svg"  width={20} height={20} className="social_icon" alt="facebook"  /></Text>
+               <Text tag="li" className="social_list">  <Image  src="/svg/logo-twitter 2.svg"  width={20} height={20} className="social_icon" alt="facebook"  /></Text>
+               <Text tag="li" className="social_list">  <Image  src="/svg/git.svg"  width={20} height={20} className="social_icon" alt="facebook"  /></Text>
               </ul >
 
             </div>
@@ -90,9 +85,9 @@ const Footer = () => {
             </div>
             </div>
           </div>
-          <hr className="border-[#D9D9D9]" />
+          <Text tag="hr" className="border-[#D9D9D9]" />
           <div className="copy_right py-4">
-            <p className="text-sm text-center">© Copyright 2022, All Rights Reserved by <b>Secure 365</b></p>
+            <Text tag="p" className="text-sm text-center">© Copyright 2022, All Rights Reserved by <b>Secure 365</b></Text>
 
           </div>
         </div>
