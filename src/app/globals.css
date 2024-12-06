@@ -137,6 +137,7 @@ h1, h2, h3, h4, h5, li, a, span, p{
   padding: 30px;
   transition: all .3s ease-in;
   border: 1px solid #FAFAFA;
+  border-radius: 20px !important;
 }
 .column_hover:hover{
   border: 1px solid #CFF0FC;
@@ -191,7 +192,7 @@ h2.expert_heading{
 
 
 .get_started_wrapper h2{
-  max-width: 33rem;
+  max-width: 38rem;
 }
 
 /* banner image start */
@@ -266,8 +267,16 @@ padding-right: 15px;
 h2 {
   font-size: 35px;
 }
+h2 strong {
+  font-size: 42px;
+}
 }
 
+@media screen and (max-width:768px) {
+  .banner_absolute {
+    max-width: 50%;
+}
+}
 @media screen and (max-width:767px) {
   .banner_absolute {
     position: unset;
@@ -283,6 +292,12 @@ h2 {
   min-height: 46px;
   letter-spacing: 1.3px;
 }
+.column_hover {
+  padding: 20px 10px;
+  border: 1px solid #cff0fc;
+}
+
+
 }
 @media screen and (max-width:575px) {
   .banner_heading {
@@ -293,6 +308,34 @@ h2 {
 }
 h2 {
   font-size: 28px;
+}
+
+}
+@media screen and (max-width:480px) {
+  .get_started_wrapper h2 {
+    line-height: 36px !important;
+}
+.social_list {
+  width: 30px;
+  height: 30px;
+  padding: 8px;
+}
+.social_list .facebook_icon{
+  max-width: 8px;
+}
+.cybersecurity_wrapper h2 {
+  max-width: 100%;
+  line-height: 35px;
+}
+.global_btn {
+  min-width: auto;
+  font-size: 16px;
+  min-height: unset;
+  letter-spacing: 1.3px;
+  padding: 12px 25px;
+}
+.banner_absolute {
+  max-width: 80%;
 }
 }
 
