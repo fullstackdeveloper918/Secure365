@@ -60,9 +60,9 @@ export default async function page() {
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 ">
             <Text tag="h2" className="heading_h2 capitalize ">
-              {data?.makes_us_diffrent_heading}
-              <span>
-               {data?.makes_us_diffrent_heading_second}
+              {data?.makes_us_diffrent_heading} 
+              <span className="capitalize font-semibold m-2" >
+                {data?.makes_us_diffrent_heading_second}
               </span>
             </Text>
             <Text tag="p" className="max-w-2xl text-center subheading_text ">
@@ -150,7 +150,7 @@ export default async function page() {
       <section className="cybersecurity_wrapper  py-5">
         <div className="container">
           <div className="grid md:grid-cols-2  md:p-10 p-3 gap-7  items-center ">
-            <div className="left-side flex gap-5 col-md-4 col-12 ">
+            <div className="left-side flex gap-5 col-md-4 col-12  relative">
               <div className="flex flex-col gap-5">
                 <div>
                   <Image
@@ -176,6 +176,14 @@ export default async function page() {
                   height={300}
                   alt="kuch b"
                 />
+              </div>
+
+
+              <div className="counter_box absolute ">
+                <div>
+                <h4 className="text-white text-3xl font-medium">30+</h4> 
+                <p className="text-white leading-snug">Years of Experience</p>
+                </div>
               </div>
             </div>
 
