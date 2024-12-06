@@ -70,7 +70,7 @@ export default async function page() {
             </Text>
           </div>
 
-          <div className="w-full grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 pt-10">
+          <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 pt-10">
             {data?.choose_real_world && data?.choose_real_world.map((item, index) => (
               <>
                 <Suspense fallback={<CategoryCardSkeleton />}>
@@ -104,9 +104,9 @@ export default async function page() {
       </section>
 
       {/* World Class Protection */}
-      <section className="py-5 protection_section  bg-[#011024] text-white">
+      <section className="py-5 md:pb-16 pb-5 protection_section  bg-[#011024] text-white">
         <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10 pb-0 gap-7 ">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3 pb-0 gap-7 ">
             <div className="left-side">
               <Text tag="h2" className="capitalize">
                 {data?.world_class_protection_heading}
@@ -114,7 +114,7 @@ export default async function page() {
                   {data?.world_class_protection_heading_second}
                 </strong>
               </Text>
-              <div className="w-full grid grid-cols-2 mt-8 space-y-10">
+              <div className="w-full grid sm:grid-cols-2 grid-cols-1 space-y-10">
 
                 {
                   data?.world_class_protection && data?.world_class_protection.map((protect, index) => (
@@ -147,9 +147,9 @@ export default async function page() {
       </section>
 
       {/* Protect your website section */}
-      <section className="cybersecurity_wrapper my-5">
+      <section className="cybersecurity_wrapper  py-5">
         <div className="container">
-          <div className="grid md:grid-cols-2   p-10 gap-7  items-center ">
+          <div className="grid md:grid-cols-2  md:p-10 p-3 gap-7  items-center ">
             <div className="left-side flex gap-5 col-md-4 col-12 ">
               <div className="flex flex-col gap-5">
                 <div>
@@ -200,17 +200,17 @@ export default async function page() {
       </section>
 
       {/* Ensure Your Website */}
-      <section className="get_started_wrapper my-5 bg-black text-white py-16">
+      <section className="get_started_wrapper my-5 bg-black text-white lg:py-16 md:py-12 py-5">
         <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 p-10  gap-7 items-center">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3  gap-7 items-center">
             <div className="left-side">
               <div className="w-full ">
               
-                  <Text tag="h2" className="mb-8">
+                  <Text tag="h2" className="md:mb-8 mb-4">
                     Ensure your website's protection with cutting-edge{" "}
                     <span className="text_blue">cybersecurity</span>
                   </Text>
-                  <Text tag="p" className="text-white md:text-xl text-lg my-5">
+                  <Text tag="p" className="text-white md:text-xl text-md md:my-5 my-2">
                   At Secure365, we understand that navigating the digital world can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering.
                   </Text>
                   <Text tag="p" className="text-white md:text-xl text-lg my-2 mb-5">

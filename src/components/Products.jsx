@@ -10,19 +10,19 @@ const Products = async ({data}) => {
     <section
       id="products"
       aria-labelledby="product-heading"
-      className="space-y-8 px-4 sm:px-6 lg:px-8 py-8 md:pt-10 lg:pt-24 container"
+      className="space-y-8 px-4 sm:px-6 lg:px-8 py-8 md:pt-10 lg:pt-16 container"
     >
       <div className="flex items-center justify-center">
         <div className="flex flex-col items-center justify-between gap-4">
           <Text
             tag="h2"
-            className="text-4xl"
+            className=""
           >
             Our Key Services
           </Text>
           <Text
             tag="p"
-            className="max-w-2xl text-center text-primary"
+            className="max-w-2xl text-center  text-[#4F4F4F] subheading_text"
           >
             At Secure365, we understand that navigating the digital world can be
             overwhelming. That’s why we’ve designed our services to be a
