@@ -4,12 +4,12 @@ import "./globals.css";
 const geistSans = localFont({
   src: "./fonts/Axiforma-Regular.woff",
   variable: "--font-geist-sans",
-  weight: "100 900",
+  weight: "100 400 500 600 700 800 900",
 });
 const geistMono = localFont({
   src: "./fonts/Axiforma-Regular.woff2",
   variable: "--font-geist-mono",
-  weight: "100 900",
+  weight: "100 400 500 600 700 800 900",
 });
 
 

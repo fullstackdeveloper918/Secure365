@@ -230,35 +230,6 @@ const page = async () => {
         </div>
       </section>
 
-
-
-
-
-      {/* service page section started */}
-     
-
-
-      {/* servie why chose started */}
-
-    
-
-      {/* service why choose ended */}
-
-      {/* service core value started  */}
-
-   
-
-      {/* service core value ended */}
-  
-
-
-
-      {/* ready slider started */}
-    
-
-      {/* ready slider ended */}
-
-
     </>
   );
 };

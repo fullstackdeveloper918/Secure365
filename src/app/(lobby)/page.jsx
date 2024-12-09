@@ -1,11 +1,13 @@
 import dynamic from "next/dynamic";
-// import Categories from "@/components/Categories";
 import React, { Suspense } from "react";
-// import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 import { Button } from "@/components/ui/button";
 
 
 const Products = dynamic(() => import("../../components/Products"), {
+  loading: () => <p>Loading...</p>,
+});
+
+const Hero = dynamic(() => import("../../components/Hero"), {
   loading: () => <p>Loading...</p>,
 });
 
@@ -63,7 +65,7 @@ export default async function page() {
 
   return (
     <main>
-      {/* <Hero /> */}
+      <Hero />
 
 {/* logos slider */}
 <section className="logo_section lg:py-20 py-10   ">
