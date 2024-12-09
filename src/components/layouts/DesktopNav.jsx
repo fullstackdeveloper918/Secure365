@@ -22,7 +22,6 @@ const DesktopNav = () => {
         );
 
         const result = await response.json();
-        console.log(result, 'check result')
         setData(result?.menu_items);
       } catch (error) {
       }
@@ -42,12 +41,15 @@ const DesktopNav = () => {
       <NavigationMenu>
         <NavigationMenuList>
           {data?.map((item, index) => (
+            
+            
+              <Link href={`/${item?.slug}`} key={index}>
            
-              <NavigationMenuItem key={index}>
+              <NavigationMenuItem >
                 <NavigationMenuTrigger>{item?.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                   
+                    {console.log(item, 'itemcheck')}
                   
                     {item?.children?.length > 0 && 
                       item?.children?.map((child, childindex) => (
@@ -63,7 +65,7 @@ const DesktopNav = () => {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-            
+               </Link>
           ))}
         </NavigationMenuList>
       </NavigationMenu>

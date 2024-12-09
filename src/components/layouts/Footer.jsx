@@ -9,7 +9,7 @@ const data = [
     id: 1,
     heading: "Company",
     Links: [
-      { id: 1, text: "About us", href:"/about" },
+      { id: 1, text: "About us", href:"/about-us" },
       { id: 2, text: "Office", href:"/office" },
       { id: 3, text: "License Verification", href:"/license" },
       { id: 4, text: "Spay & Neuter", href:"/spay" },
@@ -39,7 +39,7 @@ const data = [
 
 const Footer = () => {
 
-  console.log('Footer')
+  
   return (
     <>
       <footer className="relative text-white pt-10">

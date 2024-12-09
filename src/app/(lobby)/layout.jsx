@@ -1,3 +1,5 @@
+import PageTransition from "@/components/PageTransition";
+import StairTransition from "@/components/StairTransition";
 import dynamic from "next/dynamic";
 const Navbar = dynamic(() => import('../../components/layouts/Navbar'));
 const Hero = dynamic(() => import('../../components/Hero'));
@@ -8,7 +10,10 @@ export default async function LobbyLayout({ children }) {
     <div>
       <Navbar />
       <Hero />
+      <StairTransition />
+      <PageTransition>
       <div>{children}</div>
+      </PageTransition>
       <Footer />
     </div>
   );

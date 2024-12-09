@@ -60,6 +60,7 @@ export default async function page() {
   );
   const data = await response.json();
 
+
   return (
     <main>
       <section className="logo_section lg:py-20 md:py-10 py-3  ">

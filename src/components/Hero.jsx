@@ -12,7 +12,7 @@ const Hero = async () => {
 
   const data = await response.json();
 
-  console.log(data?.pages, 'data new chcek6  vfdkb dbfdbdfbf')
+  console.log(data?.pages, 'data')
     
 
 
@@ -26,6 +26,7 @@ const Hero = async () => {
           <h1 className='tracking-tighter text-3xl sm:text-5xl lg:text-6xl xl:text-7xl	 max-w-sm sm:max-w-lg	text-white	banner_heading'>
           <span>{data?.pages?.banner_heading}</span>
             <span className='text-emerald-600'>{data?.pages?.banner_heading_second}</span>
+            <span>{data?.pages?.banner_heading_thired}</span>
           </h1>
           <h2 className='max-w-md sm:max-w-[42rem] leading-normal text-muted-foreground text-sm sm:text-xl text-white	 sm:leading-8'>
           {data?.pages?.banner_sub_headline}
