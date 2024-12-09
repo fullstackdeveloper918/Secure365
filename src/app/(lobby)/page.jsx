@@ -55,7 +55,7 @@ export default async function page() {
       {/* <Hero /> */}
 
 {/* logos slider */}
-<section className="logo_section lg:py-20 md:py-10 py-3  ">
+<section className="logo_section lg:py-20 py-10   ">
   <div className="container">
     <div className="flex gap-5 justify-between">
     <div>
