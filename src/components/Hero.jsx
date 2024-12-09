@@ -23,10 +23,10 @@ const Hero = async () => {
       <div className='relative container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28  pb-0 min_height'>
         <div className='flex flex-col gap-y-4 justify-center items-center text-center sm:items-start sm:text-start'>
          
-          <h1 className='tracking-tighter text-3xl sm:text-5xl lg:text-6xl xl:text-5xl	 max-w-sm sm:max-w-lg	text-white	banner_heading'>
-          <span>{data?.pages?.banner_heading}</span>
-            <span className='text_blue'>{data?.pages?.banner_heading_second}</span>
-            <span>{data?.pages?.banner_heading_thired}</span>
+          <h1 className='banner_heading'>
+          <span className='banner_heading_medium'>{data?.pages?.banner_heading}</span>
+            <span className='mx-3'> { data?.pages?.banner_heading_second}</span>
+            <span className='text_blue'>{data?.pages?.banner_heading_thired}</span>
           </h1>
           <h2 className='max-w-md sm:max-w-[42rem] leading-normal text-muted-foreground text-sm sm:text-xl text-white	 sm:leading-8'>
           {data?.pages?.banner_sub_headline}
@@ -39,7 +39,7 @@ const Hero = async () => {
               href='/dashboard/stores'
               className='global_btn btn_two capitalize'
             >
-             {data?.pages?.book_demo}
+             {data?.pages?.book_demo} 
             </Link>
           </div>
         </div>
