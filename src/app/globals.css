@@ -289,6 +289,15 @@ left: 50%;
 
 /* responsive css started */
 @media screen and (max-width:1024px) {
+  .container{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  h1.banner_heading{
+    font-size: 50px !important;
+  }
+}
+@media screen and (max-width:1024px) {
   .maxWidthGiver{
     max-width: 100%;
     margin: 0;
@@ -319,6 +328,7 @@ h2 strong {
     max-width: 50%;
 }
 .maxWidthGiven {
+  margin: 0;
   max-width: 100%;
 }
 }
@@ -340,6 +350,18 @@ h2 strong {
 .column_hover {
   padding: 20px 10px;
   border: 1px solid #cff0fc;
+}
+.order_1{
+order: 1;
+}
+.order_2{
+order: 2;
+}
+.order_3{
+order: 3;
+}
+.order_4{
+order: 4;
 }
 
 

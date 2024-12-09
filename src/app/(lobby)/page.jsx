@@ -63,52 +63,30 @@ export default async function page() {
 
   return (
     <main>
-      <section className="logo_section lg:py-20 md:py-10 py-3  ">
-        <div className="container">
-          <div className="flex gap-5 justify-between">
-            <div>
-              <ImageCard
-                src="/Images/sellmac.png"
-                alt="slider images"
-                width={150}
-                height={200}
-              />
-            </div>
-            <div>
-              <ImageCard
-                src="/Images/sellmac.png"
-                alt="slider images"
-                width={150}
-                height={200}
-              />
-            </div>
-            <div>
-              <ImageCard
-                src="/Images/sellmac.png"
-                alt="slider images"
-                width={150}
-                height={200}
-              />
-            </div>
-            <div>
-              <ImageCard
-                src="/Images/sellmac.png"
-                alt="slider images"
-                width={150}
-                height={200}
-              />
-            </div>
-            <div>
-              <ImageCard
-                src="/Images/sellmac.png"
-                alt="slider images"
-                width={150}
-                height={200}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* <Hero /> */}
+
+{/* logos slider */}
+<section className="logo_section lg:py-20 py-10   ">
+  <div className="container">
+    <div className="flex gap-5 justify-between">
+    <div>
+    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
+    </div>
+    <div>
+    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
+    </div>
+    <div>
+    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
+    </div>
+    <div>
+    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
+    </div>
+    <div>
+    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
+    </div>
+    </div>
+  </div>
+</section>
 
       {/* <div className="max-w-7xl mx-auto py-16"> */}
       <section className="make_us_different md:py-12 md:pb-20 pb-10 ">
