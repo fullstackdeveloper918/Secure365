@@ -53,15 +53,15 @@ const MobileNav = () => {
                     <div className='flex flex-col gap-y-2 text-muted-foreground'>
                       <Link
                         onClick={() => setIsOpen(false)}
-                        href='/dashboard/orders'
+                        href='/about'
                       >
                        About Us
                       </Link>
                       <Link
                         onClick={() => setIsOpen(false)}
-                        href='/dashboard/stores'
+                        href='/delivery'
                       >
-                        Contact Us
+                       Delivery
                       </Link>
                     </div>
                   </AccordionContent>
@@ -70,20 +70,20 @@ const MobileNav = () => {
                   <AccordionTrigger>Lobby</AccordionTrigger>
                   <AccordionContent>
                     <div className='flex flex-col gap-y-2 text-muted-foreground'>
-                      <Link onClick={() => setIsOpen(false)} href='/products'>
-                      Services
+                      <Link onClick={() => setIsOpen(false)} href='/development'>
+                      Development
                       </Link>
                       <Link
                         onClick={() => setIsOpen(false)}
-                        href='/#categories'
+                        href='/ebooks'
                       >
-                        Categories
+                        Ebooks
                       </Link>
                       <Link
                         onClick={() => setIsOpen(false)}
-                        href='/dashboard/stores'
+                        href='/office'
                       >
-                        Create store
+                        Office
                       </Link>
                     </div>
                   </AccordionContent>
@@ -94,27 +94,27 @@ const MobileNav = () => {
                     <div className='flex flex-col gap-y-2 text-muted-foreground'>
                       <Link
                         onClick={() => setIsOpen(false)}
-                        href='/products?category=skateboards'
+                        href='/playlist'
                       >
-                        Skateboards
+                        Playlist
                       </Link>
                       <Link
                         onClick={() => setIsOpen(false)}
-                        href='/products?category=clothing'
+                        href='/privacy'
                       >
-                        Clothing
+                        Privacy
                       </Link>
                       <Link
                         onClick={() => setIsOpen(false)}
-                        href='/products?category=shoes'
+                        href='/spay'
                       >
-                        Shoes
+                        Spay
                       </Link>
                       <Link
                         onClick={() => setIsOpen(false)}
-                        href='/products?category=accessories'
+                        href='/support'
                       >
-                        Accessories
+                        Support
                       </Link>
                     </div>
                   </AccordionContent>
