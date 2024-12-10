@@ -297,9 +297,14 @@ left: 50%;
   border-radius: 10px;
 }
 
-
+.about_banner  .banner_heading {
+  font-size: 65px;
+}
 
 /* responsive css started */
+@media screen and (max-width:1024px) {
+
+}
 @media screen and (max-width:1024px) {
   .container{
     padding-left: 15px;
