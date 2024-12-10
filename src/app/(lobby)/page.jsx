@@ -1,10 +1,7 @@
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-<<<<<<< HEAD
-=======
 import Image from 'next/image'
->>>>>>> 18182f3760e39630174f5a95b266c333e3e277b1
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
@@ -78,7 +75,6 @@ export default async function page() {
       <section className="logo_section lg:py-20 py-10   ">
         <div className="container">
           <div className="flex gap-5 justify-between">
-<<<<<<< HEAD
             {data?.logo_images &&
               data?.logo_images.map((item) => (
                 <>
@@ -92,23 +88,6 @@ export default async function page() {
                   </div>
                 </>
               ))}
-=======
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
->>>>>>> 18182f3760e39630174f5a95b266c333e3e277b1
           </div>
         </div>
       </section>
@@ -467,6 +446,47 @@ export default async function page() {
 
       {/* why choose page section ended */}
 
+
+      {/* Our Core Strengths started */}
+
+      <section className="core_strenght bg-[#FBFBFB] lg:py-16 py-10  my-10">
+        <div className="container">
+          <h2 className="text-center">Our Core Strengths</h2>
+
+
+{/* add key value column from homepage */}
+
+
+        </div>
+      </section>
+      {/* Our Core Strengths ended */}
+
+      <section className="it_manangemnt pt-6 pb-12">
+        <div className="container">
+          <div className="grid md:grid-cols-2 grid-cols-1 items-center space-x-10">
+          <div className="w-full h-[100%] relative">
+              <Image src="/Images/set_Apart.png" alt="set apart" className="absolute rounded-[20px]" layout="fill" objectFit="cover" />
+              </div>
+            <div className="md:max-w-[75%]">
+              <h2 className="my-5">Our Commitment to You</h2>
+              <p className="text-[#4F4F4F] text-lg">We know that choosing an IT partner is a big decision, and we don’t take that responsibility lightly. At Secure365, our commitment goes beyond providing exceptional services—we’re dedicated to building lasting partnerships that empower our clients to succeed. </p>
+              <p className="text-[#4F4F4F] text-lg mt-5">We promise to always put your needs first, communicate openly, and provide solutions that are not only secure and reliable but also aligned with your business goals. Our aim is simple: to take the hassle out of IT, so you can focus on what matters most—growing your business</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+{/* testimonial section */}
+
+<section className="testimonial_wrapper py-10 bg-[#FAFAFA]">
+  <div className="container">
+    <h6 className="text-[#282828] text-lg my-3 text-center" >20000+ Happy Landingfolio Users</h6>
+    <h2 className="text-[#282828]  text-center">What Our Clients Say</h2>
+
+    {/* add slider  */}
+  </div>
+</section>
 
 
 
