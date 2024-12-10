@@ -1,18 +1,19 @@
-import localFont from "next/font/local";
+import {Nunito, Nunito_Sans} from "next/font/google";
 import "./globals.css";
+import clsx from "clsx";
 
-const geistSans = localFont({
-  src: "./fonts/Axiforma-Regular.woff",
-  variable: "--font-geist-sans",
-  weight: "100 400 500 600 700 800 900",
-});
-const geistMono = localFont({
-  src: "./fonts/Axiforma-Regular.woff2",
-  variable: "--font-geist-mono",
-  weight: "100 400 500 600 700 800 900",
+const nunito = Nunito({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nunito",
 });
 
 
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nunito-sans",
+});
 
 
 export const metadata = {
@@ -22,9 +23,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={clsx(nunito.variable, nunitoSans.variable)}>
+
+      
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${AxiformaReg.variable} ${AxiformaMono.variable}`}
       >
         {children}
       </body>
