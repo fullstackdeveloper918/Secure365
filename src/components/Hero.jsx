@@ -46,6 +46,7 @@ const Hero = () => {
         cache: 'no-store',
       });
       const result = await response.json();
+      console.log(result, 'result')
       setData(result); // Store the fetched data in state
     };
 
@@ -66,7 +67,7 @@ const Hero = () => {
            variants={FadeUp(0.6)}
            initial="initial"
            animate="animate"
-          className='banner_heading'>
+          className='banner_heading font-Axiforma'>
             <span className='banner_heading_medium'>{data?.pages?.banner_heading}</span>
             <span className='mr-3'> {data?.pages?.banner_heading_second}</span>
             <span className='text_blue'>{data?.pages?.banner_heading_thired}</span>
@@ -95,9 +96,9 @@ const Hero = () => {
               
         className='flex items-center justify-center md:justify-end'>
           <motion.img
-           initial={{x:50, opacity: 0}}
-           animate={{x:0, opacity: 1}}
-           transition={{duration: 0.6, delay: 0.4, ease: "easeInOut"}}
+           initial={{y:-100, opacity: 0}}
+           animate={{y:0, opacity: 1}}
+           transition={{duration: 0.9, delay: 0.4, ease: "easeInOut"}}
             priority
             src={data?.pages?.banner_image?.url}
             className='banner_absolute'

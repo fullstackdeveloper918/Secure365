@@ -1,11 +1,12 @@
-
+"use client";
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import ProductCardSkeleton from "@/components/skeletons/ProductCardSkeleton";
 import { motion } from "framer-motion";
-import {MotionWrapper} from "@/components/MotionWrapper";
+import { MotionWrapper } from "@/components/MotionWrapper";
+import { FadeUp } from "@/lib/motion";
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
@@ -69,19 +70,20 @@ export default async function page() {
   );
   const data = await response.json();
 
-
- 
-
-  // console.log(data?.website_protect_section_image_experience_url?.image_data, "bete");
+  console.log(data, "bete");
 
   return (
     <main>
-       <section className='relative overlay banner_robot'>
-       <Image src="/Images/homepage_banner.png" className='absolute' layout='fill' alt='background image' />
-      <Suspense fallback={<ProductCardSkeleton />}>
-        <Hero />
-      </Suspense>
-
+      <section className="relative overlay banner_robot">
+        <Image
+          src="/Images/homepage_banner.png"
+          className="absolute"
+          layout="fill"
+          alt="background image"
+        />
+        <Suspense fallback={<ProductCardSkeleton />}>
+          <Hero />
+        </Suspense>
       </section>
 
       {/* logos slider */}
@@ -89,17 +91,16 @@ export default async function page() {
         <div className="container">
           <div className="flex gap-5 justify-between items-center">
             {data?.logo_images &&
-              data?.logo_images.map((item,index) => (
+              data?.logo_images.map((item, index) => (
                 <>
-                 <MotionWrapper key={index} delay={index * 0.1}>
+                  <MotionWrapper key={index} delay={index * 0.1}>
                     <ImageCard
-                    src={item}
-                    alt="slider images"
-                    width={150}
-                    height={200}
+                      src={item}
+                      alt="slider images"
+                      width={150}
+                      height={200}
                     />
-                    </MotionWrapper>
-                  
+                  </MotionWrapper>
                 </>
               ))}
           </div>
@@ -170,21 +171,32 @@ export default async function page() {
                 {data?.world_class_protection &&
                   data?.world_class_protection.map((protect, index) => (
                     <>
-                      <div className="max-w-[80%] mt-10">
-                        <Text tag="h3" className="relative border_blue_bottom">
-                          {index + 1}
-                        </Text>
-                        <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3" />
-                        <Text
-                          tag="h2"
-                          className="expert_heading my-2  font-medium tet-white"
-                        >
-                          {protect?.expert_guidance_heading}
-                        </Text>
-                        <Text tag="p" className="text-[#878787]">
-                          {protect?.expert_guidance_paragraph}
-                        </Text>
-                      </div>
+                      <motion.div
+                       
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: index + 1 * 0.3 }}
+                      >
+                        <div className="max-w-[80%] mt-10">
+                          <Text
+                            tag="h3"
+                            className="relative border_blue_bottom"
+                          >
+                            {index + 1}
+                          </Text>
+                          <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3" />
+                          <Text
+                            tag="h2"
+                            className="expert_heading my-2  font-medium tet-white"
+                          >
+                            {protect?.expert_guidance_heading}
+                          </Text>
+                          <Text tag="p" className="text-[#878787]">
+                            {protect?.expert_guidance_paragraph}
+                          </Text>
+                        </div>
+                      </motion.div>
                     </>
                   ))}
               </div>
@@ -211,47 +223,90 @@ export default async function page() {
               <div className="flex flex-col gap-5">
                 {data &&
                   data?.website_protect_section_image_experience_url?.image_data?.map(
-                    (item) => (
+                    (item, index) => (
                       <>
-                        <div>
+                        <motion.div
+                          initial={{ opacity: 0, x: -100 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: index + 1 * 0.5 }}
+                        >
                           <ImageCard
                             src={item?.website_protect_section_image_experience}
                             width={300}
                             height={300}
                             alt="kuch b"
                           />
-                        </div>
+                        </motion.div>
                       </>
                     )
                   )}
               </div>
-              <div className="flex items-center">
+              <motion.div
+                initial={{ opacity: 0, y: -100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center"
+              >
                 <ImageCard
-                  src="/Images/protection.png"
+                  src={
+                    data?.website_protect_section_image_experience_second_url
+                  }
                   width={300}
                   height={300}
                   alt="kuch b"
                 />
-              </div>
+              </motion.div>
 
               <div className="counter_box absolute ">
-                <div>
-                  <h3 className="text-white text-3xl font-medium">30+</h3>
-                  <p className="text-white leading-snug">Years of Experience</p>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div>
+                    <h3 className="text-white text-3xl font-medium">30+</h3>
+                    <p className="text-white leading-snug">
+                      Years of Experience
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
 
             <div className="right-side col-md-7 col-12">
-              <Text tag="h2" className="my-2 text-black capitalize">
-                {data?.website_protect_heading_experience_section}
-              </Text>
-              <Text tag="p" className="text-[#434242] text-lg my-5">
-                {data?.website_protect_paragraph_experience_section}
-              </Text>
-              <Button className="btn_one global_btn capitalize mt-10">
-                {data?.website_protect_button_experience}
-              </Button>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Text tag="h2" className="my-2 text-black capitalize">
+                  {data?.website_protect_heading_experience_section}
+                </Text>
+              </motion.div>
+              <motion.div
+                variants={FadeUp(0.4)}
+                initial="initial"
+                whileInView={"animate"}
+                viewport={{ once: true }}
+              >
+                <Text tag="p" className="text-[#434242] text-lg my-5">
+                  {data?.website_protect_paragraph_experience_section}
+                </Text>
+              </motion.div>
+              <motion.div
+                variants={FadeUp(0.6)}
+                initial="initial"
+                whileInView={"animate"}
+                viewport={{ once: true }}
+              >
+                <Button className="btn_one global_btn capitalize mt-10">
+                  {data?.website_protect_button_experience}
+                </Button>
+              </motion.div>
             </div>
           </div>
         </div>
