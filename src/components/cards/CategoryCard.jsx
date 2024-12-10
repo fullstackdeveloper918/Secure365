@@ -1,6 +1,4 @@
 
-import Image from 'next/image'
-
 import {
   Card,
   CardContent,
@@ -8,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import ImageCard from './ImageCard'
 
 
 const CategoryCard= async ({ category }) => {
@@ -17,7 +16,7 @@ const CategoryCard= async ({ category }) => {
     // <Link href={`/products?category=${category.slug}`}>
       <Card className='relative h-full w-full overflow-hidden rounded-lg bg-transparent transition-colors group bg-[#E3F0FF] text-center'>
         <CardHeader>
-          <Image
+          <ImageCard
              src="/Images/user_img_1.png"
             alt='test'
             width={400}

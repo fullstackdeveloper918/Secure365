@@ -1,14 +1,19 @@
+"use client";
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import Image from 'next/image'
+import Image from "next/image";
+import ProductCardSkeleton from "@/components/skeletons/ProductCardSkeleton";
+import { motion } from "framer-motion";
+import { MotionWrapper } from "@/components/MotionWrapper";
+import { FadeUp } from "@/lib/motion";
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
 });
 
 const Hero = dynamic(() => import("../../components/Hero"), {
-  loading: () => <p>Loading...</p>,
+  loading: () => <ProductCardSkeleton />,
 });
 
 const Categories = dynamic(() => import("../../components/Categories"), {
@@ -69,23 +74,33 @@ export default async function page() {
 
   return (
     <main>
-      <Hero />
+      <section className="relative overlay banner_robot">
+        <Image
+          src="/Images/homepage_banner.png"
+          className="absolute"
+          layout="fill"
+          alt="background image"
+        />
+        <Suspense fallback={<ProductCardSkeleton />}>
+          <Hero />
+        </Suspense>
+      </section>
 
       {/* logos slider */}
-      <section className="logo_section lg:py-20 py-10   ">
+      <section className="logo_section lg:py-20 py-10 ">
         <div className="container">
-          <div className="flex gap-5 justify-between">
+          <div className="flex gap-5 justify-between items-center">
             {data?.logo_images &&
-              data?.logo_images.map((item) => (
+              data?.logo_images.map((item, index) => (
                 <>
-                  <div>
+                  <MotionWrapper key={index} delay={index * 0.1}>
                     <ImageCard
                       src={item}
                       alt="slider images"
                       width={150}
                       height={200}
                     />
-                  </div>
+                  </MotionWrapper>
                 </>
               ))}
           </div>
@@ -93,7 +108,7 @@ export default async function page() {
       </section>
 
       {/* <div className="max-w-7xl mx-auto py-16"> */}
-      <section className="make_us_different md:py-12 md:pb-20 pb-10 ">
+      <section className="make_us_different md:py-0 md:pb-20 pb-10 ">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 ">
             <Text tag="h2" className="heading_h2 capitalize ">
@@ -142,13 +157,13 @@ export default async function page() {
       </section>
 
       {/* World Class Protection */}
-      <section className="py-5 md:pb-16 pb-5 protection_section  bg-[#011024] text-white">
+      <section className="py-5 md:pb-20  md:pt-12 pb-0 protection_section  bg-[#011024] text-white">
         <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3 pb-0 gap-7 ">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3 md:pb-0 gap-7 ">
             <div className="left-side">
               <Text tag="h2" className="capitalize">
                 {data?.world_class_protection_heading}
-                <strong className=" text-[#52C5FF] font-extrabold block capitalize">
+                <strong className=" text-[#52C5FF] font-bold block capitalize">
                   {data?.world_class_protection_heading_second}
                 </strong>
               </Text>
@@ -156,21 +171,32 @@ export default async function page() {
                 {data?.world_class_protection &&
                   data?.world_class_protection.map((protect, index) => (
                     <>
-                      <div className="max-w-[80%] mt-10">
-                        <Text tag="h3" className="relative border_blue_bottom">
-                          {index + 1}
-                        </Text>
-                        <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3" />
-                        <Text
-                          tag="h2"
-                          className="expert_heading my-2  font-medium tet-white"
-                        >
-                          {protect?.expert_guidance_heading}
-                        </Text>
-                        <Text tag="p" className="text-[#878787]">
-                          {protect?.expert_guidance_paragraph}
-                        </Text>
-                      </div>
+                      <motion.div
+                       
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: index + 1 * 0.3 }}
+                      >
+                        <div className="max-w-[80%] mt-10">
+                          <Text
+                            tag="h3"
+                            className="relative border_blue_bottom"
+                          >
+                            {index + 1}
+                          </Text>
+                          <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3" />
+                          <Text
+                            tag="h2"
+                            className="expert_heading my-2  font-medium tet-white"
+                          >
+                            {protect?.expert_guidance_heading}
+                          </Text>
+                          <Text tag="p" className="text-[#878787]">
+                            {protect?.expert_guidance_paragraph}
+                          </Text>
+                        </div>
+                      </motion.div>
                     </>
                   ))}
               </div>
@@ -195,50 +221,92 @@ export default async function page() {
           <div className="grid md:grid-cols-2  md:p-10 p-3 gap-7  items-center ">
             <div className="left-side flex gap-5 col-md-4 col-12  relative">
               <div className="flex flex-col gap-5">
-                <div>
-                  <ImageCard
-                    src="/Images/protection.png"
-                    width={300}
-                    height={300}
-                    alt="kuch b"
-                  />
-                </div>
-                <div>
-                  <ImageCard
-                    src="/Images/protection.png"
-                    width={300}
-                    height={300}
-                    alt="kuch b"
-                  />
-                </div>
+                {data &&
+                  data?.website_protect_section_image_experience_url?.image_data?.map(
+                    (item, index) => (
+                      <>
+                        <motion.div
+                          initial={{ opacity: 0, x: -100 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: index + 1 * 0.5 }}
+                        >
+                          <ImageCard
+                            src={item?.website_protect_section_image_experience}
+                            width={300}
+                            height={300}
+                            alt="kuch b"
+                          />
+                        </motion.div>
+                      </>
+                    )
+                  )}
               </div>
-              <div className="flex items-center">
+              <motion.div
+                initial={{ opacity: 0, y: -100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="flex items-center"
+              >
                 <ImageCard
-                  src="/Images/protection.png"
+                  src={
+                    data?.website_protect_section_image_experience_second_url
+                  }
                   width={300}
                   height={300}
                   alt="kuch b"
                 />
-              </div>
+              </motion.div>
 
               <div className="counter_box absolute ">
-                <div>
-                  <h3 className="text-white text-3xl font-medium">30+</h3>
-                  <p className="text-white leading-snug">Years of Experience</p>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div>
+                    <h3 className="text-white text-3xl font-medium">30+</h3>
+                    <p className="text-white leading-snug">
+                      Years of Experience
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </div>
 
             <div className="right-side col-md-7 col-12">
-              <Text tag="h2" className="my-2 text-black capitalize">
-                {data?.website_protect_heading_experience_section}
-              </Text>
-              <Text tag="p" className="text-[#434242] text-lg my-5">
-                {data?.website_protect_paragraph_experience_section}
-              </Text>
-              <Button className="btn_one global_btn capitalize mt-10">
-                {data?.website_protect_button_experience}
-              </Button>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Text tag="h2" className="my-2 text-black capitalize">
+                  {data?.website_protect_heading_experience_section}
+                </Text>
+              </motion.div>
+              <motion.div
+                variants={FadeUp(0.4)}
+                initial="initial"
+                whileInView={"animate"}
+                viewport={{ once: true }}
+              >
+                <Text tag="p" className="text-[#434242] text-lg my-5">
+                  {data?.website_protect_paragraph_experience_section}
+                </Text>
+              </motion.div>
+              <motion.div
+                variants={FadeUp(0.6)}
+                initial="initial"
+                whileInView={"animate"}
+                viewport={{ once: true }}
+              >
+                <Button className="btn_one global_btn capitalize mt-10">
+                  {data?.website_protect_button_experience}
+                </Button>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -292,6 +360,7 @@ export default async function page() {
       <Products data={data?.key_services_data} />
 
       <Categories data={data} />
+
       <section className="key_services">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4">
@@ -310,191 +379,6 @@ export default async function page() {
           </div>
         </div>
       </section>
-
-
-      {/* why choose page section started */}
-      <section className="relative overlay about_banner text-center">
-        <ImageCard
-          src="/Images/why_us.png"
-          className="absolute"
-          layout="fill"
-          alt=" about Background image"
-        />
-        <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0 min_height">
-          <Text
-            tag="h1"
-            className="text-center	banner_heading"
-          >
-            {" "}
-            From
-            <Text tag="span" className="text_blue mx-2 mb-0">
-              {" "}
-              Fighting Cybercrime
-            </Text>
-            <Text tag="span" className="block ">
-              {" "}
-              Building Secure Solutions
-            </Text>
-          </Text>
-          <Text
-            tag="p"
-            className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-2xl text-md"
-          >
-            We provide expert IT and cybersecurity solutions that protect,
-            support, and empower your business.
-          </Text>
-        </div>
-      </section>
-
-      {/* it management section staered */}
-      <section className="it_manangemnt py-16">
-        <div className="container">
-          <div className="grid md:grid-cols-2 grid-cols-1 items-center">
-            <div>
-              <p className="text-[#4F4F4F] text-lg">When it comes to choosing an IT partner, you need more than just someone to set up your systems or install a firewall—you need a trusted advisor who understands your business, anticipates your needs, and has the expertise to solve complex challenges. At Secure365, we bring together years of experience in cybersecurity, IT management, and digital strategy to deliver solutions that are tailored, proactive, and focused on driving results.</p>
-              <p className="text-[#4F4F4F] text-lg mt-5">We believe that technology should be a catalyst for growth, not a source of frustration. That’s why we take the complexity out of IT management, making it simple, secure, and stress-free for your business</p>
-            </div>
-
-            <div className="text-end">
-              <Image src="/Images/secure_img.png" alt="why choose" className="mx-auto" width={500} height={500} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="set_up">
-        <div className="container">
-          <div className="grid md:grid-cols-2 grid-cols-1  space-x-10">
-            <div className="set_leftwrapper">
-              <h2>What Sets Us Apart  </h2>
-              <div className="w-full h-[85%] relative">
-              <Image src="/Images/set_Apart.png" alt="set apart" className="absolute rounded-[20px]" layout="fill" objectFit="cover" />
-              </div>
-            </div>
-            <div className="set_rightwrapper">
-              <p className="subheading_text text-semibold text-4xl">Our approach is built on three core principles: Expertise, Simplicity, and Commitment. Here’s what makes Secure365 different:</p>
-              <ul className="lg:my-12 ">
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md "> Decades of Real-World Experience</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7">
-                      Secure365 was founded by Jonathan Brax, whose background in criminology and years of experience battling digital fraud bring a unique perspective to cybersecurity. Alongside a team of seasoned IT professionals, Jonathan built Secure365 to be more than just a service provider—it’s a response to the frustrations faced by businesses in navigating the complex world of cyber threats and IT management. With our expertise in technology and first-hand understanding of the challenges businesses face, we offer solutions that are practical, effective, and backed by real-world experience.
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Customer-Centric Approach</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7">
-                      Your success is our priority. We take the time to understand your business’s unique needs and tailor our services to support your goals. From small startups to established enterprises, we provide personalized solutions that fit your budget, scale with your growth, and adapt to your changing needs. With Secure365, you’re not just a client—you’re a partner
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">All-in-One IT Solutions</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7">
-                      Your success is our priority. We take the time to understand your business’s unique needs and tailor our services to support your goals. From small startups to established enterprises, we provide personalized solutions that fit your budget, scale with your growth, and adapt to your changing needs. With Secure365, you’re not just a client—you’re a partner
-                    </Text>
-                  </div>
-                </li>
-
-              </ul>
-            </div>
-
-
-          
-            <div className="set_rightwrapper">
-              
-              <ul className="lg:my-4 ">
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Proactive Protection & Support</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7">
-                    Your success is our priority. We take the time to understand your business’s unique needs and tailor our services to support your goals. From small startups to established enterprises, we provide personalized solutions that fit your budget, scale with your growth, and adapt to your changing needs. With Secure365, you’re not just a client—you’re a partner
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Transparent Communication & Reporting</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7">
-                    Your success is our priority. We take the time to understand your business’s unique needs and tailor our services to support your goals. From small startups to established enterprises, we provide personalized solutions that fit your budget, scale with your growth, and adapt to your changing needs. With Secure365, you’re not just a client—you’re a partner.
-                    </Text>
-                  </div>
-                </li>
-                
-              </ul>
-            </div>
-
-            <div className="set_rightwrapper">
-              <div className="w-full h-[85%] relative">
-              <Image src="/Images/rightImage.png" alt="set apart" className="absolute rounded-[20px]" layout="fill" objectFit="cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* it management section ended */}
-
-
-      {/* why choose page section ended */}
-
-
-      {/* Our Core Strengths started */}
-
-      <section className="core_strenght bg-[#FBFBFB] lg:py-16 py-10  my-10">
-        <div className="container">
-          <h2 className="text-center">Our Core Strengths</h2>
-
-
-{/* add key value column from homepage */}
-
-
-        </div>
-      </section>
-      {/* Our Core Strengths ended */}
-
-      <section className="it_manangemnt pt-6 pb-12">
-        <div className="container">
-          <div className="grid md:grid-cols-2 grid-cols-1 items-center space-x-10">
-          <div className="w-full h-[100%] relative">
-              <Image src="/Images/set_Apart.png" alt="set apart" className="absolute rounded-[20px]" layout="fill" objectFit="cover" />
-              </div>
-            <div className="md:max-w-[75%]">
-              <h2 className="my-5">Our Commitment to You</h2>
-              <p className="text-[#4F4F4F] text-lg">We know that choosing an IT partner is a big decision, and we don’t take that responsibility lightly. At Secure365, our commitment goes beyond providing exceptional services—we’re dedicated to building lasting partnerships that empower our clients to succeed. </p>
-              <p className="text-[#4F4F4F] text-lg mt-5">We promise to always put your needs first, communicate openly, and provide solutions that are not only secure and reliable but also aligned with your business goals. Our aim is simple: to take the hassle out of IT, so you can focus on what matters most—growing your business</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-{/* testimonial section */}
-
-<section className="testimonial_wrapper py-10 bg-[#FAFAFA]">
-  <div className="container">
-    <h6 className="text-[#282828] text-lg my-3 text-center" >20000+ Happy Landingfolio Users</h6>
-    <h2 className="text-[#282828]  text-center">What Our Clients Say</h2>
-
-    {/* add slider  */}
-  </div>
-</section>
-
-
-
-
-
-
-
-
     </main>
   );
 }

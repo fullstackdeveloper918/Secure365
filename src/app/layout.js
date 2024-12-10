@@ -1,18 +1,16 @@
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/Axiforma-Regular.woff",
-  variable: "--font-geist-sans",
-  weight: "100 400 500 600 700 800 900",
-});
-const geistMono = localFont({
-  src: "./fonts/Axiforma-Regular.woff2",
-  variable: "--font-geist-mono",
-  weight: "100 400 500 600 700 800 900",
-});
 
-
+const AxiformaMono = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Axiforma-Regular.woff',
+      weight: "400"
+    }
+  ],
+  variable: '--font-Axiforma'
+});
 
 
 export const metadata = {
@@ -22,9 +20,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    <html lang="en" >
+      <body className={`${AxiformaMono.variable}`}
       >
         {children}
       </body>
