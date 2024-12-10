@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 
-
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
 });
@@ -15,9 +14,12 @@ const Categories = dynamic(() => import("../../components/Categories"), {
   loading: () => <p>Loading...</p>,
 });
 
-const CategoryCardSkeleton = dynamic(() => import("../../components/skeletons/CategoryCardSkeleton"), {
-  loading: () => <p>Loading...</p>,
-});
+const CategoryCardSkeleton = dynamic(
+  () => import("../../components/skeletons/CategoryCardSkeleton"),
+  {
+    loading: () => <p>Loading...</p>,
+  }
+);
 
 const ImageCard = dynamic(() => import("../../components/cards/ImageCard"), {
   loading: () => <p>Loading...</p>,
@@ -62,33 +64,32 @@ export default async function page() {
   );
   const data = await response.json();
 
+  console.log(data, "bete");
 
   return (
     <main>
       <Hero />
 
-{/* logos slider */}
-<section className="logo_section lg:py-20 py-10   ">
-  <div className="container">
-    <div className="flex gap-5 justify-between">
-    <div>
-    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
-    </div>
-    <div>
-    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
-    </div>
-    <div>
-    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
-    </div>
-    <div>
-    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
-    </div>
-    <div>
-    <ImageCard src="/Images/sellmac.png"  alt="slider images" width={150} height={200}   />
-    </div>
-    </div>
-  </div>
-</section>
+      {/* logos slider */}
+      <section className="logo_section lg:py-20 py-10   ">
+        <div className="container">
+          <div className="flex gap-5 justify-between">
+            {data?.logo_images &&
+              data?.logo_images.map((item) => (
+                <>
+                  <div>
+                    <ImageCard
+                      src={item}
+                      alt="slider images"
+                      width={150}
+                      height={200}
+                    />
+                  </div>
+                </>
+              ))}
+          </div>
+        </div>
+      </section>
 
       {/* <div className="max-w-7xl mx-auto py-16"> */}
       <section className="make_us_different md:py-12 md:pb-20 pb-10 ">
@@ -228,17 +229,14 @@ export default async function page() {
             </div>
 
             <div className="right-side col-md-7 col-12">
-              <Text tag="h2" className="my-2 text-black">
-                Protect your website with the power of cybersecurity.
+              <Text tag="h2" className="my-2 text-black capitalize">
+                {data?.website_protect_heading_experience_section}
               </Text>
               <Text tag="p" className="text-[#434242] text-lg my-5">
-                At Secure365, we understand that navigating the digital world
-                can be overwhelming. That’s why we’ve designed our services to
-                be a one-stop solution, covering everything from cloud
-                management and IT support to marketing and cybersecurity.{" "}
+                {data?.website_protect_paragraph_experience_section}
               </Text>
               <Button className="btn_one global_btn capitalize mt-10">
-                Get started
+                {data?.website_protect_button_experience}
               </Button>
             </div>
           </div>
