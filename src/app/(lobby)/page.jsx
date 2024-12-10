@@ -1,10 +1,7 @@
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-<<<<<<< HEAD
-=======
 import Image from 'next/image'
->>>>>>> 18182f3760e39630174f5a95b266c333e3e277b1
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
@@ -78,7 +75,6 @@ export default async function page() {
       <section className="logo_section lg:py-20 py-10   ">
         <div className="container">
           <div className="flex gap-5 justify-between">
-<<<<<<< HEAD
             {data?.logo_images &&
               data?.logo_images.map((item) => (
                 <>
@@ -92,23 +88,6 @@ export default async function page() {
                   </div>
                 </>
               ))}
-=======
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
-            <div>
-              <ImageCard src="/Images/sellmac.png" alt="slider images" width={150} height={200} />
-            </div>
->>>>>>> 18182f3760e39630174f5a95b266c333e3e277b1
           </div>
         </div>
       </section>
