@@ -159,7 +159,7 @@ export default async function page() {
       {/* World Class Protection */}
       <section className="py-5 md:pb-20  md:pt-12 pb-0 protection_section  bg-[#011024] text-white">
         <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3 md:pb-0 gap-7 ">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 p-3 md:pb-0 gap-7 ">
             <div className="left-side">
               <Text tag="h2" className="capitalize">
                 {data?.world_class_protection_heading}
@@ -167,7 +167,7 @@ export default async function page() {
                   {data?.world_class_protection_heading_second}
                 </strong>
               </Text>
-              <div className="w-full grid sm:grid-cols-2 grid-cols-1 space-y-10">
+              <div className="w-full grid sm:grid-cols-2 grid-cols-1 space-y-10 items-end">
                 {data?.world_class_protection &&
                   data?.world_class_protection.map((protect, index) => (
                     <>
@@ -178,7 +178,7 @@ export default async function page() {
                         viewport={{ once: true }}
                         transition={{ duration: index + 1 * 0.3 }}
                       >
-                        <div className="max-w-[80%] mt-10">
+                        <div className="max-w-[80%] ">
                           <Text
                             tag="h3"
                             className="relative border_blue_bottom"
