@@ -218,7 +218,7 @@ export default async function page() {
       {/* Protect your website section */}
       <section className="cybersecurity_wrapper  py-5">
         <div className="container">
-          <div className="grid md:grid-cols-2  md:p-10 p-3 gap-7  items-center ">
+          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10 p-3 gap-7  items-center ">
             <div className="left-side flex gap-5 col-md-4 col-12  relative">
               <div className="flex flex-col gap-5">
                 {data &&

@@ -93,16 +93,14 @@ const Hero = () => {
             </Link>
           </motion.div>
         </div>
-        <div
-              
-              className='flex items-center justify-center md:justify-end'>
+        <div className='flex items-center justify-center '>
           <motion.img
            initial={{y:-100, opacity: 0}}
            animate={{y:0, opacity: 1}}
            transition={{duration: 0.9, delay: 0.4, ease: "easeInOut"}}
            priority
            src={data?.pages?.banner_image?.url}
-           className='banner_absolute'
+           className='banner_rotate'
            alt='Hero image'
            width={500}
            height={500}

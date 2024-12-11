@@ -179,6 +179,11 @@ h2 strong {
   font-size: 17px;
 }
 
+
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+}
 /*********** expert_heading started************/
 
 h2.expert_heading {
@@ -291,10 +296,20 @@ h2.expert_heading {
 /* responsive css started */
 
 .logo_section{
-  /* top: 100px;
-z-index: 100; */
 animation: drift 15s 2s linear infinite both;
-/* position: relative; */
+}
+
+.banner_rotate{
+  animation: rotateGlobe 10s linear infinite;
+  transform-style: preserve-3d;
+}
+@keyframes rotateGlobe {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 /* animation */
 @keyframes drift {
