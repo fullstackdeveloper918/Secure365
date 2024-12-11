@@ -72,13 +72,13 @@ const Hero = () => {
             <span className='mr-3'> {data?.pages?.banner_heading_second}</span>
             <span className='text_blue'>{data?.pages?.banner_heading_thired}</span>
           </motion.h1>
-          <motion.h2
+          <motion.p
            variants={FadeUp(0.8)}
            initial="initial"
            animate="animate"
           className='max-w-md sm:max-w-[39rem] leading-normal text-muted-foreground text-sm sm:text-xl text-white sm:leading-8'>
             {data?.pages?.banner_sub_headline}
-          </motion.h2>
+          </motion.p>
           <motion.div
            variants={FadeUp(1)}
            initial="initial"

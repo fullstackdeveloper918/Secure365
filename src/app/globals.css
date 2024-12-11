@@ -125,9 +125,6 @@
   border-color: #fff;
   color: #52C5FF;
 }
-.banner_heading {
-  line-height: 6rem !important;
-}
 
 .container{
     margin: auto;
@@ -163,8 +160,9 @@
 /******** common heading fix size ***********/
 
 .banner_heading{
-  font-size: 85px;
+  font-size: 95px;
   color: #fff;
+  line-height: 7rem !important;
 }
 
 h1 span.banner_heading_medium{
@@ -234,7 +232,7 @@ h2.expert_heading{
   bottom: 0;
 }
 .min_height{
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 150px);
 }
 
 .get_started_wrapper h2{
@@ -273,8 +271,8 @@ h2.expert_heading{
 
 /* counter */
 .counter_box{
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
 border-radius: 50%;
 text-align: center;
 display: flex;
@@ -301,8 +299,26 @@ left: 50%;
 .about_banner  .banner_heading {
   font-size: 65px;
 }
-
+.max_Width{
+  max-width: 80%;
+}
 /* responsive css started */
+@media screen and (max-width:1530px) {
+  .min_height {
+    min-height: calc(100vh - 60px);
+}
+h1 span.banner_heading_medium {
+  font-size: 40px;
+}
+.banner_heading {
+  font-size: 75px;
+  line-height: 6rem !important;
+}
+h2 {
+  font-size: 40px;
+  line-height: 50px;
+}
+}
 @media screen and (max-width:1366px) {
   .banner_heading {
     font-size: 65px;
@@ -319,6 +335,25 @@ h1 span.banner_heading_medium {
   min-width: 175px;
   font-size: 18px;
   min-height: 49px;
+}
+.max_Width{
+  max-width: 90%;
+}
+
+.cybersecurity_wrapper h2 {
+  max-width: 108%;
+}
+
+}
+@media screen and (max-width:1290px) {
+  .min_height {
+    min-height: calc(100vh - 100px);
+}
+.column_hover {
+  padding: 15px;
+}
+.font_14{
+  font-size: 14px !important;
 }
 }
 @media screen and (max-width:1024px) {

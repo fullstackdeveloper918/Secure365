@@ -87,7 +87,7 @@ export default async function page() {
       </section>
 
       {/* logos slider */}
-      <section className="logo_section lg:py-20 py-10 ">
+      <section className="logo_section lg:py-10 py-10 ">
         <div className="container">
           <div className="flex gap-5 justify-between items-center">
             {data?.logo_images &&
@@ -108,7 +108,7 @@ export default async function page() {
       </section>
 
       {/* <div className="max-w-7xl mx-auto py-16"> */}
-      <section className="make_us_different md:py-0 md:pb-20 pb-10 ">
+      <section className="make_us_different md:py-10 md:pb-10 pb-10 ">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 ">
             <Text tag="h2" className="heading_h2 capitalize ">
@@ -122,7 +122,7 @@ export default async function page() {
             </Text>
           </div>
 
-          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-10">
+          <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 pt-10">
             {data?.choose_real_world &&
               data?.choose_real_world.map((item, index) => (
                 <React.Fragment key={index}>
@@ -144,7 +144,7 @@ export default async function page() {
 
                       <Text
                         tag="p"
-                        className="text-center text-md text-primary text-[#4F4F4F]"
+                        className="text-center text-md text-primary text-[#4F4F4F] font_14"
                       >
                         {item?.world_experience_paragraph}
                       </Text>
@@ -159,7 +159,7 @@ export default async function page() {
       {/* World Class Protection */}
       <section className="py-5 md:pb-20  md:pt-12 pb-0 protection_section  bg-[#011024] text-white">
         <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 p-3 md:pb-0 gap-7 ">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 2xl:pb-0 p-3 md:pb-0 gap-7 ">
             <div className="left-side">
               <Text tag="h2" className="capitalize">
                 {data?.world_class_protection_heading}
@@ -178,7 +178,7 @@ export default async function page() {
                         viewport={{ once: true }}
                         transition={{ duration: index + 1 * 0.3 }}
                       >
-                        <div className="max-w-[80%] ">
+                        <div className="max_Width ">
                           <Text
                             tag="h3"
                             className="relative border_blue_bottom"
@@ -233,8 +233,9 @@ export default async function page() {
                         >
                           <ImageCard
                             src={item?.website_protect_section_image_experience}
-                            width={300}
-                            height={300}
+                            width={400}
+                            height={420}
+                            className="rounded-[10px]"
                             alt="kuch b"
                           />
                         </motion.div>
@@ -253,8 +254,9 @@ export default async function page() {
                   src={
                     data?.website_protect_section_image_experience_second_url
                   }
-                  width={300}
-                  height={300}
+                  width={360}
+                  height={450}
+                   className="rounded-[10px]"
                   alt="kuch b"
                 />
               </motion.div>
