@@ -381,6 +381,33 @@ export default async function page() {
           </div>
         </div>
       </section> */}
+
+
+{/* banner section new  */}
+<section className="bannerNew bg-black relative overflow-hidden">
+  <div className="absolute  top-20 h-full w-full">
+  <Image src="/Images/3d.png" alt="wave" layout="fill" objectFit="cover" className="absolute img_drop " />
+  </div>
+ 
+ <div className="container relative z-10">
+<div>
+<h1 className="text-white"><span>Expert Business</span> IT Services. <span className="text_blue font-medium block textSpan">All in One Place</span></h1>
+  <p className="text-white mt-10">From cybersecurity to cloud solutions, we’ve got your business covered securely and efficiently.
+  </p>
+</div>
+ </div>
+</section>
+{/* banner section ended*/}
+
+{/* intro section strated */}
+<section className="intro py-20"> 
+  <div className="container">
+    {/* <h2>Introduction:</h2> */}
+  </div>
+</section>
+{/* intro section ended */}
+
+
     </main>
   );
 }

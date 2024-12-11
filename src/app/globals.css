@@ -303,14 +303,14 @@ animation: drift 15s 2s linear infinite both;
   animation: rotateGlobe 10s linear infinite;
   transform-style: preserve-3d;
 }
-@keyframes rotateGlobe {
+/* @keyframes rotateGlobe {
   0% {
     transform: rotateY(0deg);
   }
   100% {
     transform: rotateY(360deg);
   }
-}
+} */
 /* animation */
 @keyframes drift {
 	from {
@@ -320,13 +320,33 @@ animation: drift 15s 2s linear infinite both;
 		transform: translateX(1250px);
 	}
 }
+.bannerNew h1{
+  font-size: 70px;
+  line-height: normal;
+}
+/* .bannerNew h1{
+color: #52c5ff;
+} */
+.bannerNew p{
+  font-size: 35px;
+  max-width: 48%;
+}
 
 
+.bannerNew{
+  padding: 100px 0;
+  min-height: 80vh;
+  align-items: center;
+  display: flex;
+}
 
-
-
-
-
+.img_drop{
+  opacity: 0.1;
+}
+.textSpan{
+font-size: 120px;
+line-height: normal;
+}
 @media screen and (max-width: 1530px) {
   .min_height {
     min-height: calc(100vh - 60px);
