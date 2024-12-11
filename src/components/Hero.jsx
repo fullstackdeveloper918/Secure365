@@ -61,9 +61,9 @@ const Hero = () => {
   return (
     <>
    
-      <Image src="/Images/homepage_banner.png" className='absolute' layout='fill' alt='background image' />
-      <div className='relative container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8 pt-24 sm:pt-24 pb-0 min_height'>
-        <div className='flex flex-col gap-y-4 justify-center items-center text-center sm:items-start sm:text-start pb-10'>
+      <Image src="/Images/homebaner.png" className='absolute' layout='fill' alt='background image' objectFit='cover' />
+      <div className='relative container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8 pt-24 sm:pt-24 pb-0 min_height' >
+        <div className='flex flex-col gap-y-4 justify-center  md:text-left items-baseline  pb-10'>
           <motion.h1
            variants={FadeUp(0.6)}
            initial="initial"
@@ -77,18 +77,18 @@ const Hero = () => {
            variants={FadeUp(0.8)}
            initial="initial"
            animate="animate"
-           className='max-w-md sm:max-w-[39rem] leading-normal text-muted-foreground text-sm sm:text-xl text-white sm:leading-8'>
+           className='max-w-md sm:max-w-[39rem] maxWidth leading-normal text-muted-foreground text-sm sm:text-xl text-white sm:leading-8 font-Axiforma'>
             {data?.pages?.banner_sub_headline}
           </motion.p>
           <motion.div
            variants={FadeUp(1)}
            initial="initial"
            animate="animate"
-           className='flex flex-wrap items-center text-white gap-4 mt-5'>
-            <a href='/products' className='btn_one global_btn capitalize'>
+           className='flex flex-wrap   text-white gap-4 mt-5'>
+            <a href='/products' className='btn_one global_btn capitalize font-Axiforma'>
               {data?.pages?.get_started}
             </a>
-            <Link href='/dashboard/stores' className='global_btn btn_two capitalize'>
+            <Link href='/dashboard/stores' className='global_btn btn_two capitalize font-Axiforma'>
               {data?.pages?.book_demo}
             </Link>
           </motion.div>

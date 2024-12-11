@@ -285,7 +285,7 @@ export default async function page() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <Text tag="h2" className="my-2 text-black capitalize">
+                <Text tag="h2" className="my-2 text-black capitalize font-Axiforma">
                   {data?.website_protect_heading_experience_section}
                 </Text>
               </motion.div>
@@ -295,7 +295,7 @@ export default async function page() {
                 whileInView={"animate"}
                 viewport={{ once: true }}
               >
-                <Text tag="p" className="text-[#434242] text-lg my-5">
+                <Text tag="p" className="text-[#434242] text-lg my-5 font-Axiforma">
                   {data?.website_protect_paragraph_experience_section}
                 </Text>
               </motion.div>
@@ -363,7 +363,7 @@ export default async function page() {
 
       <Categories data={data} />
 
-      <section className="key_services">
+      {/* <section className="key_services">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4">
             <Text tag="h2" className="text-4xl">
@@ -380,7 +380,7 @@ export default async function page() {
             <RecentWork />
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

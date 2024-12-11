@@ -61,7 +61,7 @@ const Footer = () => {
                   alt="Secure Logo"
                 />
               </Link>
-              <Text tag="p" className="max-w-[80%]">
+              <Text tag="p" className="max-w-[80%] font-Axiforma">
                 Clarity gives you the blocks and components you need to create a
                 truly professional website.
               </Text>
@@ -76,7 +76,7 @@ const Footer = () => {
                     alt="facebook"
                   />
                 </Text>
-                <Text tag="li" className="social_list">
+                <Text tag="li" className="social_list font-Axiforma">
                   {" "}
                   <ImageCard
                     src="/svg/insta.svg"
@@ -86,7 +86,7 @@ const Footer = () => {
                     alt="facebook"
                   />
                 </Text>
-                <Text tag="li" className="social_list">
+                <Text tag="li" className="social_list font-Axiforma">
                   {" "}
                   <ImageCard
                     src="/svg/logo-twitter 2.svg"
@@ -115,7 +115,7 @@ const Footer = () => {
               <div className="maxWidthGiven">
                 <Text
                   tag="h4"
-                  className="md:text-xl text-md font-semibold text-white uppercase"
+                  className="md:text-xl text-md font-semibold text-white uppercase font-Axiforma"
                 >
                   {item?.heading}
                 </Text>
@@ -123,7 +123,7 @@ const Footer = () => {
                   {
                     item?.Links?.map((link) => (
                       <React.Fragment key={link?.id}>
-                    <Text tag="li" className="md:mb-4 md:text-md mb-2 text-sm">
+                    <Text tag="li" className="md:mb-4 md:text-md mb-2 text-sm font-Axiforma">
                        <Link href={link?.href}>
                       {link?.text}
                   </Link>

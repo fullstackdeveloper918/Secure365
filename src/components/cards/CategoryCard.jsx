@@ -26,10 +26,10 @@ const CategoryCard= async ({ category }) => {
           />
         </CardHeader>
         <CardContent className='space-y-1.5'>
-          <CardTitle className='capitalize text-emerald-600 group-hover:text-white'>
+          <CardTitle className='capitalize text-emerald-600 group-hover:text-white font-Axiforma'>
         
-            <h2 className='text-[#020842] text-lg'>edfhbj</h2>
-            <span className='text-[#020842] text-sm uppercase '>ABCD</span>
+            <h2 className='text-[#020842] text-lg font-Axiforma'>edfhbj</h2>
+            <span className='text-[#020842] text-sm uppercase font-Axiforma'>ABCD</span>
           </CardTitle>
           <CardDescription className='group-hover:text-white'>
            {category.products}
