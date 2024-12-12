@@ -404,7 +404,7 @@ export default async function page() {
 {/* banner section ended*/}
 
 {/* intro section strated */}
-<section className="intro py-20 text-center"> 
+<section className="intro py-16 text-center"> 
   <div className="container">
     <h2>Introduction:</h2>
     <p className="max-w-[70%] text-xl my-8 mx-auto">
