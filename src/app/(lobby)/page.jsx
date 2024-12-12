@@ -391,7 +391,7 @@ export default async function page() {
   <div className="absolute  top-20 h-full w-full">
   <Image src="/Images/3d.png" alt="wave" layout="fill" objectFit="cover" className="absolute img_drop " />
   </div>
- 
+ <div className="grid lg:grid-cols-2 grid-cols-1">
  <div className="container relative z-10">
 <div>
 <h1 className="text-white"><span>Expert Business</span> IT Services. <span className="text_blue font-medium block textSpan">All in One Place</span></h1>
@@ -399,13 +399,20 @@ export default async function page() {
   </p>
 </div>
  </div>
+ <div className="text-center">
+  <Image src="/Images/Globe.png" alt="globe" width={650} height={650} objectFit="cover" className="mx-auto" />
+ </div>
+ </div>
 </section>
 {/* banner section ended*/}
 
 {/* intro section strated */}
-<section className="intro py-20"> 
+<section className="intro py-20 text-center"> 
   <div className="container">
-    {/* <h2>Introduction:</h2> */}
+    <h2>Introduction:</h2>
+    <p className="max-w-[70%] text-xl my-8 mx-auto">
+    Welcome to Secure365, where we take the complexity out of managing your business’s technology needs. We provide a full spectrum of IT solutions designed to empower your business with enhanced security, streamlined processes, and a support system that’s second to none. Whether you’re a startup, a growing enterprise, or a seasoned business, Secure365 is your trusted partner for everything IT—so you can focus on what really matters: growing your business.
+    </p>
   </div>
 </section>
 {/* intro section ended */}
