@@ -1,12 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import { Suspense } from "react";
 import React from "react";
-
-
-
 import CategoryCard from "@/components/cards/CategoryCard";
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 import Text from "./Text";
+
 
 const categories = [
   {

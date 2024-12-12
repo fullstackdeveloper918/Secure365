@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { MotionWrapper } from "@/components/MotionWrapper";
 import { FadeUp } from "@/lib/motion";
 
+
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
 });
