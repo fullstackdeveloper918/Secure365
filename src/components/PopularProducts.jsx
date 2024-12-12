@@ -1,5 +1,6 @@
 import ProductCard from '@/components/cards/ProductCard'
 import React from 'react'
+// import ScrollSection from './ScrollSection'
 
 
 const products = [
@@ -15,6 +16,8 @@ const PopularProducts = async ({data}) => {
 
   return (
     <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3'>
+      {/* <ScrollSection> */}
+        
       {data && data.map((product,index) => (
         <React.Fragment  key={index}>
         <ProductCard
@@ -22,6 +25,7 @@ const PopularProducts = async ({data}) => {
          />
          </React.Fragment>
       ))}
+      {/* </ScrollSection> */}
     </div>
   )
 }

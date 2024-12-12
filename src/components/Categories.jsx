@@ -60,6 +60,8 @@ const Categories = async ({data}) => {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      
+
         {data?.skilled_expert_data && data?.skilled_expert_data.map((category, index) => (
           <Suspense key={category?.id}  fallback={<CategoryCardSkeleton />}>
             <React.Fragment >
@@ -67,6 +69,7 @@ const Categories = async ({data}) => {
             </React.Fragment>
           </Suspense>
         ))}
+     
       </div>
     </section>
   );

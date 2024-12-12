@@ -57,8 +57,8 @@ const Hero = () => {
   return (
     <>
    
-      <Image src="/Images/homebaner.png" className='absolute' layout='fill' alt='background image' objectFit='cover' />
-      <div className='relative container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8 pt-24 sm:pt-24 pb-0 min_height' >
+      {/* <Image src="" className='absolute bg-no-repeat' layout='fill' alt='background image' objectFit='cover' /> */}
+      <div className='relative herobanner container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8 pt-24 sm:pt-24 pb-0 min_height' >
         <div className='flex flex-col gap-y-4 justify-center  md:text-left items-baseline  pb-10'>
           <motion.h1
            variants={FadeUp(0.6)}
@@ -104,10 +104,6 @@ const Hero = () => {
            />
         </div>
       </div>
-
-
-
-
            </>
   );
 };

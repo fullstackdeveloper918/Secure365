@@ -14,7 +14,7 @@ const CategoryCard= async ({ category }) => {
 
 
   return (
-     <ScrollSection>
+    
       <Card className='relative h-full w-full overflow-hidden rounded-lg bg-transparent transition-colors group bg-[#E3F0FF] text-center'>
         <CardHeader>
           <ImageCard
@@ -37,7 +37,7 @@ const CategoryCard= async ({ category }) => {
           </CardDescription>
         </CardContent>
       </Card>
-      </ScrollSection>
+      
   )
 }
 
