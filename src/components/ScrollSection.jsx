@@ -4,7 +4,7 @@ import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
 
 
 
-const ScrollSection = () => {
+const ScrollSection = ({children}) => {
     const sectionRef = useRef(null)
     const triggerRef = useRef(null)
  
@@ -38,7 +38,8 @@ const ScrollSection = () => {
     <section className='scroll-section-outer'>
         <div ref={triggerRef}>
             <div ref={sectionRef} className='scroll-section-inner'>
-                <div className='scroll-section text-black'>
+                {children}
+                {/* <div className='scroll-section text-black'>
                    <h3>Section 1</h3>
                 </div>
                 <div className='scroll-section'>
@@ -49,7 +50,7 @@ const ScrollSection = () => {
                 </div>
                 <div className='scroll-section'>
                    <h3>Section 4</h3>
-                </div>
+                </div> */}
             </div>
         </div>
     </section>

@@ -7,13 +7,14 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import ImageCard from './ImageCard'
+import ScrollSection from '../ScrollSection'
 
 
 const CategoryCard= async ({ category }) => {
 
 
   return (
-    // <Link href={`/products?category=${category.slug}`}>
+     <ScrollSection>
       <Card className='relative h-full w-full overflow-hidden rounded-lg bg-transparent transition-colors group bg-[#E3F0FF] text-center'>
         <CardHeader>
           <ImageCard
@@ -36,7 +37,7 @@ const CategoryCard= async ({ category }) => {
           </CardDescription>
         </CardContent>
       </Card>
-    // </Link>
+      </ScrollSection>
   )
 }
 
