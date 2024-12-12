@@ -52,11 +52,11 @@ const Categories = async ({data}) => {
     <section
       id="categories"
       aria-labelledby="categories-heading"
-      className="space-y-8 px-4 sm:px-6 lg:px-8 py-8 md:pt-10 lg:pt-24 sm:pb-28 container"
+      className="space-y-8 md:pb-20 md:py-10 container"
     >
       <div className="flex items-end justify-center">
         <div className="flex flex-col items-center justify-center gap-4">
-          <Text tag="h2" className=" text-center block text-center">
+          <Text tag="h2" className=" text-center block text-cente font-Axiforma">
           {data?.top_skilled_experts_heading}
           </Text>
         </div>

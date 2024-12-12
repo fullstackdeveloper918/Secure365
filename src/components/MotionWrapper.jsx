@@ -74,7 +74,7 @@ export const MotionHead2= ({ children, delay = 0 }) => {
       variants={FadeUp(delay)} // Pass the delay here
       initial="initial"
       animate="animate"
-      className="banner_heading"
+      className="banner_heading font-Axiforma" 
     >
       {children} {/* Render the children passed to this component */}
     </motion.h2>
@@ -88,7 +88,7 @@ export const MotionDiv= ({ children, delay = 0 }) => {
       variants={FadeUp(delay)} // Pass the delay here
       initial="initial"
       animate="animate"
-      className="banner_heading"
+      className="banner_heading font-Axiforma"
     >
       {children} {/* Render the children passed to this component */}
     </motion.div>
