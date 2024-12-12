@@ -7,6 +7,7 @@ import ProductCardSkeleton from "@/components/skeletons/ProductCardSkeleton";
 import { motion } from "framer-motion";
 import { MotionWrapper } from "@/components/MotionWrapper";
 import { FadeUp } from "@/lib/motion";
+import ScrollSection from "@/components/ScrollSection";
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
@@ -313,6 +314,8 @@ export default async function page() {
           </div>
         </div>
       </section>
+
+      <ScrollSection />
 
       {/* Ensure Your Website */}
       <section className="get_started_wrapper my-5 bg-black text-white lg:py-16 md:py-12 py-5">
