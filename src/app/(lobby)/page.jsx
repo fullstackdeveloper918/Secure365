@@ -75,12 +75,7 @@ export default async function page() {
   return (
     <main>
       <section className="relative overlay banner_robot bg-black">
-          {/* <Image
-            src="/Images/homepage_banner.png"
-            className="absolute"
-            layout="fill"
-            alt="background image"
-          /> */}
+         
         <Suspense fallback={<ProductCardSkeleton />}>
           <Hero />
         </Suspense>
@@ -107,18 +102,6 @@ export default async function page() {
           </div>
         </div>
       </section>
-
-      {/* intro section strated */}
-{/* <section className="intro py-16 text-center"> 
-  <div className="container">
-    <h2>Introduction:</h2>
-    <p className="max-w-[70%] text-xl my-8 mx-auto">
-    Welcome to Secure365, where we take the complexity out of managing your business’s technology needs. We provide a full spectrum of IT solutions designed to empower your business with enhanced security, streamlined processes, and a support system that’s second to none. Whether you’re a startup, a growing enterprise, or a seasoned business, Secure365 is your trusted partner for everything IT—so you can focus on what really matters: growing your business.
-    </p>
-  </div>
-</section> */}
-{/* intro section ended */}
-
 
       {/* <div className="max-w-7xl mx-auto py-16"> */}
       <section className="make_us_different 2xl:pb-20  pb-12">
@@ -377,6 +360,8 @@ export default async function page() {
       <Products data={data?.key_services_data} />
 
       <Categories data={data} />
+
+
 
     </main>
   );
