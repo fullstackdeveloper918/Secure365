@@ -373,27 +373,10 @@ export default async function page() {
         </div>
       </section>
 
-
-      {/* <ScrollSection /> */}
-
-    
-
       {/* <Products /> */}
       <Products data={data?.key_services_data} />
 
       <Categories data={data} />
-
- 
-
-      <div className="text-center">
-  <Image src="/Images/Globe.png" alt="globe" width={650} height={650} objectFit="cover" className="mx-auto" />
- </div>
-
-
-
-
-
-
 
     </main>
   );
