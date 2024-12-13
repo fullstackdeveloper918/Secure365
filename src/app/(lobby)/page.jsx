@@ -7,6 +7,7 @@ import ProductCardSkeleton from "@/components/skeletons/ProductCardSkeleton";
 import { motion } from "framer-motion";
 import { MotionWrapper } from "@/components/MotionWrapper";
 import { FadeUp } from "@/lib/motion";
+// import ScrollSection from "@/components/ScrollSection";
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
@@ -73,20 +74,21 @@ export default async function page() {
 
   return (
     <main>
-      <section className="relative overlay banner_robot">
-        <Image
-          src="/Images/homepage_banner.png"
-          className="absolute"
-          layout="fill"
-          alt="background image"
-        />
+      <section className="relative overlay banner_robot bg-black">
+          {/* <Image
+            src="/Images/homepage_banner.png"
+            className="absolute"
+            layout="fill"
+            alt="background image"
+          /> */}
         <Suspense fallback={<ProductCardSkeleton />}>
           <Hero />
         </Suspense>
       </section>
 
+      
       {/* logos slider */}
-      <section className="logo_section lg:py-10 py-10 ">
+      <section className="logo_section 2xl:py-16 md:py-12 ">
         <div className="container">
           <div className="flex gap-5 justify-between items-center">
             {data?.logo_images &&
@@ -106,10 +108,22 @@ export default async function page() {
         </div>
       </section>
 
+      {/* intro section strated */}
+{/* <section className="intro py-16 text-center"> 
+  <div className="container">
+    <h2>Introduction:</h2>
+    <p className="max-w-[70%] text-xl my-8 mx-auto">
+    Welcome to Secure365, where we take the complexity out of managing your business’s technology needs. We provide a full spectrum of IT solutions designed to empower your business with enhanced security, streamlined processes, and a support system that’s second to none. Whether you’re a startup, a growing enterprise, or a seasoned business, Secure365 is your trusted partner for everything IT—so you can focus on what really matters: growing your business.
+    </p>
+  </div>
+</section> */}
+{/* intro section ended */}
+
+
       {/* <div className="max-w-7xl mx-auto py-16"> */}
-      <section className="make_us_different md:py-10 md:pb-10 pb-10 ">
+      <section className="make_us_different 2xl:pb-20  pb-12">
         <div className="container">
-          <div className="flex flex-col items-center justify-between gap-4 ">
+          <div className="flex flex-col items-center justify-between gap-2 ">
             <Text tag="h2" className="heading_h2 capitalize ">
               {data?.makes_us_diffrent_heading}
               <span className="capitalize font-semibold m-2">
@@ -121,22 +135,24 @@ export default async function page() {
             </Text>
           </div>
 
-          <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6 pt-10">
+          <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
             {data?.choose_real_world &&
               data?.choose_real_world.map((item, index) => (
                 <React.Fragment key={index}>
                   <Suspense fallback={<CategoryCardSkeleton />}>
                     <div className="text-center column_hover">
-                      <ImageCard
+                     <div className="cardImage">
+                     <ImageCard
                         src={item?.world_icon_url}
                         width={40}
                         height={40}
                         alt="avatar image"
-                        className="mx-auto mb-3"
+                        className="mx-auto"
                       />
+                     </div>
                       <Text
                         tag="h3"
-                        className="md:text-xl text-xl mb-2 font-medium text-center "
+                        className="md:text-xl text-xl font-medium text-center "
                       >
                         {item?.world_heading}
                       </Text>
@@ -156,7 +172,7 @@ export default async function page() {
       </section>
 
       {/* World Class Protection */}
-      <section className="py-5 md:pb-20  md:pt-12 pb-0 protection_section  bg-[#011024] text-white">
+      <section className="2xl:py-18 py-14 protection_section  bg-[#011024] text-white">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 2xl:pb-0 p-3 md:pb-0 gap-7 ">
             <div className="left-side">
@@ -319,13 +335,13 @@ export default async function page() {
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3  gap-7 items-center">
             <div className="left-side">
               <div className="w-full ">
-                <Text tag="h2" className="md:mb-8 mb-4">
+                <Text tag="h2" className="md:mb-8 mb-4 font-Axiforma">
                   Ensure your website's protection with cutting-edge{" "}
                   <span className="text_blue">cybersecurity</span>
                 </Text>
                 <Text
                   tag="p"
-                  className="text-white md:text-xl text-md md:my-5 my-2"
+                  className="text-white md:text-lg text-md md:my-5 my-2 font-Axiforma md:max-w-[80%]"
                 >
                   At Secure365, we understand that navigating the digital world
                   can be overwhelming. That’s why we’ve designed our services to
@@ -333,12 +349,12 @@ export default async function page() {
                 </Text>
                 <Text
                   tag="p"
-                  className="text-white md:text-xl text-lg my-2 mb-5"
+                  className="text-white md:text-lg text-lg my-2 mb-5  font-Axiforma"
                 >
                   That’s why we’ve designed our services to be a one-stop
                   solution, covering
                 </Text>
-                <Button className="btn_one global_btn capitalize mt-5">
+                <Button className="btn_one global_btn capitalize mt-5  font-Axiforma">
                   Get started
                 </Button>
               </div>
@@ -357,54 +373,26 @@ export default async function page() {
         </div>
       </section>
 
+
+      {/* <ScrollSection /> */}
+
+    
+
       {/* <Products /> */}
       <Products data={data?.key_services_data} />
 
       <Categories data={data} />
 
-      {/* <section className="key_services">
-        <div className="container">
-          <div className="flex flex-col items-center justify-between gap-4">
-            <Text tag="h2" className="text-4xl">
-              Our Recent Best Works
-            </Text>
-            <Text tag="p" className="max-w-2xl">
-              Our recent projects highlight our expertise in delivering tailored
-              solutions that meet the unique needs and objectives of our
-              clients, custom software.
-            </Text>
-          </div>
-
-          <div className="w-full flex justify-between items-center gap-6">
-            <RecentWork />
-          </div>
-        </div>
-      </section> */}
-
-
-{/* banner section new  */}
-<section className="bannerNew bg-black relative overflow-hidden">
-  <div className="absolute  top-20 h-full w-full">
-  <Image src="/Images/3d.png" alt="wave" layout="fill" objectFit="cover" className="absolute img_drop " />
-  </div>
  
- <div className="container relative z-10">
-<div>
-<h1 className="text-white"><span>Expert Business</span> IT Services. <span className="text_blue font-medium block textSpan">All in One Place</span></h1>
-  <p className="text-white mt-10">From cybersecurity to cloud solutions, we’ve got your business covered securely and efficiently.
-  </p>
-</div>
- </div>
-</section>
-{/* banner section ended*/}
 
-{/* intro section strated */}
-<section className="intro py-20"> 
-  <div className="container">
-    {/* <h2>Introduction:</h2> */}
-  </div>
-</section>
-{/* intro section ended */}
+      <div className="text-center">
+  <Image src="/Images/Globe.png" alt="globe" width={650} height={650} objectFit="cover" className="mx-auto" />
+ </div>
+
+
+
+
+
 
 
     </main>

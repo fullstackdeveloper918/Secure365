@@ -5,6 +5,9 @@ import Link from "next/link";
 
 const ProductCard = ({ product }) => {
   return (
+    <div className="scroll-section">
+
+  
     <div className="group/card  border hover:shadow-2xl duration-300 transition-all rounded-2xl space-y-4 h-full relative">
       {/* <Link
         href={`/${product.storeId}/${product.slug}?productId=${product.id}`}
@@ -33,6 +36,7 @@ const ProductCard = ({ product }) => {
           />
         </button>
       </div>
+    </div>
     </div>
   );
 };

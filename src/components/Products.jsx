@@ -31,6 +31,7 @@ const Products = async ({data}) => {
           </Text>
         </div>
       </div>
+      
       <Suspense fallback={<PopularProductsSkeleton />}>
         <PopularProducts data={data} />
       </Suspense>
