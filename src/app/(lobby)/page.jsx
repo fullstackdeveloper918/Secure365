@@ -2,7 +2,6 @@
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import ProductCardSkeleton from "@/components/skeletons/ProductCardSkeleton";
 import CategoryCardSkeleton from '@/components/skeletons/CategoryCardSkeleton'
 import ImageCard from "../../components/cards/ImageCard";
 
@@ -19,11 +18,6 @@ const Categories = dynamic(() => import("../../components/Categories"), {
   loading: () => <p>Loading...</p>,
 });
 
-// const ImageCard = dynamic(() => import("../../components/cards/ImageCard"), {
-//   loading: () => <p>Loading...</p>,
-// });
-
-const RecentWork = dynamic(() => import("../../components/RecentWork"));
 
 const Text = dynamic(() => import("../../components/Text"), {
   loading: () => <p>Loading Wait...</p>,
@@ -67,9 +61,9 @@ export default async function page() {
     <main>
       <section className="relative overlay banner_robot bg-black">
          
-        <Suspense fallback={<ProductCardSkeleton />}>
+      
           <Hero />
-        </Suspense>
+    
       </section>
 
       
