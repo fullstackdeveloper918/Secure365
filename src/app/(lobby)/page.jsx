@@ -56,6 +56,8 @@ export default async function page() {
   );
   const data = await response.json();
 
+  console.log(data, 'datahome')
+
 
   return (
     <main>
@@ -271,26 +273,23 @@ export default async function page() {
             <div className="left-side">
               <div className="w-full ">
                 <Text tag="h2" className="md:mb-8 mb-4 font-Axiforma">
-                  Ensure your website's protection with cutting-edge{" "}
+                  {data?.website_experience_heading_second}
                   <span className="text_blue">cybersecurity</span>
                 </Text>
                 <Text
                   tag="p"
                   className="text-white md:text-lg text-md md:my-5 my-2 font-Axiforma md:max-w-[80%]"
                 >
-                  At Secure365, we understand that navigating the digital world
-                  can be overwhelming. That’s why we’ve designed our services to
-                  be a one-stop solution, covering.
+                  {data?.website_experience_paragraph_second}
                 </Text>
                 <Text
                   tag="p"
                   className="text-white md:text-lg text-lg my-2 mb-5  font-Axiforma"
                 >
-                  That’s why we’ve designed our services to be a one-stop
-                  solution, covering
+                
                 </Text>
                 <Button className="btn_one global_btn capitalize mt-5  font-Axiforma">
-                  Get started
+                 {data?.website_experience_button_second}
                 </Button>
               </div>
             </div>
@@ -307,19 +306,15 @@ export default async function page() {
           </div>
         </div>
       </section>
-
-      {/* <Products /> */}
       <Products data={data?.key_services_data} />
-
       <Categories data={data} />
-
       <section>
         <div>
-
         </div>
       </section>
 
-
+      
+      
 
     </main>
   );
