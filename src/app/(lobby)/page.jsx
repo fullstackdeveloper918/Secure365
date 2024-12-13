@@ -60,10 +60,7 @@ export default async function page() {
   return (
     <main>
       <section className="relative overlay banner_robot bg-black">
-         
-      
           <Hero />
-    
       </section>
 
       
@@ -74,7 +71,6 @@ export default async function page() {
             {data?.logo_images &&
               data?.logo_images.map((item, index) => (
                 <>
-                
                     <ImageCard
                       src={item}
                       alt="slider images"

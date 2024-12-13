@@ -1,12 +1,15 @@
 import ImageCard from "@/components/cards/ImageCard";
 import Text from "@/components/Text";
-import React from "react";
-import Image from 'next/image'
+import React, { Suspense } from "react";
+import Image from "next/image";
+import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 const page = async () => {
-
-  const response = await fetch('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about', {
-    cache: 'no-store'
-  });
+  const response = await fetch(
+    "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about",
+    {
+      cache: "no-store",
+    }
+  );
 
   const data = await response.json();
 
@@ -14,10 +17,11 @@ const page = async () => {
     <>
       <section className="relative overlay about_banner text-center">
         <ImageCard
-          src="/Images/about_banner.png"
+          src={data?.data?.image_url}
           className="absolute"
           layout="fill"
           alt=" about Background image"
+          objectFit="cover"
         />
         <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0 min_height">
           <Text
@@ -45,17 +49,14 @@ const page = async () => {
         </div>
       </section>
 
-
-
-      {/* ready to expert */}
-
       {/* our story section started */}
       <section className="story_section md:py-20 py-10 px-3 md:px-0">
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="leftWrapper ">
               <Text tag="h2" className="capitalize">
-                Our <b>story</b>
+                {data?.data?.our_story_heading}{" "}
+                <b>{data?.data?.our_story_heading_second}</b>
               </Text>
               <Text
                 tag="hr"
@@ -67,42 +68,72 @@ const page = async () => {
               >
                 {data?.data?.our_story_paragraph}
               </Text>
-              <Text tag="p" className="text-[#4F4F4F] md:text-lg text-md my-3">
-
-              </Text>
+              <Text
+                tag="p"
+                className="text-[#4F4F4F] md:text-lg text-md my-3"
+              ></Text>
             </div>
             <div className="RightWrapper md:text-end md:m-0 my-5">
               <ImageCard
                 alt="story image"
-                src="/Images/story_img.png"
+                src={data?.data?.image_url}
                 className="mx-auto"
                 width={600}
                 height={550}
               />
             </div>
           </div>
-          <Text tag="p" className="text-[#4F4F4F] md:text-lg text-md md:mt-8">
-            Jonathan’s journey was further strengthened when he partnered with
-            Chan Prayitno, a seasoned Network Administrator and cybersecurity
-            expert with years of experience defending against digital threats.
-            Together, they built Secure365 to go beyond traditional security
-            measures, integrating everything from proactive fraud detection and
-            IT management to post-incident support for those already impacted by
-            cybercrime.
-          </Text>
         </div>
       </section>
+
+      <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
+        {data?.data?.vision_data &&
+          data?.data?.vision_data.map((item, index) => (
+            <React.Fragment key={index}>
+              <Suspense fallback={<CategoryCardSkeleton />}>
+                <div className="text-center column_hover">
+                  <div className="cardImage">
+                    <ImageCard
+                      src={item?.our_vision_about_image}
+                      width={40}
+                      height={40}
+                      alt="avatar image"
+                      className="mx-auto"
+                    />
+                  </div>
+                  <Text
+                    tag="h3"
+                    className="md:text-xl text-xl font-medium text-center "
+                  >
+                    {item?.our_vision_about_heading}
+                  </Text>
+
+                  <Text
+                    tag="p"
+                    className="text-center text-md text-primary text-[#4F4F4F] font_14"
+                  >
+                    {item?.our_vision_about_paragraph}
+                  </Text>
+                </div>
+              </Suspense>
+            </React.Fragment>
+          ))}
+      </div>
 
       {/* why section started*/}
 
       <section className="why_choose py-10  bg-[#F6FCFE] ">
         <div className="container">
-          <h2 className="text-center">Why Choose <strong className="text_blue">Secure365?</strong></h2>
+          <h2 className="text-center capitalize">
+            {data?.data?.why_chooes_secure_about_heading}{" "}
+            <strong className="text_blue capitalize">
+              {data?.data?.why_chooes_secure_about_heading_second}
+            </strong>
+          </h2>
         </div>
       </section>
 
       {/* why section ended*/}
-
 
       <section className="coreValue md:pt-20 pb-10 px-3 md:px-0">
         <div className="container">
@@ -110,7 +141,7 @@ const page = async () => {
             <div className="RightWrapper md:text-end order_2">
               <ImageCard
                 alt="story image"
-                src="/Images/coreValue.png"
+                src={data?.data?.core_value_main_image}
                 // className="mx-auto"
                 width={600}
                 height={550}
@@ -119,97 +150,82 @@ const page = async () => {
 
             <div className="leftWrapper order_1">
               <Text tag="h2" className="capitalize">
-                Our <b>Core Values</b>
+                {data?.data?.core_value_main_heading}{" "}
+                <b>{data?.data?.core_value_main_heading_second}</b>
               </Text>
 
               <ul className="lg:my-12 mt-9">
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Customer-First Approach</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]">
-                      Our clients come first. We strive to understand their unique needs and exceed expectations in everything we do.
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Integrity & Transparency</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]">
-                      Our clients come first. We strive to understand their unique needs and exceed expectations in everything we do.
-                    </Text>
-                  </div>
-                </li>
-
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Innovation & Growth</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2 md:max-w-[90%] ">
-                      Our clients come first. We strive to understand their unique needs and exceed expectations in everything we do.
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Security as a Responsibility</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2 md:max-w-[90%] ">
-                      Our clients come first. We strive to understand their unique needs and exceed expectations in everything we do.
-                    </Text>
-                  </div>
-                </li>
+                {data?.data &&
+                  data?.data?.core_value_data_loop.map((item,index) => (
+                    <React.Fragment key={index}>
+                      <li className="flex space-x-2 items-start mb-3">
+                        <Image
+                          src="/Images/Approval.png"
+                          width={30}
+                          height={30}
+                          alt="approve image"
+                          className="approve_img"
+                        />
+                        <div>
+                          <Text
+                            tag="h3"
+                            className="font-semibold md:text-lg text-md "
+                          >
+                            {item?.core_value_heading}
+                          </Text>
+                          <Text
+                            tag="p"
+                            className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]"
+                          >
+                            {item?.core_value_paragraph}
+                          </Text>
+                        </div>
+                      </li>
+                    </React.Fragment>
+                  ))}
               </ul>
             </div>
 
             <div className="leftWrapper md:mt-20 mt-0">
               <Text tag="h2" className="capitalize">
-                Our <b>Services</b>
+                {data?.data?.our_services_left_heading_main}{" "}
+                <b>{data?.data?.our_services_left_heading_main_second}</b>
               </Text>
               <ul className="lg:my-12 mt-9">
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Cybersecurity Solutions</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]">
-                      Our clients come first. We strive to understand their unique needs and exceed expectations in everything we do.
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">IT Support & Managed Services</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]">
-                      Our clients come first. We strive to understand their unique needs and exceed expectations in everything we do.
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Cloud & Server Management</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]">
-                      Our clients come first. We strive to understand their unique needs and exceed expectations in everything we do.
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <Image src="/Images/Approval.png" width={30} height={30} alt="approve image" className="approve_img" />
-                  <div>
-                    <Text tag="h3" className="font-semibold md:text-lg text-md ">Cybersecurity Solutions</Text>
-                    <Text tag="p" className="text-[#4F4F4F] md:text-md  text-sm my-2 md:max-w-[90%] ">
-                      Our clients come first. We strive to understand their unique needs and exceed expectations in everything we do.
-                    </Text>
-                  </div>
-                </li>
+                {data?.data &&
+                  data?.data?.our_services_left_data.map((item,index) => (
+                    <React.Fragment key={index}>
+                      <li className="flex space-x-2 items-start mb-3">
+                        <Image
+                          src="/Images/Approval.png"
+                          width={30}
+                          height={30}
+                          alt="approve image"
+                          className="approve_img"
+                        />
+                        <div>
+                          <Text
+                            tag="h3"
+                            className="font-semibold md:text-lg text-md "
+                          >
+                           {item?.our_service_left_heading}
+                          </Text>
+                          <Text
+                            tag="p"
+                            className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]"
+                          >
+                            {item?.our_service_left_paragraph}
+                          </Text>
+                        </div>
+                      </li>
+                    </React.Fragment>
+                  ))}
               </ul>
             </div>
             <div className="RightWrapper md:text-end mt-20">
               <ImageCard
                 alt="story image"
-                src="/Images/service_Appproach.png"
+                src={data?.data?.our_service_left_image_urls}
                 className="mx-auto"
                 width={600}
                 height={550}
@@ -219,15 +235,22 @@ const page = async () => {
         </div>
       </section>
 
-
       <section className="ready_partner relative lg:py-20 py-10  text-center md:mt-20 mt-10">
-        <Image alt="expert image" className="absolute -z-10" layout="fill" src="/Images/ready_expert.png" />
+        <Image
+          alt="expert image"
+          className="absolute -z-10"
+          layout="fill"
+          src="/Images/ready_expert.png"
+        />
         <div className="container">
-          <h2 className="text-white lg:text-5xl  md:text-3xl  text-2xl">Ready to Partner with the <b>Experts?</b></h2>
-          <p className="text-white md:text-lg mt-5 text-md lg:max-w-[50%] md:max-w-[70%] mx-auto" >Contact us today to learn more about how Secure365 can help safeguard your business and support your success</p>
+          <h2 className="text-white lg:text-5xl  md:text-3xl  text-2xl">
+            {data?.data?.partner_with_expert_about_heading} <b>Experts?</b>
+          </h2>
+          <p className="text-white md:text-lg mt-5 text-md lg:max-w-[50%] md:max-w-[70%] mx-auto">
+            {data?.data?.partner_with_expert_about_paragraph}
+          </p>
         </div>
       </section>
-
     </>
   );
 };
