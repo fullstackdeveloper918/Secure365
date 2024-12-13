@@ -69,7 +69,6 @@ export default async function page() {
     }
   );
   const data = await response.json();
-
   console.log(data, "bete");
 
   return (
