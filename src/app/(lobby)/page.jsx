@@ -9,7 +9,6 @@ import { MotionWrapper } from "@/components/MotionWrapper";
 import { FadeUp } from "@/lib/motion";
 // import ScrollSection from "@/components/ScrollSection";
 
-
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
 });
@@ -174,7 +173,7 @@ export default async function page() {
       </section>
 
       {/* World Class Protection */}
-      <section className="2xl:py-18 py-14 protection_section  bg-[#011024] text-white">
+      <section className="2xl:py-14 py-14 protection_section  bg-[#011024] text-white">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 2xl:pb-0 p-3 md:pb-0 gap-7 ">
             <div className="left-side">
@@ -410,7 +409,7 @@ export default async function page() {
   <div className="absolute  top-20 h-full w-full">
   <Image src="/Images/3d.png" alt="wave" layout="fill" objectFit="cover" className="absolute img_drop " />
   </div>
- <div className="grid lg:grid-cols-2 grid-cols-1">
+ 
  <div className="container relative z-10">
 <div>
 <h1 className="text-white"><span>Expert Business</span> IT Services. <span className="text_blue font-medium block textSpan">All in One Place</span></h1>
