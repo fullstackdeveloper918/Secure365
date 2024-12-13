@@ -3,6 +3,9 @@ import Text from "@/components/Text";
 import React, { Suspense } from "react";
 import Image from "next/image";
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
+
+
+
 const page = async () => {
   const response = await fetch(
     "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about",
@@ -12,6 +15,8 @@ const page = async () => {
   );
 
   const data = await response.json();
+
+  console.log(data, 'data about')
 
   return (
     <>
