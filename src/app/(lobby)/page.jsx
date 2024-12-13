@@ -1,36 +1,27 @@
-"use client";
+
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import ProductCardSkeleton from "@/components/skeletons/ProductCardSkeleton";
-import { motion } from "framer-motion";
-import { MotionWrapper } from "@/components/MotionWrapper";
-import { FadeUp } from "@/lib/motion";
-// import ScrollSection from "@/components/ScrollSection";
+import CategoryCardSkeleton from '@/components/skeletons/CategoryCardSkeleton'
+import ImageCard from "../../components/cards/ImageCard";
+
+
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
 });
 
-const Hero = dynamic(() => import("../../components/Hero"), {
-  loading: () => <ProductCardSkeleton />,
-});
+const Hero = dynamic(() => import("../../components/Hero"),)
+
 
 const Categories = dynamic(() => import("../../components/Categories"), {
   loading: () => <p>Loading...</p>,
 });
 
-const CategoryCardSkeleton = dynamic(
-  () => import("../../components/skeletons/CategoryCardSkeleton"),
-  {
-    loading: () => <p>Loading...</p>,
-  }
-);
-
-const ImageCard = dynamic(() => import("../../components/cards/ImageCard"), {
-  loading: () => <p>Loading...</p>,
-});
+// const ImageCard = dynamic(() => import("../../components/cards/ImageCard"), {
+//   loading: () => <p>Loading...</p>,
+// });
 
 const RecentWork = dynamic(() => import("../../components/RecentWork"));
 
@@ -70,7 +61,7 @@ export default async function page() {
     }
   );
   const data = await response.json();
-  console.log(data, "bete");
+
 
   return (
     <main>
@@ -89,14 +80,14 @@ export default async function page() {
             {data?.logo_images &&
               data?.logo_images.map((item, index) => (
                 <>
-                  <MotionWrapper key={index} delay={index * 0.1}>
+                
                     <ImageCard
                       src={item}
                       alt="slider images"
                       width={150}
                       height={200}
                     />
-                  </MotionWrapper>
+        
                 </>
               ))}
           </div>
@@ -169,12 +160,7 @@ export default async function page() {
                 {data?.world_class_protection &&
                   data?.world_class_protection.map((protect, index) => (
                     <>
-                      <motion.div
-                       
-                        initial={{ opacity: 0, y: 100 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: index + 1 * 0.3 }}
+                      <div
                       >
                         <div className="max_Width ">
                           <Text
@@ -194,7 +180,7 @@ export default async function page() {
                             {protect?.expert_guidance_paragraph}
                           </Text>
                         </div>
-                      </motion.div>
+                      </div>
                     </>
                   ))}
               </div>
@@ -223,11 +209,7 @@ export default async function page() {
                   data?.website_protect_section_image_experience_url?.image_data?.map(
                     (item, index) => (
                       <>
-                        <motion.div
-                          initial={{ opacity: 0, x: -100 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: index + 1 * 0.5 }}
+                        <div
                         >
                           <ImageCard
                             src={item?.website_protect_section_image_experience}
@@ -236,16 +218,12 @@ export default async function page() {
                             className="rounded-[10px]"
                             alt="kuch b"
                           />
-                        </motion.div>
+                        </div>
                       </>
                     )
                   )}
               </div>
-              <motion.div
-                initial={{ opacity: 0, y: -100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+              <div
                 className="flex items-center"
               >
                 <ImageCard
@@ -257,14 +235,10 @@ export default async function page() {
                    className="rounded-[10px]"
                   alt="kuch b"
                 />
-              </motion.div>
+              </div>
 
               <div className="counter_box absolute ">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
+                <div
                 >
                   <div>
                     <h3 className="text-white text-3xl font-medium">30+</h3>
@@ -272,41 +246,29 @@ export default async function page() {
                       Years of Experience
                     </p>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
 
             <div className="right-side col-md-7 col-12">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+              <div
               >
                 <Text tag="h2" className="my-2 text-black capitalize font-Axiforma">
                   {data?.website_protect_heading_experience_section}
                 </Text>
-              </motion.div>
-              <motion.div
-                variants={FadeUp(0.4)}
-                initial="initial"
-                whileInView={"animate"}
-                viewport={{ once: true }}
+              </div>
+              <div
               >
                 <Text tag="p" className="text-[#434242] text-lg my-5 font-Axiforma">
                   {data?.website_protect_paragraph_experience_section}
                 </Text>
-              </motion.div>
-              <motion.div
-                variants={FadeUp(0.6)}
-                initial="initial"
-                whileInView={"animate"}
-                viewport={{ once: true }}
+              </div>
+              <div
               >
                 <Button className="btn_one global_btn capitalize mt-10">
                   {data?.website_protect_button_experience}
                 </Button>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -360,6 +322,12 @@ export default async function page() {
       <Products data={data?.key_services_data} />
 
       <Categories data={data} />
+
+      <section>
+        <div>
+
+        </div>
+      </section>
 
 
 
