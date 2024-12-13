@@ -70,7 +70,6 @@ export default async function page() {
     }
   );
   const data = await response.json();
-
   console.log(data, "bete");
 
   return (
@@ -374,58 +373,10 @@ export default async function page() {
         </div>
       </section>
 
-
-      {/* <ScrollSection /> */}
-
-    
-
       {/* <Products /> */}
       <Products data={data?.key_services_data} />
 
       <Categories data={data} />
-
-      {/* <section className="key_services">
-        <div className="container">
-          <div className="flex flex-col items-center justify-between gap-4">
-            <Text tag="h2" className="text-4xl">
-              Our Recent Best Works
-            </Text>
-            <Text tag="p" className="max-w-2xl">
-              Our recent projects highlight our expertise in delivering tailored
-              solutions that meet the unique needs and objectives of our
-              clients, custom software.
-            </Text>
-          </div>
-
-          <div className="w-full flex justify-between items-center gap-6">
-            <RecentWork />
-          </div>
-        </div>
-      </section> */}
-
-
-{/* banner section new  */}
-{/* <section className="bannerNew bg-black relative overflow-hidden">
-  <div className="absolute  top-20 h-full w-full">
-  <Image src="/Images/3d.png" alt="wave" layout="fill" objectFit="cover" className="absolute img_drop " />
-  </div>
- 
- <div className="container relative z-10">
-<div>
-<h1 className="text-white"><span>Expert Business</span> IT Services. <span className="text_blue font-medium block textSpan">All in One Place</span></h1>
-  <p className="text-white mt-10">From cybersecurity to cloud solutions, we’ve got your business covered securely and efficiently.
-  </p>
-</div>
- </div>
- <div className="text-center">
-  <Image src="/Images/Globe.png" alt="globe" width={650} height={650} objectFit="cover" className="mx-auto" />
- </div>
- </div>
-</section> */}
-{/* banner section ended*/}
-
-
-
 
     </main>
   );
