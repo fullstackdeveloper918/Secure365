@@ -2,8 +2,7 @@ import ImageCard from "@/components/cards/ImageCard";
 import Text from "@/components/Text";
 import React from "react";
 
-const page = async() => {
-
+const page = async () => {
   const response = await fetch(
     "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/choose",
     {
@@ -12,7 +11,7 @@ const page = async() => {
   );
 
   const data = await response.json();
-  console.log(data, 'choose')
+  console.log(data?.data, "pgaechoose");
 
   return (
     <>
@@ -53,7 +52,7 @@ const page = async() => {
           <div className="grid md:grid-cols-2 grid-cols-1 items-center">
             <div>
               <p className="text-[#4F4F4F] text-lg">
-                {console.log(data?.data, 'comment')}
+                {console.log(data?.data, "comment")}
               </p>
               <p className="text-[#4F4F4F] text-lg mt-5">
                 We believe that technology should be a catalyst for growth, not
@@ -80,10 +79,10 @@ const page = async() => {
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1  space-x-10">
             <div className="set_leftwrapper">
-              <h2>What Sets Us Apart </h2>
+              <h2>{data?.data?.why_choose_sets_us_main_heading}</h2>
               <div className="w-full h-[85%] relative">
                 <ImageCard
-                  src="/Images/set_Apart.png"
+                  src={data?.data?.why_choose_sets_us_apart_image_url}
                   alt="set apart"
                   className="absolute rounded-[20px]"
                   layout="fill"
@@ -93,102 +92,37 @@ const page = async() => {
             </div>
             <div className="set_rightwrapper">
               <p className="subheading_text text-semibold text-4xl">
-                Our approach is built on three core principles: Expertise,
-                Simplicity, and Commitment. Here’s what makes Secure365
-                different:
+                {data?.data?.why_choose_sets_us_apart_paragraph}
               </p>
               <ul className="lg:my-12 ">
-                <li className="flex space-x-2 items-start mb-3">
-                  <ImageCard
-                    src="/Images/Approval.png"
-                    width={30}
-                    height={30}
-                    alt="approve image"
-                    className="approve_img"
-                  />
-                  <div>
-                    <Text
-                      tag="h3"
-                      className="font-semibold md:text-lg text-md "
-                    >
-                       Decades of Real-World Experience
-                    </Text>
-                    <Text
-                      tag="p"
-                      className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7"
-                    >
-                      Secure365 was founded by Jonathan Brax, whose background
-                      in criminology and years of experience battling digital
-                      fraud bring a unique perspective to cybersecurity.
-                      Alongside a team of seasoned IT professionals, Jonathan
-                      built Secure365 to be more than just a service
-                      provider—it’s a response to the frustrations faced by
-                      businesses in navigating the complex world of cyber
-                      threats and IT management. With our expertise in
-                      technology and first-hand understanding of the challenges
-                      businesses face, we offer solutions that are practical,
-                      effective, and backed by real-world experience.
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <ImageCard
-                    src="/Images/Approval.png"
-                    width={30}
-                    height={30}
-                    alt="approve image"
-                    className="approve_img"
-                  />
-                  <div>
-                    <Text
-                      tag="h3"
-                      className="font-semibold md:text-lg text-md "
-                    >
-                      Customer-Centric Approach
-                    </Text>
-                    <Text
-                      tag="p"
-                      className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7"
-                    >
-                      Your success is our priority. We take the time to
-                      understand your business’s unique needs and tailor our
-                      services to support your goals. From small startups to
-                      established enterprises, we provide personalized solutions
-                      that fit your budget, scale with your growth, and adapt to
-                      your changing needs. With Secure365, you’re not just a
-                      client—you’re a partner
-                    </Text>
-                  </div>
-                </li>
-                <li className="flex space-x-2 items-start mb-3">
-                  <ImageCard
-                    src="/Images/Approval.png"
-                    width={30}
-                    height={30}
-                    alt="approve image"
-                    className="approve_img"
-                  />
-                  <div>
-                    <Text
-                      tag="h3"
-                      className="font-semibold md:text-lg text-md "
-                    >
-                      All-in-One IT Solutions
-                    </Text>
-                    <Text
-                      tag="p"
-                      className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7"
-                    >
-                      Your success is our priority. We take the time to
-                      understand your business’s unique needs and tailor our
-                      services to support your goals. From small startups to
-                      established enterprises, we provide personalized solutions
-                      that fit your budget, scale with your growth, and adapt to
-                      your changing needs. With Secure365, you’re not just a
-                      client—you’re a partner
-                    </Text>
-                  </div>
-                </li>
+                {data &&
+                  data?.data?.why_choose_sets_data.map((item, index) => (
+                    <React.Fragment key={index}>
+                      <li className="flex space-x-2 items-start mb-3">
+                        <ImageCard
+                          src="/Images/Approval.png"
+                          width={30}
+                          height={30}
+                          alt="approve image"
+                          className="approve_img"
+                        />
+                        <div>
+                          <Text
+                            tag="h3"
+                            className="font-semibold md:text-lg text-md "
+                          >
+                            {item?.why_choose_us_decades_world_heading}
+                          </Text>
+                          <Text
+                            tag="p"
+                            className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7"
+                          >
+                            {item?.why_choose_us_decades_world_paragraph}
+                          </Text>
+                        </div>
+                      </li>
+                    </React.Fragment>
+                  ))}
               </ul>
             </div>
 
@@ -278,7 +212,7 @@ const page = async() => {
 
       <section className="core_strenght bg-[#FBFBFB] lg:py-16 py-10  my-10">
         <div className="container">
-          <h2 className="text-center">Our Core Strengths</h2>
+          <h2 className="text-center">{data?.data?.why_choose_core_strength_main_heading}</h2>
 
           {/* add key value column from homepage */}
         </div>
@@ -290,7 +224,7 @@ const page = async() => {
           <div className="grid md:grid-cols-2 grid-cols-1 items-center space-x-10">
             <div className="w-full h-[100%] relative">
               <ImageCard
-                src="/Images/set_Apart.png"
+                src={data?.data?.why_choose_commitment_image_url}
                 alt="set apart"
                 className="absolute rounded-[20px]"
                 layout="fill"
@@ -298,20 +232,16 @@ const page = async() => {
               />
             </div>
             <div className="md:max-w-[75%]">
-              <h2 className="my-5">Our Commitment to You</h2>
+              <h2 className="my-5">{data?.data?.why_choose_commitment_heading}</h2>
               <p className="text-[#4F4F4F] text-lg">
-                We know that choosing an IT partner is a big decision, and we
-                don’t take that responsibility lightly. At Secure365, our
-                commitment goes beyond providing exceptional services—we’re
-                dedicated to building lasting partnerships that empower our
-                clients to succeed.{" "}
+                 {data?.data?.why_choose_commitment_paragraph}
               </p>
               <p className="text-[#4F4F4F] text-lg mt-5">
-                We promise to always put your needs first, communicate openly,
+                {/* We promise to always put your needs first, communicate openly,
                 and provide solutions that are not only secure and reliable but
                 also aligned with your business goals. Our aim is simple: to
                 take the hassle out of IT, so you can focus on what matters
-                most—growing your business
+                most—growing your business */}
               </p>
             </div>
           </div>
@@ -323,9 +253,9 @@ const page = async() => {
       <section className="testimonial_wrapper py-10 bg-[#FAFAFA]">
         <div className="container">
           <h6 className="text-[#282828] text-lg my-3 text-center">
-            20000+ Happy Landingfolio Users
+            {data?.data?.choose_our_client_user}
           </h6>
-          <h2 className="text-[#282828]  text-center">What Our Clients Say</h2>
+          <h2 className="text-[#282828]  text-center">{data?.data?.choose_our_client_heading}</h2>
 
           {/* add slider  */}
         </div>
