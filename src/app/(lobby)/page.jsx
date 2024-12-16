@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import CategoryCardSkeleton from '@/components/skeletons/CategoryCardSkeleton'
 import ImageCard from "../../components/cards/ImageCard";
-
+import Image from "next/image";
 
 
 const Products = dynamic(() => import("../../components/Products"), {
@@ -62,10 +62,10 @@ export default async function page() {
   return (
     <main>
       <section className="relative overlay banner_robot bg-black">
-          <Hero />
+        <Hero />
       </section>
 
-      
+
       {/* logos slider */}
       <section className="logo_section 2xl:py-16 md:py-12 ">
         <div className="container">
@@ -73,21 +73,57 @@ export default async function page() {
             {data?.logo_images &&
               data?.logo_images.map((item, index) => (
                 <>
-                    <ImageCard
-                      src={item}
-                      alt="slider images"
-                      width={150}
-                      height={200}
-                    />
-        
+                  <ImageCard
+                    src={item}
+                    alt="slider images"
+                    width={150}
+                    height={200}
+                  />
+
                 </>
               ))}
           </div>
         </div>
       </section>
 
+      {/* intro section started */}
+      <section className="introduction-wrapper  pb-16 pb-20">
+        <div className="container ">
+          <div className="flex gap-10">
+            <h2 className="text-2xl introheading relative pl-3 font-semibold "> Introduction:</h2>
+            <div>
+              <p className="text-2xl">Welcome to Secure365, where we take the complexity out of managing your business’s technology needs. We provide a full spectrum of IT solutions designed to empower your business with enhanced security, streamlined processes, and a support system that’s second to none.
+              </p>
+              <p className="text-2xl mt-5">Whether you’re a startup, a growing enterprise, or a seasoned business, Secure365 is your trusted partner for everything IT—so you can focus on what really matters: growing your business.
+              </p>
+              <a href="" className="discovermore addArrow inline-flex text-xl mt-5 relaitve">Discover more <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 24L24 9M24 9H15.6667M24 9V17.3333" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* intro section ended */}
+
+
       {/* <div className="max-w-7xl mx-auto py-16"> */}
-      <section className="make_us_different 2xl:pb-20  pb-12">
+      <section className="make_us_different 2xl:py-16  pb-12 bg-[#f0f0f0]">
+        <div className="container">
+          <div className="flex flex-col items-center justify-between gap-2 ">
+            <Text tag="h2" className="heading_h2 capitalize ">
+              {data?.makes_us_diffrent_heading}
+              <span className="capitalize font-semibold m-2">
+                {data?.makes_us_diffrent_heading_second}
+              </span>
+            </Text>
+            <Text tag="p" className=" mt-8 text-center text-2xl max-w-[60%] mx-auto">
+              At Secure365, we understand that navigating the <strong>digital world</strong> can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering everything from cloud management and IT support to marketing and cybersecurity.
+            </Text>
+            <Text tag="p" className=" mt-5 text-center text-2xl max-w-[70%] mx-auto">
+              Our approach combines expertise, proactive management, and industry-leading technology to deliver seamless experiences, minimize risk, and maximize efficiency.
+            </Text>
+          </div>
+        </div>
+      </section>
+      {/* <section className="make_us_different 2xl:pb-20  pb-12">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-2 ">
             <Text tag="h2" className="heading_h2 capitalize ">
@@ -107,15 +143,15 @@ export default async function page() {
                 <React.Fragment key={index}>
                   <Suspense fallback={<CategoryCardSkeleton />}>
                     <div className="text-center column_hover">
-                     <div className="cardImage">
-                     <ImageCard
-                        src={item?.world_icon_url}
-                        width={40}
-                        height={40}
-                        alt="avatar image"
-                        className="mx-auto"
-                      />
-                     </div>
+                      <div className="cardImage">
+                        <ImageCard
+                          src={item?.world_icon_url}
+                          width={40}
+                          height={40}
+                          alt="avatar image"
+                          className="mx-auto"
+                        />
+                      </div>
                       <Text
                         tag="h3"
                         className="md:text-xl text-xl font-medium text-center "
@@ -135,10 +171,10 @@ export default async function page() {
               ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* World Class Protection */}
-      <section className="2xl:py-18 py-14 protection_section  bg-[#011024] text-white">
+      {/* <section className="2xl:py-18 py-14 protection_section  bg-[#011024] text-white">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 2xl:pb-0 p-3 md:pb-0 gap-7 ">
             <div className="left-side">
@@ -189,8 +225,38 @@ export default async function page() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <section className="2xl:py-18 py-20 protection_section  bg-[#011024] text-white">
+        <div className="container">
+          <h2 className="text-center mb-10">Key Services:</h2>
 
+          <div className="grid grid-cols-4 mt-20">
+            <div className="keyColumns">
+              <Image src="/Images/solutiom.svg" alt="key icon" width={50} height={50} />
+              <h3 > Cybersecurity Solutions</h3>
+              <p>Protect your business from threats with advanced security measures, real-time monitoring, and threat intelligence.</p>
+            </div>
+            <div className="keyColumns">
+              <Image src="/Images/solutiom.svg" alt="key icon" width={50} height={50} />
+              <h3 > Cybersecurity Solutions</h3>
+              <p>Protect your business from threats with advanced security measures, real-time monitoring, and threat intelligence.</p>
+            </div>
+            <div className="keyColumns">
+              <Image src="/Images/solutiom.svg" alt="key icon" width={50} height={50} />
+              <h3 > Cybersecurity Solutions</h3>
+              <p>Protect your business from threats with advanced security measures, real-time monitoring, and threat intelligence.</p>
+            </div>
+            <div className="keyColumns">
+              <Image src="/Images/solutiom.svg" alt="key icon" width={50} height={50} />
+              <h3 > Cybersecurity Solutions</h3>
+              <p>Protect your business from threats with advanced security measures, real-time monitoring, and threat intelligence.</p>
+            </div>
+           
+          </div>
+        </div>
+
+
+      </section>
       {/* Protect your website section  dvfd*/}
       <section className="cybersecurity_wrapper  py-5">
         <div className="container">
@@ -224,7 +290,7 @@ export default async function page() {
                   }
                   width={360}
                   height={450}
-                   className="rounded-[10px]"
+                  className="rounded-[10px]"
                   alt="kuch b"
                 />
               </div>
@@ -286,10 +352,10 @@ export default async function page() {
                   tag="p"
                   className="text-white md:text-lg text-lg my-2 mb-5  font-Axiforma"
                 >
-                
+
                 </Text>
                 <Button className="btn_one global_btn capitalize mt-5  font-Axiforma">
-                 {data?.website_experience_button_second}
+                  {data?.website_experience_button_second}
                 </Button>
               </div>
             </div>
@@ -313,8 +379,8 @@ export default async function page() {
         </div>
       </section>
 
-      
-      
+
+
 
     </main>
   );

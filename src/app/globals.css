@@ -128,6 +128,7 @@
 .container {
   margin: auto;
   max-width: 95% !important;
+  padding: 0 70px;
 }
 
 .column_hover {
@@ -197,9 +198,9 @@ h2 {
 h2 strong {
   font-size: 60px;
 }
-.subheading_text {
+/* .subheading_text {
   font-size: 17px;
-}
+} */
 
 
 html, body{
@@ -227,7 +228,29 @@ h2.expert_heading {
 
 /*********** cybersecurity_wrapper  end ************/
 .cybersecurity_wrapper h2 {
-  max-width: 78%;
+  line-height: normal;
+  font-size: 50px;
+}
+
+.keyColumns{
+  border: 2px;
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 15px;
+    align-items: center;
+    border: 2px solid #6b6b6b;
+    border-radius: 30px;
+    padding: 30px 20px;
+}
+
+.keyColumns h3{
+  font-size: 30px;
+}
+.keyColumns img{
+  margin-bottom: 20px;
+}
+.keyColumns p{
+  font-size: 18px;
 }
 /*********** cybersecurity_wrapper  end ************/
 
@@ -368,6 +391,64 @@ color: #52c5ff;
 .textSpan{
 font-size: 120px;
 line-height: normal;
+}
+
+
+
+/* introheading new section */
+
+.introheading:before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 28px;
+  top: 15px;
+  left: 0;
+  bottom: 0;
+  background: #52c5ff;
+  transform: translateY(-50%);
+}
+
+.discovermore{
+  position: relative;
+}
+.discovermore::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0px;
+  left: 0;
+  background: #000;
+  transition: transform 0.5s ease;
+}
+.discovermore:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0px;
+  left: 0;
+  background: #52c5ff;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease;
+}
+.discovermore:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.discovermore svg{
+  transition: all 0.5s ease;
+}
+.discovermore:hover svg{
+  transform: rotate(45deg) translateX(10px) translateY(-10px)  !important;
+}
+@media screen and (min-width: 1600px) {
+ .make_us_different h2 ,.protection_section  h2 {
+    font-size: 80px;
+    line-height: 60px;
+}
 }
 @media screen and (max-width: 1530px) {
   .min_height {
