@@ -16,13 +16,13 @@ const Products = async ({data}) => {
         <div className="flex flex-col items-center justify-between gap-4">
           <Text
             tag="h2"
-            className=""
+            className="font-Axiforma"
           >
             Our Key Services
           </Text>
           <Text
             tag="p"
-            className="max-w-3xl text-center  text-[#4F4F4F] subheading_text"
+            className="max-w-3xl text-center font-Axiforma  text-[#4F4F4F] subheading_text"
           >
             At Secure365, we understand that navigating the digital world can be
             overwhelming. That’s why we’ve designed our services to be a
@@ -31,6 +31,7 @@ const Products = async ({data}) => {
           </Text>
         </div>
       </div>
+      
       <Suspense fallback={<PopularProductsSkeleton />}>
         <PopularProducts data={data} />
       </Suspense>

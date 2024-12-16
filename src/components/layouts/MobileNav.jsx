@@ -28,17 +28,17 @@ const MobileNav = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="text-white bg-transparent hover:bg-transparent hover:text-white"
+            className="text-white bg-transparent hover:bg-transparent hover:text-white font-Axiforma"
           >
             <Menu />
-            <span className="sr-only">Toggle Menu</span>
+            <span className="sr-only ">Toggle Menu</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="right">
           <div className="px-2 flex flex-col gap-4">
             <Link
               href="/"
-              className="flex items-center"
+              className="flex items-center font-Axiforma"
               onClick={() => setIsOpen(false)}
             ></Link>
             <div className="text-sm">
@@ -50,7 +50,7 @@ const MobileNav = () => {
                 <AccordionItem value="item-1">
                   <AccordionTrigger>Home</AccordionTrigger>
                   <AccordionContent>
-                    <div className="flex flex-col gap-y-2 text-muted-foreground">
+                    <div className="flex flex-col gap-y-2 text-muted-foreground font-Axiforma">
                       <Link onClick={() => setIsOpen(false)} href="/about-us">
                         About Us
                       </Link>
