@@ -21,7 +21,8 @@ const MobileNav = () => {
   return (
     <div className="flex justify-between w-full lg:hidden">
       <Link href="/">
-        <Image src={Secure} width={150} height={30} alt="Secure Logo" />
+        {/* <Image src={Secure} width={150} height={30} alt="Secure Logo" /> */}
+         <Image src='/Images/SECURE365_new.png' width={240} height={80} alt="Secure Logo" />
       </Link>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
