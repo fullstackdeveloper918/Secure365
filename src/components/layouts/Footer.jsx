@@ -42,7 +42,7 @@ const Footer = () => {
   
   return (
     <>
-      <footer className="relative text-white pt-10">
+      <footer className="relative text-white pt-10 bg-[#111]">
         <ImageCard
           className="absolute -z-10 w-full"
           src="/Images/footer_bg_new.png"
