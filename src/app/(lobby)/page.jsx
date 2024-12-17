@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 import ImageCard from "../../components/cards/ImageCard";
 import Image from "next/image";
-import { Heading } from "@/components/Heading";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
@@ -16,9 +16,7 @@ const Categories = dynamic(() => import("../../components/Categories"), {
   loading: () => <p>Loading...</p>,
 });
 
-const Text = dynamic(() => import("../../components/Text"), {
-  loading: () => <p>Loading Wait...</p>,
-});
+const Text = dynamic(() => import("../../components/Text"));
 
 const testimonial = [
   {
@@ -68,14 +66,16 @@ export default async function page() {
             {data?.logo_images &&
               data?.logo_images.map((item, index) => (
                 <>
-                  <Suspense fallback={<p>Loading...</p>}>
-                  <ImageCard
-                    src={item}
-                    alt="slider images"
-                    width={150}
-                    height={200}
+                  <Suspense
+                    fallback={<Skeleton className="h-12 w-12 rounded-full" />}
+                  >
+                    <ImageCard
+                      src={item}
+                      alt="slider images"
+                      width={150}
+                      height={200}
                     />
-                    </Suspense>
+                  </Suspense>
                 </>
               ))}
           </div>
@@ -91,21 +91,22 @@ export default async function page() {
               Introduction:
             </h2>
             <div>
-              <Suspense fallback={<p>Loading...</p>}>
-              <Text tag="p" className="text-2xl">
-                Welcome to Secure365, where we take the complexity out of
-                managing your business’s technology needs. We provide a full
-                spectrum of IT solutions designed to empower your business with
-                enhanced security, streamlined processes, and a support system
-                that’s second to none.
-              </Text>
+              <Suspense fallback={<Skeleton className="h-4 w-[250px]" />}>
+                <Text tag="p" className="text-2xl">
+                  Welcome to Secure365, where we take the complexity out of
+                  managing your business’s technology needs. We provide a full
+                  spectrum of IT solutions designed to empower your business
+                  with enhanced security, streamlined processes, and a support
+                  system that’s second to none.
+                </Text>
               </Suspense>
-              <Suspense fallback={<p>Loading...</p>}>
-              <Text tag="p" className="text-2xl mt-5">
-                Whether you’re a startup, a growing enterprise, or a seasoned
-                business, Secure365 is your trusted partner for everything IT—so
-                you can focus on what really matters: growing your business.
-              </Text>
+              <Suspense fallback={<Skeleton className="h-4 w-[250px]" />}>
+                <Text tag="p" className="text-2xl mt-5">
+                  Whether you’re a startup, a growing enterprise, or a seasoned
+                  business, Secure365 is your trusted partner for everything
+                  IT—so you can focus on what really matters: growing your
+                  business.
+                </Text>
               </Suspense>
               <a
                 href=""
@@ -138,23 +139,35 @@ export default async function page() {
       <section className="make_us_different 2xl:py-16  pb-12 bg-[#f0f0f0]">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-2 ">
-            <Suspense fallback={<h2>Loading ...</h2>}>
-            <Text tag="h2" className="heading_h2 capitalize ">
-              {data?.makes_us_diffrent_heading}
-              <span className="capitalize font-semibold m-2">
-                {data?.makes_us_diffrent_heading_second}
-              </span>
-            </Text>
+            <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
+              <Text tag="h2" className="heading_h2 capitalize ">
+                {data?.makes_us_diffrent_heading}
+                <span className="capitalize font-semibold m-2">
+                  {data?.makes_us_diffrent_heading_second}
+                </span>
+              </Text>
             </Suspense>
             <Suspense fallback={<p>Loading...</p>}>
-            <Text tag="p" className=" mt-8 text-center text-2xl max-w-[60%] mx-auto">
-              At Secure365, we understand that navigating the <strong>digital world</strong> can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering everything from cloud management and IT support to marketing and cybersecurity.
-            </Text>
+              <Text
+                tag="p"
+                className=" mt-8 text-center text-2xl max-w-[60%] mx-auto"
+              >
+                At Secure365, we understand that navigating the{" "}
+                <strong>digital world</strong> can be overwhelming. That’s why
+                we’ve designed our services to be a one-stop solution, covering
+                everything from cloud management and IT support to marketing and
+                cybersecurity.
+              </Text>
             </Suspense>
             <Suspense fallback={<p>Loading...</p>}>
-            <Text tag="p" className=" mt-5 text-center text-2xl max-w-[70%] mx-auto">
-              Our approach combines expertise, proactive management, and industry-leading technology to deliver seamless experiences, minimize risk, and maximize efficiency.
-            </Text>
+              <Text
+                tag="p"
+                className=" mt-5 text-center text-2xl max-w-[70%] mx-auto"
+              >
+                Our approach combines expertise, proactive management, and
+                industry-leading technology to deliver seamless experiences,
+                minimize risk, and maximize efficiency.
+              </Text>
             </Suspense>
           </div>
         </div>
@@ -164,58 +177,25 @@ export default async function page() {
         <div className="container">
           <h2 className="text-center mb-5">Key Services:</h2>
           <div className="grid grid-cols-4 mt-20">
-            <div className="keyColumns">
-              <Image
-                src="/Images/solutiom.svg"
-                alt="key icon"
-                width={50}
-                height={50}
-              />
-              <Text tag="h3"> Cybersecurity Solutions</Text>
-              <Text tag="p">
-                Protect your business from threats with advanced security
-                measures, real-time monitoring, and threat intelligence.
-              </Text>
-            </div>
-            <div className="keyColumns">
-              <Image
-                src="/Images/solutiom.svg"
-                alt="key icon"
-                width={50}
-                height={50}
-              />
-              <Text tag="h3"> Cybersecurity Solutions</Text>
-              <Text tag="p">
-                Protect your business from threats with advanced security
-                measures, real-time monitoring, and threat intelligence.
-              </Text>
-            </div>
-            <div className="keyColumns">
-              <Image
-                src="/Images/solutiom.svg"
-                alt="key icon"
-                width={50}
-                height={50}
-              />
-              <Text tag="h3"> Cybersecurity Solutions</Text>
-              <Text tag="p">
-                Protect your business from threats with advanced security
-                measures, real-time monitoring, and threat intelligence.
-              </Text>
-            </div>
-            <div className="keyColumns">
-              <Image
-                src="/Images/solutiom.svg"
-                alt="key icon"
-                width={50}
-                height={50}
-              />
-              <Text tag="h3"> Cybersecurity Solutions</Text>
-              <Text tag="p">
-                Protect your business from threats with advanced security
-                measures, real-time monitoring, and threat intelligence.
-              </Text>
-            </div>
+            {data &&
+              data?.key_services_data.map((item, index) => (
+                <>
+                  <div className="keyColumns" key={index}>
+                    <Suspense fallback={<p>Loading Image...</p>}>
+                      <ImageCard
+                        src={item?.our_key_services_image}
+                        alt="key icon"
+                        width={50}
+                        height={50}
+                      />
+                    </Suspense>
+                    <Text tag="h3"> Cybersecurity Solutions</Text>
+                    <Suspense fallback={<p>Loading Text...</p>}>
+                      <Text tag="p">{item?.our_key_services_paragraph}</Text>
+                    </Suspense>
+                  </div>
+                </>
+              ))}
           </div>
         </div>
       </section>
@@ -257,7 +237,9 @@ export default async function page() {
               <div className="counter_box absolute ">
                 <div>
                   <div>
-                    <Text tag="h3" className="text-white text-3xl font-medium">30+</Text>
+                    <Text tag="h3" className="text-white text-3xl font-medium">
+                      30+
+                    </Text>
                     <Text tag="p" className="text-white leading-snug">
                       Years of Experience
                     </Text>
@@ -341,12 +323,8 @@ export default async function page() {
   );
 }
 
-
-
-
-
-
-      {/* <section className="make_us_different 2xl:pb-20  pb-12">
+{
+  /* <section className="make_us_different 2xl:pb-20  pb-12">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-2 ">
             <Text tag="h2" className="heading_h2 capitalize ">
@@ -394,10 +372,14 @@ export default async function page() {
               ))}
           </div>
         </div>
-      </section> */}
+      </section> */
+}
 
-      {/* World Class Protection */}
-      {/* <section className="2xl:py-14 py-14 protection_section  bg-[#011024] text-white">
+{
+  /* World Class Protection */
+}
+{
+  /* <section className="2xl:py-14 py-14 protection_section  bg-[#011024] text-white">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 2xl:pb-0 p-3 md:pb-0 gap-7 ">
             <div className="left-side">
@@ -448,4 +430,5 @@ export default async function page() {
             </div>
           </div>
         </div>
-      </section>  */}
+      </section>  */
+}
