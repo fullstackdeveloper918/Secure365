@@ -333,6 +333,7 @@ export default async function page() {
       </section>
 
       {/* Ensure Your Website */}
+      {/* resolving git error */}
       <section className="get_started_wrapper my-5 bg-black text-white lg:py-16 md:py-12 py-5">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3  gap-7 items-center">
