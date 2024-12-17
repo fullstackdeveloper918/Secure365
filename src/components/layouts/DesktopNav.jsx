@@ -35,7 +35,8 @@ const DesktopNav = () => {
     <div className="hidden lg:flex items-center w-full md:justify-between w-100 ">
      
       <Link href="/" className="flex space-x-2">
-        <Image src={Secure} width={150} height={30} alt="Secure Logo" />
+        {/* <Image src={Secure} width={150} height={30} alt="Secure Logo" /> */}
+        <Image src='/Images/SECURE365_new.png' width={240} height={80} alt="Secure Logo" />
       </Link>
      
       <NavigationMenu>
@@ -46,9 +47,9 @@ const DesktopNav = () => {
               <Link href={`/${item?.slug}`} key={index}>
            
               <NavigationMenuItem >
-                <NavigationMenuTrigger chever={item?.children?.length > 0}>{item?.title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger className='font-Axiforma' chever={item?.children?.length> 0}>{item?.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] ">
                     
                   
                     {item?.children?.length > 0 && 

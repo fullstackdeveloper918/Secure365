@@ -107,7 +107,7 @@
 }
 .btn_one {
   background: #52c5ff;
-  color: #fff;
+  color: #000;
   border-color: #52c5ff;
 }
 .btn_one:hover {
@@ -525,6 +525,48 @@ line-height: normal;
   }
 }
 
+/* /17-12-24 */
+.baner_images{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.banner_robot {
+  max-width: 98%;
+  margin: 20px auto 0px;
+  height: 90vh;
+  border-radius: 30px;
+}
+.baner_imagesafter{
+  position: absolute;
+  left: -1px;
+  top: -7px;
+  transform: rotate(1deg);
+  
+}
+.herobanner {
+  height: 90vh;
+}
+.rightbanner img.banner_rotate {
+  margin-top: -90px;
+  opacity: .5;
+}
+.banner_robot{
+  position: relative;
+}
+.banner_robot::before{
+  background: url(/Images/banner_bg_container.png);
+  width: calc(100% + 10%);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0; 
+  content: '';
+  opacity: .3;
+}
+/* /17-12-24 */ 
 @media screen and (min-width: 1600px) {
  .make_us_different h2 {
     font-size: 80px;
@@ -540,7 +582,7 @@ line-height: normal;
   }
   .banner_heading {
     font-size: 75px;
-    line-height: 6rem !important;
+    line-height: 77px !important;
   }
   h2 {
     font-size: 40px;
@@ -595,6 +637,7 @@ max-width: 80%;
 font-size: 16px !important;
 line-height: normal;
 }
+
 .column_hover {
   max-width: 100%;
   gap: 5px;

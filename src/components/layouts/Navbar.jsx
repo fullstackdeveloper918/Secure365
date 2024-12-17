@@ -13,7 +13,7 @@ const MobileNav = dynamic(() => import('../layouts/MobileNav'))
 const Navbar = () => {
 
   return (
-    <header className='absolute top-0 z-50 w-full py-5'>
+    <header className='absolute top-0 z-50 w-full pt-10 pb-5'>
       <nav className='container   flex items-center justify-between mx-auto'>
         <MobileNav />
         <DesktopNav />
