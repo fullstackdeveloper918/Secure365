@@ -228,7 +228,7 @@ h2.expert_heading {
 
 /*********** cybersecurity_wrapper  end ************/
 .cybersecurity_wrapper h2 {
-  line-height: normal;
+  /* line-height: normal; */
   font-size: 50px;
 }
 
@@ -244,13 +244,30 @@ h2.expert_heading {
 }
 
 .keyColumns h3{
-  font-size: 30px;
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 600;
 }
 .keyColumns img{
   margin-bottom: 20px;
 }
 .keyColumns p{
-  font-size: 18px;
+  font-size: 16px;
+  color: #c2c2c2;
+  margin-top: 10px;
+}
+.hovercard{
+opacity: 0;
+}
+.cardHover{
+  transition: all .3s ease-in;
+}
+.cardHover:hover .hovercard{
+  opacity: 1;
+  transition: all .3s ease-in;
+}
+.hovercard li{
+  cursor: pointer;
 }
 /*********** cybersecurity_wrapper  end ************/
 
@@ -412,12 +429,14 @@ line-height: normal;
 .discovermore{
   position: relative;
 }
+
+/* accept change  */
 .discovermore::before {
   content: '';
   position: absolute;
-  width: 100%;
+  width: 80%;
   height: 2px;
-  bottom: 0px;
+  bottom: -10px;
   left: 0;
   background: #000;
   transition: transform 0.5s ease;
@@ -428,7 +447,7 @@ line-height: normal;
   width: 100%;
   transform: scaleX(0);
   height: 2px;
-  bottom: 0px;
+  bottom: -10px;
   left: 0;
   background: #52c5ff;
   transform-origin: bottom right;
@@ -444,6 +463,68 @@ line-height: normal;
 .discovermore:hover svg{
   transform: rotate(45deg) translateX(10px) translateY(-10px)  !important;
 }
+
+.make_us_different{
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.expertImage {
+  max-height: 380px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.expertImage  img{
+  max-height: 380px !important;
+  overflow: hidden;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.hovercard  .social_list {
+  width: 30px;
+  height: 30px;
+  background: #52c5ff;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-color: #52c5ff;
+}
+.hovercard  .fontfacebook img{
+  max-width: 8px;
+}
+.hovercard  .social_list:hover {
+  background: #52c5ff;
+  border-color: #52c5ff;
+}
+
+.animate {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/*=== Optional Delays, change values here  ===*/
+.one {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.10s;
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
 @media screen and (min-width: 1600px) {
  .make_us_different h2 {
     font-size: 80px;

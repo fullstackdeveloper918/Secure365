@@ -17,8 +17,9 @@ const CategoryCard= async ({ category }) => {
 
   return (
     
-      <Card className='relative h-full w-full overflow-hidden rounded-lg bg-transparent transition-colors group bg-[#E3F0FF] text-center'>
+      <Card className='relative h-full w-full overflow-hidden rounded-lg bg-transparent transition-colors group bg-[] text-center'>
         <CardHeader>
+          <div className='expertImage'>
           <ImageCard
              src={category?.top_skilled_experts_image}
             alt={category?.top_skilled_experts_name}
@@ -27,9 +28,52 @@ const CategoryCard= async ({ category }) => {
             className='user_image'
             
             />
+          </div>
         </CardHeader>
         <CardContent className='space-y-1.5'>
-        <ul className="list-none flex gap-2 mt-5">
+        <ul className="list-none  gap-2  hovercard absolute top-2 right-2">
+                <Text tag="li" className="social_list fontfacebook">
+                  {" "}
+                  <ImageCard
+                    src="/svg/facebook.svg"
+                    width={12}
+                    height={12}
+                    className="social_icon facebook_icon"
+                    alt="facebook"
+                  />
+                </Text>
+                <Text tag="li" className="social_list font-Axiforma">
+                  {" "}
+                  <ImageCard
+                    src="/svg/insta.svg"
+                    width={20}
+                    height={20}
+                    className="social_icon"
+                    alt="facebook"
+                  />
+                </Text>
+                <Text tag="li" className="social_list font-Axiforma">
+                  {" "}
+                  <ImageCard
+                    src="/svg/logo-twitter 2.svg"
+                    width={20}
+                    height={20}
+                    className="social_icon"
+                    alt="facebook"
+                  />
+                </Text>
+                <Text tag="li" className="social_list">
+                  {" "}
+                  <ImageCard
+                    src="/svg/git.svg"
+                    width={20}
+                    height={20}
+                    className="social_icon"
+                    alt="facebook"
+                  />
+                </Text>
+              </ul>
+        {/* <ul className="list-none  gap-2  hovercard absolute top-2 right-2">
         {category?.top_skilled_experts_icon_facebook  &&
                 <Text tag="li" className="social_list">
                   {" "}
@@ -81,11 +125,9 @@ const CategoryCard= async ({ category }) => {
                   />
                 </Text>
                 }
-              </ul>
-          {/* <CardTitle className='capitalize text-emerald-600 group-hover:text-white font-Axiforma'>
-        
-            
-          </CardTitle> */}
+              </ul> */}
+        <h3>Daxton Atlas</h3>
+        <p>System Manager</p>
           <CardDescription className='group-hover:text-white'>
            {category.products}
           </CardDescription>

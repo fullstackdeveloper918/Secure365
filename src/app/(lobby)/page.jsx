@@ -62,7 +62,7 @@ export default async function page() {
       </section>
 
       {/* logos slider */}
-      <section className="logo_section 2xl:py-16 md:py-12 ">
+      {/* <section className="logo_section 2xl:py-16 md:py-12 ">
         <div className="container">
           <div className="flex gap-5 justify-between items-center">
             {data?.logo_images &&
@@ -80,19 +80,19 @@ export default async function page() {
               ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* intro section started */}
-      <section className="introduction-wrapper pb-20">
+      <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
         <div className="container ">
           <div className="flex gap-10">
-            <h2 className="text-2xl introheading relative pl-3 font-semibold ">
+            <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
               {" "}
               Introduction:
             </h2>
             <div>
               <Suspense fallback={<p>Loading...</p>}>
-              <Text tag="p" className="text-2xl">
+              <Text tag="p" className="text-2xl font-Axiforma">
                 Welcome to Secure365, where we take the complexity out of
                 managing your business’s technology needs. We provide a full
                 spectrum of IT solutions designed to empower your business with
@@ -101,7 +101,7 @@ export default async function page() {
               </Text>
               </Suspense>
               <Suspense fallback={<p>Loading...</p>}>
-              <Text tag="p" className="text-2xl mt-5">
+              <Text tag="p" className="text-2xl mt-10 font-Axiforma">
                 Whether you’re a startup, a growing enterprise, or a seasoned
                 business, Secure365 is your trusted partner for everything IT—so
                 you can focus on what really matters: growing your business.
@@ -109,7 +109,7 @@ export default async function page() {
               </Suspense>
               <a
                 href=""
-                className="discovermore addArrow inline-flex text-xl mt-5 relaitve"
+                className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
               >
                 Discover more{" "}
                 <svg
@@ -135,11 +135,12 @@ export default async function page() {
       {/* intro section ended */}
 
       {/* <div className="max-w-7xl mx-auto py-16"> */}
-      <section className="make_us_different 2xl:py-16  pb-12 bg-[#f0f0f0]">
+      <section className="make_us_different 2xl:py-16  pb-12 bg-[#f0f0f0] relative">
+        {/* <Image src="/Images/Cybersecurity.png" alt="img" width={100} height={100} className="animate fadeInUp one" /> */}
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-2 ">
             <Suspense fallback={<h2>Loading ...</h2>}>
-            <Text tag="h2" className="heading_h2 capitalize ">
+            <Text tag="h2" className="heading_h2 capitalize font-Axiforma">
               {data?.makes_us_diffrent_heading}
               <span className="capitalize font-semibold m-2">
                 {data?.makes_us_diffrent_heading_second}
@@ -147,8 +148,8 @@ export default async function page() {
             </Text>
             </Suspense>
             <Suspense fallback={<p>Loading...</p>}>
-            <Text tag="p" className=" mt-8 text-center text-2xl max-w-[60%] mx-auto">
-              At Secure365, we understand that navigating the <strong>digital world</strong> can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering everything from cloud management and IT support to marketing and cybersecurity.
+            <Text tag="p" className=" mt-8 text-center text-2xl max-w-[60%] mx-auto font-Axiforma">
+              At Secure365, we understand that navigating the <strong>digital world</strong> can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering everything from <strong>Cloud management</strong> and <strong>IT support</strong> to marketing and cybersecurity.
             </Text>
             </Suspense>
             <Suspense fallback={<p>Loading...</p>}>
@@ -160,10 +161,10 @@ export default async function page() {
         </div>
       </section>
 
-      <section className="2xl:py-18 py-20 protection_section  bg-[#011024] text-white">
+      <section className="2xl:py-18 py-20 protection_section  bg-[#111] text-white">
         <div className="container">
-          <h2 className="text-center mb-5">Key Services:</h2>
-          <div className="grid grid-cols-4 mt-20">
+          <h2 className="mb-5">Key Services:</h2>
+          <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
             <div className="keyColumns">
               <Image
                 src="/Images/solutiom.svg"
@@ -184,10 +185,9 @@ export default async function page() {
                 width={50}
                 height={50}
               />
-              <Text tag="h3"> Cybersecurity Solutions</Text>
+              <Text tag="h3"> Cloud & Server Management</Text>
               <Text tag="p">
-                Protect your business from threats with advanced security
-                measures, real-time monitoring, and threat intelligence.
+              Efficiently manage your data and applications in the cloud with our secure, scalable solutions.
               </Text>
             </div>
             <div className="keyColumns">
@@ -197,10 +197,9 @@ export default async function page() {
                 width={50}
                 height={50}
               />
-              <Text tag="h3"> Cybersecurity Solutions</Text>
+              <Text tag="h3">E-commerce Security & Fraud Prevention</Text>
               <Text tag="p">
-                Protect your business from threats with advanced security
-                measures, real-time monitoring, and threat intelligence.
+              Safeguard your transactions and customer data with cutting-edge fraud detection and secure payment systems.
               </Text>
             </div>
             <div className="keyColumns">
@@ -210,10 +209,9 @@ export default async function page() {
                 width={50}
                 height={50}
               />
-              <Text tag="h3"> Cybersecurity Solutions</Text>
+              <Text tag="h3">IT Support & Business Management</Text>
               <Text tag="p">
-                Protect your business from threats with advanced security
-                measures, real-time monitoring, and threat intelligence.
+              Get 24/7 support from certified professionals who solve problems before they impact your business.
               </Text>
             </div>
           </div>
@@ -222,7 +220,7 @@ export default async function page() {
       {/* Protect your website section  dvfd*/}
       <section className="cybersecurity_wrapper  py-5">
         <div className="container">
-          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10 p-3 gap-7  items-center ">
+          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10 p-3 gap-7  ">
             <div className="left-side flex gap-5 col-md-4 col-12  relative">
               <div className="flex flex-col gap-5">
                 {data &&
@@ -248,7 +246,7 @@ export default async function page() {
                     data?.website_protect_section_image_experience_second_url
                   }
                   width={360}
-                  height={450}
+                  height={200}
                   className="rounded-[10px]"
                   alt="kuch b"
                 />
