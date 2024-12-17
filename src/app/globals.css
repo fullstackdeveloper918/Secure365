@@ -445,7 +445,7 @@ line-height: normal;
   transform: rotate(45deg) translateX(10px) translateY(-10px)  !important;
 }
 @media screen and (min-width: 1600px) {
- .make_us_different h2 ,.protection_section  h2 {
+ .make_us_different h2 {
     font-size: 80px;
     line-height: 60px;
 }
