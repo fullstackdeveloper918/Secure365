@@ -126,7 +126,7 @@ const CategoryCard= async ({ category }) => {
                 </Text>
                 }
               </ul> */}
-        <h3>Daxton Atlas</h3>
+        <h3 className='text-2xl font-Axiforma font-medium mb-0'>Daxton Atlas</h3>
         <p>System Manager</p>
           <CardDescription className='group-hover:text-white'>
            {category.products}

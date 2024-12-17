@@ -174,19 +174,19 @@ export default async function page() {
               </span>
             </Text>
             </Suspense>
-            <Suspense fallback={<p>Loading...</p>}>
+            {/* <Suspense fallback={<p>Loading...</p>}>
             <Text tag="p" className=" mt-8 text-center text-2xl max-w-[60%] mx-auto font-Axiforma">
               At Secure365, we understand that navigating the <strong>digital world</strong> can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering everything from <strong>Cloud management</strong> and <strong>IT support</strong> to marketing and cybersecurity.
             </Text>
-            </Suspense>
-            <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
+            </Suspense> */}
+            {/* <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
               <Text tag="h2" className="heading_h2 capitalize ">
                 {data?.makes_us_diffrent_heading}
                 <span className="capitalize font-semibold m-2">
                   {data?.makes_us_diffrent_heading_second}
                 </span>
               </Text>
-            </Suspense>
+            </Suspense> */}
             <Suspense fallback={<p>Loading...</p>}>
               <Text
                 tag="p"
