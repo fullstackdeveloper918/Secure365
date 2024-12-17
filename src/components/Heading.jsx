@@ -1,15 +1,24 @@
 
-export const Heading = ({
+const Heading = ({
   title,
   description,
-  headingClass,
+  titleClass,
+  bold,
+  boldClass,
   descriptionnClass,
-  ...props
+  
 }) => {
   return (
-    <div {...props}>
-      <h2 className={headingClass}>{title}</h2>
+    <>
+    
+      <h2 className={titleClass}>{title}
+      <span className={boldClass}>{bold}</span>
+      </h2>
       <p className={descriptionnClass}>{description}</p>
-    </div>
+    </>
+    
   )
 }
+
+
+export default Heading

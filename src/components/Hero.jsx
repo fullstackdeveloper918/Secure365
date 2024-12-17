@@ -1,8 +1,20 @@
 import Link from 'next/link';
 import ImageCard from './cards/ImageCard';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+
+
+
+export async function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve,ms))
+}
+
+
+const Text = dynamic(() => wait(2000).then(() => import('@/components/Text')))
 
 
 export default async function Hero() {
+
   const response = await fetch(
     "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner",
     {
@@ -16,12 +28,15 @@ export default async function Hero() {
   
       <div className='relative herobanner container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8 pt-24 sm:pt-24 pb-0' >
         <div className='flex flex-col gap-y-4 justify-center  md:text-left items-baseline  pb-10'>
-          <h1
+          <Suspense fallback={<p>Loading Heading...</p>}>
+
+          <Text tag="h1"
            className='banner_heading font-Axiforma'>
             <span className='banner_heading_medium'>{data?.pages?.banner_heading}</span>
             <span className='mr-3'> {data?.pages?.banner_heading_second}</span>
             <span className='text_blue'>{data?.pages?.banner_heading_thired}</span>
-          </h1>
+          </Text>
+             </Suspense>
           <p
          
            className='max-w-md sm:max-w-[39rem] maxWidth leading-normal text-muted-foreground text-sm sm:text-xl text-white sm:leading-8 font-Axiforma'>

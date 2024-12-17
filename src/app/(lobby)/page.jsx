@@ -1,27 +1,22 @@
-
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import CategoryCardSkeleton from '@/components/skeletons/CategoryCardSkeleton'
+import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 import ImageCard from "../../components/cards/ImageCard";
 import Image from "next/image";
-
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Products = dynamic(() => import("../../components/Products"), {
   loading: () => <p>Loading...</p>,
 });
 
-const Hero = dynamic(() => import("../../components/Hero"),)
-
+const Hero = dynamic(() => import("../../components/Hero"));
 
 const Categories = dynamic(() => import("../../components/Categories"), {
   loading: () => <p>Loading...</p>,
 });
 
-
-const Text = dynamic(() => import("../../components/Text"), {
-  loading: () => <p>Loading Wait...</p>,
-});
+const Text = dynamic(() => import("../../components/Text"));
 
 const testimonial = [
   {
@@ -56,8 +51,7 @@ export default async function page() {
   );
   const data = await response.json();
 
-  console.log(data, 'datahome')
-
+  console.log(data, "datahome");
 
   return (
     <main>
@@ -75,7 +69,6 @@ export default async function page() {
         <Hero />
       </section>
 
-
       {/* logos slider */}
       <section className="logo_section 2xl:py-16 md:py-12 ">
         <div className="container">
@@ -83,13 +76,16 @@ export default async function page() {
             {data?.logo_images &&
               data?.logo_images.map((item, index) => (
                 <>
-                  <ImageCard
-                    src={item}
-                    alt="slider images"
-                    width={150}
-                    height={200}
-                  />
-
+                  <Suspense
+                    fallback={<Skeleton className="h-12 w-12 rounded-full" />}
+                  >
+                    <ImageCard
+                      src={item}
+                      alt="slider images"
+                      width={150}
+                      height={200}
+                    />
+                  </Suspense>
                 </>
               ))}
           </div>
@@ -100,40 +96,245 @@ export default async function page() {
       <section className="introduction-wrapper pb-20">
         <div className="container ">
           <div className="flex gap-10">
-            <h2 className="text-2xl introheading relative pl-3 font-semibold "> Introduction:</h2>
+            <h2 className="text-2xl introheading relative pl-3 font-semibold ">
+              {" "}
+              Introduction:
+            </h2>
             <div>
-              <p className="text-2xl">Welcome to Secure365, where we take the complexity out of managing your business’s technology needs. We provide a full spectrum of IT solutions designed to empower your business with enhanced security, streamlined processes, and a support system that’s second to none.
-              </p>
-              <p className="text-2xl mt-5">Whether you’re a startup, a growing enterprise, or a seasoned business, Secure365 is your trusted partner for everything IT—so you can focus on what really matters: growing your business.
-              </p>
-              <a href="" className="discovermore addArrow inline-flex text-xl mt-5 relaitve">Discover more <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 24L24 9M24 9H15.6667M24 9V17.3333" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+              <Suspense fallback={<Skeleton className="h-4 w-[250px]" />}>
+                <Text tag="p" className="text-2xl">
+                  Welcome to Secure365, where we take the complexity out of
+                  managing your business’s technology needs. We provide a full
+                  spectrum of IT solutions designed to empower your business
+                  with enhanced security, streamlined processes, and a support
+                  system that’s second to none.
+                </Text>
+              </Suspense>
+              <Suspense fallback={<Skeleton className="h-4 w-[250px]" />}>
+                <Text tag="p" className="text-2xl mt-5">
+                  Whether you’re a startup, a growing enterprise, or a seasoned
+                  business, Secure365 is your trusted partner for everything
+                  IT—so you can focus on what really matters: growing your
+                  business.
+                </Text>
+              </Suspense>
+              <a
+                href=""
+                className="discovermore addArrow inline-flex text-xl mt-5 relaitve"
+              >
+                Discover more{" "}
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 24L24 9M24 9H15.6667M24 9V17.3333"
+                    stroke="#000"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
       </section>
       {/* intro section ended */}
 
-
       {/* <div className="max-w-7xl mx-auto py-16"> */}
       <section className="make_us_different 2xl:py-16  pb-12 bg-[#f0f0f0]">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-2 ">
-            <Text tag="h2" className="heading_h2 capitalize ">
-              {data?.makes_us_diffrent_heading}
-              <span className="capitalize font-semibold m-2">
-                {data?.makes_us_diffrent_heading_second}
-              </span>
-            </Text>
-            <Text tag="p" className=" mt-8 text-center text-2xl max-w-[60%] mx-auto">
-              At Secure365, we understand that navigating the <strong>digital world</strong> can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering everything from cloud management and IT support to marketing and cybersecurity.
-            </Text>
-            <Text tag="p" className=" mt-5 text-center text-2xl max-w-[70%] mx-auto">
-              Our approach combines expertise, proactive management, and industry-leading technology to deliver seamless experiences, minimize risk, and maximize efficiency.
-            </Text>
+            <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
+              <Text tag="h2" className="heading_h2 capitalize ">
+                {data?.makes_us_diffrent_heading}
+                <span className="capitalize font-semibold m-2">
+                  {data?.makes_us_diffrent_heading_second}
+                </span>
+              </Text>
+            </Suspense>
+            <Suspense fallback={<p>Loading...</p>}>
+              <Text
+                tag="p"
+                className=" mt-8 text-center text-2xl max-w-[60%] mx-auto"
+              >
+                At Secure365, we understand that navigating the{" "}
+                <strong>digital world</strong> can be overwhelming. That’s why
+                we’ve designed our services to be a one-stop solution, covering
+                everything from cloud management and IT support to marketing and
+                cybersecurity.
+              </Text>
+            </Suspense>
+            <Suspense fallback={<p>Loading...</p>}>
+              <Text
+                tag="p"
+                className=" mt-5 text-center text-2xl max-w-[70%] mx-auto"
+              >
+                Our approach combines expertise, proactive management, and
+                industry-leading technology to deliver seamless experiences,
+                minimize risk, and maximize efficiency.
+              </Text>
+            </Suspense>
           </div>
         </div>
       </section>
-      {/* <section className="make_us_different 2xl:pb-20  pb-12">
+
+      <section className="2xl:py-18 py-20 protection_section  bg-[#011024] text-white">
+        <div className="container">
+          <h2 className="text-center mb-5">Key Services:</h2>
+          <div className="grid grid-cols-4 mt-20">
+            {data &&
+              data?.key_services_data.map((item, index) => (
+                <>
+                  <div className="keyColumns" key={index}>
+                    <Suspense fallback={<p>Loading Image...</p>}>
+                      <ImageCard
+                        src={item?.our_key_services_image}
+                        alt="key icon"
+                        width={50}
+                        height={50}
+                      />
+                    </Suspense>
+                    <Text tag="h3"> Cybersecurity Solutions</Text>
+                    <Suspense fallback={<p>Loading Text...</p>}>
+                      <Text tag="p">{item?.our_key_services_paragraph}</Text>
+                    </Suspense>
+                  </div>
+                </>
+              ))}
+          </div>
+        </div>
+      </section>
+      {/* Protect your website section  dvfd*/}
+      <section className="cybersecurity_wrapper  py-5">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10 p-3 gap-7  items-center ">
+            <div className="left-side flex gap-5 col-md-4 col-12  relative">
+              <div className="flex flex-col gap-5">
+                {data &&
+                  data?.website_protect_section_image_experience_url?.image_data?.map(
+                    (item, index) => (
+                      <>
+                        <div>
+                          <ImageCard
+                            src={item?.website_protect_section_image_experience}
+                            width={400}
+                            height={420}
+                            className="rounded-[10px]"
+                            alt="kuch b"
+                          />
+                        </div>
+                      </>
+                    )
+                  )}
+              </div>
+              <div className="flex items-center">
+                <ImageCard
+                  src={
+                    data?.website_protect_section_image_experience_second_url
+                  }
+                  width={360}
+                  height={450}
+                  className="rounded-[10px]"
+                  alt="kuch b"
+                />
+              </div>
+
+              <div className="counter_box absolute ">
+                <div>
+                  <div>
+                    <Text tag="h3" className="text-white text-3xl font-medium">
+                      30+
+                    </Text>
+                    <Text tag="p" className="text-white leading-snug">
+                      Years of Experience
+                    </Text>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="right-side col-md-7 col-12">
+              <div>
+                <Text
+                  tag="h2"
+                  className="my-2 text-black capitalize font-Axiforma"
+                >
+                  {data?.website_protect_heading_experience_section}
+                </Text>
+              </div>
+              <div>
+                <Text
+                  tag="p"
+                  className="text-[#434242] text-lg my-5 font-Axiforma"
+                >
+                  {data?.website_protect_paragraph_experience_section}
+                </Text>
+              </div>
+              <div>
+                <Button className="btn_one global_btn capitalize mt-10">
+                  {data?.website_protect_button_experience}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ensure Your Website */}
+      {/* resolving git error */}
+      <section className="get_started_wrapper my-5 bg-black text-white lg:py-16 md:py-12 py-5">
+        <div className="container">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3  gap-7 items-center">
+            <div className="left-side">
+              <div className="w-full ">
+                <Text tag="h2" className="md:mb-8 mb-4 font-Axiforma">
+                  {data?.website_experience_heading_second}
+                  <span className="text_blue">cybersecurity</span>
+                </Text>
+                <Text
+                  tag="p"
+                  className="text-white md:text-lg text-md md:my-5 my-2 font-Axiforma md:max-w-[80%]"
+                >
+                  {data?.website_experience_paragraph_second}
+                </Text>
+                <Text
+                  tag="p"
+                  className="text-white md:text-lg text-lg my-2 mb-5  font-Axiforma"
+                ></Text>
+                <Button className="btn_one global_btn capitalize mt-5  font-Axiforma">
+                  {data?.website_experience_button_second}
+                </Button>
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="">
+                <ImageCard
+                  src="/svg/professional_team.svg"
+                  width={700}
+                  height={500}
+                  alt="expert guidance image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Products data={data?.key_services_data} />
+      <Categories data={data} />
+      <section>
+        <div></div>
+      </section>
+    </main>
+  );
+}
+
+{
+  /* <section className="make_us_different 2xl:pb-20  pb-12">
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-2 ">
             <Text tag="h2" className="heading_h2 capitalize ">
@@ -181,10 +382,14 @@ export default async function page() {
               ))}
           </div>
         </div>
-      </section> */}
+      </section> */
+}
 
-      {/* World Class Protection */}
-      {/* <section className="2xl:py-14 py-14 protection_section  bg-[#011024] text-white">
+{
+  /* World Class Protection */
+}
+{
+  /* <section className="2xl:py-14 py-14 protection_section  bg-[#011024] text-white">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 2xl:pb-0 p-3 md:pb-0 gap-7 ">
             <div className="left-side">
@@ -235,160 +440,5 @@ export default async function page() {
             </div>
           </div>
         </div>
-      </section>  */}
-      <section className="2xl:py-18 py-20 protection_section  bg-[#011024] text-white">
-        <div className="container">
-          <h2 className="text-center mb-5">Key Services:</h2>
-
-          <div className="grid grid-cols-4 mt-20">
-            <div className="keyColumns">
-              <Image src="/Images/solutiom.svg" alt="key icon" width={50} height={50} />
-              <h3 > Cybersecurity Solutions</h3>
-              <p>Protect your business from threats with advanced security measures, real-time monitoring, and threat intelligence.</p>
-            </div>
-            <div className="keyColumns">
-              <Image src="/Images/solutiom.svg" alt="key icon" width={50} height={50} />
-              <h3 > Cybersecurity Solutions</h3>
-              <p>Protect your business from threats with advanced security measures, real-time monitoring, and threat intelligence.</p>
-            </div>
-            <div className="keyColumns">
-              <Image src="/Images/solutiom.svg" alt="key icon" width={50} height={50} />
-              <h3 > Cybersecurity Solutions</h3>
-              <p>Protect your business from threats with advanced security measures, real-time monitoring, and threat intelligence.</p>
-            </div>
-            <div className="keyColumns">
-              <Image src="/Images/solutiom.svg" alt="key icon" width={50} height={50} />
-              <h3 > Cybersecurity Solutions</h3>
-              <p>Protect your business from threats with advanced security measures, real-time monitoring, and threat intelligence.</p>
-            </div>
-           
-          </div>
-        </div>
-
-
-      </section>
-      {/* Protect your website section  dvfd*/}
-      <section className="cybersecurity_wrapper  py-5">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10 p-3 gap-7  items-center ">
-            <div className="left-side flex gap-5 col-md-4 col-12  relative">
-              <div className="flex flex-col gap-5">
-                {data &&
-                  data?.website_protect_section_image_experience_url?.image_data?.map(
-                    (item, index) => (
-                      <>
-                        <div
-                        >
-                          <ImageCard
-                            src={item?.website_protect_section_image_experience}
-                            width={400}
-                            height={420}
-                            className="rounded-[10px]"
-                            alt="kuch b"
-                          />
-                        </div>
-                      </>
-                    )
-                  )}
-              </div>
-              <div
-                className="flex items-center"
-              >
-                <ImageCard
-                  src={
-                    data?.website_protect_section_image_experience_second_url
-                  }
-                  width={360}
-                  height={450}
-                  className="rounded-[10px]"
-                  alt="kuch b"
-                />
-              </div>
-
-              <div className="counter_box absolute ">
-                <div
-                >
-                  <div>
-                    <h3 className="text-white text-3xl font-medium">30+</h3>
-                    <p className="text-white leading-snug">
-                      Years of Experience
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="right-side col-md-7 col-12">
-              <div
-              >
-                <Text tag="h2" className="my-2 text-black capitalize font-Axiforma">
-                  {data?.website_protect_heading_experience_section}
-                </Text>
-              </div>
-              <div
-              >
-                <Text tag="p" className="text-[#434242] text-lg my-5 font-Axiforma">
-                  {data?.website_protect_paragraph_experience_section}
-                </Text>
-              </div>
-              <div
-              >
-                <Button className="btn_one global_btn capitalize mt-10">
-                  {data?.website_protect_button_experience}
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ensure Your Website */}
-      {/* resolving git error */}
-      <section className="get_started_wrapper my-5 bg-black text-white lg:py-16 md:py-12 py-5">
-        <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3  gap-7 items-center">
-            <div className="left-side">
-              <div className="w-full ">
-                <Text tag="h2" className="md:mb-8 mb-4 font-Axiforma">
-                  {data?.website_experience_heading_second}
-                  <span className="text_blue">cybersecurity</span>
-                </Text>
-                <Text
-                  tag="p"
-                  className="text-white md:text-lg text-md md:my-5 my-2 font-Axiforma md:max-w-[80%]"
-                >
-                  {data?.website_experience_paragraph_second}
-                </Text>
-                <Text
-                  tag="p"
-                  className="text-white md:text-lg text-lg my-2 mb-5  font-Axiforma"
-                >
-
-                </Text>
-                <Button className="btn_one global_btn capitalize mt-5  font-Axiforma">
-                  {data?.website_experience_button_second}
-                </Button>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="">
-                <ImageCard
-                  src="/svg/professional_team.svg"
-                  width={700}
-                  height={500}
-                  alt="expert guidance image"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <Products data={data?.key_services_data} />
-      <Categories data={data} />
-      <section>
-        <div>
-        </div>
-      </section>
-    </main>
-  );
+      </section>  */
 }
