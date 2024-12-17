@@ -26,7 +26,7 @@ export default async function Hero() {
     <>
    
   
-      <div className='relative herobanner container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8 pt-24 sm:pt-24 pb-0' >
+      <div className='relative herobanner container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8  pt-20 sm:pt-24 pb-0' >
         <div className='flex flex-col gap-y-4 justify-center  md:text-left items-baseline  pb-10'>
           <Suspense fallback={<p>Loading Heading...</p>}>
 

@@ -358,9 +358,56 @@ export default async function page() {
       </section>
       <Products data={data?.key_services_data} />
       <Categories data={data} />
-      <section>
+
+
+      <section className="promise_sec">
+        <div className="container">
+        <div className="promise_header flex justify-between">
+          <h2 className="font-Axiforma">Our Promise</h2>
+          <p>We simplify IT management by integrating security, support, and business continuity into a single, cohesive system. With Secure365, you get:</p>
+        </div>
+        
+        <div className="left_rightContent">
+          <div className="left_images">
+<Image src='/Images/promise_img.png' width={700} height={400} />
+          </div>
+          
+          <div className="flex flex-col gap-5 right_content">
+<div>
+  <sapn>01</sapn>
+  <div>
+  <h4 className="font-Axiforma">Expert Guidance</h4>
+  <p>Leverage our team’s experience to navigate complex IT challenges with confidence.</p>
+  </div>
+</div>
+
+<div>
+<sapn>02</sapn>
+<div>
+  <h4>Hassle-Free Management</h4>
+  <p>We take care of everything—from installation to maintenance—so you don’t have to.</p>
+  </div>
+</div>
+
+<div>
+<sapn>03</sapn>
+<div>
+  <h4>Proactive Security</h4>
+  <p>Stay ahead of threats with a dedicated team monitoring and protecting your business 24/7.</p>
+  </div>
+</div>
+
+<button className="btn_one global_btn capitalize font-Axiforma">Let Discuss</button>
+          </div>
+
+        </div>
+
+        </div>
         <div></div>
       </section>
+
+
+
     </main>
   );
 }
