@@ -46,21 +46,22 @@ const DesktopNav = () => {
               <Link href={`/${item?.slug}`} key={index}>
            
               <NavigationMenuItem >
-                <NavigationMenuTrigger>{item?.title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger chever={item?.children?.length > 0}>{item?.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                    {console.log(item, 'itemcheck')}
+                    
                   
                     {item?.children?.length > 0 && 
                       item?.children?.map((child, childindex) => (
                         <React.Fragment key={child?.title}>
+
+                        
                        
                         <ListItem  href={`/${child?.title}`} title={child?.title}>
                         Explore {child?.title}
                       </ListItem>
                         </React.Fragment>
                       ))
-                   
                     }
                   </ul>
                 </NavigationMenuContent>

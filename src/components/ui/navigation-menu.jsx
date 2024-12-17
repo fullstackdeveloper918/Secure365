@@ -36,15 +36,15 @@ const navigationMenuTriggerStyle = cva(
   "group inline-flex h-10 w-max items-center justify-center rounded-md text-white px-4 py-2 text-sm font-medium transition-colors "
 )
 
-const NavigationMenuTrigger = React.forwardRef(({ className, children, ...props }, ref) => (
+const NavigationMenuTrigger = React.forwardRef(({chever, className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
     className={cn(navigationMenuTriggerStyle(), "group", className)}
     {...props}>
     {children}{" "}
-    <ChevronDown
+    {chever && <ChevronDown
       className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
-      aria-hidden="true" />
+      aria-hidden="true" />}
   </NavigationMenuPrimitive.Trigger>
 ))
 NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName

@@ -87,7 +87,7 @@ export default async function page() {
       </section>
 
       {/* intro section started */}
-      <section className="introduction-wrapper  pb-16 pb-20">
+      <section className="introduction-wrapper pb-20">
         <div className="container ">
           <div className="flex gap-10">
             <h2 className="text-2xl introheading relative pl-3 font-semibold "> Introduction:</h2>
@@ -379,10 +379,6 @@ export default async function page() {
         <div>
         </div>
       </section>
-
-
-
-
     </main>
   );
 }

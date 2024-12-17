@@ -10,8 +10,6 @@ export default async function Hero() {
     }
   );
   const data = await response.json();
-
- 
   return (
     <>
    
@@ -19,7 +17,6 @@ export default async function Hero() {
       <div className='relative herobanner container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8 pt-24 sm:pt-24 pb-0 min_height' >
         <div className='flex flex-col gap-y-4 justify-center  md:text-left items-baseline  pb-10'>
           <h1
-          
            className='banner_heading font-Axiforma'>
             <span className='banner_heading_medium'>{data?.pages?.banner_heading}</span>
             <span className='mr-3'> {data?.pages?.banner_heading_second}</span>
@@ -42,7 +39,6 @@ export default async function Hero() {
         </div>
         <div className='flex items-center justify-center '>
           <ImageCard
-           
            src={data?.pages?.banner_image?.url}
            className='banner_rotate'
            alt='Hero image'
