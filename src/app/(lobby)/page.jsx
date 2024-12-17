@@ -61,7 +61,17 @@ export default async function page() {
 
   return (
     <main>
-      <section className="relative overlay banner_robot bg-black">
+      <section className="relative banner_robot bg-black	">
+        <div className="baner_images">
+        <span className="relative">
+          <ImageCard src='/svg/before_bannerImg.svg' width={700} height={100} />
+          </span>
+        </div>
+        <div className="baner_imagesafter">
+          <span className="relative">
+          <ImageCard src='/svg/after_bannerImg.svg' width={500} height={100} />
+          </span>
+        </div>
         <Hero />
       </section>
 
@@ -69,7 +79,7 @@ export default async function page() {
       {/* logos slider */}
       <section className="logo_section 2xl:py-16 md:py-12 ">
         <div className="container">
-          <div className="flex gap-5 justify-between items-center">
+          <div className="flex gap-5 justify-between items-center ">
             {data?.logo_images &&
               data?.logo_images.map((item, index) => (
                 <>

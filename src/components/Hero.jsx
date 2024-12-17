@@ -14,7 +14,7 @@ export default async function Hero() {
     <>
    
   
-      <div className='relative herobanner container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8 pt-24 sm:pt-24 pb-0 min_height' >
+      <div className='relative herobanner container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8 pt-24 sm:pt-24 pb-0' >
         <div className='flex flex-col gap-y-4 justify-center  md:text-left items-baseline  pb-10'>
           <h1
            className='banner_heading font-Axiforma'>
@@ -37,13 +37,21 @@ export default async function Hero() {
             </Link>
           </div>
         </div>
-        <div className='flex items-center justify-center '>
-          <ImageCard
+        <div className='flex items-center justify-center rightbanner'>
+          {/* <ImageCard
            src={data?.pages?.banner_image?.url}
            className='banner_rotate'
            alt='Hero image'
            width={500}
            height={500}
+           objectFit='cover'
+           /> */}
+           <ImageCard
+           src='/Images/bannerright_img.png'
+           className='banner_rotate'
+           alt='Hero image'
+           width={550}
+           height={550}
            objectFit='cover'
            />
         </div>
