@@ -174,7 +174,7 @@ export default async function page() {
       </section> */}
 
       {/* World Class Protection */}
-      {/* <section className="2xl:py-18 py-14 protection_section  bg-[#011024] text-white">
+      <section className="2xl:py-14 py-14 protection_section  bg-[#011024] text-white">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 2xl:pb-0 p-3 md:pb-0 gap-7 ">
             <div className="left-side">
@@ -225,7 +225,7 @@ export default async function page() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section> 
       <section className="2xl:py-18 py-20 protection_section  bg-[#011024] text-white">
         <div className="container">
           <h2 className="text-center mb-10">Key Services:</h2>
