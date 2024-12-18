@@ -13,7 +13,7 @@ const page = async () => {
 
   const data = await response.json();
 
-  console.log(data, "service");
+  console.log(data?.data?.our_approach_service_page_loop, "service");
 
   return (
     <>
@@ -64,7 +64,7 @@ const page = async () => {
             <div>
               <h2>
                 {data?.data?.why_choose_service_title}
-                <b>Secure365?</b>
+                <b>{data?.data?.why_choose_service_title_second}</b>
               </h2>
               <p className="text-[#4F4F4F] text-lg md:mt-5">
                {data?.data?.why_choose_service_paragraph}
@@ -113,7 +113,7 @@ const page = async () => {
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="leftWrapper ">
               <Text tag="h2" className="capitalize">
-                {data?.data?.our_approach_main_heading} <b>Approach</b>
+                {data?.data?.our_approach_main_heading} <b>{data?.data?.our_approach_main_heading_second}</b>
               </Text>
               <ul className="lg:my-12 mt-9">
                 {
