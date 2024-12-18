@@ -103,14 +103,14 @@ export default async function page() {
       {/* intro section started */}
       <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
         <div className="container ">
-          <div className="flex gap-10">
+          <div className="flex flexWrapperResponsive md:gap-10 gap-5">
             <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
               {" "}
               Introduction:
             </h2>
             <div>
               <Suspense fallback={<p>Loading...</p>}>
-                <Text tag="p" className="text-2xl font-Axiforma">
+                <Text tag="p" className="text-2xl  font-Axiforma">
                   Welcome to Secure365, where we take the complexity out of
                   managing your business’s technology needs. We provide a full
                   spectrum of IT solutions designed to empower your business
@@ -119,7 +119,7 @@ export default async function page() {
                 </Text>
               </Suspense>
               <Suspense fallback={<p>Loading...</p>}>
-                <Text tag="p" className="text-2xl mt-10 font-Axiforma">
+                <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
                   Whether you’re a startup, a growing enterprise, or a seasoned
                   business, Secure365 is your trusted partner for everything
                   IT—so you can focus on what really matters: growing your
@@ -199,7 +199,7 @@ export default async function page() {
             <Suspense fallback={<p>Loading...</p>}>
               <Text
                 tag="p"
-                className=" mt-8 text-center text-2xl max-w-[60%] mx-auto"
+                className=" md:mt-8 mt-4 text-center text-2xl max-w-[60%] mx-auto"
               >
                 At Secure365, we understand that navigating the{" "}
                 <strong>digital world</strong> can be overwhelming. That’s why
@@ -251,7 +251,7 @@ export default async function page() {
       {/* Protect your website section  dvfd*/}
       <section className="cybersecurity_wrapper  py-10">
         <div className="container">
-          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10 p-3 gap-7 items-center  ">
+          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10  gap-7 items-center  ">
             <div className="left-side flex gap-5 col-md-4 col-12  relative">
               <div className="flex flex-col gap-5">
                 {data &&
@@ -286,7 +286,10 @@ export default async function page() {
               <div className="counter_box absolute ">
                 <div>
                   <div>
-                    <Text tag="h3" className="text-white text-3xl font-medium">
+                    <Text
+                      tag="h3"
+                      className="text-white md:text-3xl text-xl font-medium"
+                    >
                       30+
                     </Text>
                     <Text
@@ -359,9 +362,9 @@ export default async function page() {
 
       {/* Ensure Your Website */}
       {/* resolving git error */}
-      <section className="get_started_wrapper my-5 bg-[#060606] text-white lg:py-16 md:py-12 py-5">
+      <section className="get_started_wrapper my-5 bg-[#060606] text-white lg:py-16 md:py-12 py-12">
         <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3  gap-7 items-center">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10   gap-7 items-center">
             <div className="left-side">
               <div className="w-full ">
                 <Text
@@ -371,6 +374,7 @@ export default async function page() {
                   {data?.website_experience_heading_second}
                   <span className="text_blue ml-2">cybersecurity</span>
                 </Text>
+
                 <Text
                   tag="p"
                   className="text-[#c2c2c2] md:text-lg text-md md:my-5 my-2 font-Axiforma md:max-w-[80%]"
@@ -381,6 +385,7 @@ export default async function page() {
                   be a one-stop solution, covering everything from cloud
                   management and IT support to marketing and cybersecurity.
                 </Text>
+
                 <Text
                   tag="p"
                   className="text-[#c2c2c2] md:text-lg text-lg my-2 mb-5  font-Axiforma md:max-w-[80%]"
@@ -389,11 +394,13 @@ export default async function page() {
                   industry-leading technology to deliver seamless experiences,
                   minimize risk, and maximize efficiency.
                 </Text>
+
                 <Button className="btn_one global_btn capitalize mt-5  font-Axiforma">
                   {data?.website_experience_button_second}
                 </Button>
               </div>
             </div>
+
             <div className="w-full">
               <div className="">
                 <ImageCard
@@ -428,7 +435,7 @@ export default async function page() {
 
             <div className="flex flex-col gap-5 right_content">
               <div className="numberWrapper">
-                <sapn>01</sapn>
+                <span>01</span>
                 <div>
                   <h4 className="font-Axiforma">Expert Guidance</h4>
                   <p>
@@ -439,7 +446,7 @@ export default async function page() {
               </div>
 
               <div className="numberWrapper">
-                <sapn>02</sapn>
+                <span>02</span>
                 <div>
                   <h4>Hassle-Free Management</h4>
                   <p>
@@ -450,7 +457,7 @@ export default async function page() {
               </div>
 
               <div>
-                <sapn>03</sapn>
+                <span>03</span>
                 <div>
                   <h4>Proactive Security</h4>
                   <p>
@@ -464,6 +471,7 @@ export default async function page() {
             </div>
           </div>
         </div>
+
         <div></div>
       </section>
 
@@ -593,4 +601,37 @@ export default async function page() {
           </div>
         </div>
       </section>  */
+}
+{
+  /* contact page design start */
+}
+
+{
+  /* banner section  same*/
+}
+{
+  /* 
+<section className="contactformWrapper py-12">
+  <div className="container">
+    <div className="flex">
+      <div className="col-left">
+        <h2>How to Reach Us</h2>
+        <p>We make it easy for you to get in touch, whether you prefer a quick phone call, a detailed email, or scheduling a consultation at a time that works for you.</p>
+
+        <ul>
+          <li>
+            <div>
+              <h3>+(800) 311-5990</h3>
+              <p>Call Now and Get a FREE Consultation</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div className="col-right"></div>
+    </div>
+  </div>
+</section> */
+}
+{
+  /* contact page design ended */
 }
