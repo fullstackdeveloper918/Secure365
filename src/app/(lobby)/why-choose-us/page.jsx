@@ -11,6 +11,8 @@ const page = async () => {
   );
 
   const data = await response.json();
+
+  console.log(data, 'datataheck')
   
 
   return (
@@ -52,13 +54,13 @@ const page = async () => {
           <div className="grid md:grid-cols-2 grid-cols-1 items-center">
             <div>
               <p className="text-[#4F4F4F] text-lg">
-                {console.log(data?.data, "comment")}
+               {data?.data?.why_choose_us_it_partner}
               </p>
               <p className="text-[#4F4F4F] text-lg mt-5">
-                We believe that technology should be a catalyst for growth, not
+                {/* We believe that technology should be a catalyst for growth, not
                 a source of frustration. That’s why we take the complexity out
                 of IT management, making it simple, secure, and stress-free for
-                your business
+                your business */} cut off text
               </p>
             </div>
 
@@ -115,7 +117,7 @@ const page = async () => {
                           </Text>
                           <Text
                             tag="p"
-                            className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%] leading-7"
+                            className="text-[#4F4F4F] md:text-md text-sm my-2 md:max-w-[90%] leading-7"
                           >
                             {item?.why_choose_us_decades_world_paragraph}
                           </Text>
