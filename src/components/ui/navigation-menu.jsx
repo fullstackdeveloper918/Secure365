@@ -33,7 +33,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName
 const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-10 w-max items-center justify-center rounded-md text-white px-4 py-2 text-sm font-medium transition-colors "
+  "group inline-flex h-10 w-max items-center justify-center rounded-md text-white px-4 py-2 text-lg  font-medium transition-colors "
 )
 
 const NavigationMenuTrigger = React.forwardRef(({chever, className, children, ...props }, ref) => (

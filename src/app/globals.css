@@ -111,7 +111,7 @@
   border-color: #52c5ff;
 }
 .btn_one:hover {
-  background: transparent;
+  background-color: transparent !important;
   color: #52c5ff;
 }
 .btn_two {
@@ -194,6 +194,7 @@ h1 span.banner_heading_medium {
 h2 {
   font-size: 48px;
   line-height: 60px;
+  font-weight: 600 !important;
 }
 h2 strong {
   font-size: 60px;
@@ -229,7 +230,7 @@ h2.expert_heading {
 /*********** cybersecurity_wrapper  end ************/
 .cybersecurity_wrapper h2 {
   /* line-height: normal; */
-  font-size: 50px;
+  /* font-size: 50px; */
 }
 
 .keyColumns{
@@ -480,18 +481,19 @@ line-height: normal;
   overflow: hidden;
   border-radius: 10px;
   object-fit: cover;
+  object-position: 0 0px;
 }
 
 .hovercard  .social_list {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background: #52c5ff;
   margin-bottom: 10px;
   padding: 8px;
   border-color: #52c5ff;
 }
 .hovercard  .fontfacebook img{
-  max-width: 8px;
+  max-width: 12px;
 }
 .hovercard  .social_list:hover {
   background: #52c5ff;
@@ -624,7 +626,64 @@ section.promise_sec {
   background: #65b1e817;
   padding: 70px 0px 10px;
 }
-/* /17-12-24 */ 
+/* /17-12-24 */
+
+.right-side{
+  max-width: 85%;
+}
+
+
+.scroll-section-outer {
+  overflow: hidden;
+}
+
+.scroll-section-inner {
+  height: 100vh;
+  width: 400vw;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+} s
+
+.scroll-section {
+  height: 100vh; 
+  width: 100vw; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+ .scroll-section img {
+  color: var(--primaryTextColor);
+  letter-spacing: var(--headlineMedium);
+  font-size: var(--headlineMedium);
+  text-transform: uppercase;
+}
+.leftSideImage img{
+  min-height: 320px;
+  object-fit: cover;
+}
+
+section.lookingService {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(45deg, #00adee, #00447a);
+  color: #fff;
+}
+
+section.lookingService h2{
+  max-width: 80%;
+  font-size: 40px;
+  line-height: 50px;
+  margin: auto;
+}
+section.lookingService p{
+  font-size: 28px;
+  max-width: 53%;
+  margin: 10px auto;
+  line-height: 38px;
+}
+
 @media screen and (min-width: 1600px) {
  .make_us_different h2 {
     font-size: 80px;
@@ -893,31 +952,3 @@ header nav.container img {
 }
 
 
-
-
-.scroll-section-outer {
-  overflow: hidden;
-}
-
-.scroll-section-inner {
-  height: 100vh;
-  width: 400vw;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-} s
-
-.scroll-section {
-  height: 100vh; 
-  width: 100vw; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} 
-
- .scroll-section img {
-  color: var(--primaryTextColor);
-  letter-spacing: var(--headlineMedium);
-  font-size: var(--headlineMedium);
-  text-transform: uppercase;
-}

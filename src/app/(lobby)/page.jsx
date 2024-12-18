@@ -242,19 +242,19 @@ export default async function page() {
         
       </section>
       {/* Protect your website section  dvfd*/}
-      <section className="cybersecurity_wrapper  py-5">
+      <section className="cybersecurity_wrapper  py-10">
         <div className="container">
-          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10 p-3 gap-7  ">
+          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10 p-3 gap-7 items-center  ">
             <div className="left-side flex gap-5 col-md-4 col-12  relative">
               <div className="flex flex-col gap-5">
                 {data &&
                   data?.website_protect_section_image_experience_url?.image_data?.map(
                     (item, index) => (
                       <>
-                        <div>
+                        <div className="leftSideImage">
                           <ImageCard
                             src={item?.website_protect_section_image_experience}
-                            width={400}
+                            width={380}
                             height={420}
                             className="rounded-[10px]"
                             alt="kuch b"
@@ -269,7 +269,7 @@ export default async function page() {
                   src={
                     data?.website_protect_section_image_experience_second_url
                   }
-                  width={360}
+                  width={300}
                   height={200}
                   className="rounded-[10px]"
                   alt="kuch b"
@@ -282,7 +282,7 @@ export default async function page() {
                     <Text tag="h3" className="text-white text-3xl font-medium">
                       30+
                     </Text>
-                    <Text tag="p" className="text-white leading-snug">
+                    <Text tag="p" className="text-white leading-snug font-semibold">
                       Years of Experience
                     </Text>
                   </div>
@@ -294,7 +294,7 @@ export default async function page() {
               <div>
                 <Text
                   tag="h2"
-                  className="my-2 text-black capitalize font-Axiforma"
+                  className="my-2 text-black capitalize font-Axiforma font-medium"
                 >
                   {data?.website_protect_heading_experience_section}
                 </Text>
@@ -304,13 +304,21 @@ export default async function page() {
                   tag="p"
                   className="text-[#434242] text-lg my-5 font-Axiforma"
                 >
-                  {data?.website_protect_paragraph_experience_section}
+                  {/* {data?.website_protect_paragraph_experience_section} */}
+                  At Secure365, we understand that navigating the digital world can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering everything from cloud management and IT support to marketing and cybersecurity.
+                </Text>
+                <Text
+                  tag="p"
+                  className="text-[#434242] text-lg my-5 font-Axiforma"
+                >
+                  Our approach combines expertise, proactive management, and industry-leading technology to deliver seamless experiences, minimize risk, and maximize efficiency.
                 </Text>
               </div>
               <div>
-                <Button className="btn_one global_btn capitalize mt-10">
+                <a href="#" className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma">
                   {data?.website_protect_button_experience}
-                </Button>
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 24L24 9M24 9H15.6667M24 9V17.3333" stroke="#000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </a>
               </div>
             </div>
           </div>
@@ -319,7 +327,7 @@ export default async function page() {
 
       {/* Ensure Your Website */}
       {/* resolving git error */}
-      <section className="get_started_wrapper my-5 bg-black text-white lg:py-16 md:py-12 py-5">
+      <section className="get_started_wrapper my-5 bg-[#060606] text-white lg:py-16 md:py-12 py-5">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3  gap-7 items-center">
             <div className="left-side">
@@ -330,14 +338,17 @@ export default async function page() {
                 </Text>
                 <Text
                   tag="p"
-                  className="text-white md:text-lg text-md md:my-5 my-2 font-Axiforma md:max-w-[80%]"
+                  className="text-[#c2c2c2] md:text-lg text-md md:my-5 my-2 font-Axiforma md:max-w-[80%]"
                 >
-                  {data?.website_experience_paragraph_second}
+                  {/* {data?.website_experience_paragraph_second} */}
+                  At Secure365, we understand that navigating the digital world can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering everything from cloud management and IT support to marketing and cybersecurity.
                 </Text>
                 <Text
                   tag="p"
-                  className="text-white md:text-lg text-lg my-2 mb-5  font-Axiforma"
-                ></Text>
+                  className="text-[#c2c2c2] md:text-lg text-lg my-2 mb-5  font-Axiforma"
+                >
+Our approach combines expertise, proactive management, and industry-leading technology to deliver seamless experiences, minimize risk, and maximize efficiency.
+                </Text>
                 <Button className="btn_one global_btn capitalize mt-5  font-Axiforma">
                   {data?.website_experience_button_second}
                 </Button>
@@ -397,7 +408,7 @@ export default async function page() {
   </div>
 </div>
 
-<button className="btn_one global_btn capitalize font-Axiforma">Let Discuss</button>
+{/* <button className="btn_one global_btn capitalize font-Axiforma">Let Discuss</button> */}
           </div>
 
         </div>
@@ -406,7 +417,18 @@ export default async function page() {
         <div></div>
       </section>
 
+<section className="lookingService">
+  <div className="container">
+    {/* <h2>Ready to Simplify Your IT?</h2> */}
+    <h2>Contact us today for a no-obligation consultation to see how Secure365 can optimize your technology strategy.
+    </h2>
+   <div className="text-center  mt-10">
+   <button  className="btn_two global_btn capitalize font-Axiforma inline mx-auto" >Contact us  </button>
+   </div>
+    
+  </div>
 
+</section>
 
     </main>
   );

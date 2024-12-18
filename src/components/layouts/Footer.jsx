@@ -42,7 +42,7 @@ const Footer = () => {
   
   return (
     <>
-      <footer className="relative text-white pt-10 bg-[#111]">
+      <footer className="relative text-white pt-10 bg-[#181b23]">
         <ImageCard
           className="absolute -z-10 w-full"
           src="/Images/footer_bg_new.png"
@@ -61,7 +61,7 @@ const Footer = () => {
                   alt="Secure Logo"
                 />
               </Link>
-              <Text tag="p" className="max-w-[80%] font-Axiforma">
+              <Text tag="p" className="max-w-[80%] font-Axiforma text-[#c2c2c2]">
                 Clarity gives you the blocks and components you need to create a
                 truly professional website.
               </Text>
@@ -123,7 +123,7 @@ const Footer = () => {
                   {
                     item?.Links?.map((link) => (
                       <React.Fragment key={link?.id}>
-                    <Text tag="li" className="md:mb-4 md:text-md mb-2 text-sm font-Axiforma">
+                    <Text tag="li" className="md:mb-4 md:text-md mb-2 text-sm font-Axiforma text-[#c2c2c2] hover:text-white transition-all  duration-300">
                        <Link href={link?.href}>
                       {link?.text}
                   </Link>
@@ -142,9 +142,9 @@ const Footer = () => {
            
             }
           </div>
-          <Text tag="hr" className="border-[#D9D9D9]" />
+          <Text tag="hr" className="border-[#434343]" />
           <div className="copy_right py-4">
-            <Text tag="p" className="text-sm text-center">
+            <Text tag="p" className="text-sm text-center text-[#c2c2c2]">
               © Copyright 2022, All Rights Reserved by <b>Secure 365</b>
             </Text>
           </div>

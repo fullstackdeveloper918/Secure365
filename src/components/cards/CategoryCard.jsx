@@ -19,19 +19,19 @@ const CategoryCard= async ({ category }) => {
     
       <Card className='relative h-full w-full overflow-hidden rounded-lg bg-transparent transition-colors group bg-[] text-center'>
         <CardHeader>
-          <div className='expertImage'>
+          <div className='expertImage mb-4'>
           <ImageCard
              src={category?.top_skilled_experts_image}
             alt={category?.top_skilled_experts_name}
             width={400}
             height={400}
-            className='user_image'
+            className='user_image '
             
             />
           </div>
         </CardHeader>
-        <CardContent className='space-y-1.5'>
-        <ul className="list-none  gap-2  hovercard absolute top-2 right-2">
+        <CardContent className=''>
+        <ul className="list-none  gap-2  hovercard absolute top-4 right-4">
                 <Text tag="li" className="social_list fontfacebook">
                   {" "}
                   <ImageCard
@@ -126,8 +126,8 @@ const CategoryCard= async ({ category }) => {
                 </Text>
                 }
               </ul> */}
-        <h3 className='text-2xl font-Axiforma font-medium mb-0'>Daxton Atlas</h3>
-        <p>System Manager</p>
+        <h3 className='text-2xl font-Axiforma font-semibold mb-0'>Daxton Atlas</h3>
+        <p className='text-xl mt-0'>System Manager</p>
           <CardDescription className='group-hover:text-white'>
            {category.products}
           </CardDescription>
