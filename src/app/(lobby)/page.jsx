@@ -213,7 +213,7 @@ export default async function page() {
         </div>
       </section>
 
-      <section className="2xl:py-18 py-20 protection_section  bg-[#111] text-white">
+      <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
         <div className="container">
           
             <h2 className="mb-5">Key Services:</h2>
@@ -332,9 +332,9 @@ export default async function page() {
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3  gap-7 items-center">
             <div className="left-side">
               <div className="w-full ">
-                <Text tag="h2" className="md:mb-8 mb-4 font-Axiforma">
+                <Text tag="h2" className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide">
                   {data?.website_experience_heading_second}
-                  <span className="text_blue">cybersecurity</span>
+                  <span className="text_blue ml-2">cybersecurity</span>
                 </Text>
                 <Text
                   tag="p"
@@ -345,7 +345,7 @@ export default async function page() {
                 </Text>
                 <Text
                   tag="p"
-                  className="text-[#c2c2c2] md:text-lg text-lg my-2 mb-5  font-Axiforma"
+                  className="text-[#c2c2c2] md:text-lg text-lg my-2 mb-5  font-Axiforma md:max-w-[80%]"
                 >
 Our approach combines expertise, proactive management, and industry-leading technology to deliver seamless experiences, minimize risk, and maximize efficiency.
                 </Text>
@@ -384,7 +384,7 @@ Our approach combines expertise, proactive management, and industry-leading tech
           </div>
           
           <div className="flex flex-col gap-5 right_content">
-<div>
+<div className="numberWrapper">
   <sapn>01</sapn>
   <div>
   <h4 className="font-Axiforma">Expert Guidance</h4>
@@ -392,7 +392,7 @@ Our approach combines expertise, proactive management, and industry-leading tech
   </div>
 </div>
 
-<div>
+<div className="numberWrapper">
 <sapn>02</sapn>
 <div>
   <h4>Hassle-Free Management</h4>
@@ -401,7 +401,7 @@ Our approach combines expertise, proactive management, and industry-leading tech
 </div>
 
 <div>
-<sapn>03</sapn>
+<sapn >03</sapn>
 <div>
   <h4>Proactive Security</h4>
   <p>Stay ahead of threats with a dedicated team monitoring and protecting your business 24/7.</p>

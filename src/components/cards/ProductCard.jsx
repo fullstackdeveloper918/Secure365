@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
     <div className="scroll-section">
 
   
-    <div className="group/card  border hover:shadow-2xl duration-300 transition-all rounded-2xl space-y-4 h-full relative">
+    <div className="group/card  border hover:shadow-2xl duration-300 transition-all rounded-2xl space-y-4 h-full relative cardImageHover">
       {/* <Link
         href={`/${product.storeId}/${product.slug}?productId=${product.id}`}
       > */}

@@ -31,7 +31,7 @@ const CategoryCard= async ({ category }) => {
           </div>
         </CardHeader>
         <CardContent className=''>
-        <ul className="list-none  gap-2  hovercard absolute top-4 right-4">
+        <ul className="list-none  gap-2  hovercard absolute top-5 right-5">
                 <Text tag="li" className="social_list fontfacebook">
                   {" "}
                   <ImageCard
@@ -127,7 +127,7 @@ const CategoryCard= async ({ category }) => {
                 }
               </ul> */}
         <h3 className='text-2xl font-Axiforma font-semibold mb-0'>Daxton Atlas</h3>
-        <p className='text-xl mt-0'>System Manager</p>
+        <p className='text-lg text-[#3d3d3d] mt-0'>System Manager</p>
           <CardDescription className='group-hover:text-white'>
            {category.products}
           </CardDescription>
