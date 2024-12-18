@@ -585,21 +585,21 @@ line-height: normal;
 .promise_header {
   margin: 0px 0px 40px;
 }
-.left_rightContent .right_content sapn {
-  font-size: 30px;
+.left_rightContent .right_content span {
+  font-size: 24px;
   background: #fff;
   border-radius: 50px;
   color: #52c5ff;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   font-family: Axiforma;
   font-weight: 600;
   align-items: center;
   margin: 0;
-  padding: 5px 0 0;
-  min-width: 80px;
+  padding: 3px 0 0;
+  min-width: 60px;
   border: 7px solid #52c5ff66;
 
 }
@@ -632,13 +632,13 @@ section.promise_sec {
 }
 
 .numberWrapper::after{
-  border: 3px dashed #00adee;
-  width: 3px;
-  height: 50px;
+  border: 1px dashed #00adee;
+  width: 1px;
+  height: 70px;
   position: absolute;
   content: "";
-  left: 35px;
-  top: 93%;
+  left: 28px;
+  top: 70%;
   border-radius: 80px;
 }
 
@@ -899,6 +899,25 @@ header nav.container ul li button {
 .left_rightContent .right_content h4 {
   font-size: 22px;
 }
+.left_rightContent .right_content span {
+  font-size: 20px;
+  width: 60px;
+  height: 60px;
+  padding: 5px 0 0;
+  min-width: 60px;
+}
+.numberWrapper:after {
+  height: 50px;
+  left: 27px;
+  top: 85%;
+}
+section.lookingService h2 {
+  font-size: 30px;
+  line-height: 40px;
+}
+.leftSideImage img {
+  min-height: 250px;
+}
 }
 
 @media screen and (max-width: 768px) {
@@ -909,6 +928,22 @@ header nav.container ul li button {
     margin: 0;
     max-width: 100%;
   }
+  .left_rightContent {
+    grid-template-columns: 1fr;
+    gap:  50px 0;
+    margin: 0 0 50px 0;
+}
+section.lookingService {
+  padding: 40px 0;
+}
+section.lookingService h2 {
+  font-size: 24px ;
+}
+.global_btn {
+  min-width: 165px;
+  font-size: 16px;
+  min-height: 46px;
+}
 }
 @media screen and (max-width: 767px) {
 
@@ -948,9 +983,6 @@ header nav.container ul li button {
   .maxWidth{
     max-width: 100% !important;
   }
-}
-
-@media (max-width:767px){
   .baner_imagesafter {
     top: -2px !important;
     transform: rotate(1deg);
@@ -967,8 +999,12 @@ header nav.container img {
 .herobanner {
   padding-top: 70px !important;
 }
+.flexWrapperResponsive{
+  flex-wrap: wrap;
 }
-@media screen and (max-width: 575px) {
+
+}
+@media screen and (max-width: 675px) {
   /* .banner_heading {
     line-height: 2rem !important;
 } */
@@ -991,6 +1027,54 @@ header nav.container img {
     font-size: 40px !important;
     line-height: 46px !important;
   }
+  .promise_header {
+    margin: 0 0 20px;
+    flex-wrap: wrap;
+}
+.promise_header p {
+  max-width: 100%;
+  line-height: 26px;
+  font-size: 16px !important;
+  margin-top: 10px;
+}
+.left_rightContent .right_content > div {
+  gap: 15px;
+  max-width: 40rem;
+}
+.numberWrapper::after {
+  height: 80px;
+  left: 27px;
+  top: 62%;
+}
+section.lookingService h2 {
+  font-size: 20px;
+  line-height: 28px;
+}
+.lookingService .text-center.mt-10 {
+  margin-top: 30px !important;
+}
+
+footer hr{
+  margin-top: 30px;
+}
+.copy_right  p {
+  font-size: 12px !important;
+}
+.make_us_different h2 {
+  font-size: 30px;
+  width: 100%;
+}
+.make_us_different{
+  padding: 40px 0 !important;
+  text-align: center;
+}
+
+section.promise_sec {
+  background: #65b1e817;
+  padding: 40px 0 10px;
+  margin-top: 50px;
+}
+
 }
 @media screen and (max-width: 480px) {
   .get_started_wrapper h2 {
@@ -1018,6 +1102,22 @@ header nav.container img {
   .banner_absolute {
     max-width: 80%;
   }
+
 }
 
+
+@media screen and (max-width: 460px) {
+.make_us_different p {
+  font-size: 16px !important;
+  max-width: 100% !important;
+  line-height: 26px;
+}
+.leftSideImage img {
+  min-height: auto;
+}
+.counter_box {
+  width: 140px;
+  height: 140px;
+}
+}
 

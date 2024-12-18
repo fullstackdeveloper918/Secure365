@@ -57,13 +57,13 @@ export default async function page() {
     <main>
       <section className="relative banner_robot bg-black	">
         <div className="baner_images">
-        <span className="relative">
-          <ImageCard src='/svg/before_bannerImg.svg' width={700} height={100} />
+          <span className="relative">
+            <ImageCard src='/svg/before_bannerImg.svg' width={700} height={100} />
           </span>
         </div>
         <div className="baner_imagesafter">
           <span className="relative">
-          <ImageCard src='/svg/after_bannerImg.svg' width={500} height={100} />
+            <ImageCard src='/svg/after_bannerImg.svg' width={500} height={100} />
           </span>
         </div>
         <Hero />
@@ -95,27 +95,27 @@ export default async function page() {
       {/* intro section started */}
       <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
         <div className="container ">
-          <div className="flex gap-10">
+          <div className="flex flexWrapperResponsive md:gap-10 gap-5">
             <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
               {" "}
               Introduction:
             </h2>
             <div>
               <Suspense fallback={<p>Loading...</p>}>
-              <Text tag="p" className="text-2xl font-Axiforma">
-                Welcome to Secure365, where we take the complexity out of
-                managing your business’s technology needs. We provide a full
-                spectrum of IT solutions designed to empower your business with
-                enhanced security, streamlined processes, and a support system
-                that’s second to none.
-              </Text>
+                <Text tag="p" className="text-2xl  font-Axiforma">
+                  Welcome to Secure365, where we take the complexity out of
+                  managing your business’s technology needs. We provide a full
+                  spectrum of IT solutions designed to empower your business with
+                  enhanced security, streamlined processes, and a support system
+                  that’s second to none.
+                </Text>
               </Suspense>
               <Suspense fallback={<p>Loading...</p>}>
-              <Text tag="p" className="text-2xl mt-10 font-Axiforma">
-                Whether you’re a startup, a growing enterprise, or a seasoned
-                business, Secure365 is your trusted partner for everything IT—so
-                you can focus on what really matters: growing your business.
-              </Text>
+                <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
+                  Whether you’re a startup, a growing enterprise, or a seasoned
+                  business, Secure365 is your trusted partner for everything IT—so
+                  you can focus on what really matters: growing your business.
+                </Text>
               </Suspense>
               {/* <Suspense fallback={<Skeleton className="h-4 w-[250px]" />}>
                 <Text tag="p" className="text-2xl">
@@ -166,13 +166,13 @@ export default async function page() {
         {/* <Image src="/Images/Cybersecurity.png" alt="img" width={100} height={100} className="animate fadeInUp one" /> */}
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-2 ">
-          <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
-          <Text tag="h2" className="heading_h2 capitalize ">
-              {data?.makes_us_diffrent_heading}
-              <span className="capitalize font-semibold m-2">
-                {data?.makes_us_diffrent_heading_second}
-              </span>
-            </Text>
+            <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
+              <Text tag="h2" className="heading_h2 capitalize ">
+                {data?.makes_us_diffrent_heading}
+                <span className="capitalize font-semibold m-2">
+                  {data?.makes_us_diffrent_heading_second}
+                </span>
+              </Text>
             </Suspense>
             {/* <Suspense fallback={<p>Loading...</p>}>
             <Text tag="p" className=" mt-8 text-center text-2xl max-w-[60%] mx-auto font-Axiforma">
@@ -190,7 +190,7 @@ export default async function page() {
             <Suspense fallback={<p>Loading...</p>}>
               <Text
                 tag="p"
-                className=" mt-8 text-center text-2xl max-w-[60%] mx-auto"
+                className=" md:mt-8 mt-4 text-center text-2xl max-w-[60%] mx-auto"
               >
                 At Secure365, we understand that navigating the{" "}
                 <strong>digital world</strong> can be overwhelming. That’s why
@@ -215,8 +215,8 @@ export default async function page() {
 
       <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
         <div className="container">
-          
-            <h2 className="mb-5">Key Services:</h2>
+
+          <h2 className="mb-5">Key Services:</h2>
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
             {data &&
               data?.key_services_data.map((item, index) => (
@@ -238,13 +238,13 @@ export default async function page() {
                 </>
               ))}
           </div>
-          </div>
-        
+        </div>
+
       </section>
       {/* Protect your website section  dvfd*/}
       <section className="cybersecurity_wrapper  py-10">
         <div className="container">
-          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10 p-3 gap-7 items-center  ">
+          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10  gap-7 items-center  ">
             <div className="left-side flex gap-5 col-md-4 col-12  relative">
               <div className="flex flex-col gap-5">
                 {data &&
@@ -279,7 +279,7 @@ export default async function page() {
               <div className="counter_box absolute ">
                 <div>
                   <div>
-                    <Text tag="h3" className="text-white text-3xl font-medium">
+                    <Text tag="h3" className="text-white md:text-3xl text-xl font-medium">
                       30+
                     </Text>
                     <Text tag="p" className="text-white leading-snug font-semibold">
@@ -327,9 +327,9 @@ export default async function page() {
 
       {/* Ensure Your Website */}
       {/* resolving git error */}
-      <section className="get_started_wrapper my-5 bg-[#060606] text-white lg:py-16 md:py-12 py-5">
+      <section className="get_started_wrapper my-5 bg-[#060606] text-white lg:py-16 md:py-12 py-12">
         <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10 p-3  gap-7 items-center">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10   gap-7 items-center">
             <div className="left-side">
               <div className="w-full ">
                 <Text tag="h2" className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide">
@@ -347,7 +347,7 @@ export default async function page() {
                   tag="p"
                   className="text-[#c2c2c2] md:text-lg text-lg my-2 mb-5  font-Axiforma md:max-w-[80%]"
                 >
-Our approach combines expertise, proactive management, and industry-leading technology to deliver seamless experiences, minimize risk, and maximize efficiency.
+                  Our approach combines expertise, proactive management, and industry-leading technology to deliver seamless experiences, minimize risk, and maximize efficiency.
                 </Text>
                 <Button className="btn_one global_btn capitalize mt-5  font-Axiforma">
                   {data?.website_experience_button_second}
@@ -373,62 +373,66 @@ Our approach combines expertise, proactive management, and industry-leading tech
 
       <section className="promise_sec">
         <div className="container">
-        <div className="promise_header flex justify-between">
-          <h2 className="font-Axiforma">Our Promise</h2>
-          <p>We simplify IT management by integrating security, support, and business continuity into a single, cohesive system. With Secure365, you get:</p>
-        </div>
-        
-        <div className="left_rightContent">
-          <div className="left_images">
-<Image src='/Images/promise_img.png' width={700} height={400} />
-          </div>
-          
-          <div className="flex flex-col gap-5 right_content">
-<div className="numberWrapper">
-  <sapn>01</sapn>
-  <div>
-  <h4 className="font-Axiforma">Expert Guidance</h4>
-  <p>Leverage our team’s experience to navigate complex IT challenges with confidence.</p>
-  </div>
-</div>
-
-<div className="numberWrapper">
-<sapn>02</sapn>
-<div>
-  <h4>Hassle-Free Management</h4>
-  <p>We take care of everything—from installation to maintenance—so you don’t have to.</p>
-  </div>
-</div>
-
-<div>
-<sapn >03</sapn>
-<div>
-  <h4>Proactive Security</h4>
-  <p>Stay ahead of threats with a dedicated team monitoring and protecting your business 24/7.</p>
-  </div>
-</div>
-
-{/* <button className="btn_one global_btn capitalize font-Axiforma">Let Discuss</button> */}
+          <div className="promise_header flex justify-between">
+            <h2 className="font-Axiforma">Our Promise</h2>
+            <p>We simplify IT management by integrating security, support, and business continuity into a single, cohesive system. With Secure365, you get:</p>
           </div>
 
-        </div>
+          <div className="left_rightContent">
+            <div className="left_images">
+              <Image src='/Images/promise_img.png' width={700} height={400} />
+            </div>
+
+            <div className="flex flex-col gap-5 right_content">
+              <div className="numberWrapper">
+                <span>01</span>
+                <div>
+                  <h4 className="font-Axiforma">Expert Guidance</h4>
+                  <p>Leverage our team’s experience to navigate complex IT challenges with confidence.</p>
+                </div>
+              </div>
+
+              <div className="numberWrapper">
+                <span>02</span>
+                <div>
+                  <h4>Hassle-Free Management</h4>
+                  <p>We take care of everything—from installation to maintenance—so you don’t have to.</p>
+                </div>
+              </div>
+
+              <div>
+                <span >03</span>
+                <div>
+                  <h4>Proactive Security</h4>
+                  <p>Stay ahead of threats with a dedicated team monitoring and protecting your business 24/7.</p>
+                </div>
+              </div>
+
+              {/* <button className="btn_one global_btn capitalize font-Axiforma">Let Discuss</button> */}
+            </div>
+
+          </div>
 
         </div>
         <div></div>
       </section>
 
-<section className="lookingService">
-  <div className="container">
-    {/* <h2>Ready to Simplify Your IT?</h2> */}
-    <h2>Contact us today for a no-obligation consultation to see how Secure365 can optimize your technology strategy.
-    </h2>
-   <div className="text-center  mt-10">
-   <button  className="btn_two global_btn capitalize font-Axiforma inline mx-auto" >Contact us  </button>
-   </div>
-    
-  </div>
+      <section className="lookingService">
+        <div className="container">
+          {/* <h2>Ready to Simplify Your IT?</h2> */}
+          <h2>Contact us today for a no-obligation consultation to see how Secure365 can optimize your technology strategy.
+          </h2>
+          <div className="text-center  mt-10">
+            <button className="btn_two global_btn capitalize font-Axiforma inline mx-auto" >Contact us  </button>
+          </div>
 
-</section>
+        </div>
+
+      </section>
+
+
+
+
 
     </main>
   );
@@ -543,3 +547,28 @@ Our approach combines expertise, proactive management, and industry-leading tech
         </div>
       </section>  */
 }
+{/* contact page design start */}
+
+{/* banner section  same*/}
+{/* 
+<section className="contactformWrapper py-12">
+  <div className="container">
+    <div className="flex">
+      <div className="col-left">
+        <h2>How to Reach Us</h2>
+        <p>We make it easy for you to get in touch, whether you prefer a quick phone call, a detailed email, or scheduling a consultation at a time that works for you.</p>
+
+        <ul>
+          <li>
+            <div>
+              <h3>+(800) 311-5990</h3>
+              <p>Call Now and Get a FREE Consultation</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div className="col-right"></div>
+    </div>
+  </div>
+</section> */}
+{/* contact page design ended */}
