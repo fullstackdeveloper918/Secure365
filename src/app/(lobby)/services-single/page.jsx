@@ -60,7 +60,7 @@ const page = async () => {
                 <b>{data?.data?.service_single_why_choose_heading_second}</b>
               </Text>
               <Text tag="p" className="text-[#4F4F4F] text-lg md:mt-5">
-               {data?.data?.service_single_why_choose_paragraph}
+                {data?.data?.service_single_why_choose_paragraph}
               </Text>
             </div>
           </div>
@@ -69,99 +69,132 @@ const page = async () => {
 
       <section className="service_core_page bg-[#FAFAFA] py-16 ">
         <h2 className="text-center">
-          {data?.data?.service_single_include_main_heading}<b></b>
+          {data?.data?.service_single_include_main_heading}
+          <b></b>
         </h2>
         <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
-        {data?.data?.service_single_data &&
-          data?.data?.service_single_data.map((item, index) => (
-            <React.Fragment key={index}>
-              <Suspense fallback={<CategoryCardSkeleton />}>
-                <div className="text-center column_hover">
-                  <div className="cardImage">
-                    <ImageCard
-                      src={item?.service_single_page_include_image}
-                      width={40}
-                      height={40}
-                      alt="avatar image"
-                      className="mx-auto"
-                    />
-                  </div>
-                  <Text
-                    tag="h3"
-                    className="md:text-xl text-xl font-medium text-center "
-                  >
-                    {item?.service_single_page_include_heading}
-                  </Text>
-
-                  <Text
-                    tag="p"
-                    className="text-center text-md text-primary text-[#4F4F4F] font_14"
-                  >
-                    {item?.service_single_page_include_paragraph}
-                  </Text>
-                </div>
-              </Suspense>
-            </React.Fragment>
-          ))}
-      </div>
-      </section>
-
-      {/* <section className="ApproachSevices  py-20   px-3 md:px-0">
-        <div className="container">
-          <div className="grid md:grid-cols-2 grid-cols-1">
-            <div className="leftWrapper ">
-              <Text tag="h2" className="capitalize">
-                {data?.data?.our_approach_main_heading} <b>{data?.data?.our_approach_main_heading_second}</b>
-              </Text>
-              <ul className="lg:my-12 mt-9">
-                {
-                  data?.data && data?.data?.our_approach_service_page_loop.map((item, index) => (
-                    <React.Fragment key={index}>
-                    
-                      <li className="flex space-x-2 items-start mb-3">
-                  <ImageCard
-                    src="/Images/Approval.png"
-                    width={30}
-                    height={30}
-                    alt="approve image"
-                    className="approve_img"
-                  />
-                  <div>
+          {data?.data?.service_single_data &&
+            data?.data?.service_single_data.map((item, index) => (
+              <React.Fragment key={index}>
+                <Suspense fallback={<CategoryCardSkeleton />}>
+                  <div className="text-center column_hover">
+                    <div className="cardImage">
+                      <ImageCard
+                        src={item?.service_single_page_include_image}
+                        width={40}
+                        height={40}
+                        alt="avatar image"
+                        className="mx-auto"
+                      />
+                    </div>
                     <Text
                       tag="h3"
-                      className="font-semibold md:text-lg text-md "
+                      className="md:text-xl text-xl font-medium text-center "
                     >
-                      {item?.our_approach_service_heading}
+                      {item?.service_single_page_include_heading}
                     </Text>
+
                     <Text
                       tag="p"
-                      className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]"
+                      className="text-center text-md text-primary text-[#4F4F4F] font_14"
                     >
-                     {item?.our_core_service_title_paragraph}
+                      {item?.service_single_page_include_paragraph}
                     </Text>
                   </div>
-                </li>
+                </Suspense>
+              </React.Fragment>
+            ))}
+        </div>
+      </section>
+
+      <section className="service_core_page bg-[#FAFAFA] py-16 ">
+        <h2 className="text-center">
+          {data?.data?.service_single_choosing_heading_main}
+          <b></b>
+
+          <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
+            {data?.data?.service_single_choosing_data &&
+              data?.data?.service_single_choosing_data.map((item, index) => (
+                <React.Fragment key={index}>
+                  <Suspense fallback={<CategoryCardSkeleton />}>
+                    {item?.service_single_choosing_image !== null && (
+                      <div className="text-center column_hover">
+                        <div className="cardImage">
+                          <ImageCard
+                            src={item?.service_single_choosing_image}
+                            width={40}
+                            height={40}
+                            alt="avatar image"
+                            className="mx-auto"
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </Suspense>
+                </React.Fragment>
+              ))}
+          </div>
+        </h2>
+      </section>
+
+      <ul className="lg:my-12 mt-9">
+                {data?.data &&
+                  data?.data?.service_single_page_data.map((item,index) => (
+                    <React.Fragment key={index}>
+                      <li className="flex space-x-2 items-start mb-3">
+                        <ImageCard
+                          src="/Images/Approval.png"
+                          width={30}
+                          height={30}
+                          alt="approve image"
+                          className="approve_img"
+                        />
+                        <div>
+                          <Text
+                            tag="h3"
+                            className="font-semibold md:text-lg text-md "
+                          >
+                            {item?.service_single_heading_services}
+                          </Text>
+                          <Text
+                            tag="p"
+                            className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]"
+                          >
+                            {item?.service_single_heading_paragraph}
+                          </Text>
+                        </div>
+                      </li>
                     </React.Fragment>
-                  ))
-                }
-              
-                
+                  ))}
               </ul>
+
+
+              <section className="service_why_chose py-20">
+        <div className="container">
+          <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-10">
+            
+            <div>
+              <h2>
+                {data?.data?.service_single_our_promise_heading}
+                {/* <b>data?.data?.why_choose_service_title_second</b> */}
+              </h2>
+              <p className="text-[#4F4F4F] text-lg md:mt-5">
+               {data?.data?.service_single_our_promise_paragraph}
+              </p>
             </div>
-            <div className="RightWrapper ">
+            <div>
               <ImageCard
-                alt="story image"
-                src="/Images/service_Appproach.png"
-                className="mx-auto"
-                width={600}
-                height={550}
+                src={data?.data?.image_promis_urls}
+                alt="banner image"
+                width={700}
+                height={600}
               />
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* <section className="ready_partner relative lg:py-20 py-10  text-center ">
+      <section className="ready_partner relative lg:py-20 py-10  text-center ">
         <ImageCard
           alt="expert image"
           className="absolute -z-10"
@@ -170,13 +203,15 @@ const page = async () => {
         />
         <div className="container">
           <h2 className="text-white lg:text-5xl  md:text-3xl  text-2xl">
-           {data?.data?.ready_to_partner_heading} <b>Experts?</b>
+           {data?.data?.service_single_management_heading} <b>{data?.data?.service_single_management_heading_second}</b>
           </h2>
           <p className="text-white md:text-lg mt-5 text-md lg:max-w-[50%] md:max-w-[70%] mx-auto">
-            {data?.data?.ready_to_partner_paragraph}
+            {data?.data?.service_single_management_paragraph}
           </p>
         </div>
-      </section> */}
+      </section>
+
+      
     </>
   );
 };
