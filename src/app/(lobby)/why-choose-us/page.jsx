@@ -25,7 +25,7 @@ const page = async () => {
           layout="fill"
           alt=" about Background image"
         />
-        <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0 min_height">
+        <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0 ">
           <Text tag="h1" className="text-center	banner_heading">
             {" "}
             From
