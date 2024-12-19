@@ -55,7 +55,7 @@ const Footer = () => {
             <div className="flex flex-col gap-5">
               <Link href="/" className="flex space-x-2">
                 <ImageCard
-                  src="/svg/secure.svg"
+                  src="/Images/secure_white.png"
                   width={200}
                   height={30}
                   alt="Secure Logo"
