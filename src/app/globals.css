@@ -709,7 +709,10 @@ textarea:focus-visible {
 .borderradius img,
 .borderradius{
   border-radius: 0 50px 0 50px;
+}
 
+b, strong{
+  font-weight: 600 !important;
 }
 
 @media screen and (min-width: 1922px) {

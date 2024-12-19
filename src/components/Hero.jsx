@@ -18,15 +18,13 @@ export default async function Hero() {
   const data = await response.json();
   return (
     <>
-   
   
       <div className='relative herobanner container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8  pt-20 sm:pt-24 pb-0' >
         <div className='flex flex-col gap-y-4 justify-center  md:text-left items-baseline  pb-10'>
           <Suspense fallback={<p>Loading Heading...</p>}>
-
           <Text tag="h1"
            className='banner_heading font-Axiforma'>
-            <span className='banner_heading_medium'>{data?.pages?.banner_heading}</span>
+            <span className='banner_heading_medium'>{data?.Home?.banner_heading}</span>
             <span className='mr-3'> {data?.pages?.banner_heading_second}</span>
             <span className='text_blue'>{data?.pages?.banner_heading_thired}</span>
           </Text>

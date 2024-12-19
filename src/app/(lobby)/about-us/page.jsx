@@ -98,29 +98,68 @@ const page = async () => {
         </div>
       </section>
 
-      <section className="pb-20">
+         {/* introduction Section Content */}
+         <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
+        <div className="container ">
+          <div className="flex flexWrapperResponsive md:gap-10 gap-5">
+            <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
+              {response?.data?.home_introduction_section_heading_main}
+            </h2>
+            <div>
+                <Text tag="p" className="text-2xl  font-Axiforma">
+                  {response?.data?.home_introduction_section_paragreaph_first}
+                </Text>
+                <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
+                  {response?.data?.home_introduction_section_paragreaph_second}
+                </Text>
+              <a
+                href=""
+                className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
+              >
+                {response?.data?.home_introduction_section_discover}
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 24L24 9M24 9H15.6667M24 9V17.3333"
+                    stroke="#000"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="md:py-20 py-10">
         <div className="container">
-          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
-            {response?.data?.vision_data &&
-              response?.data?.vision_data.map((item, index) => (
-                <React.Fragment key={index}>
-                  <Suspense fallback={<CategoryCardSkeleton />}>
-                    <div className="text-center column_hover">
-                      <div className="cardImage">
-                        <ImageCard
-                          src={item?.our_vision_about_image}
-                          width={40}
-                          height={40}
-                          alt="avatar image"
-                          className="mx-auto"
-                        />
-                      </div>
-                      <Text
-                        tag="h3"
-                        className="md:text-xl text-xl font-medium text-center capitalize "
-                      >
-                        {item?.our_vision_about_heading}
-                      </Text>
+        <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
+        {response?.data?.vision_data &&
+          response?.data?.vision_data.map((item, index) => (
+            <React.Fragment key={index}>
+              <Suspense fallback={<CategoryCardSkeleton />}>
+                <div className="text-center column_hover">
+                  <div className="cardImage">
+                    <ImageCard
+                      src={item?.our_vision_about_image}
+                      width={40}
+                      height={40}
+                      alt="avatar image"
+                      className="mx-auto"
+                    />
+                  </div>
+                  <Text
+                    tag="h3"
+                    className="md:text-xl text-xl font-medium text-center "
+                  >
+                    {item?.our_vision_about_heading}
+                  </Text>
 
                       <Text
                         tag="p"
@@ -135,6 +174,8 @@ const page = async () => {
           </div>
         </div>
       </section>
+        {/* </div>
+      </section> */}
 
       {/* why section started*/}
 
