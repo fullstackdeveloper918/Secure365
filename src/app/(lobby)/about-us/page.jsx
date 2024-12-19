@@ -1,7 +1,7 @@
 import ImageCard from "@/components/cards/ImageCard";
 import Text from "@/components/Text";
 import React, { Suspense } from "react";
-import Image from "next/image";
+
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 
 
@@ -164,7 +164,7 @@ const page = async () => {
                   data?.data?.core_value_data_loop.map((item,index) => (
                     <React.Fragment key={index}>
                       <li className="flex space-x-2 items-start mb-3">
-                        <Image
+                        <ImageCard
                           src="/Images/Approval.png"
                           width={30}
                           height={30}
@@ -201,7 +201,7 @@ const page = async () => {
                   data?.data?.our_services_left_data.map((item,index) => (
                     <React.Fragment key={index}>
                       <li className="flex space-x-2 items-start mb-3">
-                        <Image
+                        <ImageCard
                           src="/Images/Approval.png"
                           width={30}
                           height={30}
@@ -241,7 +241,7 @@ const page = async () => {
       </section>
 
       <section className="ready_partner relative lg:py-20 py-10  text-center md:mt-20 mt-10">
-        <Image
+        <ImageCard
           alt="expert image"
           className="absolute -z-10"
           layout="fill"

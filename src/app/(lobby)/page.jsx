@@ -1,46 +1,16 @@
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
-import ImageCard from "../../components/cards/ImageCard";
-import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
+import Link from "next/link";
 
-const Products = dynamic(() => import("../../components/Products"), {
-  loading: () => <p>Loading...</p>,
-});
-
+const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
-
-const Categories = dynamic(() => import("../../components/Categories"), {
-  loading: () => <p>Loading...</p>,
-});
-
+const ImageCard = dynamic(() => import("../../components/cards/ImageCard"));
+const Categories = dynamic(() => import("../../components/Categories"));
 const Text = dynamic(() => import("../../components/Text"));
 
-const testimonial = [
-  {
-    id: 1,
-    img: "/Images/consumer-centric.png",
-    icon: "Real World Image",
-    title: "Real-World Experience",
-    text: "Secure365 is built on years of battling cybercrime, managing e-commerce platforms, and developing technology strategies that work in real-world scenarios.",
-  },
-  {
-    id: 2,
-    img: "/Images/solution.png",
-    icon: "Solution Image",
-    title: "Comprehensive Solutions",
-    text: "Secure365 is built on years of battling cybercrime, managing e-commerce platforms, and developing technology strategies that work in real-world scenarios.",
-  },
-  {
-    id: 3,
-    img: "/Images/user-experience.png",
-    icon: "User Experience Image",
-    title: "Victim-Centric Approach",
-    text: "Secure365 is built on years of battling cybercrime, managing e-commerce platforms, and developing technology strategies that work in real-world scenarios.",
-  },
-];
+
 
 export default async function page() {
   const response = await fetch(
@@ -55,35 +25,38 @@ export default async function page() {
 
   return (
     <main>
-      <section className="relative banner_robot bg-black	">
+      <section className="relative banner_robot bg-black">
         <div className="baner_images">
           <span className="relative">
-            <ImageCard
-              src="/svg/before_bannerImg.svg"
-              width={700}
-              height={100}
-            />
+            <Suspense fallback={<p>Loading...</p>}>
+              <ImageCard
+                src="/svg/before_bannerImg.svg"
+                width={700}
+                height={100}
+              />
+            </Suspense>
           </span>
         </div>
         <div className="baner_imagesafter">
           <span className="relative">
-            <ImageCard
-              src="/svg/after_bannerImg.svg"
-              width={500}
-              height={100}
-            />
+            <Suspense fallback={<p>Loading...</p>}>
+              <ImageCard
+                src="/svg/after_bannerImg.svg"
+                width={500}
+                height={100}
+              />
+            </Suspense>
           </span>
         </div>
         <Hero />
       </section>
 
-      {/* intro section started */}
+      {/* introduction Section Content */}
       <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
         <div className="container ">
           <div className="flex flexWrapperResponsive md:gap-10 gap-5">
             <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
               {data?.home_introduction_section_heading_main}
-              
             </h2>
             <div>
               <Suspense fallback={<p>Loading...</p>}>
@@ -96,7 +69,7 @@ export default async function page() {
                   {data?.home_introduction_section_paragreaph_second}
                 </Text>
               </Suspense>
-             
+
               <a
                 href=""
                 className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
@@ -122,11 +95,12 @@ export default async function page() {
           </div>
         </div>
       </section>
-      {/* intro section ended */}
 
-      {/* <div className="max-w-7xl mx-auto py-16"> */}
+      {/* Introduction Ends Here */}
+
+      {/* What Makes us Different Section Starts */}
+
       <section className="make_us_different 2xl:py-16  pb-12 bg-[#f0f0f0] relative">
-        {/* <Image src="/Images/Cybersecurity.png" alt="img" width={100} height={100} className="animate fadeInUp one" /> */}
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-2 ">
             <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
@@ -137,17 +111,12 @@ export default async function page() {
                 </span>
               </Text>
             </Suspense>
-          
+
             <Suspense fallback={<p>Loading...</p>}>
               <Text
                 tag="p"
                 className=" md:mt-8 mt-4 text-center text-2xl max-w-[60%] mx-auto"
               >
-                {/* At Secure365, we understand that navigating the{" "}
-                <strong>digital world</strong> can be overwhelming. That’s why
-                we’ve designed our services to be a one-stop solution, covering
-                everything from cloud management and IT support to marketing and
-                cybersecurity. */}
                 {data?.makes_us_diffrent_paragraph}
               </Text>
             </Suspense>
@@ -163,9 +132,13 @@ export default async function page() {
         </div>
       </section>
 
+      {/* What Makes us Different Section Ends */}
+
+      {/* Key Services Section Starts */}
+
       <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
         <div className="container">
-          <h2 className="mb-5">{data?.home_key_service_first_heading}:</h2>
+          <Text tag="h2" className="mb-5">{data?.home_key_service_first_heading}:</Text>
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
             {data &&
               data?.home_key_service_data.map((item, index) => (
@@ -181,7 +154,9 @@ export default async function page() {
                     </Suspense>
                     <Text tag="h3">{item?.home_key_service_first_title}</Text>
                     <Suspense fallback={<p>Loading Text...</p>}>
-                      <Text tag="p">{item?.home_key_service_first_paragraph}</Text>
+                      <Text tag="p">
+                        {item?.home_key_service_first_paragraph}
+                      </Text>
                     </Suspense>
                   </div>
                 </>
@@ -189,7 +164,11 @@ export default async function page() {
           </div>
         </div>
       </section>
-      {/* Protect your website section  dvfd*/}
+
+      {/* Key Services Section Ends */}
+
+      {/* Protect Your Website Section Starts*/}
+
       <section className="cybersecurity_wrapper  py-10">
         <div className="container">
           <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10  gap-7 items-center  ">
@@ -200,28 +179,34 @@ export default async function page() {
                     (item, index) => (
                       <>
                         <div className="leftSideImage">
-                          <ImageCard
-                            src={item?.website_protect_section_image_experience}
-                            width={380}
-                            height={420}
-                            className="rounded-[10px]"
-                            alt="kuch b"
-                          />
+                          <Suspense fallback={<p>Loading...</p>}>
+                            <ImageCard
+                              src={
+                                item?.website_protect_section_image_experience
+                              }
+                              width={380}
+                              height={420}
+                              className="rounded-[10px]"
+                              alt="kuch b"
+                            />
+                          </Suspense>
                         </div>
                       </>
                     )
                   )}
               </div>
               <div className="flex items-center">
-                <ImageCard
-                  src={
-                    data?.website_protect_section_image_experience_second_url
-                  }
-                  width={300}
-                  height={200}
-                  className="rounded-[10px]"
-                  alt="kuch b"
-                />
+                <Suspense fallback={<p>Loading...</p>}>
+                  <ImageCard
+                    src={
+                      data?.website_protect_section_image_experience_second_url
+                    }
+                    width={300}
+                    height={200}
+                    className="rounded-[10px]"
+                    alt="kuch b"
+                  />
+                </Suspense>
               </div>
 
               <div className="counter_box absolute ">
@@ -246,28 +231,32 @@ export default async function page() {
 
             <div className="right-side col-md-7 col-12">
               <div>
-                <Text
-                  tag="h2"
-                  className="my-2 text-black capitalize font-Axiforma font-medium"
-                >
-                  {data?.website_protect_heading_experience_section}
-                </Text>
+                <Suspense fallback={<p>Loading...</p>}>
+                  <Text
+                    tag="h2"
+                    className="my-2 text-black capitalize font-Axiforma font-medium"
+                  >
+                    {data?.website_protect_heading_experience_section}
+                  </Text>
+                </Suspense>
               </div>
               <div>
-                <Text
-                  tag="p"
-                  className="text-[#434242] text-lg my-5 font-Axiforma"
-                >
-                 {data?.website_protect_paragraph_experience_section}
-                </Text>
-                <Text
-                  tag="p"
-                  className="text-[#434242] text-lg my-5 font-Axiforma"
-                >
-                  Our approach combines expertise, proactive management, and
-                  industry-leading technology to deliver seamless experiences,
-                  minimize risk, and maximize efficiency.
-                </Text>
+                <Suspense fallback={<p>Loading...</p>}>
+                  <Text
+                    tag="p"
+                    className="text-[#434242] text-lg my-5 font-Axiforma"
+                  >
+                    {data?.makes_us_diffrent_paragraph}
+                  </Text>
+                </Suspense>
+                <Suspense fallback={<p>Loading...</p>}>
+                  <Text
+                    tag="p"
+                    className="text-[#434242] text-lg my-5 font-Axiforma"
+                  >
+                    {data?.makes_us_diffrent_paragraph_second}
+                  </Text>
+                </Suspense>
               </div>
               <div>
                 <a
@@ -285,9 +274,9 @@ export default async function page() {
                     <path
                       d="M9 24L24 9M24 9H15.6667M24 9V17.3333"
                       stroke="#000"
-                      stroke-width="2.4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></path>
                   </svg>
                 </a>
@@ -297,8 +286,10 @@ export default async function page() {
         </div>
       </section>
 
-      {/* Ensure Your Website */}
-      {/* resolving git error */}
+      {/* Protect Your Website Section Ends*/}
+
+      {/* Ensure Your Website Section Starts */}
+
       <section className="get_started_wrapper my-5 bg-[#060606] text-white lg:py-16 md:py-12 py-12">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10   gap-7 items-center">
@@ -337,95 +328,101 @@ export default async function page() {
                 </Button>
               </div>
             </div>
-
             <div className="w-full">
               <div className="">
-                <ImageCard
-                  src="/svg/professional_team.svg"
-                  width={700}
-                  height={500}
-                  alt="expert guidance image"
-                />
+                <Suspense fallback={<p>Loading...</p>}>
+                  <ImageCard
+                    src="/svg/professional_team.svg"
+                    width={700}
+                    height={500}
+                    alt="expert guidance image"
+                  />
+                </Suspense>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Ensure Your Website Section Ends */}
+
+      {/* Our Key Services Section Starts */}
       <Products data={data?.key_services_data} />
+
+      {/* Our Key Services Section Ends */}
+
+      {/* Top Skilled Experts Section Starts */}
+
       <Categories data={data} />
+
+      {/* Top Skilled Experts Section Ends */}
+
+      {/* Our Promise Section Starts */}
 
       <section className="promise_sec">
         <div className="container">
-          <div className="promise_header flex justify-between">
-            <h2 className="font-Axiforma">Our Promise</h2>
-            <p>
-              We simplify IT management by integrating security, support, and
-              business continuity into a single, cohesive system. With
-              Secure365, you get:
-            </p>
-          </div>
+          <Suspense fallback={<p>Loading...</p>}>
+            <div className="promise_header flex justify-between">
+              <Text tag="h2" className="font-Axiforma">
+                {data?.home_page_our_promise_main_heading}
+              </Text>
+              <Text tag="p">{data?.home_page_our_promise_main_paragraph}</Text>
+            </div>
+          </Suspense>
 
           <div className="left_rightContent">
             <div className="left_images">
-              <Image src="/Images/promise_img.png" width={700} height={400} />
+              <Suspense fallback={<p>Loading...</p>}>
+                <ImageCard
+                  src={data?.home_page_our_promise_image_url}
+                  width={700}
+                  height={400}
+                />
+              </Suspense>
             </div>
 
             <div className="flex flex-col gap-5 right_content">
-              <div className="numberWrapper">
-                <span>01</span>
-                <div>
-                  <h4 className="font-Axiforma">Expert Guidance</h4>
-                  <p>
-                    Leverage our team’s experience to navigate complex IT
-                    challenges with confidence.
-                  </p>
-                </div>
-              </div>
-
-              <div className="numberWrapper">
-                <span>02</span>
-                <div>
-                  <h4>Hassle-Free Management</h4>
-                  <p>
-                    We take care of everything—from installation to
-                    maintenance—so you don’t have to.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <span>03</span>
-                <div>
-                  <h4>Proactive Security</h4>
-                  <p>
-                    Stay ahead of threats with a dedicated team monitoring and
-                    protecting your business 24/7.
-                  </p>
-                </div>
-              </div>
-
-              {/* <button className="btn_one global_btn capitalize font-Axiforma">Let Discuss</button> */}
+              {data &&
+                data?.home_page_our_promise_data?.map((item, index) => (
+                  <Suspense fallback={<p>Loading...</p>}>
+                    <React.Fragment key={index}>
+                      <div className="numberWrapper">
+                        <Text tag="span">0{index + 1}</Text>
+                        <div>
+                          <Text tag="h4" className="font-Axiforma">
+                            {item?.home_page_our_promise_title}
+                          </Text>
+                          <Text tag="p">{item?.home_page_our_promise_servise_paragraph}</Text>
+                        </div>
+                      </div>
+                    </React.Fragment>
+                  </Suspense>
+                ))}
             </div>
           </div>
         </div>
-
-        <div></div>
       </section>
+
+      {/* Our Promise Section Ends */}
+
+      {/* Contact Section Starts */}
 
       <section className="lookingService">
         <div className="container">
-          {/* <h2>Ready to Simplify Your IT?</h2> */}
-          <h2>
-            Contact us today for a no-obligation consultation to see how
-            Secure365 can optimize your technology strategy.
-          </h2>
+          <Suspense fallback={<p>Loading...</p>}>
+            <Text tag="h2">{data?.home_page_contact_section_heading}</Text>
+          </Suspense>
           <div className="text-center  mt-10">
-            <button className="btn_two global_btn capitalize font-Axiforma inline mx-auto">
-              Contact us{" "}
-            </button>
+            <Link href="/contact-us">
+              <button className="btn_two global_btn capitalize font-Axiforma inline mx-auto">
+                {data?.home_page_contact_button}
+              </button>
+            </Link>
           </div>
         </div>
       </section>
+
+      {/* Contact Section Ends */}
     </main>
   );
 }
