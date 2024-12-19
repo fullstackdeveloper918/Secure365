@@ -1,20 +1,13 @@
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import ImageCard from "../../components/cards/ImageCard";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 
-const Products = dynamic(() => import("../../components/Products"), {
-  loading: () => <p>Loading...</p>,
-});
-
+const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
-
-const Categories = dynamic(() => import("../../components/Categories"), {
-  loading: () => <p>Loading...</p>,
-});
-
+const ImageCard = dynamic(() => import("../../components/cards/ImageCard"));
+const Categories = dynamic(() => import("../../components/Categories"));
 const Text = dynamic(() => import("../../components/Text"));
 
 
@@ -145,7 +138,7 @@ export default async function page() {
 
       <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
         <div className="container">
-          <h2 className="mb-5">{data?.home_key_service_first_heading}:</h2>
+          <Text tag="h2" className="mb-5">{data?.home_key_service_first_heading}:</Text>
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
             {data &&
               data?.home_key_service_data.map((item, index) => (
@@ -281,9 +274,9 @@ export default async function page() {
                     <path
                       d="M9 24L24 9M24 9H15.6667M24 9V17.3333"
                       stroke="#000"
-                      stroke-width="2.4"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></path>
                   </svg>
                 </a>
@@ -394,12 +387,12 @@ export default async function page() {
                   <Suspense fallback={<p>Loading...</p>}>
                     <React.Fragment key={index}>
                       <div className="numberWrapper">
-                        <span>01</span>
+                        <Text tag="span">0{index + 1}</Text>
                         <div>
-                          <h4 className="font-Axiforma">
+                          <Text tag="h4" className="font-Axiforma">
                             {item?.home_page_our_promise_title}
-                          </h4>
-                          <p>{item?.home_page_our_promise_servise_paragraph}</p>
+                          </Text>
+                          <Text tag="p">{item?.home_page_our_promise_servise_paragraph}</Text>
                         </div>
                       </div>
                     </React.Fragment>

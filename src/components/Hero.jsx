@@ -1,16 +1,10 @@
 import Link from 'next/link';
-import ImageCard from './cards/ImageCard';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 
 
-
-export async function wait(ms) {
-  return new Promise((resolve) => setTimeout(resolve,ms))
-}
-
-
-const Text = dynamic(() => wait(2000).then(() => import('@/components/Text')))
+const Text = dynamic(() =>  import('@/components/Text'))
+const ImageCard = dynamic(() =>  import('@/components/cards/ImageCard'))
 
 
 export default async function Hero() {
@@ -36,12 +30,12 @@ export default async function Hero() {
             <span className='mr-3'> {data?.pages?.banner_heading_second}</span>
             <span className='text_blue'>{data?.pages?.banner_heading_thired}</span>
           </Text>
-             </Suspense>
-          <p
+          <Text tag="p"
          
-           className='max-w-md sm:max-w-[39rem] maxWidth leading-normal text-muted-foreground text-sm sm:text-xl text-white sm:leading-8 font-Axiforma'>
+         className='max-w-md sm:max-w-[39rem] maxWidth leading-normal text-muted-foreground text-sm sm:text-xl text-white sm:leading-8 font-Axiforma'>
             {data?.pages?.banner_sub_headline}
-          </p>
+          </Text>
+             </Suspense>
           <div
            className='flex flex-wrap   text-white gap-4 mt-5'>
             <a href='/products' className='btn_one global_btn capitalize font-Axiforma'>
@@ -53,14 +47,7 @@ export default async function Hero() {
           </div>
         </div>
         <div className='flex items-center justify-center rightbanner'>
-          {/* <ImageCard
-           src={data?.pages?.banner_image?.url}
-           className='banner_rotate'
-           alt='Hero image'
-           width={500}
-           height={500}
-           objectFit='cover'
-           /> */}
+          <Suspense fallback={<p>Loading...</p>}>
            <ImageCard
            src='/Images/bannerright_img.png'
            className='banner_rotate'
@@ -69,6 +56,7 @@ export default async function Hero() {
            height={550}
            objectFit='cover'
            />
+           </Suspense>
         </div>
       </div>
            </>
