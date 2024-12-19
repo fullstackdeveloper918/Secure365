@@ -10,12 +10,13 @@ const ImageCard = dynamic(() =>  import('@/components/cards/ImageCard'))
 export default async function Hero() {
 
   const response = await fetch(
-    "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner",
+    "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner/home",
     {
       cache: "no-store",
     }
   );
   const data = await response.json();
+  console.log(data?.pages?.banner_data?.banner_image?.url, 'checkhome')
   return (
     <>
   
@@ -24,9 +25,9 @@ export default async function Hero() {
           <Suspense fallback={<p>Loading Heading...</p>}>
           <Text tag="h1"
            className='banner_heading font-Axiforma'>
-            <span className='banner_heading_medium'>{data?.Home?.banner_heading}</span>
-            <span className='mr-3'> {data?.pages?.banner_heading_second}</span>
-            <span className='text_blue'>{data?.pages?.banner_heading_thired}</span>
+            <span className='banner_heading_medium'>{data?.pages?.banner_data?.banner_heading}</span>
+            <span className='mr-3'> {data?.pages?.banner_data?.banner_heading_second}</span>
+            <span className='text_blue'>{data?.pages?.banner_data?.banner_heading_third}</span>
           </Text>
           <Text tag="p"
          
@@ -37,17 +38,17 @@ export default async function Hero() {
           <div
            className='flex flex-wrap   text-white gap-4 mt-5'>
             <a href='/products' className='btn_one global_btn capitalize font-Axiforma'>
-              {data?.pages?.get_started}
+              {data?.pages?.banner_data?.get_started}
             </a>
             <Link href='/dashboard/stores' className='global_btn btn_two capitalize font-Axiforma'>
-              {data?.pages?.book_demo}
+              {data?.pages?.banner_data?.book_demo}
             </Link>
           </div>
         </div>
         <div className='flex items-center justify-center rightbanner'>
           <Suspense fallback={<p>Loading...</p>}>
            <ImageCard
-           src='/Images/bannerright_img.png'
+           src={data?.pages?.banner_data?.banner_image?.url}
            className='banner_rotate'
            alt='Hero image'
            width={550}
