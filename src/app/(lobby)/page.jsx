@@ -77,77 +77,31 @@ export default async function page() {
         <Hero />
       </section>
 
-      {/* logos slider */}
-      {/* <section className="logo_section 2xl:py-16 md:py-12 ">
-        <div className="container">
-          <div className="flex gap-5 justify-between items-center ">
-            {data?.logo_images &&
-              data?.logo_images.map((item, index) => (
-                <>
-                  <Suspense
-                    fallback={<Skeleton className="h-12 w-12 rounded-full" />}
-                  >
-                    <ImageCard
-                      src={item}
-                      alt="slider images"
-                      width={150}
-                      height={200}
-                    />
-                  </Suspense>
-                </>
-              ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* intro section started */}
       <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
         <div className="container ">
           <div className="flex flexWrapperResponsive md:gap-10 gap-5">
             <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
-              {" "}
-              Introduction:
+              {data?.home_introduction_section_heading_main}
+              
             </h2>
             <div>
               <Suspense fallback={<p>Loading...</p>}>
                 <Text tag="p" className="text-2xl  font-Axiforma">
-                  Welcome to Secure365, where we take the complexity out of
-                  managing your business’s technology needs. We provide a full
-                  spectrum of IT solutions designed to empower your business
-                  with enhanced security, streamlined processes, and a support
-                  system that’s second to none.
+                  {data?.home_introduction_section_paragreaph_first}
                 </Text>
               </Suspense>
               <Suspense fallback={<p>Loading...</p>}>
                 <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
-                  Whether you’re a startup, a growing enterprise, or a seasoned
-                  business, Secure365 is your trusted partner for everything
-                  IT—so you can focus on what really matters: growing your
-                  business.
+                  {data?.home_introduction_section_paragreaph_second}
                 </Text>
               </Suspense>
-              {/* <Suspense fallback={<Skeleton className="h-4 w-[250px]" />}>
-                <Text tag="p" className="text-2xl">
-                  Welcome to Secure365, where we take the complexity out of
-                  managing your business’s technology needs. We provide a full
-                  spectrum of IT solutions designed to empower your business
-                  with enhanced security, streamlined processes, and a support
-                  system that’s second to none.
-                </Text>
-              </Suspense> */}
-              {/* <Suspense fallback={<Skeleton className="h-4 w-[250px]" />}>
-                <Text tag="p" className="text-2xl mt-5">
-                  Whether you’re a startup, a growing enterprise, or a seasoned
-                  business, Secure365 is your trusted partner for everything
-                  IT—so you can focus on what really matters: growing your
-                  business.
-                </Text>
-              </Suspense> */}
+             
               <a
                 href=""
                 className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
               >
-                Discover more{" "}
+                {data?.home_introduction_section_discover}
                 <svg
                   width="32"
                   height="32"
@@ -183,29 +137,18 @@ export default async function page() {
                 </span>
               </Text>
             </Suspense>
-            {/* <Suspense fallback={<p>Loading...</p>}>
-            <Text tag="p" className=" mt-8 text-center text-2xl max-w-[60%] mx-auto font-Axiforma">
-              At Secure365, we understand that navigating the <strong>digital world</strong> can be overwhelming. That’s why we’ve designed our services to be a one-stop solution, covering everything from <strong>Cloud management</strong> and <strong>IT support</strong> to marketing and cybersecurity.
-            </Text>
-            </Suspense> */}
-            {/* <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
-              <Text tag="h2" className="heading_h2 capitalize ">
-                {data?.makes_us_diffrent_heading}
-                <span className="capitalize font-semibold m-2">
-                  {data?.makes_us_diffrent_heading_second}
-                </span>
-              </Text>
-            </Suspense> */}
+          
             <Suspense fallback={<p>Loading...</p>}>
               <Text
                 tag="p"
                 className=" md:mt-8 mt-4 text-center text-2xl max-w-[60%] mx-auto"
               >
-                At Secure365, we understand that navigating the{" "}
+                {/* At Secure365, we understand that navigating the{" "}
                 <strong>digital world</strong> can be overwhelming. That’s why
                 we’ve designed our services to be a one-stop solution, covering
                 everything from cloud management and IT support to marketing and
-                cybersecurity.
+                cybersecurity. */}
+                {data?.makes_us_diffrent_paragraph}
               </Text>
             </Suspense>
             <Suspense fallback={<p>Loading...</p>}>
@@ -213,9 +156,7 @@ export default async function page() {
                 tag="p"
                 className=" mt-5 text-center text-2xl max-w-[70%] mx-auto"
               >
-                Our approach combines expertise, proactive management, and
-                industry-leading technology to deliver seamless experiences,
-                minimize risk, and maximize efficiency.
+                {data?.makes_us_diffrent_paragraph_second}
               </Text>
             </Suspense>
           </div>
@@ -224,23 +165,23 @@ export default async function page() {
 
       <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
         <div className="container">
-          <h2 className="mb-5">Key Services:</h2>
+          <h2 className="mb-5">{data?.home_key_service_first_heading}:</h2>
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
             {data &&
-              data?.key_services_data.map((item, index) => (
+              data?.home_key_service_data.map((item, index) => (
                 <>
                   <div className="keyColumns" key={index}>
                     <Suspense fallback={<p>Loading Image...</p>}>
                       <ImageCard
-                        src={item?.our_key_services_image}
+                        src={item?.home_key_service_first_image}
                         alt="key icon"
                         width={50}
                         height={50}
                       />
                     </Suspense>
-                    <Text tag="h3"> Cybersecurity Solutions</Text>
+                    <Text tag="h3">{item?.home_key_service_first_title}</Text>
                     <Suspense fallback={<p>Loading Text...</p>}>
-                      <Text tag="p">{item?.our_key_services_paragraph}</Text>
+                      <Text tag="p">{item?.home_key_service_first_paragraph}</Text>
                     </Suspense>
                   </div>
                 </>
@@ -317,11 +258,7 @@ export default async function page() {
                   tag="p"
                   className="text-[#434242] text-lg my-5 font-Axiforma"
                 >
-                  {/* {data?.website_protect_paragraph_experience_section} */}
-                  At Secure365, we understand that navigating the digital world
-                  can be overwhelming. That’s why we’ve designed our services to
-                  be a one-stop solution, covering everything from cloud
-                  management and IT support to marketing and cybersecurity.
+                 {data?.website_protect_paragraph_experience_section}
                 </Text>
                 <Text
                   tag="p"
