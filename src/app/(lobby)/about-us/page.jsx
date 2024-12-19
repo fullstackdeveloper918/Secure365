@@ -11,7 +11,6 @@ import { bannerUrl, fetchData } from "@/lib/data";
 const page = async () => {
 
   const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about')
-
   console.log(response, 'response')
   const banner = await bannerUrl('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner')
 

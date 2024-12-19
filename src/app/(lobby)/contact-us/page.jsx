@@ -1,12 +1,22 @@
 import React from 'react'
 import Image from "next/image";
 import Text from "@/components/Text";
-// import React, { Suspense } from "react";
-const Contact = () => {
+import { fetchData } from '@/lib/data';
+import ImageCard from '@/components/cards/ImageCard';
+
+
+
+const Contact = async() => {
+
+  const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/contact')
+
+
+  console.log(response?.data, 'contactdata')
+
   return (
     <>
       <section className="relative overlay about_banner text-center">
-        <Image
+        <ImageCard
           src="/Images/contact_banner.png"
           className="absolute"
           layout="fill"
@@ -39,30 +49,24 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 grid-cols-1 ">
 
             {/* left wrapper  */}
-            <div className='leftReachWrapper md:w-[60%] w-full '>
-              <div className=' max-w-full'>
-                <h2>How to Reach Us</h2>
-                <p className='text-[#707070] text-md font-Axiforma'>We make it easy for you to get in touch, whether you prefer a quick phone call, a detailed email, or scheduling a consultation at a time that works for you.</p>
+            <div className='leftReachWrapper w-[55%] '>
+              <div className='xl:max-w-[60%]'>
+                <Text tag="h2">{response?.data?.reach_contact_section_heading}</Text>
+                <Text tag="p" className='text-[#707070] text-md font-Axiforma'>{response?.data?.reach_contact_section_paragraph}</Text>
                 <ul className='my-5'>
-                  <li className='flex gap-5 border-t border-[#DADADA] py-10 items-center'>
-                    <Image src="/Images/call.png" alt='call image' width={60} height={60} />
+                  {
+                    response && response?.data?.reach_contact_us_by.map((item, index) => (
+                      <React.Fragment key={index}>
+                       <li className='flex gap-5 border-t border-[#DADADA] py-10 items-center'>
+                    <ImageCard src={item?.reach_contact_section_image} alt='call image' width={60} height={60} />
                     <div>
-                      <h3 className='text-[#111111] text-2xl font-normal font-Axiforma'>+(800) 311-5990</h3>
-                      <p className='text-[#707070] text-xl font-Axiforma mt-3'>Call Now and Get a FREE Consultation</p>
+                      <Text tag="h3" className='text-[#111111] text-2xl font-normal font-Axiforma'>+ {item?.reach_contact_us_by}</Text>
+                      <Text tag="p" className='text-[#707070] text-xl font-Axiforma mt-3'>{item?.reach_contact_us_text}</Text>
                     </div>
                   </li>
-                  <li className='flex gap-5 border-t border-[#DADADA] py-10 items-center'>
-                    <Image src="/Images/email.png" alt='call image' width={60} height={60} />
-                    <div>
-                      <h3 className='text-[#111111] text-2xl font-normal font-Axiforma'>info@secure365.com</h3>
-                    </div>
-                  </li>
-                  <li className='flex gap-5 border-t border-[#DADADA] py-10 items-center'>
-                    <Image src="/Images/timer.png" alt='call image' width={60} height={60} />
-                    <div>
-                      <h3 className='text-[#111111] text-2xl font-normal font-Axiforma'>Monday - Friday, 9:00 AM - 5:00 PM CST</h3>
-                    </div>
-                  </li>
+                      </React.Fragment>
+                    ))
+                  }
                 </ul>
               </div>
             </div>
@@ -88,7 +92,7 @@ const Contact = () => {
                   <input placeholder='How Can We Help?' className='bg-[#F7F7F7] border-[#CACACA] text-[#555] md:text-xl text-md px-5 py-4 rounded-[30px] w-full' />
                 </div>
                 <div className='w-full mb-4'>
-                  <textarea className='bg-[#F7F7F7] border-[#CACACA] text-[#0e0e0e] p-5 rounded-[30px] md:text-xl text-md w-full'>Message</textarea>
+                  <textarea className='bg-[#F7F7F7] border-[#CACACA] text-[#0e0e0e] p-5 rounded-[30px] md:text-xl text-md w-full' placeholder='Message'></textarea>
                 </div>
                 <div className='w-full mb-4'>
                   <input type="radio" />
@@ -105,12 +109,12 @@ const Contact = () => {
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center md:gap-20">
             <div className='relative h-full w-full shadow-sm border-1 border-[#333]' >
-              <Image src="/Images/scheduleimg.png"  alt="img" layout='fill' objectFit='cover' />
+              <ImageCard src="/Images/scheduleimg.png"  alt="img" layout='fill' objectFit='cover' />
             </div>
             <div>
-              <h2>Schedule a Consultation</h2>
-              <p>Looking for a more in-depth discussion? Schedule a one-on-one consultation with one of our specialists. </p>
-              <p>We’ll take the time to understand your needs and provide personalized guidance on the best solutions for your business</p>
+              <Text tag="h2">{response?.data?.contact_schedule_consult_heading}</Text>
+              <Text tag="p">{response?.data?.contact_schedule_consult_paragraph}</Text>
+              <Text tag="p">We’ll take the time to understand your needs and provide personalized guidance on the best solutions for your business</Text>
             </div>
           </div>
         </div>
@@ -120,47 +124,96 @@ const Contact = () => {
       <section className='bg-[#E2F5FC]  '>
         <div className="grid md:grid-cols-2 grid-cols-1 items-center md:gap-10">
           <div className='relative h-full w-full'>
-            <Image src="/Images/locationimg.png" alt="img" className='absolute' layout='fill' objectFit='cover'  />
+            <ImageCard src="/Images/locationimg.png" alt="img" className='absolute' layout='fill' objectFit='cover'  />
           </div>
           <div className='py-24'>
-            <h2>Our Location</h2>
-            <p>While we proudly serve clients across the globe, our primary office is located in Arlington Heights, IL. We also offer remote consultations and services to ensure that wherever you are, Secure365 is there to support you</p>
+            <Text tag="h2">{response?.data?.contact_our_location_heading}</Text>
+            <Text tag="p">{response?.data?.contact_our_location_heading_paragraph}</Text>
             <ul className='my-5'>
               <li className='flex gap-5 border-t border-[#DADADA] py-10 items-center'>
-                <Image src="/Images/locationIcon.png" alt='call image' width={60} height={60} />  
+                <ImageCard src="/Images/locationIcon.png" alt='call image' width={60} height={60} />  
                 <div>
-                      <h3 className='text-[#111111] text-2xl font-normal font-Axiforma'>Headquarters</h3>
-                      <p className='text-[#707070] text-xl font-Axiforma mt-3'>1512 E Algonquin Rd, Arlington Heights, IL 60005</p>
+                      <Text tag="h3" className='text-[#111111] text-2xl font-normal font-Axiforma'>{response?.data?.contact_map_location}</Text>
+                      <Text tag="p" className='text-[#707070] text-xl font-Axiforma mt-3'>{response?.data?.contact_map_loction_details}</Text>
                     </div>            
               </li>
             </ul>
           </div>
-
         </div>
       </section>
 
 
+      <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
+        {response?.data?.contact_secure_loop &&
+          response?.data?.contact_secure_loop.map((item, index) => (
+            <React.Fragment key={index}>
+                <div className="text-center column_hover">
+                  <div className="cardImage">
+                    <ImageCard
+                      src={item?.contact_secure_image}
+                      width={40}
+                      height={40}
+                      alt="avatar image"
+                      className="mx-auto"
+                    />
+                  </div>
+                  <Text
+                    tag="h3"
+                    className="md:text-xl text-xl font-medium text-center "
+                  >
+                    {item?.contact_secure_heading}
+                  </Text>
 
-        {/* <section>
-          <div className="container">
-            <h2>Why Contact Secure365?</h2>
-          </div>
-        </section> */}
+                  <Text
+                    tag="p"
+                    className="text-center text-md text-primary text-[#4F4F4F] font_14"
+                  >
+                    {item?.contact_secure_paragraph}
+                  </Text>
+                </div>
+          
+            </React.Fragment>
+          ))}
+      </div>
+
         <section className='md:py-20 py-10'>
           <div className="container">
-           <div className="grid md:grid-cols-2 grid">
+           <div className="grid md:grid-cols-2">
            <div>
-              <h2>Our Promise</h2>
-              <p className='md:mt-10 mt-5 md:mb-10 mb-7 text-[#4F4F4F] text-2xl md:max-w-[80%]'>We handle the heavy lifting of server and cloud management, so you can focus on what matters most—your business. Secure365’s solutions are designed to streamline your IT operations, maximize security, and provide a stable foundation for growth. With us, you’ll have peace of mind knowing that your data is safe, your systems are optimized, and your business can scale effortlessly</p>
-              <button className='btn_one global_btn capitalize font-Axiforma mt-4 text-white'>Contact us</button>
+              <Text tag="h2">{response?.data?.contact_promise_heading}</Text>
+              <Text tag="p" className='md:mt-10 mt-5 md:mb-10 mb-7 text-[#4F4F4F] text-2xl md:max-w-[80%]'>We handle the heavy lifting of server and cloud management, so you can focus on what matters most—your business. Secure365’s solutions are designed to streamline your IT operations, maximize security, and provide a stable foundation for growth. With us, you’ll have peace of mind knowing that your data is safe, your systems are optimized, and your business can scale effortlessly</Text>
+              <button className='btn_one global_btn capitalize font-Axiforma mt-4 text-white'>{response?.data?.contact_button}</button>
             </div>
             <div className='relative h-full w-full'>
-              <Image src="/Images/promiseImage.png" alt='promise image' layout='fill' objectFit='contain' />
+              <ImageCard src={response?.data?.contact_promise_image_url} alt='promise image' layout='fill' objectFit='contain' />
             </div>
             
            </div>
           </div>
         </section>
+
+          <section className="ready_partner relative lg:py-20 py-10  text-center md:mt-20 mt-10">
+                <ImageCard
+                  alt="expert image"
+                  className="absolute -z-10"
+                  layout="fill"
+                  src="/Images/ready_expert.png"
+                  />
+  
+                <div className="container">
+                  <Text tag="h2" className="text-white lg:text-5xl  md:text-3xl  text-2xl">
+                    {response?.data?.contact_ready_heading}
+                  </Text>
+                  <Text tag="p" className="text-white md:text-lg mt-5 text-md lg:max-w-[50%] md:max-w-[70%] mx-auto">
+                    {response?.data?.contact_ready_paragraph}
+                  </Text>
+                 
+                </div>
+              </section>
+
+
+
+
     </>
   )
 }
