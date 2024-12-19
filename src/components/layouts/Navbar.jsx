@@ -1,10 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic'
-// import Link from 'next/link'
 
-// import SearchButton from '@/components/layouts/SearchButton'
-// import UserAccountNav from '@/components/auth/UserAccountNav'
-// import CartButton from '@/components/cart/CartButton'
 const DesktopNav = dynamic(() => import('../layouts/DesktopNav'))
 const MobileNav = dynamic(() => import('../layouts/MobileNav'))
 

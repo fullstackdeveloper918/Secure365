@@ -48,16 +48,16 @@ const DesktopNav = () => {
            
               <NavigationMenuItem >
                 <NavigationMenuTrigger className='font-Axiforma' chever={item?.children?.length> 0}>{item?.title}</NavigationMenuTrigger>
+                {
+                  item?.children?.length > 0 &&
+               
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] ">
                     
                   
-                    {item?.children?.length > 0 && 
+                    {  
                       item?.children?.map((child, childindex) => (
                         <React.Fragment key={child?.title}>
-
-                        
-                       
                         <ListItem  href={`/${child?.title}`} title={child?.title}>
                         Explore {child?.title}
                       </ListItem>
@@ -66,6 +66,7 @@ const DesktopNav = () => {
                     }
                   </ul>
                 </NavigationMenuContent>
+                 }
               </NavigationMenuItem>
                </Link>
           ))}
