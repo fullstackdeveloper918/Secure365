@@ -28,24 +28,26 @@ export default async function page() {
       <section className="relative banner_robot bg-black">
         <div className="baner_images">
           <span className="relative">
-            <Suspense fallback={<p>Loading...</p>}>
+           
               <ImageCard
                 src="/svg/before_bannerImg.svg"
                 width={700}
                 height={100}
+                alt="banner image"
               />
-            </Suspense>
+          
           </span>
         </div>
         <div className="baner_imagesafter">
           <span className="relative">
-            <Suspense fallback={<p>Loading...</p>}>
+           
               <ImageCard
                 src="/svg/after_bannerImg.svg"
                 width={500}
                 height={100}
+                alt="banner image"
               />
-            </Suspense>
+          
           </span>
         </div>
         <Hero />
@@ -59,16 +61,16 @@ export default async function page() {
               {data?.home_introduction_section_heading_main}
             </h2>
             <div>
-              <Suspense fallback={<p>Loading...</p>}>
+           
                 <Text tag="p" className="text-2xl  font-Axiforma">
                   {data?.home_introduction_section_paragreaph_first}
                 </Text>
-              </Suspense>
-              <Suspense fallback={<p>Loading...</p>}>
+             
+    
                 <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
                   {data?.home_introduction_section_paragreaph_second}
                 </Text>
-              </Suspense>
+            
 
               <a
                 href=""
@@ -187,7 +189,7 @@ export default async function page() {
                               width={380}
                               height={420}
                               className="rounded-[10px]"
-                              alt="kuch b"
+                              alt="protection section image"
                             />
                           </Suspense>
                         </div>
@@ -204,7 +206,7 @@ export default async function page() {
                     width={300}
                     height={200}
                     className="rounded-[10px]"
-                    alt="kuch b"
+                    alt="protection section image"
                   />
                 </Suspense>
               </div>
@@ -377,6 +379,7 @@ export default async function page() {
                   src={data?.home_page_our_promise_image_url}
                   width={700}
                   height={400}
+                  alt="our promise image"
                 />
               </Suspense>
             </div>

@@ -1,56 +1,58 @@
-import ImageCard from "@/components/cards/ImageCard";
-import Text from "@/components/Text";
+import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
+const Text = dynamic(() => import('@/components/Text'));
+const ImageCard = dynamic(() => import('@/components/cards/ImageCard'));
 
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
+import { bannerUrl, fetchData } from "@/lib/data";
 
 
 
 const page = async () => {
-  const response = await fetch(
-    "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about",
-    {
-      cache: "no-store",
-    }
-  );
+ 
+  const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about')
 
-  const data = await response.json();
+  console.log(response, 'response')
+  const banner = await bannerUrl('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner')
 
-  console.log(data, 'data about')
 
   return (
     <>
       <section className="relative overlay about_banner text-center">
+        <Suspense fallback={<p>Loading image...</p>}>
         <ImageCard
-          src={data?.data?.image_url}
+          src={response?.data?.image_url}
           className="absolute"
           layout="fill"
           alt=" about Background image"
           objectFit="cover"
-        />
+          />
+        </Suspense>
         <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0 min_height">
+          <Suspense fallback={<p>Loading content...</p>}>
+
           <Text
             tag="h1"
             className="tracking-tighter text-3xl  lg:text-5xl xl:text-5xl	 text-center 	text-white	banner_heading"
-          >
-            {" "}
-            From
+            >
+         
+            {banner?.data?.banner_heading}
             <Text tag="span" className="text_blue mx-2">
-              {" "}
-              Fighting Cybercrime
+          
+              {/* {banner?.data?.banner_heading_second} */}
             </Text>
             <Text tag="span" className="block my-3">
-              {" "}
-              Building Secure Solutions
+           
+              {/* {banner?.data?.banner_heading_third} */}
             </Text>
           </Text>
           <Text
             tag="p"
             className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-xl text-md font-Axiforma"
-          >
-            We provide expert IT and cybersecurity solutions that protect,
-            support, and empower your business.
+            >
+            {/* {banner?.data?.banner_sub_headline} */}
           </Text>
+            </Suspense>
         </div>
       </section>
 
@@ -58,42 +60,48 @@ const page = async () => {
       <section className="story_section md:py-20 py-10 px-3 md:px-0">
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1">
-            <div className="leftWrapper ">
+            <div className="leftWrapper">
+              <Suspense fallback={<p>Loading content...</p>}>
+
               <Text tag="h2" className="capitalize">
-                {data?.data?.our_story_heading}{" "}
-                <b>{data?.data?.our_story_heading_second}</b>
+                {response?.data?.our_story_heading}{" "}
+                <b>{response?.data?.our_story_heading_second}</b>
               </Text>
               <Text
                 tag="hr"
                 className="border-1.5 my-5 border-[#111111] max-w-[30%]"
-              />
+                />
               <Text
                 tag="p"
                 className="text-[#4F4F4F] md:text-lg md:mt-8 text-md"
-              >
-                {data?.data?.our_story_paragraph}
+                >
+                {response?.data?.our_story_paragraph}
               </Text>
               <Text
                 tag="p"
                 className="text-[#4F4F4F] md:text-lg text-md my-3"
-              ></Text>
+                ></Text>
+                </Suspense>
             </div>
             <div className="RightWrapper md:text-end md:m-0 my-5">
+            <Suspense fallback={<p>Loading image...</p>}>
+
               <ImageCard
                 alt="story image"
-                src={data?.data?.image_url}
+                src={response?.data?.image_url}
                 className="mx-auto"
                 width={600}
                 height={550}
               />
+              </Suspense>
             </div>
           </div>
         </div>
       </section>
 
       <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
-        {data?.data?.vision_data &&
-          data?.data?.vision_data.map((item, index) => (
+        {response?.data?.vision_data &&
+          response?.data?.vision_data.map((item, index) => (
             <React.Fragment key={index}>
               <Suspense fallback={<CategoryCardSkeleton />}>
                 <div className="text-center column_hover">
@@ -129,12 +137,15 @@ const page = async () => {
 
       <section className="why_choose py-10  bg-[#F6FCFE] ">
         <div className="container">
-          <h2 className="text-center capitalize">
-            {data?.data?.why_chooes_secure_about_heading}{" "}
+          <Suspense fallback={<p>Loading...</p>}>
+
+          <Text tag="h2" className="text-center capitalize">
+            {response?.data?.why_chooes_secure_about_heading}{" "}
             <strong className="text_blue capitalize">
-              {data?.data?.why_chooes_secure_about_heading_second}
+              {response?.data?.why_chooes_secure_about_heading_second}
             </strong>
-          </h2>
+          </Text>
+          </Suspense>
         </div>
       </section>
 
@@ -144,25 +155,32 @@ const page = async () => {
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1">
             <div className="RightWrapper md:text-end order_2">
+              <Suspense fallback={<p>Loading image...</p>}>
+
               <ImageCard
                 alt="story image"
-                src={data?.data?.core_value_main_image}
-                // className="mx-auto"
+                src={response?.data?.core_value_main_image}
                 width={600}
                 height={550}
-              />
+                />
+                </Suspense>
             </div>
 
             <div className="leftWrapper order_1">
+              <Suspense fallback={<p>Loading...</p>}>
+
               <Text tag="h2" className="capitalize">
-                {data?.data?.core_value_main_heading}{" "}
-                <b>{data?.data?.core_value_main_heading_second}</b>
+                {response?.data?.core_value_main_heading}{" "}
+                <b>{response?.data?.core_value_main_heading_second}</b>
               </Text>
+              </Suspense>
 
               <ul className="lg:my-12 mt-9">
-                {data?.data &&
-                  data?.data?.core_value_data_loop.map((item,index) => (
+                {response?.data &&
+                  response?.data?.core_value_data_loop.map((item,index) => (
+                    
                     <React.Fragment key={index}>
+                      <Suspense fallback={<p>Loading</p>}>
                       <li className="flex space-x-2 items-start mb-3">
                         <ImageCard
                           src="/Images/Approval.png"
@@ -170,7 +188,7 @@ const page = async () => {
                           height={30}
                           alt="approve image"
                           className="approve_img"
-                        />
+                          />
                         <div>
                           <Text
                             tag="h3"
@@ -186,20 +204,26 @@ const page = async () => {
                           </Text>
                         </div>
                       </li>
+                            </Suspense>
                     </React.Fragment>
                   ))}
               </ul>
             </div>
 
             <div className="leftWrapper md:mt-20 mt-0">
+              <Suspense fallback={<p>loading</p>}>
+
               <Text tag="h2" className="capitalize">
-                {data?.data?.our_services_left_heading_main}{" "}
-                <b>{data?.data?.our_services_left_heading_main_second}</b>
+                {response?.data?.our_services_left_heading_main}{" "}
+                <b>{response?.data?.our_services_left_heading_main_second}</b>
               </Text>
+              </Suspense>
               <ul className="lg:my-12 mt-9">
-                {data?.data &&
-                  data?.data?.our_services_left_data.map((item,index) => (
+                {response?.data &&
+                  response?.data?.our_services_left_data.map((item,index) => (
                     <React.Fragment key={index}>
+                      <Suspense fallback={<p>Loading</p>}>
+
                       <li className="flex space-x-2 items-start mb-3">
                         <ImageCard
                           src="/Images/Approval.png"
@@ -207,53 +231,63 @@ const page = async () => {
                           height={30}
                           alt="approve image"
                           className="approve_img"
-                        />
+                          />
                         <div>
                           <Text
                             tag="h3"
                             className="font-semibold md:text-lg text-md "
-                          >
+                            >
                            {item?.our_service_left_heading}
                           </Text>
                           <Text
                             tag="p"
                             className="text-[#4F4F4F] md:text-md  text-sm my-2  md:max-w-[90%]"
-                          >
+                            >
                             {item?.our_service_left_paragraph}
                           </Text>
                         </div>
                       </li>
+                            </Suspense>
                     </React.Fragment>
                   ))}
               </ul>
             </div>
             <div className="RightWrapper md:text-end mt-20">
+              <Suspense fallback={<p>Loading</p>}>
+
               <ImageCard
                 alt="story image"
-                src={data?.data?.our_service_left_image_urls}
+                src={response?.data?.our_service_left_image_urls}
                 className="mx-auto"
                 width={600}
                 height={550}
-              />
+                />
+                </Suspense>
             </div>
           </div>
         </div>
       </section>
 
       <section className="ready_partner relative lg:py-20 py-10  text-center md:mt-20 mt-10">
+        <Suspense fallback={<p>Loading image</p>}>
+
         <ImageCard
           alt="expert image"
           className="absolute -z-10"
           layout="fill"
           src="/Images/ready_expert.png"
-        />
+          />
+          </Suspense>
         <div className="container">
-          <h2 className="text-white lg:text-5xl  md:text-3xl  text-2xl">
-            {data?.data?.partner_with_expert_about_heading} <b>Experts?</b>
-          </h2>
-          <p className="text-white md:text-lg mt-5 text-md lg:max-w-[50%] md:max-w-[70%] mx-auto">
-            {data?.data?.partner_with_expert_about_paragraph}
-          </p>
+          <Suspense fallback={<p>Loading...</p>}>
+
+          <Text tag="h2" className="text-white lg:text-5xl  md:text-3xl  text-2xl">
+            {response?.data?.partner_with_expert_about_heading} <b>Experts?</b>
+          </Text>
+          <Text tag="p" className="text-white md:text-lg mt-5 text-md lg:max-w-[50%] md:max-w-[70%] mx-auto">
+            {response?.data?.partner_with_expert_about_paragraph}
+          </Text>
+          </Suspense>
         </div>
       </section>
     </>
