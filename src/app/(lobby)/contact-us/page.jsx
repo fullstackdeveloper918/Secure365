@@ -36,11 +36,11 @@ const Contact = () => {
 
       <section className='reachForm md:py-20  py-10'>
         <div className="container">
-          <div className="flex ">
+          <div className="grid md:grid-cols-2 grid-cols-1 ">
 
             {/* left wrapper  */}
-            <div className='leftReachWrapper w-[55%] '>
-              <div className='xl:max-w-[60%]'>
+            <div className='leftReachWrapper md:w-[60%] w-full '>
+              <div className=' max-w-full'>
                 <h2>How to Reach Us</h2>
                 <p className='text-[#707070] text-md font-Axiforma'>We make it easy for you to get in touch, whether you prefer a quick phone call, a detailed email, or scheduling a consultation at a time that works for you.</p>
                 <ul className='my-5'>
@@ -69,7 +69,7 @@ const Contact = () => {
 
             {/* right wrapper  */}
 
-            <div className='leftReachWrapper w-[45%]'>
+            <div className='leftReachWrapper  w-full'>
               <form>
                 <div className='grid md:grid-cols-2 grid-cols-1 gap-6 mb-4'>
                   <input placeholder='First name' className='bg-[#F7F7F7] border-[#CACACA] text-[#555] md:text-xl text-md px-5 py-4 rounded-[30px]' />
