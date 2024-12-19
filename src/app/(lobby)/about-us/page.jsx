@@ -56,9 +56,9 @@ const page = async () => {
       </section>
 
       {/* our story section started */}
-      <section className="story_section md:py-20 py-10 px-3 md:px-0">
+      <section className="story_section md:py-20 py-10 md:px-0">
         <div className="container">
-          <div className="grid md:grid-cols-2 grid-cols-1">
+          <div className="grid md:grid-cols-2 grid-cols-1 md:gap-10">
             <div className="leftWrapper">
               <Suspense fallback={<p>Loading content...</p>}>
 
@@ -179,7 +179,7 @@ const page = async () => {
 
       {/* why section started*/}
 
-      <section className="why_choose md:py-10 py-20  bg-[#F6FCFE] ">
+      <section className="why_choose py-10 md:py-20  bg-[#F6FCFE] ">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
 
@@ -228,13 +228,13 @@ const page = async () => {
 
       {/* why section ended*/}
 
-      <section className="coreValue md:pt-20 pb-10 px-3 md:px-0">
+      <section className="coreValue md:pt-20 py-10 pb-10  md:px-0">
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-10">
             <div className="RightWrapper md:text-end order_2">
               <Suspense fallback={<p>Loading image...</p>}>
 
-                <div className="relative h-full w-full">
+                <div className="relative h-full w-full imgHeight">
                   <ImageCard
                     alt="story image"
                     src={response?.data?.core_value_main_image}
@@ -245,7 +245,7 @@ const page = async () => {
               </Suspense>
             </div>
 
-            <div className="leftWrapper order_1">
+            <div className="leftWrapper order_1 md:mt-0 mt-5">
               <Suspense fallback={<p>Loading...</p>}>
 
                 <Text tag="h2" className="capitalize">
@@ -254,7 +254,7 @@ const page = async () => {
                 </Text>
               </Suspense>
 
-              <ul className="lg:my-12 mt-9">
+              <ul className="lg:my-12 mt-5">
                 {response?.data &&
                   response?.data?.core_value_data_loop.map((item, index) => (
 
@@ -331,9 +331,9 @@ const page = async () => {
                   ))}
               </ul>
             </div>
-            <div className="RightWrapper md:text-end mt-20">
+            <div className="RightWrapper md:text-end md:mt-20">
               <Suspense fallback={<p>Loading</p>}>
-                <div className="relative h-full w-full">
+                <div className="relative h-full w-full imgHeight">
                   <ImageCard
                     alt="story image"
                     src={response?.data?.our_service_left_image_urls}

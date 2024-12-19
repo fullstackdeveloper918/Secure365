@@ -57,7 +57,7 @@ const page = async () => {
             <div>
               <Text tag="h2">
                 {data?.data?.service_single_why_choose_heading}
-                <b>{data?.data?.service_single_why_choose_heading_second}</b>
+                <b className="ml-2">{data?.data?.service_single_why_choose_heading_second}</b>
               </Text>
               <Text tag="p" className="text-[#4F4F4F] text-lg md:mt-5">
                 {data?.data?.service_single_why_choose_paragraph}
@@ -70,7 +70,7 @@ const page = async () => {
       <section className="service_core_page bg-[#FAFAFA] py-16 ">
         <h2 className="text-center">
           {data?.data?.service_single_include_main_heading}
-          <b></b>
+          <b className="ml-2"></b>
         </h2>
         <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
           {data?.data?.service_single_data &&
@@ -110,7 +110,7 @@ const page = async () => {
       <section className="service_core_page bg-[#FAFAFA] py-16 ">
         <h2 className="text-center">
           {data?.data?.service_single_choosing_heading_main}
-          <b></b>
+          <b className="ml-2"></b>
 
           <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
             {data?.data?.service_single_choosing_data &&
@@ -176,7 +176,7 @@ const page = async () => {
             <div>
               <h2>
                 {data?.data?.service_single_our_promise_heading}
-                {/* <b>data?.data?.why_choose_service_title_second</b> */}
+                {/* <b className="ml-2">data?.data?.why_choose_service_title_second</b> */}
               </h2>
               <p className="text-[#4F4F4F] text-lg md:mt-5">
                {data?.data?.service_single_our_promise_paragraph}
@@ -203,7 +203,7 @@ const page = async () => {
         />
         <div className="container">
           <h2 className="text-white lg:text-5xl  md:text-3xl  text-2xl">
-           {data?.data?.service_single_management_heading} <b>{data?.data?.service_single_management_heading_second}</b>
+           {data?.data?.service_single_management_heading} <b className="ml-2">{data?.data?.service_single_management_heading_second}</b>
           </h2>
           <p className="text-white md:text-lg mt-5 text-md lg:max-w-[50%] md:max-w-[70%] mx-auto">
             {data?.data?.service_single_management_paragraph}

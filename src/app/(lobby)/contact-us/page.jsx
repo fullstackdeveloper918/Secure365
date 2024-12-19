@@ -49,10 +49,10 @@ const Contact = async() => {
           <div className="grid md:grid-cols-2 grid-cols-1 ">
 
             {/* left wrapper  */}
-            <div className='leftReachWrapper w-[55%] '>
-              <div className='xl:max-w-[60%]'>
+            <div className='leftReachWrapper xl:w-[60%] '>
+              <div className=''>
                 <Text tag="h2">{response?.data?.reach_contact_section_heading}</Text>
-                <Text tag="p" className='text-[#707070] text-md font-Axiforma'>{response?.data?.reach_contact_section_paragraph}</Text>
+                <Text tag="p" className='text-[#707070] text-md font-Axiforma mt-4'>{response?.data?.reach_contact_section_paragraph}</Text>
                 <ul className='my-5'>
                   {
                     response && response?.data?.reach_contact_us_by.map((item, index) => (
@@ -108,13 +108,13 @@ const Contact = async() => {
       <section className='py-20'>
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1 items-center md:gap-20">
-            <div className='relative h-full w-full shadow-sm border-1 border-[#333]' >
+            <div className='relative h-full w-full border-1 border-[#333] imgContain' >
               <ImageCard src="/Images/scheduleimg.png"  alt="img" layout='fill' objectFit='cover' />
             </div>
-            <div>
-              <Text tag="h2">{response?.data?.contact_schedule_consult_heading}</Text>
-              <Text tag="p">{response?.data?.contact_schedule_consult_paragraph}</Text>
-              <Text tag="p">We’ll take the time to understand your needs and provide personalized guidance on the best solutions for your business</Text>
+            <div className='py-20'>
+              <Text tag="h2" className='text-[#111111] text-2xl font-normal font-Axiforma'>{response?.data?.contact_schedule_consult_heading}</Text>
+              <Text tag="p" className='text-[#707070] text-xl font-Axiforma mt-3'>{response?.data?.contact_schedule_consult_paragraph}</Text>
+              <Text tag="p" className='text-[#707070] text-xl font-Axiforma mt-3'>We’ll take the time to understand your needs and provide personalized guidance on the best solutions for your business</Text>
             </div>
           </div>
         </div>

@@ -33,14 +33,14 @@ const page = async () => {
               {" "}
               Fighting Cybercrime
             </Text>
-            <Text tag="span" className="block ">
+            <Text tag="span" className="md:block ">
               {" "}
               Building Secure Solutions
             </Text>
           </Text>
           <Text
             tag="p"
-            className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-2xl text-md"
+            className="text-white xl:max-w-[50%] mx-auto md:my-10 mt-5 md:text-2xl text-md"
           >
             We provide expert IT and cybersecurity solutions that protect,
             support, and empower your business.
@@ -79,10 +79,10 @@ const page = async () => {
 
       <section className="set_up">
         <div className="container">
-          <div className="grid md:grid-cols-2 grid-cols-1  space-x-10">
+          <div className="grid md:grid-cols-2 grid-cols-1  md:space-x-10">
             <div className="set_leftwrapper">
-              <h2>{data?.data?.why_choose_sets_us_main_heading}</h2>
-              <div className="w-full h-[85%] relative">
+              <h2 className="md:mb-5">{data?.data?.why_choose_sets_us_main_heading}</h2>
+              <div className="w-full h-[85%] relative imgHeight">
                 <ImageCard
                   src={data?.data?.why_choose_sets_us_apart_image_url}
                   alt="set apart"
@@ -93,7 +93,7 @@ const page = async () => {
               </div>
             </div>
             <div className="set_rightwrapper">
-              <p className="subheading_text text-semibold text-4xl">
+              <p className="subheading_text text-semibold md:text-3xl text-md md:mt-0 my-5">
                 {data?.data?.why_choose_sets_us_apart_paragraph}
               </p>
               <ul className="lg:my-12 ">
@@ -128,7 +128,7 @@ const page = async () => {
               </ul>
             </div>
 
-            <div className="set_rightwrapper">
+            <div className="set_rightwrapper m-0">
               <ul className="lg:my-4 ">
                 <li className="flex space-x-2 items-start mb-3">
                   <ImageCard
@@ -192,7 +192,7 @@ const page = async () => {
             </div>
 
             <div className="set_rightwrapper">
-              <div className="w-full h-[85%] relative">
+              <div className="w-full h-[85%] relative imgHeight">
                 <ImageCard
                   src="/Images/rightImage.png"
                   alt="set apart"
