@@ -70,7 +70,7 @@ const page = async () => {
             </Text>
             <Text
               tag="p"
-              className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-xl text-md font-Axiforma font-Axiforma"
+              className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-xl text-md font-Axiforma"
             >
              {bannerResponse?.pages?.banner_data?.banner_sub_headline}
             </Text>
