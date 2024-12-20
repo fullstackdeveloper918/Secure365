@@ -11,8 +11,9 @@ import { bannerUrl, fetchData } from "@/lib/data";
 const page = async () => {
 
   const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about')
-  console.log(response, 'response')
-  const banner = await bannerUrl('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner')
+  const banner = await bannerUrl('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner/about-us')
+  
+  console.log(response?.data?.secure_data, 'aboutresponse')
 
 
   return (
@@ -20,7 +21,7 @@ const page = async () => {
       <section className="relative overlay about_banner text-center">
         <Suspense fallback={<p>Loading image...</p>}>
           <ImageCard
-            src={response?.data?.image_url}
+            src={banner?.pages?.banner_data?.banner_image?.url}
             className="absolute"
             layout="fill"
             alt=" about Background image"
@@ -35,21 +36,21 @@ const page = async () => {
               className="tracking-tighter text-3xl  lg:text-5xl xl:text-5xl	 text-center 	text-white	banner_heading"
             >
 
-              {banner?.data?.banner_heading}
+              {banner?.pages?.banner_data?.banner_heading}
               <Text tag="span" className="text_blue mx-2">
 
-                {/* {banner?.data?.banner_heading_second} */}
+                {banner?.pages?.banner_data?.banner_heading_second}
               </Text>
               <Text tag="span" className="block my-3">
 
-                {/* {banner?.data?.banner_heading_third} */}
+                {banner?.pages?.banner_data?.banner_heading_third}
               </Text>
             </Text>
             <Text
               tag="p"
               className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-xl text-md font-Axiforma"
             >
-              {/* {banner?.data?.banner_sub_headline} */}
+              
             </Text>
           </Suspense>
         </div>
@@ -191,14 +192,14 @@ const page = async () => {
             </Text>
           </Suspense>
           <div className="w-full grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 pt-10">
-            {response?.data?.vision_data &&
-              response?.data?.vision_data.map((item, index) => (
+            {response?.data?.secure_data &&
+              response?.data?.secure_data.map((item, index) => (
                 <React.Fragment key={index}>
                   <Suspense fallback={<CategoryCardSkeleton />}>
                     <div className="text-center column_hover">
                       <div className="cardImage">
                         <ImageCard
-                          src={item?.our_vision_about_image}
+                          src={item?.why_chooes_secure_about_image}
                           width={40}
                           height={40}
                           alt="avatar image"
@@ -209,14 +210,14 @@ const page = async () => {
                         tag="h3"
                         className="md:text-xl text-xl font-medium text-center capitalize "
                       >
-                        {item?.our_vision_about_heading}
+                        {item?.why_chooes_secure_heading}
                       </Text>
 
                       <Text
                         tag="p"
                         className="text-center text-md text-primary text-[#4F4F4F] font_14"
                       >
-                        {item?.our_vision_about_paragraph}
+                        {item?.why_chooes_secure_paragraph}
                       </Text>
                     </div>
                   </Suspense>
