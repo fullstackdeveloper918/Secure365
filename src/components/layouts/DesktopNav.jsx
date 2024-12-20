@@ -57,7 +57,7 @@ const DesktopNav = () => {
                     {  
                       item?.children?.map((child, childindex) => (
                         <React.Fragment key={child?.title}>
-                        <ListItem  href={`/${child?.title}`} title={child?.title}>
+                        <ListItem  href={`/contact-us`} title={child?.title}>
                         Explore {child?.title}
                       </ListItem>
                         </React.Fragment>
