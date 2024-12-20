@@ -57,21 +57,21 @@ const page = async () => {
           <Suspense fallback={<p>Loading content...</p>}>
             <Text
               tag="h1"
-              className="tracking-tighter text-3xl  lg:text-5xl xl:text-5xl	 text-center 	text-white	banner_heading"
+              className="tracking-tighter text-3xl  lg:text-5xl xl:text-5xl	 text-center 	text-white font-Axiforma	banner_heading"
             >
               {bannerResponse?.pages?.banner_data?.banner_heading}
-              <Text tag="span" className="text_blue mx-2">
+              <Text tag="span" className="text_blue mx-2 font-Axiforma">
 
                 {bannerResponse?.pages?.banner_data?.banner_heading_second}
               </Text>
-              <Text tag="span" className="block my-3">
+              <Text tag="span" className="block my-3 font-Axiforma">
 
                 {bannerResponse?.pages?.banner_data?.banner_heading_third}
               </Text>
             </Text>
             <Text
               tag="p"
-              className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-xl text-md font-Axiforma"
+              className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-xl text-md font-Axiforma font-Axiforma"
             >
 
             </Text>
@@ -97,8 +97,7 @@ const page = async () => {
           <div className="grid md:grid-cols-2 grid-cols-1 md:gap-10">
             <div className="leftWrapper">
               <Suspense fallback={<p>Loading content...</p>}>
-
-                <Text tag="h2" className="capitalize">
+                <Text tag="h2" className="capitalize font-Axiforma">
                   {aboutResponse?.data?.our_story_heading}{" "}
                   <b>{aboutResponse?.data?.our_story_heading_second}</b>
                 </Text>
@@ -108,19 +107,19 @@ const page = async () => {
                 />
                 <Text
                   tag="p"
-                  className="text-[#4F4F4F] md:text-lg md:mt-8 text-md"
+                  className="text-[#4F4F4F] md:text-lg md:mt-8 text-md font-Axiforma"
                 >
                   {aboutResponse?.data?.our_story_paragraph}
                 </Text>
                 <Text
                   tag="p"
-                  className="text-[#4F4F4F] md:text-lg text-md my-3"
+                  className="text-[#4F4F4F] md:text-lg text-md my-3 font-Axiforma"
                 >
                   {aboutResponse?.data?.our_story_paragraph_second}
                 </Text>
                 <Text
                   tag="p"
-                  className="text-[#4F4F4F] md:text-lg text-md my-3"
+                  className="text-[#4F4F4F] md:text-lg text-md my-3 font-Axiforma"
                 >
                   {aboutResponse?.data?.our_story_paragraph_third}
                 </Text>
@@ -143,22 +142,22 @@ const page = async () => {
       </section>
 
       {/* introduction Section Content */}
-      <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
+      <section className="introduction-wrapper  text-center ">
         <div className="container ">
-          <div className="flex flexWrapperResponsive md:gap-10 gap-5">
-            <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
+          <div className=" flexWrapperResponsive md:gap-10 gap-5 IntroWrapperContent">
+            <h2 className=" introheading relative pl-3 font-semibold font-Axiforma mb-5">
               {aboutResponse?.data?.about_introduction_heading}
             </h2>
             <div>
-              <Text tag="p" className="text-2xl  font-Axiforma">
+              <Text tag="p" className="text-lg  font-Axiforma">
                 {aboutResponse?.data?.about_introduction_paragraph}
               </Text>
-              <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
+              <Text tag="p" className="text-lg md:mt-8 mt-4 font-Axiforma">
                 {aboutResponse?.data?.about_introduction_paragraph_second}
               </Text>
               <Link
                 href="/contact-us"
-                className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
+                className="discovermore addArrow inline-flex xl:text-2xl text-lg  mt-5 relaitve font-Axiforma"
               >
                 {aboutResponse?.data?.about_introduction_button}
                 <svg
@@ -181,14 +180,14 @@ const page = async () => {
           </div>
         </div>
       </section>
-      <section className="md:py-20 py-10">
+      <section className="md:py-20 py-10 ">
         <div className="container">
           <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
             {aboutResponse?.data?.vision_data &&
               aboutResponse?.data?.vision_data.map((item, index) => (
                 <React.Fragment key={index}>
                   <Suspense fallback={<CategoryCardSkeleton />}>
-                    <div className="text-center column_hover">
+                    <div className="text-center column_hover block">
                       <div className="cardImage">
                         <ImageCard
                           src={item?.our_vision_about_image}
@@ -200,14 +199,14 @@ const page = async () => {
                       </div>
                       <Text
                         tag="h3"
-                        className="md:text-xl text-xl font-medium text-center "
+                        className="md:text-xl text-xl font-medium font-Axiforma text-center "
                       >
                         {item?.our_vision_about_heading}
                       </Text>
 
                       <Text
                         tag="p"
-                        className="text-center text-md text-primary text-[#4F4F4F] font_14"
+                        className="text-center text-md text-primary font-Axiforma text-[#4F4F4F] font_14"
                       >
                         {item?.our_vision_about_paragraph}
                       </Text>
@@ -223,11 +222,11 @@ const page = async () => {
 
       {/* why section started*/}
 
-      <section className="why_choose py-10 md:py-20  bg-[#F6FCFE] ">
+      <section className="why_choose py-10 md:py-20  bg-[#F6FCFE] aboutColumn">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
 
-            <Text tag="h2" className="text-center capitalize">
+            <Text tag="h2" className="text-center font-Axiforma capitalize">
               {aboutResponse?.data?.why_chooes_secure_about_heading}{" "}
               <strong className="text_blue capitalize">
                 {aboutResponse?.data?.why_chooes_secure_about_heading_second}
@@ -240,7 +239,7 @@ const page = async () => {
                 <React.Fragment key={index}>
                   <Suspense fallback={<CategoryCardSkeleton />}>
                     <div className="text-center column_hover">
-                      <div className="cardImage">
+                      <div className="cardImage text-center mx-auto">
                         <ImageCard
                           src={item?.why_chooes_secure_about_image}
                           width={40}
@@ -251,7 +250,7 @@ const page = async () => {
                       </div>
                       <Text
                         tag="h3"
-                        className="md:text-xl text-xl font-medium text-center capitalize "
+                        className="md:text-xl text-xl font-medium text-center capitalize my-2"
                       >
                         {item?.why_chooes_secure_heading}
                       </Text>
@@ -272,7 +271,7 @@ const page = async () => {
 
       {/* why section ended*/}
 
-      <section className="coreValue md:pt-20 py-10 pb-10  md:px-0">
+      <section className="coreValue md:pt-16 py-10 pb-10  md:px-0">
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-10">
             <div className="RightWrapper md:text-end order_2">
@@ -392,7 +391,7 @@ const page = async () => {
         </div>
       </section>
 
-      <section className="ready_partner relative lg:py-20 py-10  text-center md:mt-20 mt-0">
+      <section className="ready_partner relative lg:py-20 py-10  text-center 2xl:mt-16 mt-0">
         <Suspense fallback={<p>Loading image</p>}>
 
           <ImageCard
