@@ -25,8 +25,9 @@ const page = async () => {
   );
   const aboutResponse = await data.json();
   const bannerResponse = await bannerData.json();
+  
 
-
+  
   return (
     <>
       <section className="relative overlay about_banner text-center">
@@ -42,7 +43,7 @@ const page = async () => {
         </div>
         <Suspense fallback={<p>Loading image...</p>}>
           <ImageCard
-            src={bannerResponse?.pages?.banner_data?.banner_image?.url}
+            src={bannerResponse?.pages?.banner_data?.banner_image_background?.url}
             className="absolute"
             layout="fill"
             alt=" about Background image"
@@ -51,12 +52,10 @@ const page = async () => {
         </Suspense>
         <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0">
           <Suspense fallback={<p>Loading content...</p>}>
-
             <Text
               tag="h1"
               className="tracking-tighter text-3xl  lg:text-5xl xl:text-5xl	 text-center 	text-white	banner_heading"
             >
-
               {bannerResponse?.pages?.banner_data?.banner_heading}
               <Text tag="span" className="text_blue mx-2">
 
