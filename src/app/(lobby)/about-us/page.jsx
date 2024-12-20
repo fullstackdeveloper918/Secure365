@@ -25,6 +25,8 @@ const page = async () => {
   );
   const aboutResponse = await data.json();
   const bannerResponse = await bannerData.json();
+
+  console.log(aboutResponse, 'aboutResponse')
   
 
   
@@ -112,7 +114,15 @@ const page = async () => {
                 <Text
                   tag="p"
                   className="text-[#4F4F4F] md:text-lg text-md my-3"
-                ></Text>
+                >
+                  {aboutResponse?.data?.our_story_paragraph_second}
+                </Text>
+                <Text
+                  tag="p"
+                  className="text-[#4F4F4F] md:text-lg text-md my-3"
+                >
+                  {aboutResponse?.data?.our_story_paragraph_third}
+                </Text>
               </Suspense>
             </div>
             <div className="RightWrapper md:text-end md:m-0 my-5">
@@ -136,20 +146,20 @@ const page = async () => {
         <div className="container ">
           <div className="flex flexWrapperResponsive md:gap-10 gap-5">
             <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
-              {aboutResponse?.data?.home_introduction_section_heading_main}
+              {aboutResponse?.data?.about_introduction_heading}
             </h2>
             <div>
               <Text tag="p" className="text-2xl  font-Axiforma">
-                {aboutResponse?.data?.home_introduction_section_paragreaph_first}
+                {aboutResponse?.data?.about_introduction_paragraph}
               </Text>
               <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
-                {aboutResponse?.data?.home_introduction_section_paragreaph_second}
+                {aboutResponse?.data?.about_introduction_paragraph_second}
               </Text>
-              <a
-                href=""
+              <Link
+                href="/contact-us"
                 className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
               >
-                {aboutResponse?.data?.home_introduction_section_discover}
+                {aboutResponse?.data?.about_introduction_button}
                 <svg
                   width="32"
                   height="32"
@@ -165,7 +175,7 @@ const page = async () => {
                     strokeLinejoin="round"
                   ></path>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
