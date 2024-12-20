@@ -7,7 +7,7 @@ import ImageCard from "../cards/ImageCard";
 const data = [
   {
     id: 1,
-    heading: "Company",
+    heading: "Explore Links",
     Links: [
       { id: 1, text: "About us", href:"/about-us" },
       { id: 1, text: "Contact Us", href:"/contact-us" },
@@ -20,7 +20,7 @@ const data = [
   },
   {
     id: 2,
-    heading: "Help",
+    heading: "Quick Links",
     Links: [
       { id: 1, text: "Services",href:"/service" },
       { id: 2, text: "Why Choose Us",href:"/why-choose-us" },
@@ -31,7 +31,7 @@ const data = [
   },
   {
     id: 3,
-    heading: "Resources",
+    heading: "More",
     Links: [
       { id: 1, text: "About Us",href:"/about-us" },
       { id: 2, text: "Why Choose Us",href:"/why-choose-us" },
