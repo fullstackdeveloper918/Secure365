@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
+import Image from "next/image";
 
 const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
@@ -173,14 +174,14 @@ export default async function page() {
 
       <section className="cybersecurity_wrapper  py-10">
         <div className="container">
-          <div className="grid lg:grid-cols-2 grid-cols-1  lg:p-10  gap-7 items-center  ">
-            <div className="left-side flex gap-5 col-md-4 col-12  relative">
+          <div className="security_div ">
+            <div className="left-side  relative">
               <div className="flex flex-col gap-5">
                 {data &&
                   data?.website_protect_section_image_experience_url?.image_data?.map(
                     (item, index) => (
                       <>
-                        <div className="leftSideImage">
+                        {/* <div className="leftSideImage">
                           <Suspense fallback={<p>Loading...</p>}>
                             <ImageCard
                               src={
@@ -192,26 +193,27 @@ export default async function page() {
                               alt="protection section image"
                             />
                           </Suspense>
-                        </div>
+                        </div> */}
                       </>
                     )
                   )}
               </div>
-              <div className="flex items-center">
-                <Suspense fallback={<p>Loading...</p>}>
-                  <ImageCard
-                    src={
-                      data?.website_protect_section_image_experience_second_url
-                    }
-                    width={300}
-                    height={200}
-                    className="rounded-[10px]"
+              {/* <div className="relative w-100 h-full"> */}
+                {/* <Suspense fallback={<p>Loading...</p>}> */}
+                 
+                 <Image
+                    src="/Images/image.jpg"
+                    // layout="fill"
+                    // objectFit="cover"
+                    // className="absolute w-full h-full"
                     alt="protection section image"
+                    width={500}
+                    height={500}
                   />
-                </Suspense>
-              </div>
+                {/* </Suspense> */}
+              {/* </div> */}
 
-              <div className="counter_box absolute ">
+              {/* <div className="counter_box absolute ">
                 <div>
                   <div>
                     <Text
@@ -228,7 +230,7 @@ export default async function page() {
                     </Text>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="right-side col-md-7 col-12">
@@ -401,6 +403,8 @@ export default async function page() {
                     </React.Fragment>
                   </Suspense>
                 ))}
+
+                <buttons className="btn_one global_btn capitalize font-Axiforma">Learn More</buttons>
             </div>
           </div>
         </div>
