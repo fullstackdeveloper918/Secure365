@@ -17,16 +17,14 @@ const Products = async ({data}) => {
             tag="h2"
             className="font-Axiforma"
           >
-            Our Key Services
+            Recent Blogs
           </Text>
           <Text
             tag="p"
-            className="max-w-3xl text-center font-Axiforma  text-[#4F4F4F] subheading_text"
-          >
-            At Secure365, we understand that navigating the digital world can be
-            overwhelming. That’s why we’ve designed our services to be a
-            one-stop solution, covering everything from cloud management and IT
-            support to marketing and
+            className=" text-center font-Axiforma  text-[#4F4F4F] subheading_text ourblogs">
+            At Secure365, we know that managing your digital presence can feel daunting. That's why we've crafted our services to serve as a comprehensive solution for all your needs. Whether it's cloud management, IT support, or strategic marketing, we ensure every aspect of your digital ecosystem is taken care of—so you can focus on what matters most to your business.
+
+
           </Text>
         </div>
       </div>
