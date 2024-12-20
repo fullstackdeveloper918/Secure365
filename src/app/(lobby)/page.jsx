@@ -148,7 +148,7 @@ export default async function page() {
               <Suspense fallback={<p>Loading...</p>}>
                 <Text
                   tag="p"
-                  className=" md:mt-8 mt-4 text-2xl  "
+                  className=" md:mt-8 mt-4 2xl:text-xl text-lg "
                 >
                   {data?.makes_us_diffrent_paragraph}
                 </Text>
@@ -156,7 +156,7 @@ export default async function page() {
               <Suspense fallback={<p>Loading...</p>}>
                 <Text
                   tag="p"
-                  className=" mt-5 text-2xl  "
+                  className=" md:mt-8 mt-4 2xl:text-xl text-lg "
                 >
                   {data?.makes_us_diffrent_paragraph_second}
                 </Text>
@@ -344,7 +344,7 @@ export default async function page() {
               </div>
             </div>
          
-            <Button className="btn_one global_btn capitalize mt-10 mx-auto font-Axiforma lg:hidden block">
+            <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
                   {data?.website_experience_button_second}
                 </Button>
           </div>
@@ -367,7 +367,7 @@ export default async function page() {
               <Text tag="h2" className="font-Axiforma">
                 {data?.home_page_our_promise_main_heading}
               </Text>
-              <Text tag="p">{data?.home_page_our_promise_main_paragraph}</Text>
+              <Text tag="p" className=" font-Axiforma">{data?.home_page_our_promise_main_paragraph}</Text>
             </div>
           </Suspense>
 
@@ -389,12 +389,12 @@ export default async function page() {
                   <Suspense fallback={<p>Loading...</p>}>
                     <React.Fragment key={index}>
                       <div className="numberWrapper">
-                        <Text tag="span">0{index + 1}</Text>
+                        <Text tag="span" className="font-Axiforma">0{index + 1}</Text>
                         <div>
                           <Text tag="h4" className="font-Axiforma">
                             {item?.home_page_our_promise_title}
                           </Text>
-                          <Text tag="p">{item?.home_page_our_promise_servise_paragraph}</Text>
+                          <Text tag="p" className>{item?.home_page_our_promise_servise_paragraph}</Text>
                         </div>
                       </div>
                     </React.Fragment>

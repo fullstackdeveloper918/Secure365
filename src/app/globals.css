@@ -353,7 +353,7 @@ h2.expert_heading {
 
 /* about page css started */
 .about_banner {
-  min-height: calc(80vh - 200px);
+  min-height:500px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -366,6 +366,7 @@ h2.expert_heading {
 
 .about_banner .banner_heading {
   font-size: 65px;
+  line-height: normal !important;
 }
 .max_Width {
   max-width: 80%;
@@ -480,7 +481,7 @@ color: #52c5ff;
   overflow: hidden;
   border-radius: 10px;
   object-fit: cover;
-  object-position: 0 0px;
+  /* object-position: 0 0px; */
   min-height: 380px !important;
 }
 
@@ -556,6 +557,7 @@ color: #52c5ff;
 .banner_robot {
   position: relative;
 }
+
 .banner_robot::before {
   background: url(/Images/banner_bg_container.png);
   width: calc(100% + 10%);
@@ -568,6 +570,9 @@ color: #52c5ff;
   content: "";
   opacity: 0.9;
 }
+
+
+
 .left_rightContent {
   display: grid;
   grid-template-columns: 5fr 7fr;
@@ -801,6 +806,12 @@ strong {
   object-fit: contain !important;
 }
 
+.mobile_link a{
+  display: block;
+  font-size: 14px !important;
+  margin-bottom: 15px !important;
+}
+
 @media screen and (min-width: 1922px) {
   .container {
     max-width: 1876px !important;
@@ -928,7 +939,7 @@ strong {
     line-height: 28px;
   }
   .security_div h2 {
-    line-height: 50px;
+    line-height: 40px;
   }
   .security_div {
     grid-template-columns: 6fr 6fr;
@@ -1106,11 +1117,11 @@ strong {
     font-size: 16px;
     min-height: 46px;
   }
-  .get_started_wrapper h2, 
+  /* .get_started_wrapper h2, 
   .get_started_wrapper p,
   .get_started_wrapper {
     text-align: center;
-  }
+  } */
 .mobileHiden{
   display: none;
 }
@@ -1261,6 +1272,11 @@ strong {
     padding: 5px 0 0;
     min-width: 40px;
   }
+  section.promise_sec {
+    margin-top: 0;
+    margin: 0 auto 50px;
+}
+
 }
 @media screen and (max-width: 480px) {
   .get_started_wrapper h2 {
@@ -1293,9 +1309,7 @@ strong {
     line-height: 40px !important;
     max-width: 100% !important;
   }
-  .about_banner {
-    min-height: calc(70vh - 180px);
-  }
+ 
   img.approve_img {
     margin-top: 5px;
   }
@@ -1313,6 +1327,15 @@ p {
 .keyColumns {
   width: 100%;
   margin-bottom: 14px;
+}
+.cybersecurity_wrapper h2 {
+  line-height: 32px;
+  font-size: 24px;
+}
+.get_started_wrapper h2 {
+  line-height: 32px !important;
+  font-size: 24px;
+  text-align: left;
 }
 }
 

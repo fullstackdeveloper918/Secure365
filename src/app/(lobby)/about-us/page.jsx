@@ -25,11 +25,21 @@ const page = async () => {
   );
   const aboutResponse = await data.json();
   const bannerResponse = await bannerData.json();
-  
-  
+
+
   return (
     <>
       <section className="relative overlay about_banner text-center">
+        <div className="baner_images">
+          <span className="relative">
+            <ImageCard
+              src="/svg/before_bannerImg.svg"
+              width={700}
+              height={100}
+              alt="banner image"
+            />
+          </span>
+        </div>
         <Suspense fallback={<p>Loading image...</p>}>
           <ImageCard
             src={bannerResponse?.pages?.banner_data?.banner_image?.url}
@@ -61,9 +71,21 @@ const page = async () => {
               tag="p"
               className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-xl text-md font-Axiforma"
             >
-              
+
             </Text>
           </Suspense>
+        </div>
+        <div className="baner_imagesafter">
+          <span className="relative">
+
+            <ImageCard
+              src="/svg/after_bannerImg.svg"
+              width={500}
+              height={100}
+              alt="banner image"
+            />
+
+          </span>
         </div>
       </section>
 
@@ -110,20 +132,20 @@ const page = async () => {
         </div>
       </section>
 
-         {/* introduction Section Content */}
-         <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
+      {/* introduction Section Content */}
+      <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
         <div className="container ">
           <div className="flex flexWrapperResponsive md:gap-10 gap-5">
             <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
               {aboutResponse?.data?.home_introduction_section_heading_main}
             </h2>
             <div>
-                <Text tag="p" className="text-2xl  font-Axiforma">
-                  {aboutResponse?.data?.home_introduction_section_paragreaph_first}
-                </Text>
-                <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
-                  {aboutResponse?.data?.home_introduction_section_paragreaph_second}
-                </Text>
+              <Text tag="p" className="text-2xl  font-Axiforma">
+                {aboutResponse?.data?.home_introduction_section_paragreaph_first}
+              </Text>
+              <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
+                {aboutResponse?.data?.home_introduction_section_paragreaph_second}
+              </Text>
               <a
                 href=""
                 className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
@@ -151,27 +173,27 @@ const page = async () => {
       </section>
       <section className="md:py-20 py-10">
         <div className="container">
-        <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
-        {aboutResponse?.data?.vision_data &&
-          aboutResponse?.data?.vision_data.map((item, index) => (
-            <React.Fragment key={index}>
-              <Suspense fallback={<CategoryCardSkeleton />}>
-                <div className="text-center column_hover">
-                  <div className="cardImage">
-                    <ImageCard
-                      src={item?.our_vision_about_image}
-                      width={40}
-                      height={40}
-                      alt="avatar image"
-                      className="mx-auto"
-                    />
-                  </div>
-                  <Text
-                    tag="h3"
-                    className="md:text-xl text-xl font-medium text-center "
-                  >
-                    {item?.our_vision_about_heading}
-                  </Text>
+          <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
+            {aboutResponse?.data?.vision_data &&
+              aboutResponse?.data?.vision_data.map((item, index) => (
+                <React.Fragment key={index}>
+                  <Suspense fallback={<CategoryCardSkeleton />}>
+                    <div className="text-center column_hover">
+                      <div className="cardImage">
+                        <ImageCard
+                          src={item?.our_vision_about_image}
+                          width={40}
+                          height={40}
+                          alt="avatar image"
+                          className="mx-auto"
+                        />
+                      </div>
+                      <Text
+                        tag="h3"
+                        className="md:text-xl text-xl font-medium text-center "
+                      >
+                        {item?.our_vision_about_heading}
+                      </Text>
 
                       <Text
                         tag="p"
@@ -186,7 +208,7 @@ const page = async () => {
           </div>
         </div>
       </section>
-        {/* </div>
+      {/* </div>
       </section> */}
 
       {/* why section started*/}

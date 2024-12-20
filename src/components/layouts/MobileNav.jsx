@@ -42,7 +42,7 @@ const MobileNav = () => {
               className="flex items-center font-Axiforma"
               onClick={() => setIsOpen(false)}
             ></Link>
-            <div className="text-sm">
+            <div className="text-sm mobile_link">
               <Accordion
                 type="multiple"
                 defaultValue={["item-1", "item-2", "item-3"]}
@@ -56,13 +56,13 @@ const MobileNav = () => {
                         About Us
                       </Link>
                       <Link onClick={() => setIsOpen(false)} href="/delivery">
-                        Delivery
+                     
                       </Link>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger>Lobby</AccordionTrigger>
+                  <AccordionTrigger>   About Us</AccordionTrigger>
                   <AccordionContent>
                     <div className="flex flex-col gap-y-2 text-muted-foreground">
                       <Link
@@ -81,7 +81,7 @@ const MobileNav = () => {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                  <AccordionTrigger>Categories</AccordionTrigger>
+                  <AccordionTrigger>Service</AccordionTrigger>
                   <AccordionContent>
                     <div className="flex flex-col gap-y-2 text-muted-foreground">
                       <Link onClick={() => setIsOpen(false)} href="/playlist">
