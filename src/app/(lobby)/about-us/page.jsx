@@ -157,7 +157,7 @@ const page = async () => {
                 {aboutResponse?.data?.about_introduction_paragraph_second}
               </Text>
               <Link
-                href="/contact-us"
+                href="/contact-us" as="style"
                 className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
               >
                 {aboutResponse?.data?.about_introduction_button}
