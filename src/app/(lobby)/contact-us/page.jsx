@@ -143,7 +143,10 @@ const Contact = async() => {
       </section>
 
 
-      <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
+   <section className='md:py-20 py-10 text-center'>
+    <div className="container">
+      <h2>Why Contact <strong>Secure365?</strong></h2>
+    <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
         {response?.data?.contact_secure_loop &&
           response?.data?.contact_secure_loop.map((item, index) => (
             <React.Fragment key={index}>
@@ -176,6 +179,8 @@ const Contact = async() => {
           ))}
       </div>
 
+    </div>
+   </section>
         <section className='md:py-20 py-10'>
           <div className="container">
            <div className="grid md:grid-cols-2">

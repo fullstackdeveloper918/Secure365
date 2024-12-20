@@ -29,49 +29,49 @@ export default async function page() {
       <section className="relative banner_robot bg-black">
         <div className="baner_images">
           <span className="relative">
-           
-              <ImageCard
-                src="/svg/before_bannerImg.svg"
-                width={700}
-                height={100}
-                alt="banner image"
-              />
-          
+
+            <ImageCard
+              src="/svg/before_bannerImg.svg"
+              width={700}
+              height={100}
+              alt="banner image"
+            />
+
           </span>
         </div>
         <div className="baner_imagesafter">
           <span className="relative">
-           
-              <ImageCard
-                src="/svg/after_bannerImg.svg"
-                width={500}
-                height={100}
-                alt="banner image"
-              />
-          
+
+            <ImageCard
+              src="/svg/after_bannerImg.svg"
+              width={500}
+              height={100}
+              alt="banner image"
+            />
+
           </span>
         </div>
         <Hero />
       </section>
 
       {/* introduction Section Content */}
-      <section className="introduction-wrapper 2xl:py-28 xl:py-20 md:py-16 py-12 ">
+      <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12 text-center ">
         <div className="container ">
-          <div className="flex flexWrapperResponsive md:gap-10 gap-5">
-            <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
+          <div className=" flexWrapperResponsive md:gap-10 gap-5 IntroWrapperContent">
+            <h2 className=" introheading relative pl-3 font-semibold font-Axiforma mb-5">
               {data?.home_introduction_section_heading_main}
             </h2>
             <div>
-           
-                <Text tag="p" className="text-2xl  font-Axiforma">
-                  {data?.home_introduction_section_paragreaph_first}
-                </Text>
-             
-    
-                <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
-                  {data?.home_introduction_section_paragreaph_second}
-                </Text>
-            
+
+              <Text tag="p" className="text-xl  font-Axiforma">
+                {data?.home_introduction_section_paragreaph_first}
+              </Text>
+
+
+              <Text tag="p" className="text-xl md:mt-8 mt-4 font-Axiforma">
+                {data?.home_introduction_section_paragreaph_second}
+              </Text>
+
 
               <a
                 href=""
@@ -98,48 +98,10 @@ export default async function page() {
           </div>
         </div>
       </section>
-
       {/* Introduction Ends Here */}
 
-      {/* What Makes us Different Section Starts */}
-
-      <section className="make_us_different 2xl:py-16  pb-12 bg-[#f0f0f0] relative">
-        <div className="container">
-          <div className="flex flex-col items-center justify-between gap-2 ">
-            <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
-              <Text tag="h2" className="heading_h2 capitalize ">
-                {data?.makes_us_diffrent_heading}
-                <span className="capitalize font-semibold m-2">
-                  {data?.makes_us_diffrent_heading_second}
-                </span>
-              </Text>
-            </Suspense>
-
-            <Suspense fallback={<p>Loading...</p>}>
-              <Text
-                tag="p"
-                className=" md:mt-8 mt-4 text-center text-2xl max-w-[60%] mx-auto"
-              >
-                {data?.makes_us_diffrent_paragraph}
-              </Text>
-            </Suspense>
-            <Suspense fallback={<p>Loading...</p>}>
-              <Text
-                tag="p"
-                className=" mt-5 text-center text-2xl max-w-[70%] mx-auto"
-              >
-                {data?.makes_us_diffrent_paragraph_second}
-              </Text>
-            </Suspense>
-          </div>
-        </div>
-      </section>
-
-      {/* What Makes us Different Section Ends */}
-
-      {/* Key Services Section Starts */}
-
-      <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
+       {/* Key Services Section Starts */}
+       <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
         <div className="container">
           <Text tag="h2" className="mb-5">{data?.home_key_service_first_heading}:</Text>
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
@@ -167,12 +129,57 @@ export default async function page() {
           </div>
         </div>
       </section>
-
       {/* Key Services Section Ends */}
 
-      {/* Protect Your Website Section Starts*/}
+      {/* What Makes us Different Section Starts */}
+      <section className="make_us_different 2xl:py-16 py-10   bg-[#f0f0f0] relative">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-2 ">
+            <div>
+              <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
+                <Text tag="h2" className="heading_h2 capitalize ">
+                  {data?.makes_us_diffrent_heading}
+                  <span className="capitalize font-semibold m-2">
+                    {data?.makes_us_diffrent_heading_second}
+                  </span>
+                </Text>
+              </Suspense>
 
-      <section className="cybersecurity_wrapper  py-10">
+              <Suspense fallback={<p>Loading...</p>}>
+                <Text
+                  tag="p"
+                  className=" md:mt-8 mt-4 text-2xl  "
+                >
+                  {data?.makes_us_diffrent_paragraph}
+                </Text>
+              </Suspense>
+              <Suspense fallback={<p>Loading...</p>}>
+                <Text
+                  tag="p"
+                  className=" mt-5 text-2xl  "
+                >
+                  {data?.makes_us_diffrent_paragraph_second}
+                </Text>
+              </Suspense>
+            </div>
+            <div className="text-center">
+              <Image
+                src="/Images/typograpy.png"
+                className=" min-h-full mx-auto typoImageHeight"
+                width={500}
+                height={500}
+                alt="expert guidance image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* What Makes us Different Section Ends */}
+
+     
+
+      {/* Protect Your Website Section Starts*/}
+      <section className="cybersecurity_wrapper  xl:py-20 py-10">
         <div className="container">
           <div className="security_div ">
             <div className="left-side  relative">
@@ -198,20 +205,20 @@ export default async function page() {
                     )
                   )}
               </div>
-              {/* <div className="relative w-100 h-full"> */}
+              <div className="relative w-100 h-full">
                 {/* <Suspense fallback={<p>Loading...</p>}> */}
-                 
-                 <Image
-                    src="/Images/image.jpg"
-                    // layout="fill"
-                    // objectFit="cover"
-                    // className="absolute w-full h-full"
-                    alt="protection section image"
-                    width={500}
-                    height={500}
-                  />
+
+                <Image
+                  src="/Images/image.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                  className="absolute w-full h-full"
+                  alt="protection section image"
+                // width={500}
+                // height={500}
+                />
                 {/* </Suspense> */}
-              {/* </div> */}
+              </div>
 
               {/* <div className="counter_box absolute ">
                 <div>
@@ -233,7 +240,7 @@ export default async function page() {
               </div> */}
             </div>
 
-            <div className="right-side col-md-7 col-12">
+            <div className="right-side col-md-7 col-12 2xl:py-20 xl:py-18 py-0">
               <div>
                 <Suspense fallback={<p>Loading...</p>}>
                   <Text
@@ -289,16 +296,15 @@ export default async function page() {
           </div>
         </div>
       </section>
-
       {/* Protect Your Website Section Ends*/}
 
       {/* Ensure Your Website Section Starts */}
-
-      <section className="get_started_wrapper my-5 bg-[#060606] text-white lg:py-16 md:py-12 py-12">
+      <section className="get_started_wrapper my-5  text-white lg:py-16 md:py-12 py-12 relative">
+        <Image src="/Images/info-graphic.jpg" className="absolute -z-10 rotate-180" layout="fill" objectFit="cover" />
         <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:p-10   gap-7 items-center">
-            <div className="left-side">
-              <div className="w-full ">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:py-10  gap-7">
+          <div className="left-side max-w-[80%]">
+              <div className=" ">
                 <Text
                   tag="h2"
                   className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide"
@@ -309,7 +315,7 @@ export default async function page() {
 
                 <Text
                   tag="p"
-                  className="text-[#c2c2c2] md:text-lg text-md md:my-5 my-2 font-Axiforma md:max-w-[80%]"
+                  className="text-[#c2c2c2] md:text-lg text-md md:mb-5 mb-2 font-Axiforma md:max-w-[80%]"
                 >
                   {/* {data?.website_experience_paragraph_second} */}
                   At Secure365, we understand that navigating the digital world
@@ -317,52 +323,43 @@ export default async function page() {
                   be a one-stop solution, covering everything from cloud
                   management and IT support to marketing and cybersecurity.
                 </Text>
-
-                <Text
-                  tag="p"
-                  className="text-[#c2c2c2] md:text-lg text-lg my-2 mb-5  font-Axiforma md:max-w-[80%]"
-                >
-                  Our approach combines expertise, proactive management, and
-                  industry-leading technology to deliver seamless experiences,
-                  minimize risk, and maximize efficiency.
-                </Text>
-
-                <Button className="btn_one global_btn capitalize mt-5  font-Axiforma">
+                <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg::block hidden mobileHiden">
                   {data?.website_experience_button_second}
                 </Button>
               </div>
             </div>
             <div className="w-full">
-              <div className="">
+              <div className="relative  w-full heightMention">
                 <Suspense fallback={<p>Loading...</p>}>
                   <ImageCard
-                    src="/svg/professional_team.svg"
-                    width={700}
-                    height={500}
+                    src="/Images/imgSteps.png"
+                    className=" min-h-full heightMention"
+                    layout="fill"
+                    // width={500}
+                    // height={500}
+                    objectFit="cover"
                     alt="expert guidance image"
                   />
                 </Suspense>
               </div>
             </div>
+         
+            <Button className="btn_one global_btn capitalize mt-10 mx-auto font-Axiforma lg:hidden block">
+                  {data?.website_experience_button_second}
+                </Button>
           </div>
+
         </div>
       </section>
-
       {/* Ensure Your Website Section Ends */}
 
-      {/* Our Key Services Section Starts */}
-      <Products data={data?.key_services_data} />
-
-      {/* Our Key Services Section Ends */}
+     
 
       {/* Top Skilled Experts Section Starts */}
-
       <Categories data={data} />
-
       {/* Top Skilled Experts Section Ends */}
 
       {/* Our Promise Section Starts */}
-
       <section className="promise_sec">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
@@ -379,7 +376,7 @@ export default async function page() {
               <Suspense fallback={<p>Loading...</p>}>
                 <ImageCard
                   src={data?.home_page_our_promise_image_url}
-                  width={700}
+                  width={600}
                   height={400}
                   alt="our promise image"
                 />
@@ -404,17 +401,19 @@ export default async function page() {
                   </Suspense>
                 ))}
 
-                <buttons className="btn_one global_btn capitalize font-Axiforma">Learn More</buttons>
+              <buttons className="btn_one global_btn capitalize font-Axiforma">Learn More</buttons>
             </div>
           </div>
         </div>
       </section>
-
       {/* Our Promise Section Ends */}
 
-      {/* Contact Section Starts */}
+       {/* Our Key Services Section Starts */}
+       <Products data={data?.key_services_data} />
+      {/* Our Key Services Section Ends */}
 
-      <section className="lookingService">
+      {/* Contact Section Starts */}
+      <section className="lookingService xl:mt-20 mt-6">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
             <Text tag="h2">{data?.home_page_contact_section_heading}</Text>
@@ -428,151 +427,29 @@ export default async function page() {
           </div>
         </div>
       </section>
-
       {/* Contact Section Ends */}
     </main>
   );
 }
 
-{
-  /* <section className="make_us_different 2xl:pb-20  pb-12">
-        <div className="container">
-          <div className="flex flex-col items-center justify-between gap-2 ">
-            <Text tag="h2" className="heading_h2 capitalize ">
-              {data?.makes_us_diffrent_heading}
-              <span className="capitalize font-semibold m-2">
-                {data?.makes_us_diffrent_heading_second}
-              </span>
-            </Text>
-            <Text tag="p" className="max-w-2xl text-center subheading_text ">
-              {data?.makes_us_diffrent_paragraph}
-            </Text>
-          </div>
 
-          <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
-            {data?.choose_real_world &&
-              data?.choose_real_world.map((item, index) => (
-                <React.Fragment key={index}>
-                  <Suspense fallback={<CategoryCardSkeleton />}>
-                    <div className="text-center column_hover">
-                      <div className="cardImage">
-                        <ImageCard
-                          src={item?.world_icon_url}
-                          width={40}
-                          height={40}
-                          alt="avatar image"
-                          className="mx-auto"
-                        />
-                      </div>
-                      <Text
-                        tag="h3"
-                        className="md:text-xl text-xl font-medium text-center "
-                      >
-                        {item?.world_heading}
-                      </Text>
 
-                      <Text
-                        tag="p"
-                        className="text-center text-md text-primary text-[#4F4F4F] font_14"
-                      >
-                        {item?.world_experience_paragraph}
-                      </Text>
-                    </div>
-                  </Suspense>
-                </React.Fragment>
-              ))}
-          </div>
-        </div>
-      </section> */
-}
 
-{
-  /* World Class Protection */
-}
-{
-  /* <section className="2xl:py-14 py-14 protection_section  bg-[#011024] text-white">
-        <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 2xl:p-10 2xl:pb-0 p-3 md:pb-0 gap-7 ">
-            <div className="left-side">
-              <Text tag="h2" className="capitalize">
-                {data?.world_class_protection_heading}
-                <strong className=" text-[#52C5FF] font-bold block capitalize">
-                  {data?.world_class_protection_heading_second}
-                </strong>
-              </Text>
-              <div className="w-full grid sm:grid-cols-2 grid-cols-1 space-y-10 items-end">
-                {data?.world_class_protection &&
-                  data?.world_class_protection.map((protect, index) => (
-                    <>
-                      <div
-                      >
-                        <div className="max_Width ">
-                          <Text
-                            tag="h3"
-                            className="relative border_blue_bottom"
-                          >
-                            {index + 1}
-                          </Text>
-                          <hr className="color-[#52C5FF] max-w-[30%] border-[#52C5FF] my-3" />
-                          <Text
-                            tag="h2"
-                            className="expert_heading my-2  font-medium tet-white"
-                          >
-                            {protect?.expert_guidance_heading}
-                          </Text>
-                          <Text tag="p" className="text-[#878787]">
-                            {protect?.expert_guidance_paragraph}
-                          </Text>
-                        </div>
-                      </div>
-                    </>
-                  ))}
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="">
-                <ImageCard
-                  src={data?.expert_image}
-                  width={700}
-                  height={500}
-                  alt="expert guidance image"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>  */
-}
-{
-  /* contact page design start */
-}
+// mast section
 
-{
-  /* banner section  same*/
-}
-{
-  /* 
-<section className="contactformWrapper py-12">
-  <div className="container">
-    <div className="flex">
-      <div className="col-left">
-        <h2>How to Reach Us</h2>
-        <p>We make it easy for you to get in touch, whether you prefer a quick phone call, a detailed email, or scheduling a consultation at a time that works for you.</p>
-
-        <ul>
-          <li>
-            <div>
-              <h3>+(800) 311-5990</h3>
-              <p>Call Now and Get a FREE Consultation</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div className="col-right"></div>
-    </div>
-  </div>
-</section> */
-}
-{
-  /* contact page design ended */
-}
+// <section className="get_started_wrapper my-5  text-white lg:py-28 md:py-12 py-12 relative">
+// <Image src="/Images/inner-baner-bg.jpg" alt="imner img" className="absolute -z-10" layout="fill" objectFit="cover"/>
+// <div className="container">
+//     <div className="left-side max-w-[70%]">
+//       <div className="w-full ">
+//       <h6><span></span>Innovative Idea</h6>
+//         <Text
+//           tag="h2"
+//           className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide"
+//         >
+//           "Drawing on IT professionals' technical expertise to assess and solve advanced technical problems."
+//         </Text>
+//       </div>
+//     </div>
+//   </div>
+// </section>

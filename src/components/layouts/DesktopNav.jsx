@@ -48,6 +48,7 @@ const DesktopNav = () => {
            
               <NavigationMenuItem >
                 <NavigationMenuTrigger className='font-Axiforma' chever={item?.children?.length> 0}>{item?.title}</NavigationMenuTrigger>
+                
                 {
                   item?.children?.length > 0 &&
                

@@ -90,7 +90,7 @@ const page = async () => {
                   src={response?.data?.image_url}
                   className="mx-auto"
                   width={600}
-                  height={550}
+                  height={400}
                 />
               </Suspense>
             </div>
@@ -339,7 +339,7 @@ const page = async () => {
                     src={response?.data?.our_service_left_image_urls}
                     className="absolute w-full h-full borderradius"
                     width={600}
-                    height={550}
+                    height={450}
                   />
                 </div>
               </Suspense>

@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="bottom_text absolute bottom-5 left-5">
         <span className="bg-[#ffffff40] text-white text-md p-3">Marketing</span>
-        <h3 className="tex-2xl my-4 text-white md:max-w-[70%] font-Axiforma">
+        <h3 className="tex-2xl my-4 text-white xl:max-w-[70%] font-Axiforma">
           Enhance Trust, Compliance, And Goverance
         </h3>
         <button className="inline  border-white rounded-full arrow_button font-Axiforma">

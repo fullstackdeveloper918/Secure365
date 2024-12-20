@@ -49,7 +49,7 @@ export default async function Hero() {
           <Suspense fallback={<p>Loading...</p>}>
            <ImageCard
            src={data?.pages?.banner_data?.banner_image?.url}
-           className='banner_rotate'
+           className='banner_rotate relative z-20'
            alt='Hero image'
            width={550}
            height={550}

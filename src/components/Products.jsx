@@ -10,7 +10,7 @@ const Products = async ({data}) => {
     <section
       id="products"
       aria-labelledby="product-heading"
-      className="space-y-8 md:py-18 md:pb-0 py-10 "><div className="container">
+      className="space-y-8  "><div className="container">
       <div className="flex items-center justify-center mb-8">
         <div className="flex flex-col items-center justify-between gap-4">
           <Text
