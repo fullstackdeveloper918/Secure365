@@ -8,10 +8,13 @@ import ImageCard from '@/components/cards/ImageCard';
 
 const Contact = async() => {
 
-  const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/contact')
-
-
-  console.log(response?.data, 'contactdata')
+  const contactData = await fetch(
+    "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/contact",
+    {
+      cache: "no-store",
+    }
+  );
+  const contactResponse = await contactData.json();
 
   return (
     <>
@@ -51,11 +54,11 @@ const Contact = async() => {
             {/* left wrapper  */}
             <div className='leftReachWrapper xl:w-[60%] '>
               <div className=''>
-                <Text tag="h2">{response?.data?.reach_contact_section_heading}</Text>
-                <Text tag="p" className='text-[#707070] text-md font-Axiforma mt-4'>{response?.data?.reach_contact_section_paragraph}</Text>
+                <Text tag="h2">{contactResponse?.data?.reach_contact_section_heading}</Text>
+                <Text tag="p" className='text-[#707070] text-md font-Axiforma mt-4'>{contactResponse?.data?.reach_contact_section_paragraph}</Text>
                 <ul className='my-5'>
                   {
-                    response && response?.data?.reach_contact_us_by.map((item, index) => (
+                    contactResponse && contactResponse?.data?.reach_contact_us_by.map((item, index) => (
                       <React.Fragment key={index}>
                        <li className='flex gap-5 border-t border-[#DADADA] py-10 items-center'>
                     <ImageCard src={item?.reach_contact_section_image} alt='call image' width={60} height={60} />
@@ -112,8 +115,8 @@ const Contact = async() => {
               <ImageCard src="/Images/scheduleimg.png"  alt="img" layout='fill' objectFit='cover' />
             </div>
             <div className='py-20'>
-              <Text tag="h2" className='text-[#111111] text-2xl font-normal font-Axiforma'>{response?.data?.contact_schedule_consult_heading}</Text>
-              <Text tag="p" className='text-[#707070] text-xl font-Axiforma mt-3'>{response?.data?.contact_schedule_consult_paragraph}</Text>
+              <Text tag="h2" className='text-[#111111] text-2xl font-normal font-Axiforma'>{contactResponse?.data?.contact_schedule_consult_heading}</Text>
+              <Text tag="p" className='text-[#707070] text-xl font-Axiforma mt-3'>{contactResponse?.data?.contact_schedule_consult_paragraph}</Text>
               <Text tag="p" className='text-[#707070] text-xl font-Axiforma mt-3'>We’ll take the time to understand your needs and provide personalized guidance on the best solutions for your business</Text>
             </div>
           </div>
@@ -127,14 +130,14 @@ const Contact = async() => {
             <ImageCard src="/Images/locationimg.png" alt="img" className='absolute' layout='fill' objectFit='cover'  />
           </div>
           <div className='py-24'>
-            <Text tag="h2">{response?.data?.contact_our_location_heading}</Text>
-            <Text tag="p">{response?.data?.contact_our_location_heading_paragraph}</Text>
+            <Text tag="h2">{contactResponse?.data?.contact_our_location_heading}</Text>
+            <Text tag="p">{contactResponse?.data?.contact_our_location_heading_paragraph}</Text>
             <ul className='my-5'>
               <li className='flex gap-5 border-t border-[#DADADA] py-10 items-center'>
                 <ImageCard src="/Images/locationIcon.png" alt='call image' width={60} height={60} />  
                 <div>
-                      <Text tag="h3" className='text-[#111111] text-2xl font-normal font-Axiforma'>{response?.data?.contact_map_location}</Text>
-                      <Text tag="p" className='text-[#707070] text-xl font-Axiforma mt-3'>{response?.data?.contact_map_loction_details}</Text>
+                      <Text tag="h3" className='text-[#111111] text-2xl font-normal font-Axiforma'>{contactResponse?.data?.contact_map_location}</Text>
+                      <Text tag="p" className='text-[#707070] text-xl font-Axiforma mt-3'>{contactResponse?.data?.contact_map_loction_details}</Text>
                     </div>            
               </li>
             </ul>
@@ -144,8 +147,8 @@ const Contact = async() => {
 
 
       <div className="w-full grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
-        {response?.data?.contact_secure_loop &&
-          response?.data?.contact_secure_loop.map((item, index) => (
+        {contactResponse?.data?.contact_secure_loop &&
+          contactResponse?.data?.contact_secure_loop.map((item, index) => (
             <React.Fragment key={index}>
                 <div className="text-center column_hover">
                   <div className="cardImage">
@@ -180,12 +183,12 @@ const Contact = async() => {
           <div className="container">
            <div className="grid md:grid-cols-2">
            <div>
-              <Text tag="h2">{response?.data?.contact_promise_heading}</Text>
+              <Text tag="h2">{contactResponse?.data?.contact_promise_heading}</Text>
               <Text tag="p" className='md:mt-10 mt-5 md:mb-10 mb-7 text-[#4F4F4F] text-2xl md:max-w-[80%]'>We handle the heavy lifting of server and cloud management, so you can focus on what matters most—your business. Secure365’s solutions are designed to streamline your IT operations, maximize security, and provide a stable foundation for growth. With us, you’ll have peace of mind knowing that your data is safe, your systems are optimized, and your business can scale effortlessly</Text>
-              <button className='btn_one global_btn capitalize font-Axiforma mt-4 text-white'>{response?.data?.contact_button}</button>
+              <button className='btn_one global_btn capitalize font-Axiforma mt-4 text-white'>{contactResponse?.data?.contact_button}</button>
             </div>
             <div className='relative h-full w-full'>
-              <ImageCard src={response?.data?.contact_promise_image_url} alt='promise image' layout='fill' objectFit='contain' />
+              <ImageCard src={contactResponse?.data?.contact_promise_image_url} alt='promise image' layout='fill' objectFit='contain' />
             </div>
             
            </div>
@@ -202,10 +205,10 @@ const Contact = async() => {
   
                 <div className="container">
                   <Text tag="h2" className="text-white lg:text-5xl  md:text-3xl  text-2xl">
-                    {response?.data?.contact_ready_heading}
+                    {contactResponse?.data?.contact_ready_heading}
                   </Text>
                   <Text tag="p" className="text-white md:text-lg mt-5 text-md lg:max-w-[50%] md:max-w-[70%] mx-auto">
-                    {response?.data?.contact_ready_paragraph}
+                    {contactResponse?.data?.contact_ready_paragraph}
                   </Text>
                  
                 </div>
