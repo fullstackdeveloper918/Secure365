@@ -10,29 +10,34 @@ const data = [
     heading: "Company",
     Links: [
       { id: 1, text: "About us", href:"/about-us" },
-      { id: 2, text: "Office", href:"/office" },
-      { id: 3, text: "License Verification", href:"/license" },
-      { id: 4, text: "Spay & Neuter", href:"/spay" },
+      { id: 1, text: "Contact Us", href:"/contact-us" },
+      { id: 3, text: "Services",href:"/service" },
+      { id: 4, text: "Why Choose Us",href:"/why-choose-us" },
+      
+     
+     
     ],
   },
   {
     id: 2,
     heading: "Help",
     Links: [
-      { id: 1, text: "Customer Support",href:"/support" },
-      { id: 2, text: "Delivery Details",href:"/delivery" },
-      { id: 3, text: "Terms & Conditions",href:"/terms" },
-      { id: 4, text: "Privacy Policy",href:"/privacy" },
+      { id: 1, text: "Services",href:"/service" },
+      { id: 2, text: "Why Choose Us",href:"/why-choose-us" },
+      { id: 3, text: "Services",href:"/service" },
+      { id: 4, text: "Why Choose Us",href:"/why-choose-us" },
+     
     ],
   },
   {
     id: 3,
     heading: "Resources",
     Links: [
-      { id: 1, text: "Free ebooks",href:"/ebooks" },
-      { id: 2, text: "Development Tutorial",href:"/development" },
-      { id: 3, text: "How to - Blog",href:"/how" },
-      { id: 4, text: "Youtube Playlist",href:"/playlist" },
+      { id: 1, text: "About Us",href:"/about-us" },
+      { id: 2, text: "Why Choose Us",href:"/why-choose-us" },
+      { id: 3, text: "Services",href:"/service" },
+      { id: 4, text: "Why Choose Us",href:"/why-choose-us" },
+ 
     ],
   },
 ];
@@ -66,6 +71,7 @@ const Footer = () => {
                 truly professional website.
               </Text>
               <ul className="list-none flex gap-2 mt-5">
+                <Link href="/">
                 <Text tag="li" className="social_list">
                   {" "}
                   <ImageCard
@@ -74,8 +80,10 @@ const Footer = () => {
                     height={12}
                     className="social_icon facebook_icon"
                     alt="facebook"
-                  />
+                    />
                 </Text>
+                    </Link>
+                    <Link href="/">
                 <Text tag="li" className="social_list font-Axiforma">
                   {" "}
                   <ImageCard
@@ -86,6 +94,8 @@ const Footer = () => {
                     alt="facebook"
                   />
                 </Text>
+                </Link>
+                <Link href="/">
                 <Text tag="li" className="social_list font-Axiforma">
                   {" "}
                   <ImageCard
@@ -96,6 +106,8 @@ const Footer = () => {
                     alt="facebook"
                   />
                 </Text>
+                </Link>
+                <Link href="/">
                 <Text tag="li" className="social_list">
                   {" "}
                   <ImageCard
@@ -104,8 +116,9 @@ const Footer = () => {
                     height={20}
                     className="social_icon"
                     alt="facebook"
-                  />
+                    />
                 </Text>
+                    </Link>
               </ul>
             </div>
             {
