@@ -5,6 +5,7 @@ const ImageCard = dynamic(() => import('@/components/cards/ImageCard'));
 
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
 import { bannerUrl, fetchData } from "@/lib/data";
+import Link from "next/link";
 
 
 
