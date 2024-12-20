@@ -4,38 +4,35 @@ const Text = dynamic(() => import('@/components/Text'));
 const ImageCard = dynamic(() => import('@/components/cards/ImageCard'));
 
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
-// import { bannerUrl, fetchData } from "@/lib/data";
+import { bannerUrl, fetchData } from "@/lib/data";
 
 
 
+const page = async () => {
 
-export const fetchData = async (url) => {
-  try {
-    const response = await fetch(url, { cache: "no-store" });
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
-  }
-};
+  const data = await fetch(
+    "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about",
+    {
+      cache: "no-store",
+    }
+  );
 
-
-
-const page = async ({response, banner}) => {
-
-  // const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about')
-  // const banner = await bannerUrl('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner/about-us')
+  const bannerData = await fetch(
+    "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner/about-us",
+    {
+      cache: "no-store",
+    }
+  );
+  const aboutResponse = await data.json();
+  const bannerResponse = await bannerData.json();
   
-  // console.log(response?.data?.secure_data, 'aboutresponse')
-
-
+  
   return (
     <>
       <section className="relative overlay about_banner text-center">
         <Suspense fallback={<p>Loading image...</p>}>
           <ImageCard
-            src={banner?.pages?.banner_data?.banner_image?.url}
+            src={bannerResponse?.pages?.banner_data?.banner_image?.url}
             className="absolute"
             layout="fill"
             alt=" about Background image"
@@ -50,14 +47,14 @@ const page = async ({response, banner}) => {
               className="tracking-tighter text-3xl  lg:text-5xl xl:text-5xl	 text-center 	text-white	banner_heading"
             >
 
-              {banner?.pages?.banner_data?.banner_heading}
+              {bannerResponse?.pages?.banner_data?.banner_heading}
               <Text tag="span" className="text_blue mx-2">
 
-                {banner?.pages?.banner_data?.banner_heading_second}
+                {bannerResponse?.pages?.banner_data?.banner_heading_second}
               </Text>
               <Text tag="span" className="block my-3">
 
-                {banner?.pages?.banner_data?.banner_heading_third}
+                {bannerResponse?.pages?.banner_data?.banner_heading_third}
               </Text>
             </Text>
             <Text
@@ -78,8 +75,8 @@ const page = async ({response, banner}) => {
               <Suspense fallback={<p>Loading content...</p>}>
 
                 <Text tag="h2" className="capitalize">
-                  {response?.data?.our_story_heading}{" "}
-                  <b>{response?.data?.our_story_heading_second}</b>
+                  {aboutResponse?.data?.our_story_heading}{" "}
+                  <b>{aboutResponse?.data?.our_story_heading_second}</b>
                 </Text>
                 <Text
                   tag="hr"
@@ -89,7 +86,7 @@ const page = async ({response, banner}) => {
                   tag="p"
                   className="text-[#4F4F4F] md:text-lg md:mt-8 text-md"
                 >
-                  {response?.data?.our_story_paragraph}
+                  {aboutResponse?.data?.our_story_paragraph}
                 </Text>
                 <Text
                   tag="p"
@@ -102,7 +99,7 @@ const page = async ({response, banner}) => {
 
                 <ImageCard
                   alt="story image"
-                  src={response?.data?.image_url}
+                  src={aboutResponse?.data?.image_url}
                   className="mx-auto"
                   width={600}
                   height={550}
@@ -118,20 +115,20 @@ const page = async ({response, banner}) => {
         <div className="container ">
           <div className="flex flexWrapperResponsive md:gap-10 gap-5">
             <h2 className="text-2xl introheading relative pl-3 font-semibold font-Axiforma">
-              {response?.data?.home_introduction_section_heading_main}
+              {aboutResponse?.data?.home_introduction_section_heading_main}
             </h2>
             <div>
                 <Text tag="p" className="text-2xl  font-Axiforma">
-                  {response?.data?.home_introduction_section_paragreaph_first}
+                  {aboutResponse?.data?.home_introduction_section_paragreaph_first}
                 </Text>
                 <Text tag="p" className="text-2xl md:mt-10 mt-5 font-Axiforma">
-                  {response?.data?.home_introduction_section_paragreaph_second}
+                  {aboutResponse?.data?.home_introduction_section_paragreaph_second}
                 </Text>
               <a
                 href=""
                 className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
               >
-                {response?.data?.home_introduction_section_discover}
+                {aboutResponse?.data?.home_introduction_section_discover}
                 <svg
                   width="32"
                   height="32"
@@ -155,8 +152,8 @@ const page = async ({response, banner}) => {
       <section className="md:py-20 py-10">
         <div className="container">
         <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 pt-10">
-        {response?.data?.vision_data &&
-          response?.data?.vision_data.map((item, index) => (
+        {aboutResponse?.data?.vision_data &&
+          aboutResponse?.data?.vision_data.map((item, index) => (
             <React.Fragment key={index}>
               <Suspense fallback={<CategoryCardSkeleton />}>
                 <div className="text-center column_hover">
@@ -199,15 +196,15 @@ const page = async ({response, banner}) => {
           <Suspense fallback={<p>Loading...</p>}>
 
             <Text tag="h2" className="text-center capitalize">
-              {response?.data?.why_chooes_secure_about_heading}{" "}
+              {aboutResponse?.data?.why_chooes_secure_about_heading}{" "}
               <strong className="text_blue capitalize">
-                {response?.data?.why_chooes_secure_about_heading_second}
+                {aboutResponse?.data?.why_chooes_secure_about_heading_second}
               </strong>
             </Text>
           </Suspense>
           <div className="w-full grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 pt-10">
-            {response?.data?.secure_data &&
-              response?.data?.secure_data.map((item, index) => (
+            {aboutResponse?.data?.secure_data &&
+              aboutResponse?.data?.secure_data.map((item, index) => (
                 <React.Fragment key={index}>
                   <Suspense fallback={<CategoryCardSkeleton />}>
                     <div className="text-center column_hover">
@@ -252,7 +249,7 @@ const page = async ({response, banner}) => {
                 <div className="relative h-full w-full imgHeight">
                   <ImageCard
                     alt="story image"
-                    src={response?.data?.core_value_main_image}
+                    src={aboutResponse?.data?.core_value_main_image}
                     className="absolute w-full h-full borderradius"
                     layout="fill" objectFit="cover"
                   />
@@ -264,14 +261,14 @@ const page = async ({response, banner}) => {
               <Suspense fallback={<p>Loading...</p>}>
 
                 <Text tag="h2" className="capitalize">
-                  {response?.data?.core_value_main_heading}{" "}
-                  <b>{response?.data?.core_value_main_heading_second}</b>
+                  {aboutResponse?.data?.core_value_main_heading}{" "}
+                  <b>{aboutResponse?.data?.core_value_main_heading_second}</b>
                 </Text>
               </Suspense>
 
               <ul className="lg:my-12 mt-5">
-                {response?.data &&
-                  response?.data?.core_value_data_loop.map((item, index) => (
+                {aboutResponse?.data &&
+                  aboutResponse?.data?.core_value_data_loop.map((item, index) => (
 
                     <React.Fragment key={index}>
                       <Suspense fallback={<p>Loading</p>}>
@@ -308,13 +305,13 @@ const page = async ({response, banner}) => {
               <Suspense fallback={<p>loading</p>}>
 
                 <Text tag="h2" className="capitalize">
-                  {response?.data?.our_services_left_heading_main}{" "}
-                  <b>{response?.data?.our_services_left_heading_main_second}</b>
+                  {aboutResponse?.data?.our_services_left_heading_main}{" "}
+                  <b>{aboutResponse?.data?.our_services_left_heading_main_second}</b>
                 </Text>
               </Suspense>
               <ul className="lg:my-12 mt-9">
-                {response?.data &&
-                  response?.data?.our_services_left_data.map((item, index) => (
+                {aboutResponse?.data &&
+                  aboutResponse?.data?.our_services_left_data.map((item, index) => (
                     <React.Fragment key={index}>
                       <Suspense fallback={<p>Loading</p>}>
 
@@ -351,7 +348,7 @@ const page = async ({response, banner}) => {
                 <div className="relative h-full w-full imgHeight">
                   <ImageCard
                     alt="story image"
-                    src={response?.data?.our_service_left_image_urls}
+                    src={aboutResponse?.data?.our_service_left_image_urls}
                     className="absolute w-full h-full borderradius"
                     width={600}
                     height={550}
@@ -377,10 +374,10 @@ const page = async ({response, banner}) => {
           <Suspense fallback={<p>Loading...</p>}>
 
             <Text tag="h2" className="text-white lg:text-5xl  md:text-3xl  text-2xl">
-              {response?.data?.partner_with_expert_about_heading} <b>Experts?</b>
+              {aboutResponse?.data?.partner_with_expert_about_heading} <b>Experts?</b>
             </Text>
             <Text tag="p" className="text-white md:text-lg mt-5 text-md lg:max-w-[50%] md:max-w-[70%] mx-auto">
-              {response?.data?.partner_with_expert_about_paragraph}
+              {aboutResponse?.data?.partner_with_expert_about_paragraph}
             </Text>
           </Suspense>
         </div>
@@ -392,13 +389,3 @@ const page = async ({response, banner}) => {
 export default page;
 
 
-export async function getServerSideProps() {
-  // Fetch the data for both APIs
-  const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about');
-  const banner = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner/about-us');
-
-  // Return both data objects as props
-  return {
-    props: { response, banner },
-  };
-}
