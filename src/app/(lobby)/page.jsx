@@ -55,7 +55,7 @@ export default async function page() {
       </section>
 
       {/* introduction Section Content */}
-      <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12 text-center ">
+      {/* <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12 text-center ">
         <div className="container ">
           <div className=" flexWrapperResponsive md:gap-10 gap-5 IntroWrapperContent">
             <h2 className=" introheading relative pl-3 font-semibold font-Axiforma mb-5">
@@ -73,7 +73,7 @@ export default async function page() {
               </Text>
 
 
-              <Link 
+              <Link
                 href="/contact-us"
                 className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
               >
@@ -97,11 +97,36 @@ export default async function page() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Introduction Ends Here */}
 
-       {/* Key Services Section Starts */}
-       <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
+
+      <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12  ">
+        <div className="container ">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-24">
+            <div className="relative">
+              <Image src="/Images/employ.jpg" alt="img" style={{ borderRadius: "30px" }} layout="fill" objectFit="cover" />
+              <div className="absolute right-3 bottom-5 max-w-[300px] bg-white p-4 ">
+                <h3 className="text-xl font-semibold">Award Winning</h3>
+                <p className="text-md">We take pride in being recognized for excellence in delivering cutting-edge cloud security and IT solutions.</p>
+              </div>
+            </div>
+            <div>
+              <h6 className="text-xl font-medium mb-5">About us</h6>
+              <h2 className=" heading_h2  relative  font-Axiforma mb-5 capitalize">
+                Your Trusted Partner in Cloud Security and IT Services
+              </h2>
+              <p className="text-[#434242] text-lg my-5 font-Axiforma">
+                Welcome to Secure 365, where innovation drives protection, and technology turns challenges into secure solutions. Established with a vision to redefine cloud security and IT services, we are a dynamic and forward-focused company dedicated to delivering advanced, reliable, and scalable solutions.
+              </p>
+              <p className="text-[#434242] text-lg my-5 font-Axiforma ">Our mission is clear—to provide comprehensive and tailored cloud security and IT services that align seamlessly with your organization’s goals. We believe in not just safeguarding your data but exceeding expectations by empowering your business with robust and innovative security measures.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Services Section Starts */}
+      <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
         <div className="container">
           <Text tag="h2" className="mb-5">{data?.home_key_service_first_heading}:</Text>
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
@@ -122,6 +147,11 @@ export default async function page() {
                       <Text tag="p">
                         {item?.home_key_service_first_paragraph}
                       </Text>
+                      <ul className="listWrapperFlex">
+                        <li className=""> <Image src="/Images/checkList.png" alt="img" width={50} height={50} />Advanced Security Measures</li>
+                        <li> <Image src="/Images/checkList.png" alt="img" width={50} height={50} />Enable Real-Time Monitoring</li>
+                        <li> <Image src="/Images/checkList.png" alt="img" width={50} height={50} /> Leverage Threat Intelligence</li>
+                      </ul>
                     </Suspense>
                   </div>
                 </>
@@ -132,7 +162,7 @@ export default async function page() {
       {/* Key Services Section Ends */}
 
       {/* What Makes us Different Section Starts */}
-      <section className="make_us_different 2xl:py-16 py-10   bg-[#f0f0f0] relative">
+      <section className="make_us_different relative">
         <div className="container">
           <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-2 ">
             <div>
@@ -162,12 +192,14 @@ export default async function page() {
                 </Text>
               </Suspense>
             </div>
-            <div className="text-center">
+            <div className="text-center  h-full w-full absolute">
               <Image
-                src="/Images/typograpy.png"
-                className=" min-h-full mx-auto typoImageHeight"
-                width={500}
-                height={500}
+                src="/svg/Specialists.svg"
+                className=" min-h-full mx-auto typoImageHeight absolute"
+                // width={400}
+                layout="fill"
+                objectFit="cover"
+                // height={400}
                 alt="expert guidance image"
               />
             </div>
@@ -176,134 +208,16 @@ export default async function page() {
       </section>
       {/* What Makes us Different Section Ends */}
 
-     
 
-      {/* Protect Your Website Section Starts*/}
-      <section className="cybersecurity_wrapper  xl:py-20 py-10">
-        <div className="container">
-          <div className="security_div ">
-            <div className="left-side  relative">
-              <div className="flex flex-col gap-5">
-                {data &&
-                  data?.website_protect_section_image_experience_url?.image_data?.map(
-                    (item, index) => (
-                      <>
-                        {/* <div className="leftSideImage">
-                          <Suspense fallback={<p>Loading...</p>}>
-                            <ImageCard
-                              src={
-                                item?.website_protect_section_image_experience
-                              }
-                              width={380}
-                              height={420}
-                              className="rounded-[10px]"
-                              alt="protection section image"
-                            />
-                          </Suspense>
-                        </div> */}
-                      </>
-                    )
-                  )}
-              </div>
-              <div className="relative w-100 h-full">
-                {/* <Suspense fallback={<p>Loading...</p>}> */}
 
-                <Image
-                  src="/Images/image.jpg"
-                  layout="fill"
-                  objectFit="cover"
-                  className="absolute w-full h-full"
-                  alt="protection section image"
-                // width={500}
-                // height={500}
-                />
-                {/* </Suspense> */}
-              </div>
-
-              {/* <div className="counter_box absolute ">
-                <div>
-                  <div>
-                    <Text
-                      tag="h3"
-                      className="text-white md:text-3xl text-xl font-medium"
-                    >
-                      30+
-                    </Text>
-                    <Text
-                      tag="p"
-                      className="text-white leading-snug font-semibold"
-                    >
-                      Years of Experience
-                    </Text>
-                  </div>
-                </div>
-              </div> */}
-            </div>
-
-            <div className="right-side col-md-7 col-12 2xl:py-20 xl:py-18 py-0">
-              <div>
-                <Suspense fallback={<p>Loading...</p>}>
-                  <Text
-                    tag="h2"
-                    className="my-2 text-black capitalize font-Axiforma font-medium"
-                  >
-                    {data?.website_protect_heading_experience_section}
-                  </Text>
-                </Suspense>
-              </div>
-              <div>
-                <Suspense fallback={<p>Loading...</p>}>
-                  <Text
-                    tag="p"
-                    className="text-[#434242] text-lg my-5 font-Axiforma"
-                  >
-                    {data?.makes_us_diffrent_paragraph}
-                  </Text>
-                </Suspense>
-                <Suspense fallback={<p>Loading...</p>}>
-                  <Text
-                    tag="p"
-                    className="text-[#434242] text-lg my-5 font-Axiforma"
-                  >
-                    {data?.makes_us_diffrent_paragraph_second}
-                  </Text>
-                </Suspense>
-              </div>
-              <div>
-                <Link
-                  href="/contact-us"
-                  className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
-                >
-                  {data?.website_protect_button_experience}
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 24L24 9M24 9H15.6667M24 9V17.3333"
-                      stroke="#000"
-                      strokeWidth="2.4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></path>
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* Protect Your Website Section Ends*/}
+  
 
       {/* Ensure Your Website Section Starts */}
       <section className="get_started_wrapper my-5  text-white lg:py-16 md:py-12 py-12 relative">
         <Image src="/Images/info-graphic.jpg" className="absolute -z-10 rotate-180" layout="fill" objectFit="cover" />
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:py-10  gap-7">
-          <div className="left-side max-w-[80%]">
+            <div className="left-side max-w-[80%]">
               <div className=" ">
                 <Text
                   tag="h2"
@@ -343,17 +257,17 @@ export default async function page() {
                 </Suspense>
               </div>
             </div>
-         
+
             <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
-                  {data?.website_experience_button_second}
-                </Button>
+              {data?.website_experience_button_second}
+            </Button>
           </div>
 
         </div>
       </section>
       {/* Ensure Your Website Section Ends */}
 
-     
+
 
       {/* Top Skilled Experts Section Starts */}
       <Categories data={data} />
@@ -400,18 +314,18 @@ export default async function page() {
                     </React.Fragment>
                   </Suspense>
                 ))}
-                <Link href="/contact-us">
+              <Link href="/contact-us">
 
-              <button className="btn_one global_btn capitalize font-Axiforma">Learn More</button>
-                </Link>
+                <button className="btn_one global_btn capitalize font-Axiforma">Learn More</button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
       {/* Our Promise Section Ends */}
 
-       {/* Our Key Services Section Starts */}
-       <Products data={data?.key_services_data} />
+      {/* Our Key Services Section Starts */}
+      <Products data={data?.key_services_data} />
       {/* Our Key Services Section Ends */}
 
       {/* Contact Section Starts */}
@@ -429,6 +343,24 @@ export default async function page() {
           </div>
         </div>
       </section>
+
+
+      {/* <section className="get_started_wrapper my-5  text-white lg:py-28 md:py-12 py-12 relative">
+<Image src="/Images/inner-baner-bg.jpg" alt="imner img" className="absolute -z-10" layout="fill" objectFit="cover"/>
+<div className="container">
+    <div className="left-side max-w-[70%]">
+      <div className="w-full ">
+      <h6><span></span>Innovative Idea</h6>
+        <Text
+          tag="h2"
+          className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide"
+        >
+          "Drawing on IT professionals' technical expertise to assess and solve advanced technical problems."
+        </Text>
+      </div>
+    </div>
+  </div>
+</section> */}
       {/* Contact Section Ends */}
     </main>
   );
@@ -439,19 +371,3 @@ export default async function page() {
 
 // mast section
 
-// <section className="get_started_wrapper my-5  text-white lg:py-28 md:py-12 py-12 relative">
-// <Image src="/Images/inner-baner-bg.jpg" alt="imner img" className="absolute -z-10" layout="fill" objectFit="cover"/>
-// <div className="container">
-//     <div className="left-side max-w-[70%]">
-//       <div className="w-full ">
-//       <h6><span></span>Innovative Idea</h6>
-//         <Text
-//           tag="h2"
-//           className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide"
-//         >
-//           "Drawing on IT professionals' technical expertise to assess and solve advanced technical problems."
-//         </Text>
-//       </div>
-//     </div>
-//   </div>
-// </section>
