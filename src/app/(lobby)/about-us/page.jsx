@@ -4,7 +4,6 @@ const Text = dynamic(() => import('@/components/Text'));
 const ImageCard = dynamic(() => import('@/components/cards/ImageCard'));
 
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
-import { bannerUrl, fetchData } from "@/lib/data";
 import Link from "next/link";
 
 
@@ -27,7 +26,7 @@ const page = async () => {
   const aboutResponse = await data.json();
   const bannerResponse = await bannerData.json();
 
-  console.log(aboutResponse, 'aboutResponse')
+  console.log(bannerResponse, 'bannerResponse')
   
 
   
@@ -73,7 +72,7 @@ const page = async () => {
               tag="p"
               className="text-white md:max-w-[55%] mx-auto md:my-10 mt-5 md:text-xl text-md font-Axiforma font-Axiforma"
             >
-
+             {bannerResponse?.pages?.banner_data?.banner_sub_headline}
             </Text>
           </Suspense>
         </div>
