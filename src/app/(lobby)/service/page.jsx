@@ -24,7 +24,7 @@ const page = async () => {
           layout="fill"
           alt=" about Background image"
         />
-        <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0 min_height">
+        <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0 ">
           <Text
             tag="h1"
             className="tracking-tight text-3xl  lg:text-6xl 2xl:text-6xl	 text-center 	text-white	banner_heading"
@@ -64,7 +64,7 @@ const page = async () => {
             <div>
               <Text tag="h2">
                 {data?.data?.why_choose_service_title}
-                <b>{data?.data?.why_choose_service_title_second}</b>
+                <b className="ml-2">{data?.data?.why_choose_service_title_second}</b>
               </Text>
               <Text tag="p" className="text-[#4F4F4F] text-lg md:mt-5">
                 {data?.data?.why_choose_service_paragraph}
@@ -91,7 +91,7 @@ const page = async () => {
                         width={65}
                         height={65}
                       />
-                      <Text tag="h3" className="text-lg md:max-w-[70%]">
+                      <Text tag="h3" className="md:text-xl text-md md:max-w-[70%] text-[#111111] ">
                         {item?.our_core_service_title_section}
                       </Text>
                     </div>
@@ -126,7 +126,7 @@ const page = async () => {
                           <div>
                             <Text
                               tag="h3"
-                              className="font-semibold md:text-lg text-md "
+                              className="font-semibold md:text-xl text-md capitalize text-[#111111]" 
                             >
                               {item?.our_approach_service_heading}
                             </Text>
