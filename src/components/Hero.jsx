@@ -37,10 +37,10 @@ export default async function Hero() {
              </Suspense>
           <div
            className='flex flex-wrap   text-white gap-4 mt-5'>
-            <a href='/products' className='btn_one global_btn capitalize font-Axiforma'>
+            <Link href='/contact-us' className='btn_one global_btn capitalize font-Axiforma'>
               {data?.pages?.banner_data?.get_started}
-            </a>
-            <Link href='/dashboard/stores' className='global_btn btn_two capitalize font-Axiforma'>
+            </Link>
+            <Link href='/contact-us' className='global_btn btn_two capitalize font-Axiforma'>
               {data?.pages?.banner_data?.book_demo}
             </Link>
           </div>

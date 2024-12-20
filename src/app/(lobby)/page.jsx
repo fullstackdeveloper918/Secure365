@@ -73,8 +73,8 @@ export default async function page() {
               </Text>
 
 
-              <a
-                href=""
+              <Link 
+                href="/contact-us"
                 className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
               >
                 {data?.home_introduction_section_discover}
@@ -93,7 +93,7 @@ export default async function page() {
                     strokeLinejoin="round"
                   ></path>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -270,8 +270,8 @@ export default async function page() {
                 </Suspense>
               </div>
               <div>
-                <a
-                  href="#"
+                <Link
+                  href="/contact-us"
                   className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
                 >
                   {data?.website_protect_button_experience}
@@ -290,7 +290,7 @@ export default async function page() {
                       strokeLinejoin="round"
                     ></path>
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -400,8 +400,10 @@ export default async function page() {
                     </React.Fragment>
                   </Suspense>
                 ))}
+                <Link href="/contact-us">
 
-              <buttons className="btn_one global_btn capitalize font-Axiforma">Learn More</buttons>
+              <button className="btn_one global_btn capitalize font-Axiforma">Learn More</button>
+                </Link>
             </div>
           </div>
         </div>
