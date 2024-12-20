@@ -4,16 +4,30 @@ const Text = dynamic(() => import('@/components/Text'));
 const ImageCard = dynamic(() => import('@/components/cards/ImageCard'));
 
 import CategoryCardSkeleton from "@/components/skeletons/CategoryCardSkeleton";
-import { bannerUrl, fetchData } from "@/lib/data";
+// import { bannerUrl, fetchData } from "@/lib/data";
 
 
 
-const page = async () => {
 
-  const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about')
-  const banner = await bannerUrl('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner/about-us')
+export const fetchData = async (url) => {
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return null;
+  }
+};
+
+
+
+const page = async ({response, banner}) => {
+
+  // const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about')
+  // const banner = await bannerUrl('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner/about-us')
   
-  console.log(response?.data?.secure_data, 'aboutresponse')
+  // console.log(response?.data?.secure_data, 'aboutresponse')
 
 
   return (
@@ -376,3 +390,15 @@ const page = async () => {
 };
 
 export default page;
+
+
+export async function getServerSideProps() {
+  // Fetch the data for both APIs
+  const response = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/about');
+  const banner = await fetchData('https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/banner/about-us');
+
+  // Return both data objects as props
+  return {
+    props: { response, banner },
+  };
+}
