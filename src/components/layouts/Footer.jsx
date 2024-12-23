@@ -79,7 +79,7 @@ const Footer = () => {
                     width={12}
                     height={12}
                     className="social_icon facebook_icon"
-                    alt="facebook"
+                    alt="facebook icon"
                     />
                 </Text>
                     </Link>
@@ -91,7 +91,7 @@ const Footer = () => {
                     width={20}
                     height={20}
                     className="social_icon"
-                    alt="facebook"
+                    alt="instagram icon"
                   />
                 </Text>
                 </Link>
@@ -103,7 +103,7 @@ const Footer = () => {
                     width={20}
                     height={20}
                     className="social_icon"
-                    alt="facebook"
+                    alt="twitter icon"
                   />
                 </Text>
                 </Link>
@@ -115,7 +115,7 @@ const Footer = () => {
                     width={20}
                     height={20}
                     className="social_icon"
-                    alt="facebook"
+                    alt="git icon"
                     />
                 </Text>
                     </Link>
