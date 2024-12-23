@@ -3,15 +3,9 @@
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import ImageCard from "../cards/ImageCard";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +13,7 @@ const MobileNav = () => {
   return (
     <div className="flex justify-between w-full lg:hidden">
       <Link href="/">
-         <Image src='/Images/SECURE365_new.png' width={240} height={80} alt="Secure Logo" />
+         <ImageCard src='/Images/SECURE365_new.png' width={240} height={80} alt="Secure Logo" />
       </Link>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import {
   NavigationMenu,
@@ -10,6 +9,7 @@ import {
 } from "../ui/navigation-menu";
 import ListItem from "./ListItem";
 import dynamic from "next/dynamic";
+import ImageCard from "../cards/ImageCard";
 const MotionDiv = dynamic(() => import("@/components/MotionDiv"));
 
 const DesktopNav = () => {
@@ -37,7 +37,7 @@ const DesktopNav = () => {
         transition={{ duration: 1.5 }}
       >
         <Link href="/" className="flex space-x-2">
-          <Image
+          <ImageCard
             src="/Images/secure_black.png"
             width={240}
             height={80}
@@ -67,7 +67,7 @@ const DesktopNav = () => {
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] ">
                       {item?.children?.map((child, childindex) => (
-                        <React.Fragment key={child?.title}>
+                        <React.Fragment key={childindex}>
                           <ListItem href={`/contact-us`} title={child?.title}>
                             Explore {child?.title}
                           </ListItem>
