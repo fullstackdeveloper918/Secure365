@@ -34,7 +34,7 @@ const DesktopNav = () => {
       <MotionDiv
         initial={{ opacity: 0, y: -200 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2.4 }}
+        transition={{ duration: 1.5 }}
       >
         <Link href="/" className="flex space-x-2">
           <Image

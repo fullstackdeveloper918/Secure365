@@ -4,15 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import Image from "next/image";
-const MotionDiv  = dynamic(() => import("../../components/MotionDiv"));
+const MotionDiv = dynamic(() => import("../../components/MotionDiv"));
 
 const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
 const ImageCard = dynamic(() => import("../../components/cards/ImageCard"));
 const Categories = dynamic(() => import("../../components/Categories"));
 const Text = dynamic(() => import("../../components/Text"));
-
-
 
 export default async function page() {
   const response = await fetch(
@@ -29,11 +27,6 @@ export default async function page() {
     <main>
       <section className="relative banner_robot bg-black">
         <div className="baner_images">
-        <MotionDiv 
-             initial={{ opacity: 0, y: -200 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 2 }}
-          >
           <span className="relative">
             <ImageCard
               src="/svg/before_bannerImg.svg"
@@ -42,26 +35,17 @@ export default async function page() {
               alt="banner image"
             />
           </span>
-          </MotionDiv>
         </div>
 
         <div className="baner_imagesafter">
-        <MotionDiv 
-             initial={{ opacity: 0, y: -100 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 2 }}
-          >
           <span className="relative">
-
             <ImageCard
               src="/svg/after_bannerImg.svg"
               width={500}
               height={100}
               alt="banner image"
             />
-
           </span>
-          </MotionDiv>
         </div>
         <Hero />
       </section>
@@ -74,18 +58,15 @@ export default async function page() {
               {data?.home_introduction_section_heading_main}
             </h2>
             <div>
-
               <Text tag="p" className="text-xl  font-Axiforma">
                 {data?.home_introduction_section_paragreaph_first}
               </Text>
-
 
               <Text tag="p" className="text-xl md:mt-8 mt-4 font-Axiforma">
                 {data?.home_introduction_section_paragreaph_second}
               </Text>
 
-
-              <Link 
+              <Link
                 href="/contact-us"
                 className="discovermore addArrow inline-flex xl:text-2xl text-xl mt-5 relaitve font-Axiforma"
               >
@@ -112,10 +93,12 @@ export default async function page() {
       </section>
       {/* Introduction Ends Here */}
 
-       {/* Key Services Section Starts */}
-       <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
+      {/* Key Services Section Starts */}
+      <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
         <div className="container">
-          <Text tag="h2" className="mb-5">{data?.home_key_service_first_heading}:</Text>
+          <Text tag="h2" className="mb-5">
+            {data?.home_key_service_first_heading}:
+          </Text>
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
             {data &&
               data?.home_key_service_data.map((item, index) => (
@@ -158,18 +141,12 @@ export default async function page() {
               </Suspense>
 
               <Suspense fallback={<p>Loading...</p>}>
-                <Text
-                  tag="p"
-                  className=" md:mt-8 mt-4 2xl:text-xl text-lg "
-                >
+                <Text tag="p" className=" md:mt-8 mt-4 2xl:text-xl text-lg ">
                   {data?.makes_us_diffrent_paragraph}
                 </Text>
               </Suspense>
               <Suspense fallback={<p>Loading...</p>}>
-                <Text
-                  tag="p"
-                  className=" md:mt-8 mt-4 2xl:text-xl text-lg "
-                >
+                <Text tag="p" className=" md:mt-8 mt-4 2xl:text-xl text-lg ">
                   {data?.makes_us_diffrent_paragraph_second}
                 </Text>
               </Suspense>
@@ -187,8 +164,6 @@ export default async function page() {
         </div>
       </section>
       {/* What Makes us Different Section Ends */}
-
-     
 
       {/* Protect Your Website Section Starts*/}
       <section className="cybersecurity_wrapper  xl:py-20 py-10">
@@ -226,8 +201,8 @@ export default async function page() {
                   objectFit="cover"
                   className="absolute w-full h-full"
                   alt="protection section image"
-                // width={500}
-                // height={500}
+                  // width={500}
+                  // height={500}
                 />
                 {/* </Suspense> */}
               </div>
@@ -312,10 +287,15 @@ export default async function page() {
 
       {/* Ensure Your Website Section Starts */}
       <section className="get_started_wrapper my-5  text-white lg:py-16 md:py-12 py-12 relative">
-        <Image src="/Images/info-graphic.jpg" className="absolute -z-10 rotate-180" layout="fill" objectFit="cover" />
+        <Image
+          src="/Images/info-graphic.jpg"
+          className="absolute -z-10 rotate-180"
+          layout="fill"
+          objectFit="cover"
+        />
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:py-10  gap-7">
-          <div className="left-side max-w-[80%]">
+            <div className="left-side max-w-[80%]">
               <div className=" ">
                 <Text
                   tag="h2"
@@ -355,17 +335,14 @@ export default async function page() {
                 </Suspense>
               </div>
             </div>
-         
-            <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
-                  {data?.website_experience_button_second}
-                </Button>
-          </div>
 
+            <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
+              {data?.website_experience_button_second}
+            </Button>
+          </div>
         </div>
       </section>
       {/* Ensure Your Website Section Ends */}
-
-     
 
       {/* Top Skilled Experts Section Starts */}
       <Categories data={data} />
@@ -379,7 +356,9 @@ export default async function page() {
               <Text tag="h2" className="font-Axiforma">
                 {data?.home_page_our_promise_main_heading}
               </Text>
-              <Text tag="p" className=" font-Axiforma">{data?.home_page_our_promise_main_paragraph}</Text>
+              <Text tag="p" className=" font-Axiforma">
+                {data?.home_page_our_promise_main_paragraph}
+              </Text>
             </div>
           </Suspense>
 
@@ -401,29 +380,34 @@ export default async function page() {
                   <Suspense fallback={<p>Loading...</p>}>
                     <React.Fragment key={index}>
                       <div className="numberWrapper">
-                        <Text tag="span" className="font-Axiforma">0{index + 1}</Text>
+                        <Text tag="span" className="font-Axiforma">
+                          0{index + 1}
+                        </Text>
                         <div>
                           <Text tag="h4" className="font-Axiforma">
                             {item?.home_page_our_promise_title}
                           </Text>
-                          <Text tag="p" className>{item?.home_page_our_promise_servise_paragraph}</Text>
+                          <Text tag="p" className>
+                            {item?.home_page_our_promise_servise_paragraph}
+                          </Text>
                         </div>
                       </div>
                     </React.Fragment>
                   </Suspense>
                 ))}
-                <Link href="/contact-us">
-
-              <button className="btn_one global_btn capitalize font-Axiforma">Learn More</button>
-                </Link>
+              <Link href="/contact-us">
+                <button className="btn_one global_btn capitalize font-Axiforma">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
       {/* Our Promise Section Ends */}
 
-       {/* Our Key Services Section Starts */}
-       <Products data={data?.key_services_data} />
+      {/* Our Key Services Section Starts */}
+      <Products data={data?.key_services_data} />
       {/* Our Key Services Section Ends */}
 
       {/* Contact Section Starts */}
@@ -445,9 +429,6 @@ export default async function page() {
     </main>
   );
 }
-
-
-
 
 // mast section
 
