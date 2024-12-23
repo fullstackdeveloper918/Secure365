@@ -46,9 +46,6 @@ export default async function page() {
               alt="banner image"
               className="rotateImage"
             />
-
-
-
           </span>
         </div>
 
@@ -67,7 +64,50 @@ export default async function page() {
       <div>
       </div>
 
-
+      <section className="home__trusted">
+   <div className="container-1440 trusted__container">
+      <div className="trusted__items-wrapper">
+         <div aria-hidden="true" className="trusted__items marquee__inverse">
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/curry.svg" alt="Curry slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/tpm.svg" alt="Truck park managment slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/globaltranz.svg" alt="Global Tranz slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/range-logistics.svg" alt="Range Logistics slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/ivia.svg" alt="Ivia slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/energy-transport-logistics.svg" alt="Energy transport logistics slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/nfi.svg" alt="NFI slide" /></div>
+         </div>
+         <div aria-hidden="true" className="trusted__items marquee__inverse">
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/curry.svg" alt="Curry slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/tpm.svg" alt="Truck park managment slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/globaltranz.svg" alt="Global Tranz slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/range-logistics.svg" alt="Range Logistics slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/ivia.svg" alt="Ivia slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/energy-transport-logistics.svg" alt="Energy transport logistics slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/nfi.svg" alt="NFI slide" /></div>
+         </div>
+      </div>
+      <div className="trusted__items-wrapper">
+         <div aria-hidden="true" className="trusted__items marquee">
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/omni-logistics.svg" alt="Omni Logistics slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/atlantic-freight.svg" alt="Atlantic Freight slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/gw-tool-group.svg" alt="GW Tool Group slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/icon-millhouse.svg" alt="Millhouse slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/becker-logisitics.svg" alt="Becker Logistics slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/tangent.svg" alt="Tangent design / engineering slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/auto-logistics.svg" alt="Auto Logistics slide" /></div>
+         </div>
+         <div aria-hidden="true" className="trusted__items marquee">
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/omni-logistics.svg" alt="Omni Logistics slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/atlantic-freight.svg" alt="Atlantic Freight slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/gw-tool-group.svg" alt="GW Tool Group slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/icon-millhouse.svg" alt="Millhouse slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/becker-logisitics.svg" alt="Becker Logistics slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/tangent.svg" alt="Tangent design / engineering slide" /></div>
+            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/auto-logistics.svg" alt="Auto Logistics slide" /></div>
+         </div>
+      </div>
+   </div>
+</section>
 
       {/* Key Services Section Starts */}
       <section className="2xl:py-18 xl:py-20 py-12 protection_section   key_serices">
@@ -103,6 +143,12 @@ export default async function page() {
       </section>
       {/* Key Services Section Ends */}
 
+
+      {/* section  */}
+
+
+    
+
       <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12  relative ">
         <Image src="/Images/bgSecure.png" objectFit="cover" layout="fill" className="absolute -z-10" />
         <div className="container">
@@ -125,46 +171,89 @@ export default async function page() {
         </div>
       </section>
 
-      {/* What Makes us Different Section Starts */}
-      <section className="make_us_different relative">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-2 ">
-            <div className="contentMake">
-              <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
-                <Text tag="h2" className="heading_h2 capitalize ">
-                  {data?.makes_us_diffrent_heading}
-                  <span className="capitalize font-semibold m-2">
-                    {data?.makes_us_diffrent_heading_second}
-                  </span>
-                </Text>
-              </Suspense>
+      {/* high_rated */}
+      <section className="page-section agencySolution bg-no-repeat" id="about" style={{ background: "url(/svg/decoration-2.svg)" }}>
 
-              <Suspense fallback={<p>Loading...</p>}>
-                <Text tag="p" className=" md:mt-8 mt-4 2xl:text-xl text-lg ">
-                  {data?.makes_us_diffrent_paragraph}
-                </Text>
-              </Suspense>
-              <Suspense fallback={<p>Loading...</p>}>
-                <Text tag="p" className=" md:mt-8 mt-4 2xl:text-xl text-lg ">
-                  {data?.makes_us_diffrent_paragraph_second}
-                </Text>
-              </Suspense>
+        <div className="container position-relative">
+          <div className="row mb-70 mb-sm-50">
+            <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+              <h2 className="section-title mb-40 mb-xs-30">High-Rated IT Services Agency Specializing in Technology Solutions</h2>
+              <p className="section-descr dark-white mb-0">
+                IT services refer to the management, implementation, and support of technology solutions that meet the business needs of organizations. These services encompass everything from cloud computing, cybersecurity, software development, and IT consulting, to system integration. The definition of IT services has evolved as technology continues to advance, enabling businesses to streamline operations, improve efficiency, and enhance customer experiences.
+              </p>
             </div>
-            <div className="text-center  h-full w-full absolute">
-              <Image
-                src="/svg/Specialists.svg"
-                className=" min-h-full mx-auto typoImageHeight absolute"
-                // width={400}
-                layout="fill"
-                objectFit="cover"
-                // height={400}
-                alt="expert guidance image"
-              />
+          </div>
+          <div className="row mt-n50 mb-70 mb-sm-50 ratingSec">
+            <div className="mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0s">
+              <div className="text-center px-lg-4">
+                <div className="testimonials-5-stars flex justify-center gap-1">
+
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+
+                </div>
+                <div className="testimonials-5-text">“Really impressed with the service and the results!”</div>
+                <div className="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
+              </div>
             </div>
+            <div className="mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0.15s">
+              <div className="text-center px-lg-4">
+                <div className="testimonials-5-stars flex justify-center gap-1">
+
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+
+                </div>
+                <div className="testimonials-5-text">“Excellent service for targeted lead generation.”</div>
+                <div className="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
+              </div>
+            </div>
+            <div className=" mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0.3s">
+              <div className="text-center px-lg-4">
+                <div className="testimonials-5-stars flex justify-center gap-1">
+
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+
+                </div>
+                <div className="testimonials-5-text">“I have super enjoyed working with Resonance.”</div>
+                <div className="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
+              </div>
+            </div>
+          </div>
+          <div className="local-scroll text-center">
+            <a className="btn btn-mod btn-w btn-with-icon btn-circle" href="/corporate-about">
+              <span className="btn-icon color-3"><i className="mi-favorite"></i></span>
+              <span data-btn-animate="y">
+                <span className="btn-animate-y">
+
+                  <span className="btn-animate-y-2" aria-hidden="true">
+                    <span className="startIcon">
+                      <Image src="/svg/strar_stroke.svg" width={20} height={20} />
+                    </span>
+                    View Our Services
+                    <Image src="/svg/down_load.svg" width={20} height={20} />
+                  </span>
+                </span>
+              </span>
+            </a>
           </div>
         </div>
       </section>
+
+      {/* high_rated end */}
+
      
+
       <section className="get_started_wrapper my-5  text-white lg:py-16 md:py-12 py-12 relative">
         <Image
           src="/Images/info-graphic.jpg"
@@ -221,94 +310,55 @@ export default async function page() {
             </Button>
           </div>
 
-            <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
-              {data?.website_experience_button_second}
-            </Button>
-          </div>
-        
+          <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
+            {data?.website_experience_button_second}
+          </Button>
+        </div>
+
       </section>
       {/* Ensure Your Website Section Ends */}
 
-      {/* high_rated */}
-      <section class="page-section agencySolution bg-no-repeat" id="about" style={{ background: "url(/svg/decoration-2.svg)" }}>
-
-        <div class="container position-relative">
-          <div class="row mb-70 mb-sm-50">
-            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
-              <h2 class="section-title mb-40 mb-xs-30">High-Rated IT Services Agency Specializing in Technology Solutions</h2>
-              <p class="section-descr dark-white mb-0">
-                IT services refer to the management, implementation, and support of technology solutions that meet the business needs of organizations. These services encompass everything from cloud computing, cybersecurity, software development, and IT consulting, to system integration. The definition of IT services has evolved as technology continues to advance, enabling businesses to streamline operations, improve efficiency, and enhance customer experiences.
-              </p>
-            </div>
-          </div>
-          <div class="row mt-n50 mb-70 mb-sm-50 ratingSec">
-            <div class="mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0s">
-              <div class="text-center px-lg-4">
-                <div class="testimonials-5-stars flex justify-center gap-1">
-
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-
-                </div>
-                <div class="testimonials-5-text">“Really impressed with the service and the results!”</div>
-                <div class="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
-              </div>
-            </div>
-            <div class="mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0.15s">
-              <div class="text-center px-lg-4">
-                <div class="testimonials-5-stars flex justify-center gap-1">
-
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-
-                </div>
-                <div class="testimonials-5-text">“Excellent service for targeted lead generation.”</div>
-                <div class="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
-              </div>
-            </div>
-            <div class=" mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0.3s">
-              <div class="text-center px-lg-4">
-                <div class="testimonials-5-stars flex justify-center gap-1">
-
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-
-                </div>
-                <div class="testimonials-5-text">“I have super enjoyed working with Resonance.”</div>
-                <div class="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
-              </div>
-            </div>
-          </div>
-          <div class="local-scroll text-center">
-            <a class="btn btn-mod btn-w btn-with-icon btn-circle" href="/corporate-about">
-              <span class="btn-icon color-3"><i class="mi-favorite"></i></span>
-              <span data-btn-animate="y">
-                <span class="btn-animate-y">
-
-                  <span class="btn-animate-y-2" aria-hidden="true">
-                    <span className="startIcon">
-                      <Image src="/svg/strar_stroke.svg" width={20} height={20} />
-                    </span>
-                    View Our Services
-                    <Image src="/svg/down_load.svg" width={20} height={20} />
+       {/* What Makes us Different Section Starts */}
+       <section className="make_us_different relative">
+        <div className="container">
+          
+          <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-2 ">
+            <div className="contentMake">
+            {/* <h6 className="text_blue">FAQ</h6> */}
+              <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
+                <Text tag="h2" className="heading_h2 capitalize ">
+                  {data?.makes_us_diffrent_heading}
+                  <span className="capitalize font-semibold m-2">
+                    {data?.makes_us_diffrent_heading_second}
                   </span>
-                </span>
-              </span>
-            </a>
+                </Text>
+              </Suspense>
+
+              <Suspense fallback={<p>Loading...</p>}>
+                <Text tag="p" className=" md:mt-8 mt-4 2xl:text-xl text-lg ">
+                  {data?.makes_us_diffrent_paragraph}
+                </Text>
+              </Suspense>
+              <Suspense fallback={<p>Loading...</p>}>
+                <Text tag="p" className=" md:mt-8 mt-4 2xl:text-xl text-lg ">
+                  {data?.makes_us_diffrent_paragraph_second}
+                </Text>
+              </Suspense>
+            </div>
+            <div className="text-center  h-full w-full ">
+              <Image
+                src="/Images/gropFaq.png"
+                className=" min-h-full mx-auto  "
+                width={600}
+                // layout="fill"
+                // objectFit="cover"
+                height={600}
+                alt="expert guidance image"
+              />
+            </div>
           </div>
         </div>
       </section>
-
-      {/* high_rated end */}
 
 
       {/* Our Promise Section Starts */}
@@ -379,42 +429,42 @@ export default async function page() {
       {/* Our Key Services Section Ends */}
 
       {/* blog_section */}
-      <section id="our-blog" class="our-blog-section">
-        <div class="blogSection container">
-          <div class="blog-header">
+      <section id="our-blog" className="our-blog-section">
+        <div className="blogSection container">
+          <div className="blog-header">
             <h2>Our Blog</h2>
             <p>Check the best marketing resources and the latest news about our company.</p>
             <div className="local-scroll">
-              <a href="#" class="read-all-btn  btn">
+              <a href="#" className="read-all-btn  btn">
                 <span className="startIcon">
                   <Image src="/svg/strar_stroke.svg" width={20} height={20} />
                 </span>
                 <span>Read All Articles</span>
-                <span class="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
+                <span className="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
               </a>
             </div>
           </div>
-          <div class="blog-grid">
-            <div class="blog-card">
-              <Image src="/Images/blog_One.webp" width={300} height={300} alt="Blog Image 1" class="blog-image" />
-              <div class="blog-content">
-                <h3 class="blog-title">Content Marketing Steps That Will Help You to Grow Your Business</h3>
-                <p class="blog-description">The macro-environment, over which a firm holds little control, consists of a variety of external factors that manifest on a large scale.</p>
-                <div class="blog-meta">
+          <div className="blog-grid">
+            <div className="blog-card">
+              <Image src="/Images/blog_One.webp" width={300} height={300} alt="Blog Image 1" className="blog-image" />
+              <div className="blog-content">
+                <h3 className="blog-title">Content Marketing Steps That Will Help You to Grow Your Business</h3>
+                <p className="blog-description">The macro-environment, over which a firm holds little control, consists of a variety of external factors that manifest on a large scale.</p>
+                <div className="blog-meta">
                   <span>February 13, 2022</span>
-                  <span class="category">Articles</span>
+                  <span className="category">Articles</span>
                 </div>
               </div>
             </div>
-            <div class="blog-card">
-              <Image src="/Images/blog_Two.png" width={300} height={300} alt="Blog Image 1" class="blog-image" />
+            <div className="blog-card">
+              <Image src="/Images/blog_Two.png" width={300} height={300} alt="Blog Image 1" className="blog-image" />
 
-              <div class="blog-content">
-                <h3 class="blog-title">Top Five Trends for Small Investment Companies Marketing</h3>
-                <p class="blog-description">The micro-environment, over which a firm holds greater control, typically includes Employees, Suppliers, and the Media.</p>
-                <div class="blog-meta">
+              <div className="blog-content">
+                <h3 className="blog-title">Top Five Trends for Small Investment Companies Marketing</h3>
+                <p className="blog-description">The micro-environment, over which a firm holds greater control, typically includes Employees, Suppliers, and the Media.</p>
+                <div className="blog-meta">
                   <span>February 11, 2023</span>
-                  <span class="category">Tutorials</span>
+                  <span className="category">Tutorials</span>
                 </div>
               </div>
             </div>

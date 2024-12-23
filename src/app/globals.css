@@ -1171,7 +1171,7 @@ ul.listWrapperFlex {
   margin-right: 0 !important;
 }
 .make_us_different {
-  padding: 150px 0;
+  padding: 50px 0;
 }
 .agencySolution {
   background-repeat: no-repeat !important;
@@ -1206,6 +1206,104 @@ ul.listWrapperFlex {
 
 .introduction-wrapper p + p {
   margin-top: 20px;
+}
+
+.trusted__title {
+  text-align: center;
+  margin-bottom: 32px
+}
+
+.trusted__title>mark {
+  color: var(--green-darker);
+  background-color: transparent
+}
+
+.trusted__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px
+}
+/* 
+.trusted__container:before,.trusted__container:after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 317px;
+  height: 100%
+} */
+
+.trusted__container:before {
+  left: 20px;
+  background: linear-gradient(to right,#f8f8f7 14.22%,rgba(250,249,245,0) 100%)
+}
+
+.trusted__container:after {
+  right: 20px;
+  background: linear-gradient(to left,#f8f8f7 14.22%,rgba(250,249,245,0) 100%)
+}
+
+.trusted__items-wrapper {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  gap: 16px
+}
+
+.trusted__items {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  gap: 16px;
+  min-width: 100%;
+  counter-reset: line-item;
+  justify-content: space-around
+}
+
+.trusted__item {
+  flex: 0 0 auto;
+  display: flex;
+  height: 72px;
+  padding: 0 48px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  /* background: linear-gradient(var(--gray-125),var(--gray-125)) padding-box,var(--stroke-30) border-box */
+}
+.marquee__inverse {
+  animation: scroll-inverse 40s linear }
+
+  @keyframes scroll-inverse {
+    from {
+        transform: translateX(-100%)
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+.magnetic-hover {
+  transition: transform .3s cubic-bezier(.3,1,.7,1)
+}
+
+.marquee {
+  animation: scroll 40s linear infinite;
+}
+
+.home__trusted{
+  padding: 120px 0 0;
+}
+
+
+@keyframes scroll {
+  from {
+      transform: translateX(0)
+  }
+
+  to {
+      transform: translateX(-100%)
+  }
 }
 
 @media screen and (min-width: 1922px) {
