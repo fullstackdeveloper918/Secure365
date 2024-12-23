@@ -2,14 +2,20 @@ import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+
 import Link from "next/link";
 import Image from "next/image";
+import TrustedSection from "@/components/logo_slider/TrustedSection";
 
 const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
 const ImageCard = dynamic(() => import("../../components/cards/ImageCard"));
 const Categories = dynamic(() => import("../../components/Categories"));
 const Text = dynamic(() => import("../../components/Text"));
+
+// trusetSEction//
+
+// trusetSEction end//
 
 
 
@@ -27,15 +33,24 @@ export default async function page() {
   return (
     <main>
       <section className="relative banner_robot bg-black">
-        <div className="baner_images">
+        <div className="baner_images centerImage">
           <span className="relative">
 
             <ImageCard
-              src="/svg/before_bannerImg.svg"
-              width={700}
+              src="/Images/centerText.png"
+              width={200}
               height={100}
               alt="banner image"
             />
+            <ImageCard
+              src="/Images/sercureRotate.png"
+              width={200}
+              height={100}
+              alt="banner image"
+              className="rotateImage"
+            />
+
+
 
           </span>
         </div>
@@ -53,6 +68,8 @@ export default async function page() {
         </div>
         <Hero />
       </section>
+      <div>
+      </div>
 
       {/* introduction Section Content */}
       {/* <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12 text-center ">
@@ -101,34 +118,11 @@ export default async function page() {
       {/* Introduction Ends Here */}
 
 
-      <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12  ">
-        <div className="container ">
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-24">
-            <div className="relative">
-              <Image src="/Images/employ.jpg" alt="img" style={{ borderRadius: "30px" }} layout="fill" objectFit="cover" />
-              <div className="absolute right-3 bottom-5 max-w-[300px] bg-white p-4 ">
-                <h3 className="text-xl font-semibold">Award Winning</h3>
-                <p className="text-md">We take pride in being recognized for excellence in delivering cutting-edge cloud security and IT solutions.</p>
-              </div>
-            </div>
-            <div>
-              <h6 className="text-xl font-medium mb-5">About us</h6>
-              <h2 className=" heading_h2  relative  font-Axiforma mb-5 capitalize">
-                Your Trusted Partner in Cloud Security and IT Services
-              </h2>
-              <p className="text-[#434242] text-lg my-5 font-Axiforma">
-                Welcome to Secure 365, where innovation drives protection, and technology turns challenges into secure solutions. Established with a vision to redefine cloud security and IT services, we are a dynamic and forward-focused company dedicated to delivering advanced, reliable, and scalable solutions.
-              </p>
-              <p className="text-[#434242] text-lg my-5 font-Axiforma ">Our mission is clear—to provide comprehensive and tailored cloud security and IT services that align seamlessly with your organization’s goals. We believe in not just safeguarding your data but exceeding expectations by empowering your business with robust and innovative security measures.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Key Services Section Starts */}
-      <section className="2xl:py-18 xl:py-20 py-12 protection_section  bg-[#111] text-white">
+      <section className="2xl:py-18 xl:py-20 py-12 protection_section   key_serices">
         <div className="container">
-          <Text tag="h2" className="mb-5">{data?.home_key_service_first_heading}:</Text>
+          <span className="text-center text_blue block font-Axiforma text-lg capitalize">our service</span>
+          <Text tag="h2" className="mb-3">{data?.home_key_service_first_heading}</Text>
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
             {data &&
               data?.home_key_service_data.map((item, index) => (
@@ -140,6 +134,7 @@ export default async function page() {
                         alt="key icon"
                         width={50}
                         height={50}
+                        className="mx-auto"
                       />
                     </Suspense>
                     <Text tag="h3">{item?.home_key_service_first_title}</Text>
@@ -147,11 +142,7 @@ export default async function page() {
                       <Text tag="p">
                         {item?.home_key_service_first_paragraph}
                       </Text>
-                      <ul className="listWrapperFlex">
-                        <li className=""> <Image src="/Images/checkList.png" alt="img" width={50} height={50} />Advanced Security Measures</li>
-                        <li> <Image src="/Images/checkList.png" alt="img" width={50} height={50} />Enable Real-Time Monitoring</li>
-                        <li> <Image src="/Images/checkList.png" alt="img" width={50} height={50} /> Leverage Threat Intelligence</li>
-                      </ul>
+
                     </Suspense>
                   </div>
                 </>
@@ -161,11 +152,33 @@ export default async function page() {
       </section>
       {/* Key Services Section Ends */}
 
+      <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12  relative ">
+        <Image src="/Images/bgSecure.png" objectFit="cover" layout="fill" className="absolute -z-10" />
+        <div className="container">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-20 items-center">
+            <div className="relative">
+              <Image src="/Images/groupImage.png" alt="img" style={{ borderRadius: "30px" }} width={500} height={800} className="mainImages" />
+              <Image src="/Images/rotateImage.png" alt="img" style={{ borderRadius: "30px" }} width={500} height={800} className="rotateImage" />
+
+            </div>
+            <div>
+              <h2 className=" heading_h2  relative text-white  font-Axiforma mb-5 capitalize">
+                About us
+              </h2>
+              <p className="font-Axiforma text-[#DDDDDD]">
+                Welcome to Secure 365, where innovation drives protection, and technology turns challenges into secure solutions. Established with a vision to redefine cloud security and IT services, we are a dynamic and forward-focused company dedicated to delivering advanced, reliable, and scalable solutions.
+              </p>
+              <p className=" font-Axiforma text-[#DDDDDD]">Our mission is clear—to provide comprehensive and tailored cloud security and IT services that align seamlessly with your organization’s goals. We believe in not just safeguarding your data but exceeding expectations by empowering your business with robust and innovative security measures.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What Makes us Different Section Starts */}
       <section className="make_us_different relative">
         <div className="container">
           <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-2 ">
-            <div>
+            <div className="contentMake">
               <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
                 <Text tag="h2" className="heading_h2 capitalize ">
                   {data?.makes_us_diffrent_heading}
@@ -210,14 +223,29 @@ export default async function page() {
 
 
 
-  
+
 
       {/* Ensure Your Website Section Starts */}
       <section className="get_started_wrapper my-5  text-white lg:py-16 md:py-12 py-12 relative">
         <Image src="/Images/info-graphic.jpg" className="absolute -z-10 rotate-180" layout="fill" objectFit="cover" />
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:py-10  gap-7">
-            <div className="left-side max-w-[80%]">
+            <div className="w-full">
+              <div className="relative  w-full heightMention">
+                <Suspense fallback={<p>Loading...</p>}>
+                  <ImageCard
+                    src="/Images/imgSteps.png"
+                    className=" min-h-full heightMention"
+                    layout="fill"
+                    // width={500}
+                    // height={500}
+                    objectFit="cover"
+                    alt="expert guidance image"
+                  />
+                </Suspense>
+              </div>
+            </div>
+            <div className="left-side max-w-[90%]">
               <div className=" ">
                 <Text
                   tag="h2"
@@ -242,21 +270,7 @@ export default async function page() {
                 </Button>
               </div>
             </div>
-            <div className="w-full">
-              <div className="relative  w-full heightMention">
-                <Suspense fallback={<p>Loading...</p>}>
-                  <ImageCard
-                    src="/Images/imgSteps.png"
-                    className=" min-h-full heightMention"
-                    layout="fill"
-                    // width={500}
-                    // height={500}
-                    objectFit="cover"
-                    alt="expert guidance image"
-                  />
-                </Suspense>
-              </div>
-            </div>
+
 
             <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
               {data?.website_experience_button_second}
@@ -267,11 +281,87 @@ export default async function page() {
       </section>
       {/* Ensure Your Website Section Ends */}
 
+      {/* high_rated */}
+      <section class="page-section agencySolution bg-no-repeat" id="about" style={{ background: "url(/svg/decoration-2.svg)" }}>
 
+        <div class="container position-relative">
+          <div class="row mb-70 mb-sm-50">
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+              <h2 class="section-title mb-40 mb-xs-30">High-Rated IT Services Agency Specializing in Technology Solutions</h2>
+              <p class="section-descr dark-white mb-0">
+                IT services refer to the management, implementation, and support of technology solutions that meet the business needs of organizations. These services encompass everything from cloud computing, cybersecurity, software development, and IT consulting, to system integration. The definition of IT services has evolved as technology continues to advance, enabling businesses to streamline operations, improve efficiency, and enhance customer experiences.
+              </p>
+            </div>
+          </div>
+          <div class="row mt-n50 mb-70 mb-sm-50 ratingSec">
+            <div class="mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0s">
+              <div class="text-center px-lg-4">
+                <div class="testimonials-5-stars flex justify-center gap-1">
 
-      {/* Top Skilled Experts Section Starts */}
-      <Categories data={data} />
-      {/* Top Skilled Experts Section Ends */}
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+
+                </div>
+                <div class="testimonials-5-text">“Really impressed with the service and the results!”</div>
+                <div class="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
+              </div>
+            </div>
+            <div class="mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0.15s">
+              <div class="text-center px-lg-4">
+                <div class="testimonials-5-stars flex justify-center gap-1">
+
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+
+                </div>
+                <div class="testimonials-5-text">“Excellent service for targeted lead generation.”</div>
+                <div class="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
+              </div>
+            </div>
+            <div class=" mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0.3s">
+              <div class="text-center px-lg-4">
+                <div class="testimonials-5-stars flex justify-center gap-1">
+
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+
+                </div>
+                <div class="testimonials-5-text">“I have super enjoyed working with Resonance.”</div>
+                <div class="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
+              </div>
+            </div>
+          </div>
+          <div class="local-scroll text-center">
+            <a class="btn btn-mod btn-w btn-with-icon btn-circle" href="/corporate-about">
+              <span class="btn-icon color-3"><i class="mi-favorite"></i></span>
+              <span data-btn-animate="y">
+                <span class="btn-animate-y">
+
+                  <span class="btn-animate-y-2" aria-hidden="true">
+                    <span className="startIcon">
+                      <Image src="/svg/strar_stroke.svg" width={20} height={20} />
+                    </span>
+                    View Our Services
+                    <Image src="/svg/down_load.svg" width={20} height={20} />
+                  </span>
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* high_rated end */}
+
 
       {/* Our Promise Section Starts */}
       <section className="promise_sec">
@@ -324,12 +414,69 @@ export default async function page() {
       </section>
       {/* Our Promise Section Ends */}
 
+      {/* Top Skilled Experts Section Starts */}
+      <Categories data={data} />
+      {/* Top Skilled Experts Section Ends */}
+
+
+
       {/* Our Key Services Section Starts */}
-      <Products data={data?.key_services_data} />
+      {/* <Products data={data?.key_services_data} /> */}
       {/* Our Key Services Section Ends */}
 
+      {/* blog_section */}
+      <section id="our-blog" class="our-blog-section">
+        <div class="blogSection container">
+          <div class="blog-header">
+            <h2>Our Blog</h2>
+            <p>Check the best marketing resources and the latest news about our company.</p>
+            <div className="local-scroll">
+              <a href="#" class="read-all-btn  btn">
+                <span className="startIcon">
+                  <Image src="/svg/strar_stroke.svg" width={20} height={20} />
+                </span>
+                <span>Read All Articles</span>
+                <span class="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
+              </a>
+            </div>
+          </div>
+          <div class="blog-grid">
+            <div class="blog-card">
+              <Image src="/Images/blog_One.webp" width={300} height={300} alt="Blog Image 1" class="blog-image" />
+              <div class="blog-content">
+                <h3 class="blog-title">Content Marketing Steps That Will Help You to Grow Your Business</h3>
+                <p class="blog-description">The macro-environment, over which a firm holds little control, consists of a variety of external factors that manifest on a large scale.</p>
+                <div class="blog-meta">
+                  <span>February 13, 2022</span>
+                  <span class="category">Articles</span>
+                </div>
+              </div>
+            </div>
+            <div class="blog-card">
+              <Image src="/Images/blog_Two.png" width={300} height={300} alt="Blog Image 1" class="blog-image" />
+
+              <div class="blog-content">
+                <h3 class="blog-title">Top Five Trends for Small Investment Companies Marketing</h3>
+                <p class="blog-description">The micro-environment, over which a firm holds greater control, typically includes Employees, Suppliers, and the Media.</p>
+                <div class="blog-meta">
+                  <span>February 11, 2023</span>
+                  <span class="category">Tutorials</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* blog_section end*/}
+
+
+
+
       {/* Contact Section Starts */}
-      <section className="lookingService xl:mt-20 mt-6">
+      <section className="lookingService xl:mt-0">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
             <Text tag="h2">{data?.home_page_contact_section_heading}</Text>
@@ -343,6 +490,8 @@ export default async function page() {
           </div>
         </div>
       </section>
+
+
 
 
       {/* <section className="get_started_wrapper my-5  text-white lg:py-28 md:py-12 py-12 relative">

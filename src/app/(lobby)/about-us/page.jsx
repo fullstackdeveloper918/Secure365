@@ -52,7 +52,7 @@ const page = async () => {
             objectFit="cover"
           />
         </Suspense>
-        <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0">
+        <div className="relative container mx-auto  px-4 sm:px-6 lg:px-8 pt-20  pb-0 banner_content">
           <Suspense fallback={<p>Loading content...</p>}>
             <Text
               tag="h1"
