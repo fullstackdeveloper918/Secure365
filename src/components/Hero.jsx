@@ -24,7 +24,7 @@ export default async function Hero() {
               <MotionDiv
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 2 }}
+                transition={{ duration: 0.6, delay: 1 }}
               >
                 <span className="banner_heading_medium">
                   {data?.pages?.banner_data?.banner_heading}
@@ -33,7 +33,7 @@ export default async function Hero() {
               <MotionDiv
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 2 }}
+                transition={{ duration: 0.6, delay: 1 }}
               >
                 <span className="mr-3">
                   {" "}
@@ -43,7 +43,7 @@ export default async function Hero() {
               <MotionDiv
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 2 }}
+                transition={{ duration: 0.6, delay: 1 }}
               >
                 <span className="text_blue">
                   {data?.pages?.banner_data?.banner_heading_third}
