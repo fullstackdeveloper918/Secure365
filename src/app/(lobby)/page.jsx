@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import Image from "next/image";
+const MotionDiv  = dynamic(() => import("../../components/MotionDiv"));
 
 const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
@@ -28,18 +29,28 @@ export default async function page() {
     <main>
       <section className="relative banner_robot bg-black">
         <div className="baner_images">
+        <MotionDiv 
+             initial={{ opacity: 0, y: -200 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 2 }}
+          >
           <span className="relative">
-
             <ImageCard
               src="/svg/before_bannerImg.svg"
               width={700}
               height={100}
               alt="banner image"
             />
-
           </span>
+          </MotionDiv>
         </div>
+
         <div className="baner_imagesafter">
+        <MotionDiv 
+             initial={{ opacity: 0, y: -100 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 2 }}
+          >
           <span className="relative">
 
             <ImageCard
@@ -50,6 +61,7 @@ export default async function page() {
             />
 
           </span>
+          </MotionDiv>
         </div>
         <Hero />
       </section>

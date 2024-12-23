@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
+const MotionDiv = dynamic(() =>  import('@/components/MotionDiv'))
 
 
 const Text = dynamic(() =>  import('@/components/Text'))
@@ -16,19 +17,24 @@ export default async function Hero() {
     }
   );
   const data = await response.json();
-  console.log(data?.pages?.banner_data?.banner_image?.url, 'checkhome')
   return (
     <>
   
       <div className='relative herobanner container mx-auto grid grid-cols-1 gap-6 lg:gap-0 md:grid-cols-2 items-center justify-between  lg:px-8  pt-20 sm:pt-24 pb-0' >
         <div className='flex flex-col gap-y-4 justify-center  md:text-left items-baseline  pb-10'>
           <Suspense fallback={<p>Loading Heading...</p>}>
+          <MotionDiv 
+             initial={{ opacity: 0, y: -50 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6 }}
+          >
           <Text tag="h1"
            className='banner_heading font-Axiforma'>
             <span className='banner_heading_medium'>{data?.pages?.banner_data?.banner_heading}</span>
             <span className='mr-3'> {data?.pages?.banner_data?.banner_heading_second}</span>
             <span className='text_blue'>{data?.pages?.banner_data?.banner_heading_third}</span>
           </Text>
+             </MotionDiv>
           <Text tag="p"
          
          className='max-w-md sm:max-w-[39rem] maxWidth leading-normal text-muted-foreground text-sm sm:text-xl text-white sm:leading-8 font-Axiforma'>
@@ -37,12 +43,22 @@ export default async function Hero() {
              </Suspense>
           <div
            className='flex flex-wrap   text-white gap-4 mt-5'>
+            <MotionDiv 
+             initial={{ opacity: 0, y: 80 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8 }} >
             <Link href='/contact-us' className='btn_one global_btn capitalize font-Axiforma'>
               {data?.pages?.banner_data?.get_started}
             </Link>
+          </MotionDiv>
+          <MotionDiv 
+             initial={{ opacity: 0, y: 100 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 1 }} >
             <Link href='/contact-us' className='global_btn btn_two capitalize font-Axiforma'>
               {data?.pages?.banner_data?.book_demo}
             </Link>
+            </MotionDiv>
           </div>
         </div>
         <div className='flex items-center justify-center rightbanner'>
