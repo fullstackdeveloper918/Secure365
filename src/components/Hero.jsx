@@ -59,9 +59,13 @@ export default async function Hero() {
           </Suspense>
           <div className="flex flex-wrap   text-white gap-4 mt-5">
             <MotionDiv
-              initial={{ opacity: 0, y: 80 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+               initial={{ opacity: 0, scale: 2 }}
+               animate={{ opacity: 1, scale: 1 }}
+               transition={{
+                 duration: 0.6,
+                 delay: 0.5,
+                 ease: [0, 0.71, 0.2, 1.01],
+               }}
             >
               <Link
                 href="/contact-us"
@@ -71,9 +75,13 @@ export default async function Hero() {
               </Link>
             </MotionDiv>
             <MotionDiv
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              initial={{ opacity: 0, scale: 2 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 1,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
             >
               <Link
                 href="/contact-us"
