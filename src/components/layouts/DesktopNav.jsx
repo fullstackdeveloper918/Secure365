@@ -32,8 +32,8 @@ const DesktopNav = () => {
   return (
     <div className="hidden lg:flex items-center w-full md:justify-between w-100 ">
       <MotionDiv
-        initial={{ opacity: 1, x:600,  y: 600 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
+        initial={{ opacity: 0, y: -200 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5 }}
       >
         <Link href="/" className="flex space-x-2">

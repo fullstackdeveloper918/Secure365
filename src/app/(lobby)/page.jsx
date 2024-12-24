@@ -5,6 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import ZoomParallax from '../../components/ZoomParallax/ZoomParallax'
 import Link from "next/link";
 import TrustedSection from "@/components/logo_slider/TrustedSection";
+import MaskText from "@/components/MaskText";
 const MotionDiv = dynamic(() => import("../../components/MotionDiv"));
 const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
@@ -127,9 +128,13 @@ export default async function page() {
               />
             </div>
             <div>
+              <MaskText>
               <h2 className=" heading_h2  relative text-white  font-Axiforma mb-5 capitalize">
                 About us
               </h2>
+              </MaskText>
+              <MaskText>
+
               <p className="font-Axiforma text-[#DDDDDD]">
                 Welcome to Secure 365, where innovation drives protection, and
                 technology turns challenges into secure solutions. Established
@@ -137,6 +142,9 @@ export default async function page() {
                 a dynamic and forward-focused company dedicated to delivering
                 advanced, reliable, and scalable solutions.
               </p>
+              </MaskText>
+              <MaskText>
+
               <p className=" font-Axiforma text-[#DDDDDD]">
                 Our mission is clear—to provide comprehensive and tailored cloud
                 security and IT services that align seamlessly with your
@@ -144,6 +152,7 @@ export default async function page() {
                 data but exceeding expectations by empowering your business with
                 robust and innovative security measures.
               </p>
+              </MaskText>
             </div>
           </div>
         </div>
@@ -155,23 +164,32 @@ export default async function page() {
           <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-2 ">
             <div className="contentMake">
               <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
+              <MaskText>
+
                 <Text tag="h2" className="heading_h2 capitalize ">
                   {data?.makes_us_diffrent_heading}
                   <span className="capitalize font-semibold m-2">
                     {data?.makes_us_diffrent_heading_second}
                   </span>
                 </Text>
+              </MaskText>
               </Suspense>
 
               <Suspense fallback={<p>Loading...</p>}>
+              <MaskText>
+
                 <Text tag="p" className=" md:mt-8 mt-4 2xl:text-xl text-lg ">
                   {data?.makes_us_diffrent_paragraph}
                 </Text>
+              </MaskText>
               </Suspense>
               <Suspense fallback={<p>Loading...</p>}>
+              <MaskText>
+
                 <Text tag="p" className=" md:mt-8 mt-4 2xl:text-xl text-lg ">
                   {data?.makes_us_diffrent_paragraph_second}
                 </Text>
+                </MaskText>
               </Suspense>
             </div>
             <div className="text-center  h-full w-full absolute">
