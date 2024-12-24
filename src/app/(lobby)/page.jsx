@@ -14,9 +14,6 @@ const ImageCard = dynamic(() => import("../../components/cards/ImageCard"));
 const Categories = dynamic(() => import("../../components/Categories"));
 const Text = dynamic(() => import("../../components/Text"));
 
-
-
-
 export default async function page() {
   const response = await fetch(
     "https://sellmac.cybersify.tech/secure365/wp-json/secure-plugin/v1/home",
@@ -61,8 +58,7 @@ export default async function page() {
         </div>
         <Hero />
       </section>
-      <div>
-      </div>
+      
 
       <section className="home__trusted">
    <div className="container-1440 trusted__container">
@@ -112,8 +108,12 @@ export default async function page() {
       {/* Key Services Section Starts a */}
       <section className="2xl:py-18 xl:py-20 py-12 protection_section   key_serices">
         <div className="container">
-          <span className="text-center text_blue block font-Axiforma text-lg capitalize">our service</span>
-          <Text tag="h2" className="mb-3">{data?.home_key_service_first_heading}</Text>
+          <span className="text-center text_blue block font-Axiforma text-lg capitalize">
+            our service
+          </span>
+          <Text tag="h2" className="mb-3">
+            {data?.home_key_service_first_heading}
+          </Text>
           <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
             {data &&
               data?.home_key_service_data.map((item, index) => (
@@ -133,7 +133,6 @@ export default async function page() {
                       <Text tag="p">
                         {item?.home_key_service_first_paragraph}
                       </Text>
-
                     </Suspense>
                   </div>
                 </>
@@ -150,22 +149,50 @@ export default async function page() {
     
 
       <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12  relative ">
-        <Image src="/Images/bgSecure.png" objectFit="cover" layout="fill" className="absolute -z-10" />
+        <Image
+          src="/Images/bgSecure.png"
+          objectFit="cover"
+          layout="fill"
+          className="absolute -z-10"
+        />
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-20 items-center">
             <div className="relative">
-              <Image src="/Images/groupImage.png" alt="img" style={{ borderRadius: "30px" }} width={500} height={800} className="mainImages" />
-              <Image src="/Images/rotateImage.png" alt="img" style={{ borderRadius: "30px" }} width={500} height={800} className="rotateImage" />
-
+              <Image
+                src="/Images/groupImage.png"
+                alt="img"
+                style={{ borderRadius: "30px" }}
+                width={500}
+                height={800}
+                className="mainImages"
+              />
+              <Image
+                src="/Images/rotateImage.png"
+                alt="img"
+                style={{ borderRadius: "30px" }}
+                width={500}
+                height={800}
+                className="rotateImage"
+              />
             </div>
             <div>
               <h2 className=" heading_h2  relative text-white  font-Axiforma mb-5 capitalize">
                 About us
               </h2>
               <p className="font-Axiforma text-[#DDDDDD]">
-                Welcome to Secure 365, where innovation drives protection, and technology turns challenges into secure solutions. Established with a vision to redefine cloud security and IT services, we are a dynamic and forward-focused company dedicated to delivering advanced, reliable, and scalable solutions.
+                Welcome to Secure 365, where innovation drives protection, and
+                technology turns challenges into secure solutions. Established
+                with a vision to redefine cloud security and IT services, we are
+                a dynamic and forward-focused company dedicated to delivering
+                advanced, reliable, and scalable solutions.
               </p>
-              <p className=" font-Axiforma text-[#DDDDDD]">Our mission is clear—to provide comprehensive and tailored cloud security and IT services that align seamlessly with your organization’s goals. We believe in not just safeguarding your data but exceeding expectations by empowering your business with robust and innovative security measures.</p>
+              <p className=" font-Axiforma text-[#DDDDDD]">
+                Our mission is clear—to provide comprehensive and tailored cloud
+                security and IT services that align seamlessly with your
+                organization’s goals. We believe in not just safeguarding your
+                data but exceeding expectations by empowering your business with
+                robust and innovative security measures.
+              </p>
             </div>
           </div>
         </div>
@@ -304,7 +331,6 @@ export default async function page() {
               </div>
             </div>
 
-
             <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
               {data?.website_experience_button_second}
             </Button>
@@ -409,8 +435,9 @@ export default async function page() {
                   </Suspense>
                 ))}
               <Link href="/contact-us">
-
-                <button className="btn_one global_btn capitalize font-Axiforma">Learn More</button>
+                <button className="btn_one global_btn capitalize font-Axiforma">
+                  Learn More
+                </button>
               </Link>
             </div>
           </div>
@@ -422,8 +449,6 @@ export default async function page() {
       <Categories data={data} />
       {/* Top Skilled Experts Section Ends */}
 
-
-
       {/* Our Key Services Section Starts */}
       {/* <Products data={data?.key_services_data} /> */}
       {/* Our Key Services Section Ends */}
@@ -433,7 +458,10 @@ export default async function page() {
         <div className="blogSection container">
           <div className="blog-header">
             <h2>Our Blog</h2>
-            <p>Check the best marketing resources and the latest news about our company.</p>
+            <p>
+              Check the best marketing resources and the latest news about our
+              company.
+            </p>
             <div className="local-scroll">
               <a href="#" className="read-all-btn  btn">
                 <span className="startIcon">
@@ -472,12 +500,7 @@ export default async function page() {
         </div>
       </section>
 
-
-
       {/* blog_section end*/}
-
-
-
 
       {/* Contact Section Starts */}
       <section className="lookingService xl:mt-0">
@@ -494,9 +517,6 @@ export default async function page() {
           </div>
         </div>
       </section>
-
-
-
 
       {/* <section className="get_started_wrapper my-5  text-white lg:py-28 md:py-12 py-12 relative">
 <Image src="/Images/inner-baner-bg.jpg" alt="imner img" className="absolute -z-10" layout="fill" objectFit="cover"/>
@@ -518,4 +538,3 @@ export default async function page() {
     </main>
   );
 }
-
