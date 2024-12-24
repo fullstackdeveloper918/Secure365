@@ -110,6 +110,16 @@ export default async function page() {
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-20 items-center">
             <div className="relative">
+              <MotionDiv 
+               initial={{ opacity: 0, scale: 2 }}
+               animate={{ opacity: 1, scale: 1 }}
+               transition={{
+                 duration: 0.8,
+                 delay: 1,
+                 ease: [0, 0.71, 0.2, 1.01],
+               }}
+              >
+
               <ImageCard
                 src="/Images/groupImage.png"
                 alt="img"
@@ -117,7 +127,18 @@ export default async function page() {
                 width={500}
                 height={800}
                 className="mainImages"
-              />
+                />
+                </MotionDiv>
+                <MotionDiv 
+                initial={{ opacity: 0, scale: 2 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 1,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+                >
+
               <ImageCard
                 src="/Images/rotateImage.png"
                 alt="img"
@@ -125,7 +146,8 @@ export default async function page() {
                 width={500}
                 height={800}
                 className="rotateImage"
-              />
+                />
+                </MotionDiv>
             </div>
             <div>
               <MaskText>

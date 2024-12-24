@@ -24,13 +24,13 @@ export default function MaskText({ children }) {
   return (
     <div ref={ref} className="text-[5vw]">
       <div className="overflow-hidden">
-        <motion.p
+        <motion.div
           variants={animation}
           initial="initial"
           animate={inView ? "enter" : ""}
         >
           {children}
-        </motion.p>
+        </motion.div>
       </div>
     </div>
   );
