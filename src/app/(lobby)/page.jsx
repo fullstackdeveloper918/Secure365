@@ -2,12 +2,10 @@ import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-
+import ZoomParallax from '../../components/ZoomParallax/ZoomParallax'
 import Link from "next/link";
-import Image from "next/image";
 import TrustedSection from "@/components/logo_slider/TrustedSection";
 const MotionDiv = dynamic(() => import("../../components/MotionDiv"));
-
 const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
 const ImageCard = dynamic(() => import("../../components/cards/ImageCard"));
@@ -58,7 +56,11 @@ export default async function page() {
         </div>
         <Hero />
       </section>
-      <div></div>
+
+      <section>
+      <ZoomParallax />
+      </section>
+    
 
       {/* Key Services Section Starts a */}
       <section className="2xl:py-18 xl:py-20 py-12 protection_section   key_serices">
@@ -98,7 +100,7 @@ export default async function page() {
       {/* Key Services Section Ends */}
 
       <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12  relative ">
-        <Image
+        <ImageCard
           src="/Images/bgSecure.png"
           objectFit="cover"
           layout="fill"
@@ -107,7 +109,7 @@ export default async function page() {
         <div className="container">
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-20 items-center">
             <div className="relative">
-              <Image
+              <ImageCard
                 src="/Images/groupImage.png"
                 alt="img"
                 style={{ borderRadius: "30px" }}
@@ -115,7 +117,7 @@ export default async function page() {
                 height={800}
                 className="mainImages"
               />
-              <Image
+              <ImageCard
                 src="/Images/rotateImage.png"
                 alt="img"
                 style={{ borderRadius: "30px" }}
@@ -173,7 +175,7 @@ export default async function page() {
               </Suspense>
             </div>
             <div className="text-center  h-full w-full absolute">
-              <Image
+              <ImageCard
                 src="/svg/Specialists.svg"
                 className=" min-h-full mx-auto typoImageHeight absolute"
                 // width={400}
@@ -188,7 +190,7 @@ export default async function page() {
       </section>
 
       <section className="get_started_wrapper my-5  text-white lg:py-16 md:py-12 py-12 relative">
-        <Image
+        <ImageCard
           src="/Images/info-graphic.jpg"
           className="absolute -z-10 rotate-180"
           layout="fill"
@@ -281,11 +283,11 @@ export default async function page() {
             >
               <div className="text-center px-lg-4">
                 <div className="testimonials-5-stars flex justify-center gap-1">
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
                 </div>
                 <div className="testimonials-5-text">
                   “Really impressed with the service and the results!”
@@ -301,11 +303,11 @@ export default async function page() {
             >
               <div className="text-center px-lg-4">
                 <div className="testimonials-5-stars flex justify-center gap-1">
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
                 </div>
                 <div className="testimonials-5-text">
                   “Excellent service for targeted lead generation.”
@@ -321,11 +323,11 @@ export default async function page() {
             >
               <div className="text-center px-lg-4">
                 <div className="testimonials-5-stars flex justify-center gap-1">
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
+                  <ImageCard src="/svg/startIcon.svg" width={20} height={20} alt="" />
                 </div>
                 <div className="testimonials-5-text">
                   “I have super enjoyed working with Resonance.”
@@ -348,14 +350,15 @@ export default async function page() {
                 <span className="btn-animate-y">
                   <span className="btn-animate-y-2" aria-hidden="true">
                     <span className="startIcon">
-                      <Image
+                      <ImageCard
                         src="/svg/strar_stroke.svg"
                         width={20}
                         height={20}
+                        alt=""
                       />
                     </span>
                     View Our Services
-                    <Image src="/svg/down_load.svg" width={20} height={20} />
+                    <ImageCard src="/svg/down_load.svg" width={20} height={20} alt="" />
                   </span>
                 </span>
               </span>
@@ -405,7 +408,7 @@ export default async function page() {
                           <Text tag="h4" className="font-Axiforma">
                             {item?.home_page_our_promise_title}
                           </Text>
-                          <Text tag="p" className>
+                          <Text tag="p">
                             {item?.home_page_our_promise_servise_paragraph}
                           </Text>
                         </div>
@@ -444,18 +447,18 @@ export default async function page() {
             <div className="local-scroll">
               <a href="#" className="read-all-btn  btn">
                 <span className="startIcon">
-                  <Image src="/svg/strar_stroke.svg" width={20} height={20} />
+                  <ImageCard src="/svg/strar_stroke.svg" width={20} height={20} alt="" />
                 </span>
                 <span>Read All Articles</span>
                 <span className="arrow">
-                  <Image src="/svg/down_load.svg" width={20} height={20} />
+                  <ImageCard src="/svg/down_load.svg" width={20} height={20} alt="" />
                 </span>
               </a>
             </div>
           </div>
           <div className="blog-grid">
             <div className="blog-card">
-              <Image
+              <ImageCard
                 src="/Images/blog_One.webp"
                 width={300}
                 height={300}
@@ -479,7 +482,7 @@ export default async function page() {
               </div>
             </div>
             <div className="blog-card">
-              <Image
+              <ImageCard
                 src="/Images/blog_Two.png"
                 width={300}
                 height={300}
@@ -523,6 +526,8 @@ export default async function page() {
           </div>
         </div>
       </section>
+
+    
 
       {/* <section className="get_started_wrapper my-5  text-white lg:py-28 md:py-12 py-12 relative">
 <Image src="/Images/inner-baner-bg.jpg" alt="imner img" className="absolute -z-10" layout="fill" objectFit="cover"/>

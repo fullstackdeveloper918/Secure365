@@ -1,7 +1,6 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-import { delay } from "framer-motion";
 const MotionDiv = dynamic(() => import("@/components/MotionDiv"));
 
 const Text = dynamic(() => import("@/components/Text"));
@@ -95,13 +94,11 @@ export default async function Hero() {
         <div className="flex items-center justify-center rightbanner">
           <Suspense fallback={<p>Loading...</p>}>
             <MotionDiv
-              // initial={{ opacity: 0, scale: 2 }}
               initial={{ opacity: 0, x: -300 }}
               animate={{ opacity: 1, x:0 }}
-              // animate={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.8,
-                delay: 0.5,
+                delay: 1.5,
                 ease: [0, 0.71, 0.2, 1.01],
               }}
             >
