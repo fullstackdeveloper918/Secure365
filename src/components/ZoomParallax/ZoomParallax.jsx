@@ -1,92 +1,91 @@
-"use client"
-
-import styles from './styles.module.css';
-import Picture1 from '../../../public/cash/1.jpeg'
-import Picture2 from '../../../public/cash/2.jpeg';
-import Picture3 from '../../../public/cash/3.jpg';
-import Picture4 from '../../../public/cash/4.jpg'
-import Picture5 from '../../../public/cash/5.jpg'
-import Picture6 from '../../../public/cash/6.jpg'
-import Picture7 from '../../../public/cash/7.jpeg'
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import styles from './styles.module.scss'
 import Image from 'next/image';
-import { useScroll, useTransform, motion} from 'framer-motion';
-import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis'
+import { useTransform, useScroll, motion } from 'framer-motion';
 
-export default function ZoomParallax() {
+const images = [
+  "1.png",
+  "2.png",
+  "3.png",
+  "4.png",
+  "5.png",
+  "6.png",
+  "1.png",
+  "2.png",
+  "3.png",
+  "4.png",
+  "5.png",
+]
 
-    useEffect( () => {
-        const lenis = new Lenis()
-       
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
+export default function Home() {
+  
+  const gallery = useRef(null);
+  const [dimension, setDimension] = useState({width:0, height:0});
 
-        requestAnimationFrame(raf)
-    },[])
-    
-    const container = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: container,
-        offset: ['start start', 'end end']
-    })
+  const { scrollYProgress } = useScroll({
+    target: gallery,
+    offset: ['start end', 'end start']
+  })
+  const { height } = dimension;
+  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
 
-    const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
-    const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
-    const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
-    const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
-    const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
+  useEffect( () => {
+    const lenis = new Lenis()
 
-    const pictures = [
-        {
-            src: Picture1,
-            scale: scale4
-        },
-        {
-            src: Picture2,
-            scale: scale5
-        },
-        {
-            src: Picture3,
-            scale: scale6
-        },
-        {
-            src: Picture4,
-            scale: scale5
-        },
-        {
-            src: Picture5,
-            scale: scale6
-        },
-        {
-            src: Picture6,
-            scale: scale8
-        },
-        {
-            src: Picture7,
-            scale: scale9
-        }
-    ]
+    const raf = (time) => {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
 
-    return (
-        <div ref={container} className={styles.container}>
-            <div className={styles.sticky}>
-                {
-                    pictures.map( ({src, scale}, index) => {
-                        return <motion.div key={index} style={{scale}} className={styles.el}>
-                            <div className={styles.imageContainer}>
-                                <Image
-                                    src={src}
-                                    fill
-                                    alt="image"
-                                    placeholder='blur'
-                                />
-                            </div>
-                        </motion.div>
-                    })
-                }
-            </div>
-        </div>
-    )
+    const resize = () => {
+      setDimension({width: window.innerWidth, height: window.innerHeight})
+    }
+
+    window.addEventListener("resize", resize)
+    requestAnimationFrame(raf);
+    resize();
+
+    return () => {
+      window.removeEventListener("resize", resize);
+    }
+  }, [])
+
+  return (
+    <main className={styles.main}>
+      {/* <div className={styles.spacer}></div> */}
+      <div ref={gallery} className={styles.gallery}>
+        <Column images={[images[0], images[1], images[2]]} y={y}/>
+        <Column images={[images[3], images[4], images[5]]} y={y2}/>
+        <Column images={[images[6], images[7], images[8]]} y={y3}/>
+        <Column images={[images[9], images[10], images[11]]} y={y4}/>
+      </div>
+      {/* <div className={styles.spacer}></div> */}
+    </main>
+  )
+}
+
+const Column = ({images, y}) => {
+  return (
+    <motion.div 
+      className={styles.column}
+      style={{y}}
+      >
+      {
+        images.map( (src, i) => {
+          return <div key={i} className={styles.imageContainer}>
+            <Image 
+              src={`/cash/${src}`}
+              alt='image'
+              fill
+            />
+          </div>
+        })
+      }
+    </motion.div>
+  )
 }
