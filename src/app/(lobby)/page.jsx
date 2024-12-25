@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import ZoomParallax from "@/components/ZoomParallax/ZoomParallax"
 
 import Link from "next/link";
 import Image from "next/image";
@@ -28,7 +29,7 @@ export default async function page() {
   return (
     <main>
       <section className="relative banner_robot bg-black">
-        <div className="baner_images centerImage">
+        {/* <div className="baner_images centerImage">
           <span className="relative">
             <ImageCard
               src="/Images/centerText.png"
@@ -44,7 +45,7 @@ export default async function page() {
               className="rotateImage"
             />
           </span>
-        </div>
+        </div> */}
 
         <div className="baner_imagesafter">
           <span className="relative">
@@ -58,63 +59,48 @@ export default async function page() {
         </div>
         <Hero />
       </section>
-      
 
-      <section className="home__trusted">
-   <div className="container-1440 trusted__container">
-      <div className="trusted__items-wrapper">
-         <div aria-hidden="true" className="trusted__items marquee__inverse">
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/curry.svg" alt="Curry slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/tpm.svg" alt="Truck park managment slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/globaltranz.svg" alt="Global Tranz slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/range-logistics.svg" alt="Range Logistics slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/ivia.svg" alt="Ivia slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/energy-transport-logistics.svg" alt="Energy transport logistics slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/nfi.svg" alt="NFI slide" /></div>
-         </div>
-         <div aria-hidden="true" className="trusted__items marquee__inverse">
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/curry.svg" alt="Curry slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/tpm.svg" alt="Truck park managment slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/globaltranz.svg" alt="Global Tranz slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/range-logistics.svg" alt="Range Logistics slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/ivia.svg" alt="Ivia slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/energy-transport-logistics.svg" alt="Energy transport logistics slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/nfi.svg" alt="NFI slide" /></div>
-         </div>
-      </div>
-      <div className="trusted__items-wrapper">
-         <div aria-hidden="true" className="trusted__items marquee">
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/omni-logistics.svg" alt="Omni Logistics slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/atlantic-freight.svg" alt="Atlantic Freight slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/gw-tool-group.svg" alt="GW Tool Group slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/icon-millhouse.svg" alt="Millhouse slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/becker-logisitics.svg" alt="Becker Logistics slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/tangent.svg" alt="Tangent design / engineering slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/auto-logistics.svg" alt="Auto Logistics slide" /></div>
-         </div>
-         <div aria-hidden="true" className="trusted__items marquee">
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/omni-logistics.svg" alt="Omni Logistics slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/atlantic-freight.svg" alt="Atlantic Freight slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/gw-tool-group.svg" alt="GW Tool Group slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/icon-millhouse.svg" alt="Millhouse slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/becker-logisitics.svg" alt="Becker Logistics slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/tangent.svg" alt="Tangent design / engineering slide" /></div>
-            <div className="trusted__item"><img src="https://zelh.com/wp-content/themes/zelh-com/assets/images/auto-logistics.svg" alt="Auto Logistics slide" /></div>
-         </div>
-      </div>
-   </div>
-</section>
+
+
+
+
+
+      {/* high_rated */}
+      <section className="page-section agencySolution bg-no-repeat" id="about" >
+
+        <div className="container position-relative">
+          <div className="row mb-70 mb-sm-50">
+            <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+              <h2 className="section-title mb-40 mb-xs-30">Why Secure <span>365</span>?</h2>
+              <p className="section-descr dark-white mb-0">
+                In The Hitchhiker’s Guide to the Galaxy, the supercomputer “Deep Thought” is built by a race of hyper-intelligent alien beings to determine the answer to “life, the universe, and everything”. Deep Thought determines that the answer is, somewhat anti-climatically, “Secure 365”.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <ZoomParallax />
+
 
       {/* Key Services Section Starts a */}
-      <section className="2xl:py-18 xl:py-20 py-12 protection_section   key_serices">
+
+      <div className="SerivesProvided container">
+
+        <Text tag="h2" className="mb-3">
+          {data?.home_key_service_first_heading}
+        </Text>
+      </div>
+      <section className="2xl:py-18 xl:py-24 py-6 protection_section   key_serices">
         <div className="container">
-          <span className="text-center text_blue block font-Axiforma text-lg capitalize">
+          {/* <span className="text-center text_blue block font-Axiforma text-lg capitalize">
             our service
-          </span>
+          </span> */}
           <Text tag="h2" className="mb-3">
             {data?.home_key_service_first_heading}
           </Text>
-          <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5">
+          <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 xl:mt-10 mt-5 gap-5">
             {data &&
               data?.home_key_service_data.map((item, index) => (
                 <>
@@ -146,165 +132,10 @@ export default async function page() {
       {/* section  */}
 
 
-    
-
-      <section className="introduction-wrapper 2xl:py-20 xl:py-20 md:py-16 py-12  relative ">
-        <Image
-          src="/Images/bgSecure.png"
-          objectFit="cover"
-          layout="fill"
-          className="absolute -z-10"
-        />
-        <div className="container">
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-4 md:gap-20 items-center">
-            <div className="relative">
-              <Image
-                src="/Images/groupImage.png"
-                alt="img"
-                style={{ borderRadius: "30px" }}
-                width={500}
-                height={800}
-                className="mainImages"
-              />
-              <Image
-                src="/Images/rotateImage.png"
-                alt="img"
-                style={{ borderRadius: "30px" }}
-                width={500}
-                height={800}
-                className="rotateImage"
-              />
-            </div>
-            <div>
-              <h2 className=" heading_h2  relative text-white  font-Axiforma mb-5 capitalize">
-                About us
-              </h2>
-              <p className="font-Axiforma text-[#DDDDDD]">
-                Welcome to Secure 365, where innovation drives protection, and
-                technology turns challenges into secure solutions. Established
-                with a vision to redefine cloud security and IT services, we are
-                a dynamic and forward-focused company dedicated to delivering
-                advanced, reliable, and scalable solutions.
-              </p>
-              <p className=" font-Axiforma text-[#DDDDDD]">
-                Our mission is clear—to provide comprehensive and tailored cloud
-                security and IT services that align seamlessly with your
-                organization’s goals. We believe in not just safeguarding your
-                data but exceeding expectations by empowering your business with
-                robust and innovative security measures.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* high_rated */}
-      <section className="page-section agencySolution bg-no-repeat" id="about" style={{ background: "url(/svg/decoration-2.svg)" }}>
-
-        <div className="container position-relative">
-          <div className="row mb-70 mb-sm-50">
-            <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
-              <h2 className="section-title mb-40 mb-xs-30">High-Rated IT Services Agency Specializing in Technology Solutions</h2>
-              <p className="section-descr dark-white mb-0">
-                IT services refer to the management, implementation, and support of technology solutions that meet the business needs of organizations. These services encompass everything from cloud computing, cybersecurity, software development, and IT consulting, to system integration. The definition of IT services has evolved as technology continues to advance, enabling businesses to streamline operations, improve efficiency, and enhance customer experiences.
-              </p>
-            </div>
-          </div>
-          <div className="row mt-n50 mb-70 mb-sm-50 ratingSec">
-            <div className="mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0s">
-              <div className="text-center px-lg-4">
-                <div className="testimonials-5-stars flex justify-center gap-1">
-
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-
-                </div>
-                <div className="testimonials-5-text">“Really impressed with the service and the results!”</div>
-                <div className="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
-              </div>
-            </div>
-            <div className="mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0.15s">
-              <div className="text-center px-lg-4">
-                <div className="testimonials-5-stars flex justify-center gap-1">
-
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-
-                </div>
-                <div className="testimonials-5-text">“Excellent service for targeted lead generation.”</div>
-                <div className="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
-              </div>
-            </div>
-            <div className=" mt-50 wow fadeInLeft no-animate animated" data-wow-delay="0.3s">
-              <div className="text-center px-lg-4">
-                <div className="testimonials-5-stars flex justify-center gap-1">
-
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-                  <Image src="/svg/startIcon.svg" width={20} height={20} />
-
-                </div>
-                <div className="testimonials-5-text">“I have super enjoyed working with Resonance.”</div>
-                <div className="testimonials-5-caption">Rated 4.5 on Trustpilot</div>
-              </div>
-            </div>
-          </div>
-          <div className="local-scroll text-center">
-            <a className="btn btn-mod btn-w btn-with-icon btn-circle" href="/corporate-about">
-              <span className="btn-icon color-3"><i className="mi-favorite"></i></span>
-              <span data-btn-animate="y">
-                <span className="btn-animate-y">
-
-                  <span className="btn-animate-y-2" aria-hidden="true">
-                    <span className="startIcon">
-                      <Image src="/svg/strar_stroke.svg" width={20} height={20} />
-                    </span>
-                    View Our Services
-                    <Image src="/svg/down_load.svg" width={20} height={20} />
-                  </span>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* high_rated end */}
-
-     
-
-      <section className="get_started_wrapper my-5  text-white lg:py-16 md:py-12 py-12 relative">
-        <Image
-          src="/Images/info-graphic.jpg"
-          className="absolute -z-10 rotate-180"
-          layout="fill"
-          objectFit="cover"
-        />
+      <section className="get_started_wrapper  text-white bg-black lg:pb-16 md:pb-12 pb-12 relative">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:py-10  gap-7">
-            <div className="w-full">
-              <div className="relative  w-full heightMention">
-                <Suspense fallback={<p>Loading...</p>}>
-                  <ImageCard
-                    src="/Images/imgSteps.png"
-                    className=" min-h-full heightMention"
-                    layout="fill"
-                    // width={500}
-                    // height={500}
-                    objectFit="cover"
-                    alt="expert guidance image"
-                  />
-                </Suspense>
-              </div>
-            </div>
+
             <div className="left-side max-w-[90%]">
               <div className=" ">
                 <Text
@@ -331,6 +162,22 @@ export default async function page() {
               </div>
             </div>
 
+            <div className="w-full">
+              <div className="relative  w-full heightMention">
+                <Suspense fallback={<p>Loading...</p>}>
+                  <ImageCard
+                    src="/Images/imgSteps.png"
+                    className=" min-h-full heightMention"
+                    layout="fill"
+                    // width={500}
+                    // height={500}
+                    objectFit="cover"
+                    alt="expert guidance image"
+                  />
+                </Suspense>
+              </div>
+            </div>
+
             <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
               {data?.website_experience_button_second}
             </Button>
@@ -342,15 +189,71 @@ export default async function page() {
         </div>
 
       </section>
+
+      <section className="introduction-wrapper 2xl:py-24 xl:py-20 md:py-16 py-12  relative ">
+        <div className="container">
+          <div className="  items-center">
+        
+            <div className="aboutwraper">
+              <div>
+              <h2 className=" heading_h2  relative  font-Axiforma mb-5 capitalize">
+                <span className="aboutIcon">
+                <svg data-v-669b4a84="" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon"><path data-v-669b4a84="" d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z" fill="currentColor" width={20} height={20}></path></svg>
+                </span>
+                About us
+              </h2>
+              </div>
+              <div>
+              <p className="font-Axiforma text-[#DDDDDD]">
+                Welcome to Secure 365, where innovation drives protection, and
+                technology turns challenges into secure solutions. Established
+                with a vision to redefine cloud security and IT services, we are
+                a dynamic and forward-focused company dedicated to delivering
+                advanced, reliable, and scalable solutions.
+              </p>
+              <p className=" font-Axiforma text-[#DDDDDD]">
+                Our mission is clear—to provide comprehensive and tailored cloud
+                security and IT services that align seamlessly with your
+                organization’s goals. We believe in not just safeguarding your
+                data but exceeding expectations by empowering your business with
+                robust and innovative security measures.
+              </p>
+
+              <div className="local-scroll">
+              <a href="#" className="read-all-btn  btn">
+                <span className="startIcon">
+                  <Image src="/svg/strar_stroke.svg" width={20} height={20} />
+                </span>
+                <span>Know More about us</span>
+                <span className="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
+              </a>
+            </div>
+              </div>
+            </div>
+{/* 
+                <div className="relative">
+              <Image
+                src="/Images/groupImage.png"
+                alt="img"
+                style={{ borderRadius: "30px" }}
+                width={400}
+                height={500}
+                className="mainImages"
+              />
+            </div> */}
+          </div>
+        </div>
+      </section>
+
       {/* Ensure Your Website Section Ends */}
 
-       {/* What Makes us Different Section Starts */}
-       <section className="make_us_different relative">
+      {/* What Makes us Different Section Starts */}
+      <section className="make_us_different relative">
         <div className="container">
-          
+
           <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-2 ">
             <div className="contentMake">
-            {/* <h6 className="text_blue">FAQ</h6> */}
+              {/* <h6 className="text_blue">FAQ</h6> */}
               <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
                 <Text tag="h2" className="heading_h2 capitalize ">
                   {data?.makes_us_diffrent_heading}
@@ -385,7 +288,6 @@ export default async function page() {
           </div>
         </div>
       </section>
-
 
       {/* Our Promise Section Starts */}
       <section className="promise_sec">
@@ -445,13 +347,34 @@ export default async function page() {
       </section>
       {/* Our Promise Section Ends */}
 
+
+            
+      <section className="home__trusted">
+        <div className="container-1440 trusted__container">
+          <div className="trusted__items-wrapper">
+            <div aria-hidden="true" className="trusted__items marquee">
+              <div className="trusted__item"><img src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" /></div>
+              <div className="trusted__item"><img src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" /></div>
+              <div className="trusted__item"><img src="/Images/logo-teacher-care.png" alt="Millhouse slide" /></div>
+              <div className="trusted__item"><img src="/Images/techable.png" alt="Becker Logistics slide" /></div>
+              <div className="trusted__item"><img src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" /></div>
+              <div className="trusted__item"><img src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" /></div>
+            </div>
+            <div aria-hidden="true" className="trusted__items marquee">
+              <div className="trusted__item"><img src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" /></div>
+              <div className="trusted__item"><img src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" /></div>
+              <div className="trusted__item"><img src="/Images/logo-teacher-care.png" alt="Millhouse slide" /></div>
+              <div className="trusted__item"><img src="/Images/techable.png" alt="Becker Logistics slide" /></div>
+              <div className="trusted__item"><img src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" /></div>
+              <div className="trusted__item"><img src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Top Skilled Experts Section Starts */}
       <Categories data={data} />
       {/* Top Skilled Experts Section Ends */}
-
-      {/* Our Key Services Section Starts */}
-      {/* <Products data={data?.key_services_data} /> */}
-      {/* Our Key Services Section Ends */}
 
       {/* blog_section */}
       <section id="our-blog" className="our-blog-section">
