@@ -273,7 +273,7 @@ export default async function page() {
               </Suspense>
             </div>
             <div className="text-center  h-full w-full ">
-              <Image
+              <ImageCard
                 src="/Images/gropFaq.png"
                 className=" min-h-full mx-auto  "
                 width={600}
@@ -395,7 +395,7 @@ export default async function page() {
           </div>
           <div className="blog-grid">
             <div className="blog-card">
-              <Image src="/Images/blog_One.webp" width={300} height={300} alt="Blog Image 1" className="blog-image" />
+              <ImageCard src="/Images/blog_One.webp" width={300} height={300} alt="Blog Image 1" className="blog-image" />
               <div className="blog-content">
                 <h3 className="blog-title">Content Marketing Steps That Will Help You to Grow Your Business</h3>
                 <p className="blog-description">The macro-environment, over which a firm holds little control, consists of a variety of external factors that manifest on a large scale.</p>
@@ -406,7 +406,7 @@ export default async function page() {
               </div>
             </div>
             <div className="blog-card">
-              <Image src="/Images/blog_Two.png" width={300} height={300} alt="Blog Image 1" className="blog-image" />
+              <ImageCard src="/Images/blog_Two.png" width={300} height={300} alt="Blog Image 1" className="blog-image" />
 
               <div className="blog-content">
                 <h3 className="blog-title">Top Five Trends for Small Investment Companies Marketing</h3>
