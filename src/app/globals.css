@@ -169,16 +169,19 @@ span.aboutIcon svg.icon {
 }
 span.aboutIcon svg.icon {
   width: 100%;
-  max-width: 20px;
-  min-width: 20px;
+  max-width: 30px;
+  min-width: 30px;
 }
 
 .aboutwraper {
   display: flex;
-  gap: 10px;
+  gap: 50px;
   flex-wrap: wrap;
 }
-.introduction-wrapper a.read-all-btn.btn {
+#about .container.position-relative {
+  max-width: 90%;
+}
+.introduction-wrapper a.read-all-btn.btn, .get_started_wrapper  a.read-all-btn.btn {
   margin: 50px 0 0;
   background: none;
   color: #000;
@@ -187,16 +190,24 @@ span.aboutIcon svg.icon {
   gap: 10px;
   transition: .5s all;
 }
-.introduction-wrapper a.read-all-btn.btn:hover{
+.get_started_wrapper a.read-all-btn.btn {
+  color: #fff;
+}
+.get_started_wrapper .local-scroll .btn span.arrow img{
+  filter: invert(1);
+}
+.get_started_wrapper .local-scroll .btn:hover span.arrow img{
+  filter: unset;
+}
+.introduction-wrapper a.read-all-btn.btn:hover, .get_started_wrapper  a.read-all-btn.btn:hover{
   border-color: #fff;
   color: #000;
   background-color: #fff;
-  transform: scale(1.2);
 }
-.introduction-wrapper a.read-all-btn.btn span.arrow img {
+.introduction-wrapper a.read-all-btn.btn span.arrow img, .get_started_wrapper  a.read-all-btn.btn span img {
   transition: .5 all;
   }
-.introduction-wrapper a.read-all-btn.btn:hover span.arrow img{
+.introduction-wrapper a.read-all-btn.btn:hover span.arrow img, .get_started_wrapper  a.read-all-btn.btn:hover  span img{
   opacity: 1;
 
 }
@@ -205,6 +216,8 @@ span.aboutIcon svg.icon {
   display: flex;
   gap: 20px;
   align-items: center;
+  font-size: 6vw;
+  font-weight: 700 !important;
 }
 /* 
 .main_projectSec>div {
@@ -240,7 +253,7 @@ span.aboutIcon svg.icon {
 
 .SerivesProvided h2 {
   text-align: center;
-  font-size: 70px;
+  font-size: 4vw;
   font-weight: 600 !important;
 }
 /* .main_projectSec end */
@@ -410,7 +423,7 @@ h2.expert_heading {
 
 .get_started_wrapper h2 {
   margin-top: 20px;
-  line-height: 65px !important;
+  line-height: 52px !important;
 }
 
 /* banner image end */
@@ -542,7 +555,7 @@ h2.expert_heading {
 /* High-rated section */
 #about {
   padding: 120px 0px;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
 }
 
 .bg-line-1 {
@@ -568,13 +581,25 @@ h2.expert_heading {
 }
 .agencySolution h2.section-title span {
   color: #52c5ff;
+  font-size: 9vw;
+  text-align: right;
+}
+.agencySolution h2.section-title b {
+  font-size: 7vw;
+  text-align: center;
+  color: #3c3c3c;
+  line-height: 9vw;
 }
 .agencySolution 
  h2.section-title {
-  font-size: 4vw;
-  margin: 0px 0px 40px;
-  font-weight: 700 !important;
+  font-size: 15vw;
+  margin: 0 0 40px;
   text-align: left;
+  font-weight: 700 !important;
+  display: flex;
+  flex-direction: column;
+  line-height: 12vw;
+  max-width: 100%;
 }
 .section-descr {
   color: #0d0e1399;
@@ -838,7 +863,7 @@ span.startIcon img {
   height: 100vh;
 }
 .rightbanner img.banner_rotate {
-  margin-top: -90px;
+  /* margin-top: -90px; */
   opacity: 0.5;
 }
 .banner_robot {
@@ -890,7 +915,18 @@ span.startIcon img {
 .promise_header {
   margin: 0px 0px 60px;
 }
-.left_rightContent .right_content span {
+.promise_sec a.read-all-btn.btn {
+  margin: 0px;
+  padding: 10px;
+  gap: 10px;
+  border-color: #fff;
+  background: transparent;
+  color: #fff;
+}
+.promise_sec a.read-all-btn.btn span.arrow img{
+filter: invert(1);
+}
+.left_rightContent .right_content .numberWrapper span {
   font-size: 24px;
   background: #1b1b1b;
   border-radius: 50px;
@@ -1281,7 +1317,8 @@ ul.listWrapperFlex {
   margin-right: 0 !important;
 }
 .make_us_different {
-  padding: 50px 0;
+  padding: 70px 0;
+  background: #f9f9f9;
 }
 .agencySolution {
   background-repeat: no-repeat !important;
@@ -1309,10 +1346,11 @@ ul.listWrapperFlex {
   max-width: 100%;
 }
 
-.introduction-wrapper p {
+.introduction-wrapper p, .make_us_different p {
   font-size: 20px;
   line-height: 34px;
   color: #0000009e;
+  font-family: poppins;
 }
 
 .introduction-wrapper p + p {
@@ -1410,7 +1448,7 @@ ul.listWrapperFlex {
 }
 
 .home__trusted{
-  padding: 40px 0 0;
+  padding: 20px 0 ;
 }
 
 
@@ -1452,6 +1490,10 @@ li.accordianList {
   }
 }
 
+.section-title>div {
+  color: #dddddd75;
+}
+
 @media screen and (min-width: 1922px) {
   .container {
     max-width: 1876px !important;
@@ -1472,7 +1514,7 @@ li.accordianList {
     font-size: 75px;
     line-height: 77px !important;
   }
-  h2 {
+  h2, .protection_section h2 {
     font-size: 40px;
     line-height: 50px;
   }
@@ -1481,6 +1523,17 @@ li.accordianList {
   .keyColumns h3 {
     font-size: 16px;
     line-height: 23px;
+}
+.herobanner.container {
+  padding-top: 50px;
+}
+.rightbanner img.banner_rotate {
+  margin: 0px auto;
+  opacity: .5;
+
+}
+.blog-header p {
+  font-size: 18px !important;
 }
 .container {
   margin: 0 auto;
@@ -1493,9 +1546,9 @@ li.accordianList {
 }
 .keyColumns > img {
   padding: 10px;
-  width: 50px;
-  height: 50px;
-  margin: 10px auto 20px;
+  width: 60px;
+  height: 60px;
+  margin: 10px 0px 20px;
 }
 }
 @media screen and (max-width: 1366px) {
@@ -1532,6 +1585,10 @@ li.accordianList {
   .min_height {
     min-height: calc(100vh - 100px);
   }
+  .herobanner.container {
+    padding-top: 8rem  ;
+    padding-bottom: 2rem;
+}
   .column_hover {
     padding: 15px;
   }
@@ -1541,7 +1598,7 @@ li.accordianList {
   .banner_heading {
     font-size: 55px;
     line-height: 4rem !important;
-    max-width: 80%;
+    max-width: 100%;
   }
   .banner_rotate {
     max-width: 70%;
@@ -1555,8 +1612,8 @@ li.accordianList {
     max-width: 100%;
     gap: 5px;
   }
-  h2 {
-    font-size: 32px;
+  h2, .protection_section h2 {
+    font-size: 38px;
     line-height: 45px;
   }
   p {
@@ -1569,10 +1626,6 @@ li.accordianList {
   }
   .container {
     padding: 0 30px;
-  }
-
-  .make_us_different p {
-    font-size: 20px !important;
   }
   .discovermore {
     font-size: 20px !important;
@@ -1663,6 +1716,10 @@ li.accordianList {
   .make_us_different {
     padding: 80px 0;
   }
+  .blog-title {
+    font-size: 18px;
+    line-height: 25px;
+}
 }
 @media (max-width: 1100px) {
   .baner_imagesafter img {
@@ -1705,6 +1762,9 @@ li.accordianList {
   .margin_bottom {
     gap: 50px 0;
   }
+  .our-blog-section .blogSection {
+    flex-direction: column;
+}
 }
 @media screen and (max-width: 991px) {
   .container {
@@ -1735,7 +1795,7 @@ li.accordianList {
     font-size: 18px !important;
   }
   .make_us_different p {
-    max-width: 80% !important;
+    max-width: 100% !important;
   }
   .keyColumns {
     margin-bottom: 30px;
@@ -1749,7 +1809,7 @@ li.accordianList {
   .left_rightContent .right_content h4 {
     font-size: 22px;
   }
-  .left_rightContent .right_content span {
+  .left_rightContent .right_content .numberWrapper span {
     font-size: 20px;
     width: 60px;
     height: 60px;
@@ -1768,7 +1828,7 @@ li.accordianList {
   .leftSideImage img {
     min-height: 250px;
   }
-  h2 strong {
+  h2 strong, .protection_section h2 {
     font-size: 40px;
   }
   .protection_section .grid {
@@ -1783,6 +1843,14 @@ li.accordianList {
   .banner_absolute {
     max-width: 50%;
   }
+  .promise_header {
+    flex-direction: column;
+}
+.promise_header p {
+  max-width: 100%;
+  font-size: 16px !important;
+  line-height: 31px !important;
+}
   .maxWidthGiven {
     margin: 0;
     max-width: 100%;
@@ -1876,11 +1944,24 @@ li.accordianList {
     grid-template-columns: 1fr;
     gap: 0;
   }
+  section#categories {
+    padding-bottom: 50px;
+}
+.keyColumns {
+  margin-right: 0px;
+}
 }
 @media screen and (max-width: 675px) {
   /* .banner_heading {
     line-height: 2rem !important;
 } */
+.aboutwraper {
+  gap: 10px;
+}
+.blog-grid {
+  gap: 50px;
+  flex-direction: column;
+}
   .banner_robot {
     max-width: 94%;
     margin: 20px auto 0;
@@ -1888,8 +1969,8 @@ li.accordianList {
   .get_started_wrapper h2 {
     line-height: 45px !important;
   }
-  h2 {
-    font-size: 28px;
+  h2, .blog-header h2, .protection_section h2 {
+    font-size: 32px;
     line-height: 36px;
   }
 
@@ -1951,7 +2032,7 @@ li.accordianList {
   h2 strong {
     font-size: 32px;
   }
-  .left_rightContent .right_content span {
+  .left_rightContent .right_content .numberWrapper span {
     font-size: 13px;
     width: 40px;
     height: 40px;

@@ -54,7 +54,7 @@ export default async function Hero() {
               tag="p"
               className="max-w-md sm:max-w-[39rem] maxWidth leading-normal text-muted-foreground text-sm sm:text-xl text-white sm:leading-8 font-Axiforma"
             >
-              {data?.pages?.banner_sub_headline}
+              {data?.pages?.banner_data?.banner_sub_headline}
             </Text>
           </Suspense>
           <div className="flex flex-wrap   text-white gap-4 mt-5">

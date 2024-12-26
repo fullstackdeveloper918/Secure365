@@ -1,12 +1,17 @@
 .gallery{
     height: 175vh;
-    background: rgb(45, 45, 45);
+    background: #2d2d2d;
     position: relative;
     display: flex;
     gap: 20px;
-    padding: 2vw;
+    padding: 0;
     box-sizing: border-box;
     overflow: hidden;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    border: 10px solid #2d2d2d;
+    border-radius: 20px;
     .column{
         position: relative;
         height: 100%;
@@ -23,6 +28,7 @@
             overflow: hidden;
             img{
                 object-fit: cover;
+                object-position: top;
             }
         }
         &:nth-of-type(1){
@@ -40,5 +46,5 @@
     }
 }
 .spacer{
-    height: 100vh;
+    height: 50vh;
 }
