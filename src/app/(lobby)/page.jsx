@@ -1,11 +1,12 @@
+
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import ZoomParallax from "@/components/ZoomParallax/ZoomParallax"
+
+
+// const ZoomParallax = dynamic(() => import('@/components/ZoomParallax/ZoomParallax'))
 import Link from "next/link";
-import TrustedSection from "@/components/logo_slider/TrustedSection";
-import MaskText from "@/components/MaskText";
 const MotionDiv = dynamic(() => import("../../components/MotionDiv"));
 const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
@@ -26,75 +27,33 @@ export default async function page() {
 
   return (
     <main>
-      <section className="relative banner_robot bg-black">
-        {/* <div className="baner_images centerImage">
-          <span className="relative">
-            <ImageCard
-              src="/Images/centerText.png"
-              width={200}
-              height={100}
-              alt="banner image"
-            />
-            <ImageCard
-              src="/Images/sercureRotate.png"
-              width={200}
-              height={100}
-              alt="banner image"
-              className="rotateImage"
-            />
-          </span>
-        </div> */}
-
+      <section className="relative banner_robot">
         <div className="baner_imagesafter">
           <span className="relative">
-            <ImageCard
+            <Suspense fallback={<p>loading</p>}>
+            {/* <ImageCard
               src="/svg/after_bannerImg.svg"
               width={500}
               height={100}
               alt="banner image"
-            />
+              /> */}
+              </Suspense>
           </span>
         </div>
         <Hero />
       </section>
 
-
-
-
-
-
-      {/* high_rated */}
-      <section className="page-section agencySolution bg-no-repeat" id="about" >
-
-        <div className="container position-relative">
-          <div className="row mb-70 mb-sm-50">
-            <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
-              <h2 className="section-title mb-40 mb-xs-30">Why Secure <span>365</span>?</h2>
-              <p className="section-descr dark-white mb-0">
-                In The Hitchhiker’s Guide to the Galaxy, the supercomputer “Deep Thought” is built by a race of hyper-intelligent alien beings to determine the answer to “life, the universe, and everything”. Deep Thought determines that the answer is, somewhat anti-climatically, “Secure 365”.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <ZoomParallax />
-
-
-      {/* Key Services Section Starts a */}
-
-      <div className="SerivesProvided container">
+      {/* <div className="SerivesProvided container">
 
         <Text tag="h2" className="mb-3">
           {data?.home_key_service_first_heading}
         </Text>
-      </div>
-      <section className="2xl:py-18 xl:py-24 py-6 protection_section   key_serices">
+      </div> */}
+
+
+      {/* <section className="2xl:py-18 xl:py-24 py-6 protection_section   key_serices">
         <div className="container">
-          {/* <span className="text-center text_blue block font-Axiforma text-lg capitalize">
-            our service
-          </span> */}
+          
           <Text tag="h2" className="mb-3">
             {data?.home_key_service_first_heading}
           </Text>
@@ -124,13 +83,9 @@ export default async function page() {
           </div>
         </div>
       </section>
-      {/* Key Services Section Ends */}
+      */}
 
-
-      {/* section  */}
-
-
-      <section className="get_started_wrapper  text-white bg-black lg:pb-16 md:pb-12 pb-12 relative">
+      {/* <section className="get_started_wrapper  text-white bg-black lg:pb-16 md:pb-12 pb-12 relative">
         <div className="container">
           <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:py-10  gap-7">
 
@@ -148,7 +103,7 @@ export default async function page() {
                   tag="p"
                   className="text-[#c2c2c2] md:text-lg text-md md:mb-5 mb-2 font-Axiforma md:max-w-[80%]"
                 >
-                  {/* {data?.website_experience_paragraph_second} */}
+                
                   At Secure365, we understand that navigating the digital world
                   can be overwhelming. That’s why we’ve designed our services to
                   be a one-stop solution, covering everything from cloud
@@ -167,8 +122,7 @@ export default async function page() {
                     src="/Images/imgSteps.png"
                     className=" min-h-full heightMention"
                     layout="fill"
-                    // width={500}
-                    // height={500}
+                    
                     objectFit="cover"
                     alt="expert guidance image"
                   />
@@ -186,9 +140,9 @@ export default async function page() {
           </Button>
         </div>
 
-      </section>
+      </section> */}
 
-      <section className="introduction-wrapper 2xl:py-24 xl:py-20 md:py-16 py-12  relative ">
+      {/* <section className="introduction-wrapper 2xl:py-24 xl:py-20 md:py-16 py-12  relative ">
         <div className="container">
           <div className="  items-center">
         
@@ -196,7 +150,7 @@ export default async function page() {
               <div>
               <h2 className=" heading_h2  relative  font-Axiforma mb-5 capitalize">
                 <span className="aboutIcon">
-                <svg data-v-669b4a84="" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon"><path data-v-669b4a84="" d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z" fill="currentColor" width={20} height={20}></path></svg>
+                <svg data-v-669b4a84="" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon"><path data-v-669b4a84="" d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z" fill="currentColor" width={20} height={20}></path></svg>
                 </span>
                 About us
               </h2>
@@ -220,38 +174,24 @@ export default async function page() {
               <div className="local-scroll">
               <a href="#" className="read-all-btn  btn">
                 <span className="startIcon">
-                  <Image src="/svg/strar_stroke.svg" width={20} height={20} />
+                  <ImageCard src="/svg/strar_stroke.svg" width={20} height={20} />
                 </span>
                 <span>Know More about us</span>
-                <span className="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
+                <span className="arrow"><ImageCard src="/svg/down_load.svg" width={20} height={20} /></span>
               </a>
             </div>
               </div>
             </div>
-{/* 
-                <div className="relative">
-              <Image
-                src="/Images/groupImage.png"
-                alt="img"
-                style={{ borderRadius: "30px" }}
-                width={400}
-                height={500}
-                className="mainImages"
-              />
-            </div> */}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Ensure Your Website Section Ends */}
-
-      {/* What Makes us Different Section Starts */}
-      <section className="make_us_different relative">
+      {/* <section className="make_us_different relative">
         <div className="container">
 
           <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-2 ">
             <div className="contentMake">
-              {/* <h6 className="text_blue">FAQ</h6> */}
+          
               <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
                 <Text tag="h2" className="heading_h2 capitalize ">
                   {data?.makes_us_diffrent_heading}
@@ -277,18 +217,17 @@ export default async function page() {
                 src="/Images/gropFaq.png"
                 className=" min-h-full mx-auto  "
                 width={600}
-                // layout="fill"
-                // objectFit="cover"
+             
                 height={600}
                 alt="expert guidance image"
               />
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Our Promise Section Starts */}
-      <section className="promise_sec">
+    
+      {/* <section className="promise_sec">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
             <div className="promise_header flex justify-between">
@@ -342,40 +281,40 @@ export default async function page() {
             </div>
           </div>
         </div>
-      </section>
-      {/* Our Promise Section Ends */}
+      </section> */}
+     
 
 
             
-      <section className="home__trusted">
+      {/* <section className="home__trusted">
         <div className="container-1440 trusted__container">
           <div className="trusted__items-wrapper">
             <div aria-hidden="true" className="trusted__items marquee">
-              <div className="trusted__item"><img src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" /></div>
-              <div className="trusted__item"><img src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" /></div>
-              <div className="trusted__item"><img src="/Images/logo-teacher-care.png" alt="Millhouse slide" /></div>
-              <div className="trusted__item"><img src="/Images/techable.png" alt="Becker Logistics slide" /></div>
-              <div className="trusted__item"><img src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" /></div>
-              <div className="trusted__item"><img src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" /></div>
+              <div className="trusted__item"><ImageCard src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide"  width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/logo-teacher-care.png" alt="Millhouse slide" width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/techable.png" alt="Becker Logistics slide" width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" width={100} height={40} /></div>
             </div>
             <div aria-hidden="true" className="trusted__items marquee">
-              <div className="trusted__item"><img src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" /></div>
-              <div className="trusted__item"><img src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" /></div>
-              <div className="trusted__item"><img src="/Images/logo-teacher-care.png" alt="Millhouse slide" /></div>
-              <div className="trusted__item"><img src="/Images/techable.png" alt="Becker Logistics slide" /></div>
-              <div className="trusted__item"><img src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" /></div>
-              <div className="trusted__item"><img src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" /></div>
+              <div className="trusted__item"><ImageCard src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/logo-teacher-care.png" alt="Millhouse slide" width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/techable.png" alt="Becker Logistics slide" width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" width={100} height={40} /></div>
+              <div className="trusted__item"><ImageCard src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" width={100} height={40} /></div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Top Skilled Experts Section Starts */}
-      <Categories data={data} />
-      {/* Top Skilled Experts Section Ends */}
+     
+      {/* <Categories data={data} /> */}
+     
 
-      {/* blog_section */}
-      <section id="our-blog" className="our-blog-section">
+      
+      {/* <section id="our-blog" className="our-blog-section">
         <div className="blogSection container">
           <div className="blog-header">
             <h2>Our Blog</h2>
@@ -389,7 +328,7 @@ export default async function page() {
                   <ImageCard src="/svg/strar_stroke.svg" width={20} height={20} alt="" />
                 </span>
                 <span>Read All Articles</span>
-                <span className="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
+                <span className="arrow"><ImageCard src="/svg/down_load.svg" width={20} height={20} /></span>
               </a>
             </div>
           </div>
@@ -419,12 +358,12 @@ export default async function page() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* blog_section end*/}
+   
 
-      {/* Contact Section Starts */}
-      <section className="lookingService xl:mt-0">
+   
+      {/* <section className="lookingService xl:mt-0">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
             <Text tag="h2">{data?.home_page_contact_section_heading}</Text>
@@ -437,27 +376,7 @@ export default async function page() {
             </Link>
           </div>
         </div>
-      </section>
-
-    
-
-      {/* <section className="get_started_wrapper my-5  text-white lg:py-28 md:py-12 py-12 relative">
-<Image src="/Images/inner-baner-bg.jpg" alt="imner img" className="absolute -z-10" layout="fill" objectFit="cover"/>
-<div className="container">
-    <div className="left-side max-w-[70%]">
-      <div className="w-full ">
-      <h6><span></span>Innovative Idea</h6>
-        <Text
-          tag="h2"
-          className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide"
-        >
-          "Drawing on IT professionals' technical expertise to assess and solve advanced technical problems."
-        </Text>
-      </div>
-    </div>
-  </div>
-</section> */}
-      {/* Contact Section Ends */}
+      </section> */}
     </main>
   );
 }

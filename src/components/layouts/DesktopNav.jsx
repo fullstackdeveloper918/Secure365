@@ -1,3 +1,5 @@
+
+
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import {
@@ -31,20 +33,22 @@ const DesktopNav = () => {
 
   return (
     <div className="hidden lg:flex items-center w-full md:justify-between w-100 ">
+      <div className="overflow-hidden">
       <MotionDiv
-        initial={{ opacity: 0, y: -200 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5 }}
-      >
+        initial={{ opacity: 0, scale: 0.4 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        >
         <Link href="/" className="flex space-x-2">
           <ImageCard
             src="/Images/secure_black.png"
             width={240}
             height={80}
             alt="Secure Logo"
-          />
+            />
         </Link>
       </MotionDiv>
+            </div>
 
       <NavigationMenu>
         <NavigationMenuList>
@@ -52,7 +56,7 @@ const DesktopNav = () => {
              <MotionDiv
              initial={{ opacity: 0, y: -50 }}
              animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.2 *index }}
+             transition={{ duration: 0.2 *index, delay: 2.4 }}
            >
             <Link href={`/${item?.slug}`} key={index}>
               <NavigationMenuItem>
