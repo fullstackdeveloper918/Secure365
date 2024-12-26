@@ -1,27 +1,38 @@
-.container{
-    height: 300vh;
+.gallery{
+    height: 175vh;
+    background: #2d2d2d;
     position: relative;
-    .sticky{
-        position: sticky;
-        overflow: hidden;
-        top: 0;
-        height: 100vh;
-        .el{
-            width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    border: 10px solid #2d2d2d;
+    border-radius: 20px;
+    .column{
+        position: relative;
+        height: 100%;
+        width: 25%;
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .imageContainer{
             height: 100%;
-            top: 0;
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .imageContainer{
-                position: relative;
-                width: 25vw;
-                height: 25vh;
-                img{
-                    object-fit: cover;
-                }
+            width: 100%;
+            position: relative;
+            border-radius: 1vw;
+            overflow: hidden;
+            img{
+                object-fit: cover;
+                object-position: top;
             }
         }
     }
+}
+.spacer{
+    height: 50vh;
 }

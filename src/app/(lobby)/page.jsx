@@ -43,15 +43,44 @@ export default async function page() {
         <Hero />
       </section>
 
-      {/* <div className="SerivesProvided container">
+
+
+
+
+
+      {/* high_rated */}
+      <section className="page-section agencySolution bg-no-repeat" id="about" >
+
+        <div className="container position-relative">
+          <div className="row mb-70 mb-sm-50">
+            <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
+              <h2 className="section-title mb-40 mb-xs-30">
+                <div>Why</div> 
+              
+                <b>Secure <span>365 ?</span></b> 
+           
+                </h2>
+              <p className="section-descr dark-white mb-0">
+                In The Hitchhiker’s Guide to the Galaxy, the supercomputer “Deep Thought” is built by a race of hyper-intelligent alien beings to determine the answer to “life, the universe, and everything”. Deep Thought determines that the answer is, somewhat anti-climatically, “Secure 365”.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <ZoomParallax />
+
+
+      {/* Key Services Section Starts a */}
+
+      <div className="SerivesProvided container">
 
         <Text tag="h2" className="mb-3">
           {data?.home_key_service_first_heading}
         </Text>
-      </div> */}
-
-
-      {/* <section className="2xl:py-18 xl:py-24 py-6 protection_section   key_serices">
+      </div>
+      <section className="2xl:py-18 xl:py-24 py-20 protection_section   key_serices">
         <div className="container">
           
           <Text tag="h2" className="mb-3">
@@ -83,11 +112,15 @@ export default async function page() {
           </div>
         </div>
       </section>
-      */}
+      
 
-      {/* <section className="get_started_wrapper  text-white bg-black lg:pb-16 md:pb-12 pb-12 relative">
+
+      {/* section  */}
+
+
+      <section className="get_started_wrapper  text-white bg-black lg:pb-16 md:pb-12 pb-12 relative md:pt-0 pt-6" >
         <div className="container">
-          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:py-10  gap-7">
+          <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:py-10  gap-12 md:gap-7">
 
             <div className="left-side max-w-[90%]">
               <div className=" ">
@@ -109,9 +142,18 @@ export default async function page() {
                   be a one-stop solution, covering everything from cloud
                   management and IT support to marketing and cybersecurity.
                 </Text>
-                <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg::block hidden mobileHiden">
-                  {data?.website_experience_button_second}
-                </Button>
+                {/* <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg::block hidden mobileHiden">
+                  
+                </Button> */}
+                <div className="local-scroll">
+              <a href="#" className="read-all-btn  btn">
+                <span className="startIcon">
+                  <Image src="/svg/strar_stroke.svg" width={20} height={20} />
+                </span>
+                <span>{data?.website_experience_button_second}</span>
+                <span className="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
+              </a>
+            </div>
               </div>
             </div>
 
@@ -130,19 +172,23 @@ export default async function page() {
               </div>
             </div>
 
-            <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
-              {data?.website_experience_button_second}
-            </Button>
-          </div>
+        
 
+            {/* <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
+              
+            </Button> */}
+          </div>
+{/* 
           <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
             {data?.website_experience_button_second}
-          </Button>
+          </Button> */}
+
+          
         </div>
 
-      </section> */}
+      </section> 
 
-      {/* <section className="introduction-wrapper 2xl:py-24 xl:py-20 md:py-16 py-12  relative ">
+      <section className="introduction-wrapper 2xl:py-32 xl:py-22 md:py-20 py-12  relative ">
         <div className="container">
           <div className="  items-center">
         
@@ -184,12 +230,12 @@ export default async function page() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section> 
 
       {/* <section className="make_us_different relative">
         <div className="container">
 
-          <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-2 ">
+          <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between md:gap-6 gap-10">
             <div className="contentMake">
           
               <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
@@ -274,9 +320,17 @@ export default async function page() {
                   </Suspense>
                 ))}
               <Link href="/contact-us">
-                <button className="btn_one global_btn capitalize font-Axiforma">
-                  Learn More
-                </button>
+
+              <div className="local-scroll">
+              <a href="#" className="read-all-btn  btn">
+                <span className="startIcon">
+                  <Image src="/svg/strar_stroke.svg" width={20} height={20} />
+                </span>
+                <span> Learn More</span>
+                <span className="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
+              </a>
+            </div>
+              
               </Link>
             </div>
           </div>
@@ -286,28 +340,6 @@ export default async function page() {
 
 
             
-      {/* <section className="home__trusted">
-        <div className="container-1440 trusted__container">
-          <div className="trusted__items-wrapper">
-            <div aria-hidden="true" className="trusted__items marquee">
-              <div className="trusted__item"><ImageCard src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide"  width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/logo-teacher-care.png" alt="Millhouse slide" width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/techable.png" alt="Becker Logistics slide" width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" width={100} height={40} /></div>
-            </div>
-            <div aria-hidden="true" className="trusted__items marquee">
-              <div className="trusted__item"><ImageCard src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/logo-teacher-care.png" alt="Millhouse slide" width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/techable.png" alt="Becker Logistics slide" width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" width={100} height={40} /></div>
-              <div className="trusted__item"><ImageCard src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" width={100} height={40} /></div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
      
       {/* <Categories data={data} /> */}
@@ -362,8 +394,31 @@ export default async function page() {
 
    
 
-   
-      {/* <section className="lookingService xl:mt-0">
+      <section className="home__trusted">
+        <div className="container-1440 trusted__container">
+          <div className="trusted__items-wrapper">
+            <div aria-hidden="true" className="trusted__items marquee">
+              <div className="trusted__item"><img src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" /></div>
+              <div className="trusted__item"><img src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" /></div>
+              <div className="trusted__item"><img src="/Images/logo-teacher-care.png" alt="Millhouse slide" /></div>
+              <div className="trusted__item"><img src="/Images/techable.png" alt="Becker Logistics slide" /></div>
+              <div className="trusted__item"><img src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" /></div>
+              <div className="trusted__item"><img src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" /></div>
+            </div>
+            <div aria-hidden="true" className="trusted__items marquee">
+              <div className="trusted__item"><img src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" /></div>
+              <div className="trusted__item"><img src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" /></div>
+              <div className="trusted__item"><img src="/Images/logo-teacher-care.png" alt="Millhouse slide" /></div>
+              <div className="trusted__item"><img src="/Images/techable.png" alt="Becker Logistics slide" /></div>
+              <div className="trusted__item"><img src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" /></div>
+              <div className="trusted__item"><img src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section Starts */}
+      <section className="lookingService xl:mt-0">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
             <Text tag="h2">{data?.home_page_contact_section_heading}</Text>
@@ -376,7 +431,7 @@ export default async function page() {
             </Link>
           </div>
         </div>
-      </section> */}
+      </section> 
     </main>
   );
 }

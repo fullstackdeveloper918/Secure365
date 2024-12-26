@@ -41,7 +41,7 @@ const DesktopNav = () => {
         >
         <Link href="/" className="flex space-x-2">
           <ImageCard
-            src="/Images/secure_black.png"
+            src="/Images/LOGO-BLACK.png"
             width={240}
             height={80}
             alt="Secure Logo"
