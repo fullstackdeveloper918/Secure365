@@ -70,15 +70,21 @@ export default async function page() {
 
         <div className="container position-relative">
           <div className="row mb-70 mb-sm-50">
-            <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-center">
-              <h2 className="section-title mb-40 mb-xs-30">
-                <div>Why</div> 
-              
-                <b>Secure <span>365 ?</span></b> 
+            <div className="innovative_sec">
+           
+               
+                <h2 className="section-title mb-40 mb-xs-30">
+                <div className="main_heading">Innovative IT Security <em>Showcased</em></div>
            
                 </h2>
+
+                <span className="aboutIcon">
+                <svg data-v-669b4a84="" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon"><path data-v-669b4a84="" d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z" fill="currentColor" width={20} height={20}></path></svg>
+             Objective
+                </span>
+
               <p className="section-descr dark-white mb-0">
-                In The Hitchhiker’s Guide to the Galaxy, the supercomputer “Deep Thought” is built by a race of hyper-intelligent alien beings to determine the answer to “life, the universe, and everything”. Deep Thought determines that the answer is, somewhat anti-climatically, “Secure 365”.
+              In the realm of cutting-edge technology, "Innovative IT Security Showcased" represents the pinnacle of safeguarding digital landscapes. Our portfolio highlights advanced solutions designed to protect data, mitigate threats, and empower businesses to operate securely in an ever-evolving digital environment. Explore our comprehensive security strategies, fortified systems, and forward-thinking innovations that redefine IT security standards.
               </p>
             </div>
           </div>
@@ -248,17 +254,7 @@ export default async function page() {
             </div>
               </div>
             </div>
-{/* 
-                <div className="relative">
-              <Image
-                src="/Images/groupImage.png"
-                alt="img"
-                style={{ borderRadius: "30px" }}
-                width={400}
-                height={500}
-                className="mainImages"
-              />
-            </div> */}
+
           </div>
         </div>
       </section>
@@ -429,25 +425,108 @@ export default async function page() {
       </section>
 
       {/* blog_section end*/}
-
       <section className="home__trusted">
         <div className="container-1440 trusted__container">
           <div className="trusted__items-wrapper">
             <div aria-hidden="true" className="trusted__items marquee">
-              <div className="trusted__item"><img src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" /></div>
-              <div className="trusted__item"><img src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" /></div>
-              <div className="trusted__item"><img src="/Images/logo-teacher-care.png" alt="Millhouse slide" /></div>
-              <div className="trusted__item"><img src="/Images/techable.png" alt="Becker Logistics slide" /></div>
-              <div className="trusted__item"><img src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" /></div>
-              <div className="trusted__item"><img src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" /></div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/svg/snap_inc_logo.svg"
+                  alt="Omni Logistics slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/wtf_logo_tm.webp"
+                  alt="GW Tool Group slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/logo-teacher-care.png"
+                  alt="Millhouse slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/techable.png"
+                  alt="Becker Logistics slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/sellmac (2).png"
+                  alt="Tangent design / engineering slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/logo__1_-removebg-preview 1.png"
+                  alt="Auto Logistics slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
             </div>
             <div aria-hidden="true" className="trusted__items marquee">
-              <div className="trusted__item"><img src="/svg/snap_inc_logo.svg" alt="Omni Logistics slide" /></div>
-              <div className="trusted__item"><img src="/Images/wtf_logo_tm.webp" alt="GW Tool Group slide" /></div>
-              <div className="trusted__item"><img src="/Images/logo-teacher-care.png" alt="Millhouse slide" /></div>
-              <div className="trusted__item"><img src="/Images/techable.png" alt="Becker Logistics slide" /></div>
-              <div className="trusted__item"><img src="/Images/sellmac (2).png" alt="Tangent design / engineering slide" /></div>
-              <div className="trusted__item"><img src="/Images/logo__1_-removebg-preview 1.png" alt="Auto Logistics slide" /></div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/svg/snap_inc_logo.svg"
+                  alt="Omni Logistics slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/wtf_logo_tm.webp"
+                  alt="GW Tool Group slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/logo-teacher-care.png"
+                  alt="Millhouse slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/techable.png"
+                  alt="Becker Logistics slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/sellmac (2).png"
+                  alt="Tangent design / engineering slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
+              <div className="trusted__item">
+                <ImageCard
+                  src="/Images/logo__1_-removebg-preview 1.png"
+                  alt="Auto Logistics slide"
+                  width={120}
+                  height={120}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -469,23 +548,6 @@ export default async function page() {
         </div>
       </section>
 
-      {/* <section className="get_started_wrapper my-5  text-white lg:py-28 md:py-12 py-12 relative">
-<Image src="/Images/inner-baner-bg.jpg" alt="imner img" className="absolute -z-10" layout="fill" objectFit="cover"/>
-<div className="container">
-    <div className="left-side max-w-[70%]">
-      <div className="w-full ">
-      <h6><span></span>Innovative Idea</h6>
-        <Text
-          tag="h2"
-          className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide"
-        >
-          "Drawing on IT professionals' technical expertise to assess and solve advanced technical problems."
-        </Text>
-      </div>
-    </div>
-  </div>
-</section> */}
-      {/* Contact Section Ends */}
     </main>
   );
 }

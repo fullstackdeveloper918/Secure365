@@ -592,25 +592,55 @@ h2.expert_heading {
 }
 .agencySolution 
  h2.section-title {
-  font-size: 15vw;
+  font-size: 7vw;
   margin: 0 0 40px;
   text-align: left;
-  font-weight: 700 !important;
-  display: flex;
-  flex-direction: column;
-  line-height: 12vw;
   max-width: 100%;
+  margin-right: 0;
+  width: 100%;
+  line-height: 7vw;
+  grid-column: 4/13;
+}
+.section-title .main_heading {
+  max-width: 80rem;
+  color: #000;
 }
 .section-descr {
   color: #0d0e1399;
-  max-width: 50rem;
-  margin: 0px;
+  max-width: 680px;
+  margin: 0;
   font-family: Axiforma;
-  font-size: 20px !important;
-  font-weight: 400 !important;
-  line-height: 36px !important;
-  letter-spacing: -.005em !important;
   text-align: left;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 26px !important;
+  letter-spacing: -.005em !important;
+  grid-column: 4 / 8;
+}
+
+.subheading {
+  display: grid;
+  grid-template-columns: 2fr 5fr 5fr;
+}
+.innovative_sec {
+  display: grid;
+  grid-column-gap: 2.2222222222vw;
+  grid-template-columns: repeat(12, 1fr);
+}
+.innovative_sec span.aboutIcon {
+  grid-column: 2/4;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 4px;
+  font-size: 18px;
+  font-family: poppins;
+  font-weight: 400;
+}
+
+.innovative_sec span.aboutIcon svg.icon {
+  width: 20px;
+  height: 20px;
 }
 .ratingSec {
   display: flex;
