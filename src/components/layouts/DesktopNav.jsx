@@ -12,6 +12,7 @@ import {
 import ListItem from "./ListItem";
 import dynamic from "next/dynamic";
 import ImageCard from "../cards/ImageCard";
+import RevealAnimation from "../RevealAnimation";
 const MotionDiv = dynamic(() => import("@/components/MotionDiv"));
 
 const DesktopNav = () => {
@@ -24,6 +25,9 @@ const DesktopNav = () => {
         );
 
         const result = await response.json();
+
+
+
         setData(result?.menu_items);
       } catch (error) {}
     };
@@ -33,12 +37,13 @@ const DesktopNav = () => {
 
   return (
     <div className="hidden lg:flex items-center w-full md:justify-between w-100 ">
-      <div className="overflow-hidden">
-      <MotionDiv
-        initial={{ opacity: 0, scale: 0.4 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        >
+     
+     <RevealAnimation
+               hidden={{ opacity: 0, y: -100 }}
+               visible={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.5, delay: 0.2 }}
+             >
+
         <Link href="/" className="flex space-x-2">
           <ImageCard
             src="/Images/LOGO-BLACK.png"
@@ -47,23 +52,23 @@ const DesktopNav = () => {
             alt="Secure Logo"
             />
         </Link>
-      </MotionDiv>
-            </div>
+            </RevealAnimation>
+       
 
       <NavigationMenu>
         <NavigationMenuList>
           {data?.map((item, index) => (
-             <MotionDiv
-             initial={{ opacity: 0, y: -50 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.2 *index, delay: 2.4 }}
-           >
+               <RevealAnimation
+               hidden={{ opacity: 0, scale: 0.4 }}
+               visible={{ opacity: 1, scale: 1 }}
+               transition={{ duration: 0.4, delay: 0.4 * 0.3 }}
+             >
             <Link href={`/${item?.slug}`} key={index}>
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className="font-Axiforma"
                   chever={item?.children?.length > 0}
-                >
+                  >
                   {item?.title}
                 </NavigationMenuTrigger>
 
@@ -82,7 +87,8 @@ const DesktopNav = () => {
                 )}
               </NavigationMenuItem>
             </Link>
-            </MotionDiv>
+         
+                </RevealAnimation>
           ))}
         </NavigationMenuList>
       </NavigationMenu>
