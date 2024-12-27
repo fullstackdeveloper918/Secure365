@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import ZoomParallax from "@/components/ZoomParallax/ZoomParallax"
+import ZoomParallax from "@/components/ZoomParallax/ZoomParallax";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -31,8 +31,6 @@ export default async function page() {
   return (
     <main>
       <section className="relative banner_robot bg-black">
-       
-
         <div className="baner_imagesafter">
           <span className="relative">
             <ImageCard
@@ -46,14 +44,9 @@ export default async function page() {
         <Hero />
       </section>
 
-
-
-
-
-
       {/* high_rated */}
 
-<section className="page-section agencySolution bg-no-repeat" id="about">
+      <section className="page-section agencySolution bg-no-repeat" id="about">
         <div className="container position-relative">
           <div className="row mb-70 mb-sm-50">
             <div className="innovative_sec">
@@ -65,9 +58,11 @@ export default async function page() {
                 >
                   <h2 className="section-title mb-40 mb-xs-30">
                     <div className="main_heading">
-                    Immersive 
-                    <p className="secure365">Secure <span>365</span></p> 
-                    <p className="Portfolio">Portfolio</p>
+                      Immersive
+                      <p className="secure365">
+                        Secure <span>365</span>
+                      </p>
+                      <p className="Portfolio">Portfolio</p>
                     </div>
                   </h2>
                 </RevealAnimation>
@@ -113,7 +108,8 @@ export default async function page() {
         </div>
       </section>
 
-      <ZoomParallax />
+      {/* <ZoomParallax /> */}
+
       <section className="2xl:py-18 xl:py-24 py-20 protection_section   key_serices">
         <div className="container">
           <Text tag="h2" className="mb-3">
@@ -124,8 +120,8 @@ export default async function page() {
               data?.home_key_service_data.map((item, index) => (
                 <>
                   <RevealAnimation
-                    hidden={{ opacity: 0, scale: 0.4 }}
-                    visible={{ opacity: 1, scale: 1 }}
+                    hidden={{ opacity: 0, y: 250 }}
+                    visible={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 * index }}
                   >
                     <div className="keyColumns" key={index}>
@@ -153,11 +149,9 @@ export default async function page() {
       </section>
       {/* Key Services Section Ends */}
 
-
-      <section className="get_started_wrapper  text-white bg-black lg:pb-16 md:pb-12 pb-12 relative md:pt-0 pt-6" >
+      <section className="get_started_wrapper  text-white bg-black lg:pb-16 md:pb-12 pb-12 relative md:pt-0 pt-6">
         <div className="container">
           <div className="flexLayout">
-
             <div className="left-side">
               <div className=" ">
                 <Text
@@ -165,13 +159,13 @@ export default async function page() {
                   className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide"
                 >
                   {data?.website_experience_heading_second}
-                   <span className="text_blue ml-2">Security with cutting-edge</span> cybersecurity solutions
+                  <span className="text_blue ml-2">
+                    Security with cutting-edge
+                  </span>{" "}
+                  cybersecurity solutions
                 </Text>
 
-                <Text
-                  tag="p"
-                  className=" font-Axiforma leftSide"
-                >
+                <Text tag="p" className=" font-Axiforma leftSide">
                   {/* {data?.website_experience_paragraph_second} */}
                   At Secure365, we understand that navigating the digital world
                   can be overwhelming. That’s why we’ve designed our services to
@@ -190,6 +184,35 @@ export default async function page() {
                 <span className="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
               </a>
             </div> */}
+              </div>
+            </div>
+
+            <div class="features-section">
+              <div class="feature-card">
+                <div class="line"></div>
+                <h3>Networking</h3>
+                <p>Dead simple setup. High-performance connectivity.</p>
+                <a href="#" class="learn-more">
+                  Learn More
+                </a>
+              </div>
+
+              <div class="feature-card">
+                <div class="line"></div>
+                <h3>Security</h3>
+                <p>Transform enterprise security. Granular policy controls.</p>
+                <a href="#" class="learn-more">
+                  Learn More
+                </a>
+              </div>
+
+              <div class="feature-card">
+                <div class="line"></div>
+                <h3>DevOps</h3>
+                <p>One-click infra access. Never expose private networks.</p>
+                <a href="#" class="learn-more">
+                  Learn More
+                </a>
               </div>
             </div>
 
@@ -224,7 +247,6 @@ export default async function page() {
                   <ImageCard
                     src="/svg/secure_png.svg"
                     className=" min-h-full heightMention"
-                  
                     width={800}
                     height={600}
                     objectFit="cover"
@@ -234,20 +256,15 @@ export default async function page() {
               </div>
             </div>
 
-        
-
             {/* <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
               
             </Button> */}
           </div>
-{/* 
+          {/* 
           <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
             {data?.website_experience_button_second}
           </Button> */}
-
-          
         </div>
-
       </section>
 
       <section className="introduction-wrapper 2xl:py-32 xl:py-22 md:py-20 py-12  relative ">
@@ -341,8 +358,8 @@ export default async function page() {
               {/* <h6 className="text_blue">FAQ</h6> */}
               <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
                 <RevealAnimation
-                  hidden={{ opacity: 0, x: -250 }}
-                  visible={{ opacity: 1, x: 0 }}
+                  hidden={{ opacity: 0, y: 250 }}
+                  visible={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 >
                   <Text tag="h2" className="heading_h2 capitalize ">
@@ -354,8 +371,8 @@ export default async function page() {
                 </RevealAnimation>
               </Suspense>
               <RevealAnimation
-                hidden={{ opacity: 0, x: -250 }}
-                visible={{ opacity: 1, x: 0 }}
+                hidden={{ opacity: 0, y: 250 }}
+                visible={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
               >
                 <Suspense fallback={<p>Loading...</p>}>
@@ -372,8 +389,8 @@ export default async function page() {
             </div>
             <div className="text-center  h-full w-full ">
               <RevealAnimation
-                hidden={{ opacity: 0, scale: 0.3 }}
-                visible={{ opacity: 1, scale: 1 }}
+                hidden={{ opacity: 0, y: 250, scale: 0 }}
+                visible={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1.2, delay: 1.3 }}
               >
                 <Image
@@ -394,7 +411,7 @@ export default async function page() {
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
             <RevealAnimation
-              hidden={{ opacity: 0, y: -200 }}
+              hidden={{ opacity: 0, y: 250 }}
               visible={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5 }}
             >
@@ -412,8 +429,8 @@ export default async function page() {
             <div className="left_images">
               <Suspense fallback={<p>Loading...</p>}>
                 <RevealAnimation
-                  hidden={{ opacity: 0, x: -300 }}
-                  visible={{ opacity: 1, x: 0 }}
+                  hidden={{ opacity: 0, y: 250 }}
+                  visible={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 0.8 }}
                 >
                   <ImageCard
@@ -431,34 +448,34 @@ export default async function page() {
                   <Suspense fallback={<p>Loading...</p>}>
                     <React.Fragment key={index}>
                       <div className="numberWrapper">
-                      <RevealAnimation
-                  hidden={{ opacity: 0, y: -400 }}
-                  visible={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.3 *index }}
-                >
-                        <Text tag="span" className="font-Axiforma">
-                          0{index + 1}
-                        </Text>
+                        <RevealAnimation
+                          hidden={{ opacity: 0, y: 250 }}
+                          visible={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 1, delay: 0.3 * index }}
+                        >
+                          <Text tag="span" className="font-Axiforma">
+                            0{index + 1}
+                          </Text>
                         </RevealAnimation>
                         <div>
-                        <RevealAnimation
-                  hidden={{ opacity: 0, x: 400 }}
-                  visible={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, delay: 0.3 *index }}
-                >
-                          <Text tag="h4" className="font-Axiforma">
-                            {item?.home_page_our_promise_title}
-                          </Text>
-                        </RevealAnimation>
-                        <RevealAnimation
-                  hidden={{ opacity: 0, x: 400 }}
-                  visible={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1, delay: 0.3 *index }}
-                  >
-                          <Text tag="p" className>
-                            {item?.home_page_our_promise_servise_paragraph}
-                          </Text>
-                  </RevealAnimation>
+                          <RevealAnimation
+                            hidden={{ opacity: 0, y: 250 }}
+                            visible={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.3 * index }}
+                          >
+                            <Text tag="h4" className="font-Axiforma">
+                              {item?.home_page_our_promise_title}
+                            </Text>
+                          </RevealAnimation>
+                          <RevealAnimation
+                            hidden={{ opacity: 0, y: 250 }}
+                            visible={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.3 * index }}
+                          >
+                            <Text tag="p" className>
+                              {item?.home_page_our_promise_servise_paragraph}
+                            </Text>
+                          </RevealAnimation>
                         </div>
                       </div>
                     </React.Fragment>
@@ -482,10 +499,6 @@ export default async function page() {
 
       {/* Our Promise Section Ends */}
 
-
-            
-
-
       {/* Top Skilled Experts Section Starts */}
       {/* <Categories data={data} /> */}
       {/* Top Skilled Experts Section Ends */}
@@ -505,16 +518,31 @@ export default async function page() {
                   <Image src="/svg/strar_stroke.svg" width={20} height={20} />
                 </span>
                 <span>Read All Articles</span>
-                <span className="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
+                <span className="arrow">
+                  <Image src="/svg/down_load.svg" width={20} height={20} />
+                </span>
               </a>
             </div>
           </div>
           <div className="blog-grid">
             <div className="blog-card">
-              <Image src="/Images/blog_One.webp" width={300} height={300} alt="Blog Image 1" className="blog-image" />
+              <Image
+                src="/Images/blog_One.webp"
+                width={300}
+                height={300}
+                alt="Blog Image 1"
+                className="blog-image"
+              />
               <div className="blog-content">
-                <h3 className="blog-title">Content Marketing Steps That Will Help You to Grow Your Business</h3>
-                <p className="blog-description">The macro-environment, over which a firm holds little control, consists of a variety of external factors that manifest on a large scale.</p>
+                <h3 className="blog-title">
+                  Content Marketing Steps That Will Help You to Grow Your
+                  Business
+                </h3>
+                <p className="blog-description">
+                  The macro-environment, over which a firm holds little control,
+                  consists of a variety of external factors that manifest on a
+                  large scale.
+                </p>
                 <div className="blog-meta">
                   <span>February 13, 2022</span>
                   <span className="category">Articles</span>
@@ -522,11 +550,23 @@ export default async function page() {
               </div>
             </div>
             <div className="blog-card">
-              <Image src="/Images/blog_Two.png" width={300} height={300} alt="Blog Image 1" className="blog-image" />
+              <Image
+                src="/Images/blog_Two.png"
+                width={300}
+                height={300}
+                alt="Blog Image 1"
+                className="blog-image"
+              />
 
               <div className="blog-content">
-                <h3 className="blog-title">Top Five Trends for Small Investment Companies Marketing</h3>
-                <p className="blog-description">The micro-environment, over which a firm holds greater control, typically includes Employees, Suppliers, and the Media.</p>
+                <h3 className="blog-title">
+                  Top Five Trends for Small Investment Companies Marketing
+                </h3>
+                <p className="blog-description">
+                  The micro-environment, over which a firm holds greater
+                  control, typically includes Employees, Suppliers, and the
+                  Media.
+                </p>
                 <div className="blog-meta">
                   <span>February 11, 2023</span>
                   <span className="category">Tutorials</span>
@@ -540,15 +580,32 @@ export default async function page() {
       {/* blog_section end*/}
       <section className="home__trusted">
         <div className="container-1440 trusted__container">
-          <div className="trsutHeader"><span className="aboutIcon">
-                <svg data-v-669b4a84="" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon"><path data-v-669b4a84="" d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z" fill="currentColor" width={20} height={20}></path></svg>
-                Trusted Clients
-                </span>
-               
+          <div className="trsutHeader">
+            <span className="aboutIcon">
+              <svg
+                data-v-669b4a84=""
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="icon"
+              >
+                <path
+                  data-v-669b4a84=""
+                  d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"
+                  fill="currentColor"
+                  width={20}
+                  height={20}
+                ></path>
+              </svg>
+              Trusted Clients
+            </span>
 
-                <h2>Trusted by <span>1000+</span> Global Companies across all industries</h2>
-                </div>
-      
+            <h2>
+              Trusted by <span>1000+</span> Global Companies across all
+              industries
+            </h2>
+          </div>
+
           <div className="trusted__items-wrapper">
             
             <div aria-hidden="true" className="trusted__items marquee">
@@ -670,7 +727,6 @@ export default async function page() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }

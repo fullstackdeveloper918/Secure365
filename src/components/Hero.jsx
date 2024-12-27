@@ -17,7 +17,7 @@ export default async function Hero() {
   return (
     <>
       <div className="relative herobanner container ">
-        <RevealAnimation>
+     
           <div className="flex flex-col gap-y-4 justify-center  md:text-left items-baseline ">
             <Suspense fallback={<p>Loading Heading...</p>}>
             <RevealAnimation
@@ -79,7 +79,7 @@ export default async function Hero() {
                 </RevealAnimation>
             </div> */}
           </div>
-        </RevealAnimation>
+       
         <div className="flex items-center justify-center rightbanner">
           <Suspense fallback={<p>Loading...</p>}>
             <ImageCard

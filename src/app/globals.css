@@ -218,6 +218,7 @@ span.aboutIcon svg.icon {
   font-size: 6vw;
   font-weight: 700 !important;
   line-height: 6vw;
+  line-height: 6vw;
 }
 /* 
 .main_projectSec>div {
@@ -295,6 +296,9 @@ span.aboutIcon svg.icon {
 .promise_sec>div>div {
   width: 100% !important;
 }
+.promise_sec>div>div {
+  width: 100% !important;
+}
 .banner_heading {
   font-size: 6vw;
   display: block;
@@ -304,7 +308,9 @@ span.aboutIcon svg.icon {
 
 h1 span.banner_heading_medium {
   font-size: 4vw;
+  font-size: 4vw;
   display: block;
+  line-height: 6vw;
   line-height: 6vw;
 }
 
@@ -375,14 +381,19 @@ h2.expert_heading {
 .keyColumns:hover {
   /* box-shadow: 0 4px 40px #3eadeb1c; */
   /* transform: scale(1.01); */
+  /* box-shadow: 0 4px 40px #3eadeb1c; */
+  /* transform: scale(1.01); */
 }
 .keyColumns h3 {
+  font-size: 20px;
+  line-height: 30px;
   font-size: 20px;
   line-height: 30px;
   font-family: AxiformaMono;
   color: #fff;
   margin: 10px 0 20px;
   font-weight: 500;
+  max-width: 13rem;
   max-width: 13rem;
 }
 
@@ -429,6 +440,8 @@ h2.expert_heading {
 
 .get_started_wrapper h2 {
   margin-top: 20px;
+  font-size: 4vw;
+  line-height: 5vw;
   font-size: 4vw;
   line-height: 5vw;
 }
@@ -571,6 +584,13 @@ h2.expert_heading {
     line-height: 2.6vw;
     font-weight: 300;
 }
+.herobanner 
+ p {
+    font-size: 1.5vw;
+    color: #ffffffd6;
+    line-height: 2.6vw;
+    font-weight: 300;
+}
 .bg-line-1 {
   position: absolute;
   top: 0;
@@ -605,6 +625,7 @@ h2.expert_heading {
 .agencySolution 
  h2.section-title {
   font-size: 9vw;
+  font-size: 6vw;
   margin: 0 0 40px;
   text-align: left;
   max-width: 100%;
@@ -628,6 +649,25 @@ h2.expert_heading {
 .section-title .main_heading {
   max-width: 80rem;
   color: #000;
+  margin-right: 0;
+  width: 100%;
+  line-height: 6vw;
+}
+.section-title .main_heading p.secure365 {
+  font-size: 9vw;
+  line-height: 9vw;
+}
+
+.section-title .main_heading p.Portfolio {
+  font-size: 9vw;
+  line-height: 9vw;
+}
+.secureheader{
+  grid-column: 4/13;
+}
+.section-title .main_heading {
+  max-width: 80rem;
+  color: #000;
 }
 .section-descr {
   color: #0d0e1399;
@@ -636,9 +676,41 @@ h2.expert_heading {
   font-family: Axiforma;
   text-align: left;
   font-size: 15px !important;
+  text-align: left;
+  font-size: 15px !important;
   font-weight: 400 !important;
   line-height: 26px !important;
+  line-height: 26px !important;
   letter-spacing: -.005em !important;
+
+}
+.secWrapper{
+  grid-column: 4 / 8;
+}
+
+.subheading {
+  display: grid;
+  grid-template-columns: 2fr 5fr 5fr;
+}
+.innovative_sec {
+  display: grid;
+  grid-column-gap: 2.2222222222vw;
+  grid-template-columns: repeat(12, 1fr);
+}
+.innovative_sec span.aboutIcon {
+  grid-column: 2/4;
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 4px;
+  font-size: 18px;
+  font-family: poppins;
+  font-weight: 400;
+}
+
+.innovative_sec span.aboutIcon svg.icon {
+  width: 20px;
+  height: 20px;
 
 }
 .secWrapper{
@@ -1064,6 +1136,7 @@ section.promise_sec {
   border-radius: 30px;
   margin: 0px auto 70px;
   overflow: hidden;
+  overflow: hidden;
 }
 section.promise_sec h2 {
   color: #fff;
@@ -1087,8 +1160,80 @@ section.promise_sec h2 {
 
 /* feature_sec */
 /* body {
+/* feature_sec */
+/* body {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0A0B1D; 
+  color: #FFFFFF;
+} */
+
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 0px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  position: relative;
+  padding: 30px 20px 30px 30px;
+  background-color: #0c0c0c;
+  border-left: 2px solid #00e8ff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'AxiformaMono';
+}
+
+.feature-card .dropdown {
+  font-size: 14px;
+  color: #52c5ff;
+  font-family: 'AxiformaMono';
+}
+
+.feature-card p {
+  font-size: 14px;
+  margin: 0 0 10px;
+  font-family: 'AxiformaMono';
+  line-height: 26px;
+  color: #ddd;
+}
+
+.feature-card .learn-more {
+  font-size: 14px;
+  color: #52c5ff;
+  text-decoration: none;
+  font-family: AxiformaMono;
+}
+
+.feature-card .learn-more:hover {
+  text-decoration: underline;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #52c5ff;
+}
+/* feature_sec */
+/* /17-12-24 */
+/* blog_section */
+/* General styling */
   font-family: Arial, sans-serif;
   background-color: #0A0B1D; 
   color: #FFFFFF;
