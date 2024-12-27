@@ -47,14 +47,14 @@ const Footer = () => {
   
   return (
     <>
-      <footer className="relative text-white pt-10 bg-[#181b23]">
+      <footer className="relative text-white pt-10 bg-[#101010]">
 
         <div className="container">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 margin_bottom lg:justify-between md:justify-start pb-12 mt-5 px-3 ">
             <div className="flex flex-col gap-5">
               <Link href="/" className="flex space-x-2">
                 <ImageCard
-                  src="/Images/secure_white.png"
+                  src="/Images/LOGO-WHITE.png"
                   width={200}
                   height={30}
                   alt="Secure Logo"
