@@ -12,7 +12,7 @@ import Text from '../Text'
 
 
 const CategoryCard= async ({ category }) => {
-  
+  console.log(category, 'category')
 
 
   return (
@@ -126,10 +126,10 @@ const CategoryCard= async ({ category }) => {
                 </Text>
                 }
               </ul> */}
-        <h3 className='2xl:text-2xl text-lg font-Axiforma font-semibold mb-0'>Daxton Atlas</h3>
-        <p className='2xl:text-lg text-md text-[#3d3d3d] mt-0'>System Manager</p>
+        <h3 className=' text-md font-Axiforma font-semibold mb-0'>{category?.top_skilled_experts_name}</h3>
+        <p className=' text-sm text-[#3d3d3d] mt-0'>System Manager</p>
           <CardDescription className='group-hover:text-white'>
-           {category.products}
+           {category?.products}
           </CardDescription>
         </CardContent>
       </Card>
