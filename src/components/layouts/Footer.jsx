@@ -48,13 +48,7 @@ const Footer = () => {
   return (
     <>
       <footer className="relative text-white pt-10 bg-[#181b23]">
-        <ImageCard
-          className="absolute -z-10 w-full"
-          src="/Images/footer_bg_new.png"
-          layout="fill"
-          alt="footer image"
-          objectFit="cover"
-        />
+
         <div className="container">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 margin_bottom lg:justify-between md:justify-start pb-12 mt-5 px-3 ">
             <div className="flex flex-col gap-5">

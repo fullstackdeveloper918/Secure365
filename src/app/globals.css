@@ -71,9 +71,9 @@
   }
 }
 
-/* h1, h2, h3, h4, h5, li, a, span, p{
+h1, h2, h3, h4, h5, li, a, span, p{
   font-family: 'Axiforma';
-} */
+}
 .text-primary {
   color: #434242;
 }
@@ -219,31 +219,7 @@ span.aboutIcon svg.icon {
   font-weight: 700 !important;
   line-height: 6vw;
 }
-/* 
-.main_projectSec>div {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
 
-.video-image-leftbox .banner-image.bottomOne {
-  position: relative;
-  right: -40px;
-}
-
-.video-image-right .banner-image.bottomOne {
-  left: -70px;
-  position: relative;
-}
-
-.main_projectSec>div .banner-image img, .main_projectSec>div .banner-image video {
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-.main_projectSec .video-image-middlebox img {
-  width: 100%;
-} */
 .SerivesProvided {
   height: 100vh;
   display: flex;
@@ -256,7 +232,6 @@ span.aboutIcon svg.icon {
   font-size: 4vw;
   font-weight: 600 !important;
 }
-/* .main_projectSec end */
 
 .column_hover:hover {
   border: 1px solid rgba(37, 99, 235, 0.2);
@@ -303,9 +278,9 @@ span.aboutIcon svg.icon {
 }
 
 h1 span.banner_heading_medium {
-  font-size: 4vw;
+  font-size: 4vw !important;
   display: block;
-  line-height: 6vw;
+  line-height: 6vw !important;
 }
 
 h2 {
@@ -603,22 +578,22 @@ h2.expert_heading {
 }
 .agencySolution 
  h2.section-title {
-  font-size: 6vw;
+  font-size: 9vw;
   margin: 0 0 40px;
   text-align: left;
   max-width: 100%;
   margin-right: 0;
   width: 100%;
-  line-height: 6vw;
+  line-height: 9vw;
 }
 .section-title .main_heading p.secure365 {
-  font-size: 9vw;
-  line-height: 9vw;
+  font-size: 9vw !important;
+  line-height: 9vw !important;
 }
 
 .section-title .main_heading p.Portfolio {
-  font-size: 9vw;
-  line-height: 9vw;
+  font-size: 9vw !important;
+  line-height: 9vw !important;
 }
 .secureheader{
   grid-column: 4/13;
@@ -1680,13 +1655,7 @@ li.accordianList {
   .min_height {
     min-height: calc(100vh - 60px);
   }
-  h1 span.banner_heading_medium {
-    font-size: 40px;
-  }
-  .banner_heading {
-    font-size: 75px;
-    line-height: 77px !important;
-  }
+
   h2, .protection_section h2 {
     font-size: 40px;
     line-height: 50px;
@@ -1729,15 +1698,8 @@ li.accordianList {
 }
 @media screen and (max-width: 1366px) {
 
-  .banner_heading {
-    font-size: 65px;
-    line-height: 4.5rem !important;
-  }
   .left_rightContent .left_images img {
     border-radius: 20px;
-  }
-  h1 span.banner_heading_medium {
-    font-size: 35px;
   }
 
   .banner_absolute {
@@ -1770,11 +1732,6 @@ li.accordianList {
   }
   .font_14 {
     font-size: 14px !important;
-  }
-  .banner_heading {
-    font-size: 55px;
-    line-height: 4rem !important;
-    max-width: 100%;
   }
   .banner_rotate {
     max-width: 70%;
@@ -1891,6 +1848,9 @@ li.accordianList {
     font-size: 18px;
     line-height: 25px;
 }
+.secWrapper {
+  grid-column: 4 / 12;
+}
 }
 @media (max-width: 1100px) {
   .baner_imagesafter img {
@@ -1922,9 +1882,6 @@ li.accordianList {
   .container {
     padding-left: 15px;
     padding-right: 15px;
-  }
-  h1.banner_heading {
-    font-size: 50px !important;
   }
   .maxWidthGiver {
     max-width: 100%;
@@ -1964,10 +1921,7 @@ li.accordianList {
   .banner_absolute {
     max-width: 350px;
   }
-  h1.banner_heading {
-    font-size: 45px !important;
-    line-height: 3.5rem !important;
-  }
+
   .min_height p {
     font-size: 18px !important;
   }
@@ -2138,9 +2092,6 @@ li.accordianList {
 }
 }
 @media screen and (max-width: 675px) {
-  /* .banner_heading {
-    line-height: 2rem !important;
-} */
 .aboutwraper {
   gap: 10px;
 }
@@ -2158,13 +2109,6 @@ li.accordianList {
     line-height: 36px;
   }
 
-  h1 span.banner_heading_medium {
-    font-size: 26px;
-  }
-  h1.banner_heading {
-    font-size: 40px !important;
-    line-height: 46px !important;
-  }
   .promise_header {
     margin: 0 0 20px;
     flex-wrap: wrap;
@@ -2256,11 +2200,6 @@ li.accordianList {
   }
   .banner_absolute {
     max-width: 80%;
-  }
-  h1.banner_heading {
-    font-size: 35px !important;
-    line-height: 40px !important;
-    max-width: 100% !important;
   }
 
   img.approve_img {

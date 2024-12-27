@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import Lenis from '@studio-freight/lenis'
+
 
 const RevealAnimation = ({hidden, visible,transition, children }) => {
   const ref = useRef(null);
@@ -10,12 +10,7 @@ const RevealAnimation = ({hidden, visible,transition, children }) => {
   const mainControls = useAnimation();
 
   useEffect(() => {
-    const lenis = new Lenis()
-
-    const raf = (time) => {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+    
     if (isInView) {
       console.log(isInView, "isInView");
       mainControls.start("visible");

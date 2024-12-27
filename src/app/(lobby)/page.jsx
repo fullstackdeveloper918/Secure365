@@ -8,13 +8,11 @@ import Link from "next/link";
 import Image from "next/image";
 import TrustedSection from "@/components/logo_slider/TrustedSection";
 import RevealAnimation from "@/components/RevealAnimation";
-// import ZoomTextOnScroll from "@/components/ZoomService/ZoomServices";
 const MotionDiv = dynamic(() => import("../../components/MotionDiv"));
 
 const Products = dynamic(() => import("../../components/Products"));
 const Hero = dynamic(() => import("../../components/Hero"));
 const ImageCard = dynamic(() => import("../../components/cards/ImageCard"));
-// const Categories = dynamic(() => import("../../components/Categories"));
 const Text = dynamic(() => import("../../components/Text"));
 
 export default async function page() {
@@ -43,8 +41,6 @@ export default async function page() {
         </div>
         <Hero />
       </section>
-
-      {/* high_rated */}
 
       <section className="page-section agencySolution bg-no-repeat" id="about">
         <div className="container position-relative">
@@ -108,8 +104,6 @@ export default async function page() {
         </div>
       </section>
 
-      {/* <ZoomParallax /> */}
-
       <section className="2xl:py-18 xl:py-24 py-20 protection_section   key_serices">
         <div className="container">
           <Text tag="h2" className="mb-3">
@@ -147,7 +141,6 @@ export default async function page() {
           </div>
         </div>
       </section>
-      {/* Key Services Section Ends */}
 
       <section className="get_started_wrapper  text-white bg-black lg:pb-16 md:pb-12 pb-12 relative md:pt-0 pt-6">
         <div className="container">
@@ -166,51 +159,39 @@ export default async function page() {
                 </Text>
 
                 <Text tag="p" className=" font-Axiforma leftSide">
-                  {/* {data?.website_experience_paragraph_second} */}
                   At Secure365, we understand that navigating the digital world
                   can be overwhelming. That’s why we’ve designed our services to
                   be a one-stop solution, covering everything from cloud
                   management and IT support to marketing and cybersecurity.
                 </Text>
-                {/* <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg::block hidden mobileHiden">
-                  
-                </Button> */}
-                {/* <div className="local-scroll">
-              <a href="#" className="read-all-btn  btn">
-                <span className="startIcon">
-                  <Image src="/svg/strar_stroke.svg" width={20} height={20} />
-                </span>
-                <span>{data?.website_experience_button_second}</span>
-                <span className="arrow"><Image src="/svg/down_load.svg" width={20} height={20} /></span>
-              </a>
-            </div> */}
+               
               </div>
             </div>
 
-            <div class="features-section">
-              <div class="feature-card">
-                <div class="line"></div>
+            <div className="features-section">
+              <div className="feature-card">
+                <div className="line"></div>
                 <h3>Networking</h3>
                 <p>Dead simple setup. High-performance connectivity.</p>
-                <a href="#" class="learn-more">
+                <a href="#" className="learn-more">
                   Learn More
                 </a>
               </div>
 
-              <div class="feature-card">
-                <div class="line"></div>
+              <div className="feature-card">
+                <div className="line"></div>
                 <h3>Security</h3>
                 <p>Transform enterprise security. Granular policy controls.</p>
-                <a href="#" class="learn-more">
+                <a href="#" className="learn-more">
                   Learn More
                 </a>
               </div>
 
-              <div class="feature-card">
-                <div class="line"></div>
+              <div className="feature-card">
+                <div className="line"></div>
                 <h3>DevOps</h3>
                 <p>One-click infra access. Never expose private networks.</p>
-                <a href="#" class="learn-more">
+                <a href="#" className="learn-more">
                   Learn More
                 </a>
               </div>
@@ -231,14 +212,9 @@ export default async function page() {
               </div>
             </div>
 
-            {/* <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
-              
-            </Button> */}
+        
           </div>
-          {/* 
-          <Button className="btn_one global_btn capitalize mt-10  font-Axiforma lg:hidden block">
-            {data?.website_experience_button_second}
-          </Button> */}
+         
         </div>
       </section>
 
@@ -322,14 +298,10 @@ export default async function page() {
         </div>
       </section>
 
-      {/* Ensure Your Website Section Ends */}
-
-      {/* What Makes us Different Section Starts */}
       <section className="make_us_different relative">
         <div className="container">
           <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between md:gap-6 gap-10">
             <div className="contentMake">
-              {/* <h6 className="text_blue">FAQ</h6> */}
               <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
                 <RevealAnimation
                   hidden={{ opacity: 0, y: 250 }}
@@ -379,8 +351,6 @@ export default async function page() {
           </div>
         </div>
       </section>
-
-      {/* Our Promise Section Starts */}
       <section className="promise_sec">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
@@ -446,7 +416,7 @@ export default async function page() {
                             visible={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.3 * index }}
                           >
-                            <Text tag="p" className>
+                            <Text tag="p">
                               {item?.home_page_our_promise_servise_paragraph}
                             </Text>
                           </RevealAnimation>
@@ -471,13 +441,7 @@ export default async function page() {
         </div>
       </section>
 
-      {/* Our Promise Section Ends */}
 
-      {/* Top Skilled Experts Section Starts */}
-      {/* <Categories data={data} /> */}
-      {/* Top Skilled Experts Section Ends */}
-
-      {/* blog_section */}
       <section id="our-blog" className="our-blog-section">
         <div className="blogSection container">
           <div className="blog-header">
@@ -551,7 +515,7 @@ export default async function page() {
         </div>
       </section>
 
-      {/* blog_section end*/}
+
       <section className="home__trusted">
         <div className="container-1440 trusted__container">
           <div className="trsutHeader">
@@ -631,61 +595,11 @@ export default async function page() {
                 />
               </div>
             </div>
-            {/* <div aria-hidden="true" className="trusted__items marquee">
-              <div className="trusted__item">
-                <ImageCard
-                  src="/svg/snap_inc_logo.svg"
-                  alt="Omni Logistics slide"
-                  width={120}
-                  height={120}
-                />
-              </div>
-              <div className="trusted__item">
-                <ImageCard
-                  src="/Images/wtf_logo_tm.webp"
-                  alt="GW Tool Group slide"
-                  width={120}
-                  height={120}
-                />
-              </div>
-              <div className="trusted__item">
-                <ImageCard
-                  src="/Images/logo-teacher-care.png"
-                  alt="Millhouse slide"
-                  width={120}
-                  height={120}
-                />
-              </div>
-              <div className="trusted__item">
-                <ImageCard
-                  src="/Images/techable.png"
-                  alt="Becker Logistics slide"
-                  width={120}
-                  height={120}
-                />
-              </div>
-              <div className="trusted__item">
-                <ImageCard
-                  src="/Images/sellmac (2).png"
-                  alt="Tangent design / engineering slide"
-                  width={120}
-                  height={120}
-                />
-              </div>
-              <div className="trusted__item">
-                <ImageCard
-                  src="/Images/logo__1_-removebg-preview 1.png"
-                  alt="Auto Logistics slide"
-                  width={120}
-                  height={120}
-                />
-              </div>
-            </div> */}
+           
           </div>
         </div>
       </section>
 
-      {/* Contact Section Starts */}
       <section className="lookingService xl:mt-0">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>

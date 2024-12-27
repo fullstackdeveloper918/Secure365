@@ -1,8 +1,7 @@
-import Link from "next/link";
+
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import RevealAnimation from "./RevealAnimation";
-const MotionDiv = dynamic(() => import("@/components/MotionDiv"));
 const Text = dynamic(() => import("@/components/Text"));
 const ImageCard = dynamic(() => import("@/components/cards/ImageCard"));
 export default async function Hero() {
@@ -51,33 +50,6 @@ export default async function Hero() {
               </Text>
                 </RevealAnimation>
             </Suspense>
-            
-            {/* <div className="flex flex-wrap   text-white gap-4 mt-5">
-            <RevealAnimation
-                  hidden={{ opacity: 0, scale: 0.2}}
-                  visible={{ opacity: 1, scale: 1}}
-                  transition={{ duration: 0.3, delay: 1 }}
-                >
-              <Link
-                href="/contact-us"
-                className="btn_one global_btn capitalize font-Axiforma"
-                >
-                {data?.pages?.banner_data?.get_started}
-              </Link>
-                </RevealAnimation>
-                <RevealAnimation
-                  hidden={{ opacity: 0, scale: 0.2}}
-                  visible={{ opacity: 1, scale: 1}}
-                  transition={{ duration: 0.6, delay: 1.5 }}
-                >
-              <Link
-                href="/contact-us"
-                className="global_btn btn_two capitalize font-Axiforma"
-                >
-                {data?.pages?.banner_data?.book_demo}
-              </Link>
-                </RevealAnimation>
-            </div> */}
           </div>
        
         <div className="flex items-center justify-center rightbanner">
