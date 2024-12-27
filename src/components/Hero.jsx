@@ -16,42 +16,64 @@ export default async function Hero() {
   return (
     <>
       <div className="relative herobanner container ">
-     
-          <div className="flex flex-col gap-y-4 justify-center  md:text-left items-baseline ">
-            <Suspense fallback={<p>Loading Heading...</p>}>
-            <RevealAnimation
-                  hidden={{ opacity: 0, y: 250 }}
+
+        <div className="flex flex-col gap-y-4 justify-center  md:text-left items-baseline ">
+          <Suspense fallback={<p>Loading Heading...</p>}>
+
+            <Text tag="h1" className="banner_heading font-Axiforma">
+              <div className="overflow-hidden">
+
+                <RevealAnimation
+                  hidden={{ opacity: 0, y: 100 }}
                   visible={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 1 }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
                 >
-              <Text tag="h1" className="banner_heading font-Axiforma">
-                <span className="banner_heading_medium">
-                  {data?.pages?.banner_data?.banner_heading}
-                </span>
-                <span className="mr-3">
-                  {data?.pages?.banner_data?.banner_heading_second}
-                </span>
-                <br></br>
-                <span className="text_blue">
-                  {data?.pages?.banner_data?.banner_heading_third}
-                </span>
-              </Text>
+
+                  <span className="banner_heading_medium">
+                    {data?.pages?.banner_data?.banner_heading}
+                  </span>
+              
+
+                
+                  <span className="mr-3">
+                    {data?.pages?.banner_data?.banner_heading_second}
+                  </span>
                   </RevealAnimation>
-                  <RevealAnimation
-                  hidden={{ opacity: 0, y: 250 }}
-                  visible={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.3, delay: 1 }}
+              </div>
+             
+                
+              {/* <br></br> */}
+              <div className="overflow-hidden">
+
+                <RevealAnimation
+                  hidden={{ opacity: 0, scale: 0 }}
+                  visible={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1.3, delay: 1.5 }}
                 >
-              <Text
-                tag="p"
-                className=" font-Axiforma"
-                >
-                {data?.pages?.banner_data?.banner_sub_headline}
-              </Text>
+
+                  <span className="text_blue">
+                    {data?.pages?.banner_data?.banner_heading_third}
+                  </span>
                 </RevealAnimation>
-            </Suspense>
-          </div>
-       
+              </div>
+            </Text>
+            <RevealAnimation
+                  hidden={{ opacity: 0, y: -200 }}
+                  visible={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.8 }}
+                >
+
+            <Text
+              tag="p"
+              className=" font-Axiforma"
+            >
+              {data?.pages?.banner_data?.banner_sub_headline}
+            </Text>
+            </RevealAnimation>
+
+          </Suspense>
+        </div>
+
         <div className="flex items-center justify-center rightbanner">
           <Suspense fallback={<p>Loading...</p>}>
             <ImageCard

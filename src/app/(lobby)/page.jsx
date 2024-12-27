@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import TrustedSection from "@/components/logo_slider/TrustedSection";
 import RevealAnimation from "@/components/RevealAnimation";
+import Essential from "@/components/Essential";
 const MotionDiv = dynamic(() => import("../../components/MotionDiv"));
 
 const Products = dynamic(() => import("../../components/Products"));
@@ -47,22 +48,48 @@ export default async function page() {
           <div className="row mb-70 mb-sm-50">
             <div className="innovative_sec">
               <div className="secureheader">
-                <RevealAnimation
-                  hidden={{ opacity: 0, y: 250 }}
-                  visible={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                >
-                  <h2 className="section-title mb-40 mb-xs-30">
-                    <div className="main_heading">
-                      Immersive
+                <h2 className="section-title mb-40 mb-xs-30">
+                  <div className="main_heading">
+                    <div className="overflow-hidden">
+
+                    <RevealAnimation
+                      hidden={{ opacity: 0, y: 100 }}
+                      visible={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      >
+                      <b>Immersive</b>
+                    </RevealAnimation>
+                    </div>
+                    <div className="overflow-hidden">
+                    <RevealAnimation
+                      hidden={{ opacity: 0, y: 200 }}
+                      visible={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      >
                       <p className="secure365">
                         Secure <span>365</span>
                       </p>
-                      <p className="Portfolio">Portfolio</p>
+                    </RevealAnimation>
                     </div>
-                  </h2>
-                </RevealAnimation>
+                    <div className="overflow-hidden">
+                    <RevealAnimation
+                      hidden={{ opacity: 0, y: 300 }}
+                      visible={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                    >
+                      <p className="Portfolio">Portfolio</p>
+                    </RevealAnimation>
+                    </div>
+                  </div>
+                </h2>
+
               </div>
+              <RevealAnimation 
+              hidden={{ opacity: 0, scale: 0.5 }}
+              visible={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              >
+
               <span className="aboutIcon">
                 <svg
                   data-v-669b4a84=""
@@ -77,10 +104,11 @@ export default async function page() {
                     fill="currentColor"
                     width={20}
                     height={20}
-                  ></path>
+                    ></path>
                 </svg>
                 Objective
               </span>
+                    </RevealAnimation>
               <div className="secWrapper">
                 <RevealAnimation
                   hidden={{ opacity: 0, y: 250 }}
@@ -103,6 +131,16 @@ export default async function page() {
           </div>
         </div>
       </section>
+
+      <section className="Zoom_parallax">
+      <ZoomParallax />
+      </section>
+
+      {/* <Suspense fallback={<p>Loading</p>}>
+        <Essential />
+      </Suspense> */}
+
+
 
       <section className="2xl:py-18 xl:py-24 py-20 protection_section   key_serices">
         <div className="container">
@@ -147,7 +185,7 @@ export default async function page() {
           <div className="flexLayout">
             <div className="left-side">
               <div className=" ">
-                <Text
+                {/* <Text
                   tag="h2"
                   className="md:mb-8 mb-4 font-Axiforma capitalize tracking-wide"
                 >
@@ -156,7 +194,7 @@ export default async function page() {
                     Security with cutting-edge
                   </span>{" "}
                   cybersecurity solutions
-                </Text>
+                </Text> */}
 
                 <Text tag="p" className=" font-Axiforma leftSide">
                   At Secure365, we understand that navigating the digital world
@@ -164,7 +202,7 @@ export default async function page() {
                   be a one-stop solution, covering everything from cloud
                   management and IT support to marketing and cybersecurity.
                 </Text>
-               
+
               </div>
             </div>
 
@@ -212,9 +250,9 @@ export default async function page() {
               </div>
             </div>
 
-        
+
           </div>
-         
+
         </div>
       </section>
 
@@ -300,7 +338,7 @@ export default async function page() {
 
       <section className="make_us_different relative">
         <div className="container">
-          <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between md:gap-6 gap-10">
+          <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between md:gap-10 gap-6">
             <div className="contentMake">
               <Suspense fallback={<Skeleton className="h-4 w-[200px]" />}>
                 <RevealAnimation
@@ -392,15 +430,11 @@ export default async function page() {
                   <Suspense fallback={<p>Loading...</p>}>
                     <React.Fragment key={index}>
                       <div className="numberWrapper">
-                        <RevealAnimation
-                          hidden={{ opacity: 0, y: 250 }}
-                          visible={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 1, delay: 0.3 * index }}
-                        >
+                       
                           <Text tag="span" className="font-Axiforma">
                             0{index + 1}
                           </Text>
-                        </RevealAnimation>
+                        
                         <div>
                           <RevealAnimation
                             hidden={{ opacity: 0, y: 250 }}
@@ -595,11 +629,11 @@ export default async function page() {
                 />
               </div>
             </div>
-           
+
           </div>
         </div>
       </section>
-
+{/* 
       <section className="lookingService xl:mt-0">
         <div className="container">
           <Suspense fallback={<p>Loading...</p>}>
@@ -613,6 +647,54 @@ export default async function page() {
             </Link>
           </div>
         </div>
+      </section> */}
+
+      <section className="headerWraperSec">
+        <div className="container">
+          <div className="bothWrapper">
+    <div className="headerWraper stickyPosition">
+    <span className="aboutIcon">
+                <svg
+                  data-v-669b4a84=""
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="icon"
+                >
+                  <path
+                    data-v-669b4a84=""
+                    d="M7.41908 4.56679L6.13722 0L4.85418 4.92566L0 6L4.85418 7.25435L6.13722 12L7.3276 7.25435L12 6L7.41908 4.56679Z"
+                    fill="currentColor"
+                    width={20}
+                    height={20}
+                  ></path>
+                </svg>
+                <span>Industries</span>
+              </span>
+      <h1>CO- <br></br>CREATING <br></br>A BETTER <br></br>FUTURE</h1>
+      <p>
+        We unite with big brands and startups in various industries to create
+        memorable experiences driven by user-centered design that drives
+        productivity and increases revenue.
+      </p>
+    </div>
+    <div className="industries">
+      <ul>
+        <li><span>01</span> Artificial Intelligence</li>
+        <li><span>02</span> Cloud</li>
+        <li><span>03</span> Cognitive Business Operations</li>
+        <li><span>04</span> Consulting</li>
+        <li><span>05</span> Cybersecurity</li>
+        <li><span>06</span> Data & Analytics</li>
+        <li><span>07</span> Enterprise Solutions</li>
+        <li><span>08</span> Network Solutions and Service</li>
+        <li><span>09</span> SEO & Marketing</li>
+        <li><span>10</span> Blockchain Solution</li>
+        <li><span>11</span> Technology</li>
+      </ul>
+    </div>
+    </div>
+  </div>
       </section>
     </main>
   );
